@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import {
   motion,
   useScroll,
@@ -9,6 +10,22 @@ import {
   useSpring,
 } from "motion/react";
 import { services } from "@/data/services";
+
+/* ── Map service titles to their route slugs ── */
+const serviceSlugMap: Record<string, string> = {
+  Branding: "/services/branding",
+  "Web Development": "/services/website-development",
+  "Graphic Design": "/services/graphic-design",
+  "Lead Generation": "/services/lead-generation",
+  "Social Media Marketing": "/services/social-media",
+  "Google Ads": "/services/google-ads",
+  "SEO Marketing": "/services/seo",
+  "Link Building": "/services/link-building",
+  "Meta Ads": "/services/meta-ads",
+  "Content Writing": "/services/content-writing",
+  "GMB Listing": "/services/gmb-listing",
+  "Technical SEO": "/services/technical-seo",
+};
 
 const ease = [0.23, 1, 0.32, 1] as const;
 
@@ -107,7 +124,7 @@ function ServiceRow({ service, index }: { service: (typeof services)[0]; index: 
       }}
       onHoverStart={() => arrowX.set(6)}
       onHoverEnd={() => arrowX.set(0)}
-      className="group relative"
+      className="group relative cursor-pointer"
     >
       {/* Shimmer divider line */}
       <div className="relative h-px w-full overflow-hidden">
@@ -298,7 +315,13 @@ export function ServicesHome2() {
           }}
         >
           {services.map((service, i) => (
-            <ServiceRow key={service.title} service={service} index={i} />
+            <Link
+              key={service.title}
+              href={serviceSlugMap[service.title] || "/services"}
+              className="block"
+            >
+              <ServiceRow service={service} index={i} />
+            </Link>
           ))}
 
           {/* Bottom shimmer divider */}
