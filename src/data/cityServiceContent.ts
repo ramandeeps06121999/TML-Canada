@@ -1,3 +1,7 @@
+import { locations } from "./locations";
+import { servicePages } from "./servicePages";
+import { generateAutoContent } from "./cityServiceAutoContent";
+
 export interface CityServiceContent {
   // Hero enrichment
   h1?: string;
@@ -4172,7 +4176,16 @@ const cityServiceContentMap: Record<string, CityServiceContent> = {
 };
 
 export function getCityServiceContent(serviceSlug: string, citySlug: string): CityServiceContent | undefined {
-  return cityServiceContentMap[`${serviceSlug}:${citySlug}`];
+  const manual = cityServiceContentMap[`${serviceSlug}:${citySlug}`];
+  if (manual) return manual;
+
+  // Auto-generate from city + service data when no manual enrichment exists
+  const location = locations[citySlug];
+  const serviceData = servicePages[serviceSlug];
+  if (location && serviceData) {
+    return generateAutoContent(location, serviceSlug, serviceData);
+  }
+  return undefined;
 }
 
 export function getAllEnrichedSlugs(): string[] {
