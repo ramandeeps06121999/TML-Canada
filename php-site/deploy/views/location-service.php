@@ -29,8 +29,8 @@ $serviceName = $serviceData['title'];
 $cityName = $location['name'];
 $canonicalUrl = TML_SITE_URL . '/services/' . $urlSlug;
 
-// Title pattern: "{Service} in {City} | TML Agency | Top {Service} Company"
-$metaTitle = $enrichment['metaTitle'] ?? ($serviceName . ' in ' . $cityName . ' | TML Agency | Top ' . $serviceName . ' Company');
+// Title pattern: "Best {Service} in {City} | TML Agency"
+$metaTitle = $enrichment['metaTitle'] ?? ('Best ' . $serviceName . ' in ' . $cityName . ' | TML Agency');
 // Meta description: unique per page — city + service + CTA
 $metaDesc = $enrichment['metaDescription'] ?? ('Looking for expert ' . strtolower($serviceName) . ' in ' . $cityName . '? TML Agency delivers proven results for ' . $cityName . ' businesses. Get a free consultation today.');
 
@@ -275,7 +275,12 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <?php if (!empty($enrichment['h1'])) : ?>
         <?php
         $h1 = (string) $enrichment['h1'];
-        $h1main = preg_replace('/\s+in\s+\S+$/i', '', $h1);
+        // Remove "in {CityName}" from the end if present to avoid duplication
+        $h1main = preg_replace('/\s+in\s+' . preg_quote($cityName, '/') . '$/i', '', $h1);
+        // If city name wasn't at end, also try removing last "in ..." pattern
+        if ($h1main === $h1) {
+            $h1main = preg_replace('/\s+in\s+[\w\s-]+$/i', '', $h1);
+        }
         echo tml_e(trim((string) $h1main));
         ?>
         <br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">in <?= tml_e($cityName) ?></span>
@@ -298,16 +303,12 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
       <?php foreach ($serviceData['stats'] as $stat) :
           $val = $stat['value'];
-          $isNum = preg_match('/^\d/', (string) $val);
-          $num = $isNum ? (int) preg_replace('/\D/', '', (string) $val) : 0;
-          $suffix = $isNum ? preg_replace('/\d/', '', (string) $val) : '';
+          $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', (string) $val, $m);
           ?>
       <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
         <div class="text-2xl md:text-3xl font-bold text-white mb-1">
-          <?php if ($isNum && $num > 0) : ?>
-            <span data-counter-target="<?= (int) $num ?>" data-counter-suffix="<?= tml_e($suffix) ?>">0</span>
-          <?php elseif ($isNum) : ?>
-            <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
+          <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
+            <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
             <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
           <?php endif; ?>
@@ -793,6 +794,71 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Get Your Free Consultation</a>
       <a href="tel:+14036048692" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUR CREATIVE WORK — Carousel -->
+<section class="py-20 md:py-28 bg-[#0a0a0a] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-10 scroll-reveal">
+    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Creative Work</p>
+    <h2 class="text-3xl sm:text-4xl font-medium text-white leading-tight">Brand Identity &amp; Creative Work<span class="text-[#ff4500]">.</span></h2>
+  </div>
+  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);">
+    <div class="flex items-center gap-5 marquee-track" style="animation-duration: 35s;">
+      <?php
+      $creativeCards = [
+          ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
+          ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
+          ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'],
+          ['product-branding-campaign.webp', 'Product Branding', 'Branding'],
+          ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'],
+          ['beauty-product-photography.webp', 'Product Photography', 'Photography'],
+          ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'],
+          ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'],
+          ['instagram-feed-design.webp', 'Instagram Grid', 'Social Media'],
+          ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'],
+          ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
+          ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+      ];
+      $allCreative = array_merge($creativeCards, $creativeCards);
+      foreach ($allCreative as $cc) : ?>
+      <div class="flex-shrink-0 w-64 md:w-72 group">
+        <div class="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-all duration-500">
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <img src="/media/<?= tml_e($cc[0]) ?>" alt="<?= tml_e($cc[1]) ?> — <?= tml_e($serviceName) ?> in <?= tml_e($cityName) ?> by TML Agency" loading="lazy" width="600" height="450" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] text-[#ff4500]/60 tracking-[0.15em] uppercase font-semibold"><?= tml_e($cc[2]) ?></span>
+            <p class="text-sm text-white/80 font-medium mt-1 group-hover:text-white transition-colors"><?= tml_e($cc[1]) ?></p>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mt-10">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 scroll-reveal scroll-delay-1">
+      <?php
+      $gridCards = [
+          ['brand-identity-design.webp', 'Brand Identity Design', 'Branding'],
+          ['social-media-content-mockup.png', 'Social Media Content', 'Social Media'],
+          ['web-design-landing-page.webp', 'Web Design', 'Development'],
+          ['product-branding-campaign.webp', 'Product Branding', 'Advertising'],
+      ];
+      foreach ($gridCards as $gc) : ?>
+      <div class="group rounded-xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-all duration-500">
+        <div class="aspect-[4/3] relative overflow-hidden">
+          <img src="/media/<?= tml_e($gc[0]) ?>" alt="<?= tml_e($gc[1]) ?> — <?= tml_e($serviceName) ?> agency <?= tml_e($cityName) ?>" loading="lazy" width="600" height="450" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-3 left-4">
+            <span class="text-[9px] text-[#ff4500]/70 tracking-[0.15em] uppercase font-semibold"><?= tml_e($gc[2]) ?></span>
+            <p class="text-xs text-white/90 font-medium mt-0.5"><?= tml_e($gc[1]) ?></p>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>

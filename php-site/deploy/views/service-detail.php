@@ -9,8 +9,8 @@ if (!$data) {
     exit;
 }
 
-// Title pattern: "{Service} Services | TML Agency — Top {Service} Company"
-$title = $data['metaTitle'] ?? ($data['title'] . ' Services | TML Agency — Top ' . $data['title'] . ' Company');
+// Title pattern: "{Service} Services | TML Agency"
+$title = $data['metaTitle'] ?? ($data['title'] . ' Services | TML Agency');
 // Unique meta description with service + CTA
 $description = $data['metaDescription'] ?? ('Expert ' . strtolower($data['title']) . ' services by TML Agency. We help businesses grow with proven strategy and creative execution. Get a free quote today.');
 $keywords = is_array($data['metaKeywords'] ?? null)
@@ -125,14 +125,14 @@ require TML_VIEWS . '/partials/head.php';
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <?php foreach ($data['stats'] ?? [] as $stat) :
           $val = $stat['value'];
-          $isNum = preg_match('/^\d/', $val);
-          $num = $isNum ? (int) preg_replace('/\D/', '', $val) : 0;
-          $suffix = $isNum ? preg_replace('/\d/', '', $val) : '';
+          // Only use counter for simple integer values like "200+", "94%", "500+"
+          // Values like "4.8/5", "3x", "48hr" should display as-is
+          $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', $val, $m);
           ?>
       <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
         <div class="text-2xl md:text-3xl font-bold text-white mb-1">
-          <?php if ($isNum && $num > 0) : ?>
-            <span data-counter-target="<?= (int) $num ?>" data-counter-suffix="<?= tml_e($suffix) ?>">0</span>
+          <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
+            <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
             <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
           <?php endif; ?>
@@ -262,82 +262,110 @@ require TML_VIEWS . '/partials/head.php';
 </section>
 <?php endif; ?>
 
+<!-- PROCESS — Timeline style -->
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
-  <div class="relative mx-auto max-w-7xl">
-    <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Our Process</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">How Our <?= tml_e($data['title']) ?> Process Works<span class="text-[#ff4500]">.</span></h2>
+  <div class="relative mx-auto max-w-6xl">
+    <div class="text-center mb-14 scroll-reveal">
+      <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Our Process</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">How Our <?= tml_e($data['title']) ?> Process Works<span class="text-[#ff4500]">.</span></h2>
+    </div>
     <?php
     $processIcons = [
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>',
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/></svg>',
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>',
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/></svg>',
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
+        '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
     ];
+    $stepCount = count($data['process'] ?? []);
     ?>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
-      <?php foreach ($data['process'] ?? [] as $i => $step) : ?>
-      <div class="relative z-10">
-        <div class="flex items-center gap-4 mb-4">
-          <div class="w-16 h-16 rounded-2xl bg-[#ff4500]/10 border border-[#ff4500]/20 flex items-center justify-center text-[#ff4500] font-bold text-lg"><?= tml_e($step['step']) ?></div>
+    <!-- Connecting line behind cards (desktop only) -->
+    <div class="relative">
+      <div class="hidden lg:block absolute top-10 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent z-0"></div>
+      <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 sm:grid-cols-2 <?= $stepCount <= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-5' ?> gap-6 relative z-10">
+        <?php foreach ($data['process'] ?? [] as $i => $step) : ?>
+        <div class="group text-center">
+          <div class="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-[#ff4500]/20 to-[#ff4500]/5 border border-[#ff4500]/20 flex flex-col items-center justify-center mb-6 group-hover:from-[#ff4500]/30 group-hover:to-[#ff4500]/10 group-hover:border-[#ff4500]/40 transition-all duration-300">
+            <div class="text-[#ff4500]"><?= $processIcons[$i % count($processIcons)] ?></div>
+            <span class="text-[10px] font-mono text-[#ff4500]/50 mt-1"><?= tml_e($step['step']) ?></span>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2"><?= tml_e($step['title']) ?></h3>
+          <p class="text-sm text-white/45 leading-relaxed max-w-[220px] mx-auto"><?= tml_e($step['description']) ?></p>
         </div>
-        <div class="mt-2 opacity-60"><?= $processIcons[$i % count($processIcons)] ?></div>
-        <h3 class="text-xl font-semibold text-white mb-2"><?= tml_e($step['title']) ?></h3>
-        <p class="text-sm text-white/90 leading-relaxed"><?= tml_e($step['description']) ?></p>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — Numbered accordion -->
+<section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
+  <div class="relative mx-auto max-w-3xl">
+    <div class="text-center mb-12 scroll-reveal">
+      <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">FAQ</p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white"><?= tml_e($data['title']) ?> Questions Answered<span class="text-[#ff4500]">.</span></h2>
+    </div>
+    <div class="space-y-3">
+      <?php foreach ($data['faqs'] ?? [] as $fi => $faq) : ?>
+      <div class="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors" data-tml-faq>
+        <button type="button" class="w-full flex items-center gap-4 p-5 md:p-6 text-left" data-tml-faq-toggle>
+          <span class="w-8 h-8 rounded-lg bg-[#ff4500]/10 flex items-center justify-center flex-shrink-0">
+            <span class="text-xs font-mono text-[#ff4500] font-bold"><?= str_pad((string) ($fi + 1), 2, '0', STR_PAD_LEFT) ?></span>
+          </span>
+          <span class="flex-1 text-white font-medium text-sm md:text-base"><?= tml_e($faq['q']) ?></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/30 flex-shrink-0 transition-transform duration-200" data-tml-faq-icon><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
+          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-[3.75rem] md:pl-[4.25rem] text-sm text-white/50 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
+        </div>
       </div>
       <?php endforeach; ?>
     </div>
   </div>
 </section>
 
-<section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-3xl">
-    <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4 text-center">FAQ</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($data['title']) ?> Questions Answered<span class="text-[#ff4500]">.</span></h2>
-    <div class="space-y-3">
-      <?php foreach ($data['faqs'] ?? [] as $faq) : ?>
-      <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors">
-        <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none text-white font-medium text-sm md:text-base">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0 mr-3"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span class="pr-4"><?= tml_e($faq['q']) ?></span>
-          <span class="text-white/30 text-xl flex-shrink-0">+</span>
-        </summary>
-        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/90 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
-      </details>
+<!-- Our Creative Work — Carousel before footer -->
+<section class="relative w-full py-12 md:py-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-8 scroll-reveal">
+    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Creative Work</p>
+    <h2 class="text-2xl sm:text-3xl font-medium text-white">Brand Identity &amp; Creative Work<span class="text-[#ff4500]">.</span></h2>
+  </div>
+  <?php
+  $carouselImages = [
+      ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
+      ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
+      ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'],
+      ['product-branding-campaign.webp', 'Product Branding', 'Branding'],
+      ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'],
+      ['beauty-product-photography.webp', 'Product Photography', 'Photography'],
+      ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'],
+      ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'],
+      ['instagram-feed-design.webp', 'Instagram Grid', 'Social Media'],
+      ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'],
+      ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
+      ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+  ];
+  $allCreative = array_merge($carouselImages, $carouselImages);
+  ?>
+  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);">
+    <div class="flex items-center gap-5 marquee-track" style="animation-duration: 35s;">
+      <?php foreach ($allCreative as $cc) : ?>
+      <div class="flex-shrink-0 w-64 md:w-72 group">
+        <div class="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-all duration-500">
+          <div class="aspect-[4/3] relative overflow-hidden">
+            <img src="/media/<?= tml_e($cc[0]) ?>" alt="<?= tml_e($cc[1]) ?> — <?= tml_e($data['title']) ?> by TML Agency" loading="lazy" width="600" height="450" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] text-[#ff4500]/60 tracking-[0.15em] uppercase font-semibold"><?= tml_e($cc[2]) ?></span>
+            <p class="text-sm text-white/80 font-medium mt-1 group-hover:text-white transition-colors"><?= tml_e($cc[1]) ?></p>
+          </div>
+        </div>
+      </div>
       <?php endforeach; ?>
     </div>
   </div>
 </section>
-
-<?php if (!empty($serviceImages)) : ?>
-<section class="relative w-full px-6 py-12 md:py-16 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-7xl">
-    <div class="grid grid-cols-3 gap-4 md:gap-5">
-      <?php
-          $stripAltVariants = [
-              tml_e($data['title'] . ' project showcase — TML Agency'),
-              tml_e($data['title'] . ' design example — TML Agency'),
-              tml_e($data['title'] . ' creative campaign — TML Agency'),
-          ];
-          foreach (array_slice($serviceImages, 0, 3) as $stripIdx => $stripFile) :
-          $stripAlt = $stripAltVariants[$stripIdx];
-          ?>
-      <figure class="relative overflow-hidden rounded-xl aspect-[4/3] bg-white/[0.03] group">
-        <img
-          src="/media/<?= tml_e($stripFile) ?>"
-          alt="<?= $stripAlt ?>"
-          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-          width="600"
-          height="450"
-        />
-        <figcaption class="sr-only"><?= $stripAlt ?></figcaption>
-      </figure>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
@@ -445,13 +473,42 @@ usort($cityLinks, static function ($a, $b) {
 });
 ?>
 <?php if (count($cityLinks) > 0) : ?>
-<section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-5xl text-center">
-    <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Available In</p>
-    <h2 class="scroll-reveal text-2xl sm:text-3xl font-medium text-white mb-10"><?= tml_e($data['title']) ?> Services by City<span class="text-[#ff4500]">.</span></h2>
-    <div class="flex flex-wrap items-center justify-center gap-3">
-      <?php foreach ($cityLinks as $cl) : ?>
-      <a href="<?= tml_e($cl['href']) ?>" class="px-5 py-2.5 rounded-full border border-white/[0.08] bg-white/[0.02] text-sm text-white/90 hover:text-[#ff4500] hover:border-[#ff4500]/30 hover:bg-[#ff4500]/5 transition-all duration-300"><?= tml_e($data['title']) ?> in <?= tml_e($cl['name']) ?></a>
+<section class="relative w-full py-16 md:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-10 scroll-reveal">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Available In</p>
+        <h2 class="text-2xl sm:text-3xl font-medium text-white"><?= tml_e($data['title']) ?> Services by City<span class="text-[#ff4500]">.</span></h2>
+      </div>
+      <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/25 font-medium">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/60"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <?= count($cityLinks) ?> cities
+      </span>
+    </div>
+  </div>
+  <?php
+  // Split cities into two rows for the marquee
+  $half = (int) ceil(count($cityLinks) / 2);
+  $row1 = array_slice($cityLinks, 0, $half);
+  $row2 = array_slice($cityLinks, $half);
+  ?>
+  <div class="space-y-4" style="mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);">
+    <!-- Row 1 — scrolls right -->
+    <div class="flex items-center gap-3 marquee-track" style="animation-duration: 60s;">
+      <?php foreach (array_merge($row1, $row1) as $cl) : ?>
+      <a href="<?= tml_e($cl['href']) ?>" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-sm text-white/70 hover:text-[#ff4500] hover:border-[#ff4500]/30 hover:bg-[#ff4500]/5 transition-all duration-300 whitespace-nowrap">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/50 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <?= tml_e($cl['name']) ?>
+      </a>
+      <?php endforeach; ?>
+    </div>
+    <!-- Row 2 — scrolls left -->
+    <div class="flex items-center gap-3 marquee-track" style="animation-duration: 55s; animation-direction: reverse;">
+      <?php foreach (array_merge($row2, $row2) as $cl) : ?>
+      <a href="<?= tml_e($cl['href']) ?>" class="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/[0.06] bg-white/[0.02] text-sm text-white/70 hover:text-[#ff4500] hover:border-[#ff4500]/30 hover:bg-[#ff4500]/5 transition-all duration-300 whitespace-nowrap">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]/50 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <?= tml_e($cl['name']) ?>
+      </a>
       <?php endforeach; ?>
     </div>
   </div>
