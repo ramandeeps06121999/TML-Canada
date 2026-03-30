@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block internal/admin paths that shouldn't be indexed
+Disallow: /404
+Disallow: /*.json$
+
+Sitemap: https://townmedialabs.ca/sitemap.xml
