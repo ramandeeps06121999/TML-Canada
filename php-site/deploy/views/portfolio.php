@@ -44,8 +44,41 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'Portfolio', 'url' => TML_SITE_URL . '/portfolio'],
 ]);
+
+// Generate CreativeWork schema for portfolio projects
+$portfolioWorks = [];
+foreach ($allWork as $project) {
+    $portfolioWorks[] = [
+        '@type' => 'CreativeWork',
+        'name' => $project['title'],
+        'description' => $project['desc'],
+        'image' => TML_SITE_URL . $project['image'],
+        'creator' => [
+            '@type' => 'Organization',
+            'name' => 'TML Agency',
+        ],
+        'dateCreated' => '2023-01-01',
+        'keywords' => $project['category'],
+    ];
+}
+
+$portfolioSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'CollectionPage',
+    'name' => 'TML Agency Portfolio',
+    'description' => $description,
+    'url' => TML_SITE_URL . '/portfolio',
+    'mainEntity' => [
+        '@type' => 'ItemList',
+        'itemListElement' => array_map(static function ($item, $pos) {
+            return array_merge($item, ['position' => $pos + 1]);
+        }, $portfolioWorks, array_keys($portfolioWorks)),
+    ],
+];
+
 $extraHead = [
     tml_json_ld_script($breadcrumbSchema),
+    tml_json_ld_script($portfolioSchema),
 ];
 require TML_VIEWS . '/partials/head.php';
 ?>

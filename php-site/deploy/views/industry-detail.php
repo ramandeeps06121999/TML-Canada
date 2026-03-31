@@ -73,12 +73,20 @@ if ($isTier1) {
         <img src="/media/digital-marketing-creative.webp"
              alt="Digital marketing creative for <?= tml_e($name) ?>"
              loading="lazy"
+             width="1920"
+             height="1080"
+             srcset="/media/digital-marketing-creative-640.webp 640w, /media/digital-marketing-creative-1024.webp 1024w, /media/digital-marketing-creative.webp 1920w"
+             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
              class="w-full h-full object-cover">
       </div>
       <div class="aspect-video rounded-2xl overflow-hidden">
         <img src="/media/brand-strategy-visual.webp"
              alt="Brand strategy visual for <?= tml_e($name) ?>"
              loading="lazy"
+             width="1920"
+             height="1080"
+             srcset="/media/brand-strategy-visual-640.webp 640w, /media/brand-strategy-visual-1024.webp 1024w, /media/brand-strategy-visual.webp 1920w"
+             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
              class="w-full h-full object-cover">
       </div>
     </div>
@@ -348,12 +356,20 @@ $sectionIcons = [
         <img src="/media/digital-marketing-creative.webp"
              alt="Digital marketing creative for <?= tml_e($name) ?>"
              loading="lazy"
+             width="1920"
+             height="1080"
+             srcset="/media/digital-marketing-creative-640.webp 640w, /media/digital-marketing-creative-1024.webp 1024w, /media/digital-marketing-creative.webp 1920w"
+             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
              class="w-full h-full object-cover">
       </div>
       <div class="aspect-video rounded-2xl overflow-hidden">
         <img src="/media/brand-strategy-visual.webp"
              alt="Brand strategy visual for <?= tml_e($name) ?>"
              loading="lazy"
+             width="1920"
+             height="1080"
+             srcset="/media/brand-strategy-visual-640.webp 640w, /media/brand-strategy-visual-1024.webp 1024w, /media/brand-strategy-visual.webp 1920w"
+             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
              class="w-full h-full object-cover">
       </div>
     </div>

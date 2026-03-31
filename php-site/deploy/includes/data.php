@@ -53,6 +53,30 @@ function tml_enrichments(): array
 /**
  * @return array<string, mixed>
  */
+function tml_service_pricing(): array
+{
+    static $d = null;
+    if ($d === null) {
+        $d = tml_json_load('servicePricing.json') ?? [];
+    }
+    return $d;
+}
+
+/**
+ * @return array<string, string>
+ */
+function tml_service_last_updated(): array
+{
+    static $d = null;
+    if ($d === null) {
+        $d = tml_json_load('serviceLastUpdated.json') ?? [];
+    }
+    return $d;
+}
+
+/**
+ * @return array<string, mixed>
+ */
 function tml_service_seo_content(): array
 {
     static $d = null;

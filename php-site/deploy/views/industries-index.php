@@ -9,8 +9,35 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'Industries', 'url' => TML_SITE_URL . '/industries'],
 ]);
+
+// Generate ItemList schema for industries
+$industryItems = [];
+foreach ($industryPages as $slug => $page) {
+    $industryItems[] = [
+        '@type' => 'Thing',
+        'name' => $page['name'],
+        'description' => $page['metaDescription'],
+        'url' => TML_SITE_URL . '/industries/' . $slug,
+    ];
+}
+
+$industriesListSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'CollectionPage',
+    'name' => 'Industries We Serve',
+    'description' => $description,
+    'url' => TML_SITE_URL . '/industries',
+    'mainEntity' => [
+        '@type' => 'ItemList',
+        'itemListElement' => array_map(static function ($item, $pos) {
+            return array_merge($item, ['position' => $pos + 1]);
+        }, $industryItems, array_keys($industryItems)),
+    ],
+];
+
 $extraHead = [
     tml_json_ld_script($breadcrumbSchema),
+    tml_json_ld_script($industriesListSchema),
 ];
 require TML_VIEWS . '/partials/head.php';
 ?>

@@ -64,7 +64,7 @@ function tml_schema_breadcrumb(array $items): array
 }
 
 /**
- * @param array{name: string, description: string, url: string, areaServed?: string, category?: string} $p
+ * @param array{name: string, description: string, url: string, areaServed?: string, category?: string, pricingTiers?: array<int, array{name: string, price: string, currency?: string, description?: string}>, dateModified?: string} $p
  */
 function tml_schema_service(array $p): array
 {
@@ -82,6 +82,34 @@ function tml_schema_service(array $p): array
     if (!empty($p['category'])) {
         $out['category'] = $p['category'];
     }
+    if (!empty($p['dateModified'])) {
+        $out['dateModified'] = $p['dateModified'];
+    }
+
+    // Add pricing tiers if provided
+    if (!empty($p['pricingTiers']) && is_array($p['pricingTiers'])) {
+        $offers = [];
+        foreach ($p['pricingTiers'] as $tier) {
+            $offer = [
+                '@type' => 'Offer',
+                'name' => $tier['name'],
+                'price' => $tier['price'],
+                'priceCurrency' => $tier['currency'] ?? 'CAD',
+            ];
+            if (!empty($tier['description'])) {
+                $offer['description'] = $tier['description'];
+            }
+            $offers[] = $offer;
+        }
+        if (!empty($offers)) {
+            $out['hasOfferCatalog'] = [
+                '@type' => 'OfferCatalog',
+                'name' => 'Service Packages',
+                'itemListElement' => $offers,
+            ];
+        }
+    }
+
     return $out;
 }
 

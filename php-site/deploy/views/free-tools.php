@@ -7,9 +7,6 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'Free Tools', 'url' => TML_SITE_URL . '/free-tools'],
 ]);
-$extraHead = [
-    tml_json_ld_script($breadcrumbSchema),
-];
 
 $tools = [
     [
@@ -42,6 +39,42 @@ $tools = [
         'category' => 'SEO',
         'description' => 'Create perfectly optimised meta titles and descriptions that drive clicks from search results.',
     ],
+];
+
+// Generate ItemList schema for free tools
+$toolItems = [];
+foreach ($tools as $i => $tool) {
+    $toolItems[] = [
+        '@type' => 'SoftwareApplication',
+        'name' => $tool['name'],
+        'description' => $tool['description'],
+        'applicationCategory' => $tool['category'],
+        'url' => TML_SITE_URL . '/free-tools',
+        'offers' => [
+            '@type' => 'Offer',
+            'price' => '0',
+            'priceCurrency' => 'CAD',
+        ],
+    ];
+}
+
+$toolsListSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'CollectionPage',
+    'name' => 'Free Marketing Tools & Calculators',
+    'description' => $description,
+    'url' => TML_SITE_URL . '/free-tools',
+    'mainEntity' => [
+        '@type' => 'ItemList',
+        'itemListElement' => array_map(static function ($item, $pos) {
+            return array_merge($item, ['position' => $pos + 1]);
+        }, $toolItems, array_keys($toolItems)),
+    ],
+];
+
+$extraHead = [
+    tml_json_ld_script($breadcrumbSchema),
+    tml_json_ld_script($toolsListSchema),
 ];
 
 require TML_VIEWS . '/partials/head.php';

@@ -68,11 +68,30 @@ $serviceImageMap = [
 $serviceImages = $serviceImageMap[$slug] ?? ['digital-marketing-creative.webp', 'brand-identity-design.webp', 'creative-design-portfolio.webp'];
 $ogImageOverride = TML_SITE_URL . '/media/' . $serviceImages[0];
 
+// Load pricing tiers and last updated date for schema
+$servicePricingData = tml_service_pricing();
+$serviceLastUpdatedData = tml_service_last_updated();
+$pricingTiers = [];
+if (isset($servicePricingData[$slug])) {
+    $pricing = $servicePricingData[$slug];
+    foreach ($pricing['tiers'] ?? [] as $tier) {
+        $pricingTiers[] = [
+            'name' => $tier['name'],
+            'price' => $tier['price'],
+            'currency' => $pricing['currency'] ?? 'CAD',
+            'description' => $tier['description'] ?? '',
+        ];
+    }
+}
+$lastUpdated = $serviceLastUpdatedData[$slug] ?? null;
+
 $serviceSchema = tml_schema_service([
     'name' => $data['title'],
     'description' => $data['description'],
     'url' => TML_SITE_URL . '/services/' . $slug,
     'category' => $data['title'],
+    'pricingTiers' => $pricingTiers,
+    'dateModified' => $lastUpdated,
 ]);
 $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
@@ -158,11 +177,13 @@ require TML_VIEWS . '/partials/head.php';
       <figure class="relative overflow-hidden rounded-2xl aspect-video bg-white/[0.03]">
         <img
           src="/media/<?= tml_e($imgFile) ?>"
+          srcset="/media/<?= tml_e($imgFile) ?> 1920w, /media/<?= tml_e(preg_replace('/\.(webp|jpg|png)$/i', '-1024.$1', $imgFile)) ?> 1024w, /media/<?= tml_e(preg_replace('/\.(webp|jpg|png)$/i', '-640.$1', $imgFile)) ?> 640w"
+          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           alt="<?= $altText ?>"
           class="w-full h-full object-cover"
           loading="<?= $imgIdx === 0 ? 'eager' : 'lazy' ?>"
-          width="800"
-          height="450"
+          width="1920"
+          height="1080"
         />
         <figcaption class="sr-only"><?= $altText ?></figcaption>
       </figure>
