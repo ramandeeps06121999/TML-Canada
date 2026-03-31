@@ -16,7 +16,20 @@
       "Bash(php -r ':*)",
       "Bash(ls -1d /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)",
       "Bash(ls -1 /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)",
-      "Bash(du -sh /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)"
+      "Bash(du -sh /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)",
+      "Bash(__NEW_LINE_2f36f1d847a6d38f__ git:*)",
+      "Bash(__NEW_LINE_2f36f1d847a6d38f__ git commit -m \"Add complete website folder - ready to upload and run:*)",
+      "Bash(__NEW_LINE_26e7394298556c79__ git:*)",
+      "Bash(__NEW_LINE_26e7394298556c79__ echo:*)",
+      "Bash(__NEW_LINE_a85f87a018af3aea__ echo:*)",
+      "Bash(__NEW_LINE_757541e7a3baa330__ git:*)",
+      "Bash(__NEW_LINE_757541e7a3baa330__ git commit -m \"Add complete website folder with ALL media:*)",
+      "Bash(__NEW_LINE_8da468fea51dfc02__ git:*)",
+      "Bash(__NEW_LINE_8da468fea51dfc02__ echo:*)",
+      "Bash(__NEW_LINE_9130ce93252d395c__ echo:*)",
+      "Bash(__NEW_LINE_f9e75bbb8a87bbc9__ git:*)",
+      "Bash(__NEW_LINE_f9e75bbb8a87bbc9__ git commit -m \"Add COMPLETE, FULLY FUNCTIONAL website with ALL pages, services, industries & media:*)",
+      "Bash(__NEW_LINE_9defbc74a94a9f7b__ git:*)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs"
