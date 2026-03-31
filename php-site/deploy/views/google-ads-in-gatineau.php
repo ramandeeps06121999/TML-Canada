@@ -11,6 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://townmedialabs.ca/favicon.ico">
+    <link rel="apple-touch-icon" href="https://townmedialabs.ca/apple-touch-icon.png">
     <title>Best Google Ads Management in Gatineau | TML Agency | PPC Experts</title>
     <meta name="description" content="Expert Google Ads management in Gatineau. Certified Google Partner. Control ad spend, maximize ROI. 200+ clients. Free audit. $2,499-$9,999/month.">
     <meta name="keywords" content="Google Ads Gatineau, publicité Google Gatineau, PPC Gatineau">

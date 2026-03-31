@@ -11,6 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://townmedialabs.ca/favicon.ico">
+    <link rel="apple-touch-icon" href="https://townmedialabs.ca/apple-touch-icon.png">
     <title>Best Branding & Logo Design in Charlottetown | TML Agency | Brand Experts</title>
     <meta name="description" content="Professional branding services in Charlottetown. Logo design, brand strategy, identity systems. 200+ brands. Award-winning work. $5,000-$25,000.">
     <meta name="keywords" content="branding Charlottetown, logo design, brand identity, brand strategy, graphic design Charlottetown">

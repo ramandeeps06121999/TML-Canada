@@ -6,7 +6,17 @@
       "Bash(node generate-india-pages.mjs)",
       "Bash(lsof -ti:3000,3001,3002,3003)",
       "Bash(lsof -i:3002)",
-      "Bash(ls /Users/ramanmakkar/Desktop/tml-nextjs/public/favicon* /Users/ramanmakkar/Desktop/tml-nextjs/public/apple-touch-icon* /Users/ramanmakkar/Desktop/tml-nextjs/src/app/favicon*)"
+      "Bash(ls /Users/ramanmakkar/Desktop/tml-nextjs/public/favicon* /Users/ramanmakkar/Desktop/tml-nextjs/public/apple-touch-icon* /Users/ramanmakkar/Desktop/tml-nextjs/src/app/favicon*)",
+      "Bash(php php-site/deploy/scripts/batch-generate-google-ads-pages.php)",
+      "Bash(ls -1 php-site/deploy/views/google-ads-in-*.php)",
+      "Bash(ls -1 php-site/deploy/views/branding-in-*.php)",
+      "Bash(du -sh php-site/deploy/views/branding-in-*.php)",
+      "Bash(/tmp/rapid_services.sh:*)",
+      "Bash(bash /tmp/rapid_services.sh)",
+      "Bash(php -r ':*)",
+      "Bash(ls -1d /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)",
+      "Bash(ls -1 /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)",
+      "Bash(du -sh /Users/ramanmakkar/Desktop/tml-php/php-site/deploy/views/*-in-*.php)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs"

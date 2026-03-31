@@ -11,6 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://townmedialabs.ca/favicon.ico">
+    <link rel="apple-touch-icon" href="https://townmedialabs.ca/apple-touch-icon.png">
     <title>Best Content Marketing in Surrey | TML Agency | Content Strategy Experts</title>
     <meta name="description" content="Strategic content marketing in Surrey. Blog writing, content strategy, copywriting. 200+ brands. Proven ROI. $3,000-$15,000/month.">
     <meta name="keywords" content="content marketing Surrey, content strategy, blog writing, copywriting, content creation">

@@ -241,7 +241,9 @@ $faqSchema = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($pageTitle); ?></title>
+    <link rel="icon" type="image/x-icon" href="https://townmedialabs.ca/favicon.ico">
+    <link rel="apple-touch-icon" href="https://townmedialabs.ca/apple-touch-icon.png">
+    <title>Best SEO in Halifax | TML Agency | SEO Experts</title>
     <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
     <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>">
     <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl); ?>">
