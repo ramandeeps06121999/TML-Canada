@@ -8,7 +8,9 @@ if (!$article) {
 }
 $title = $article['metaTitle'] ?? $article['title'];
 $description = $article['metaDescription'];
-$keywords = $article['metaKeywords'] ?? ($article['category'] . ', ' . strtolower($article['title']) . ', digital marketing, TML Agency blog, marketing tips');
+$keywords = is_array($article['keywords'] ?? null)
+    ? implode(', ', $article['keywords'])
+    : ($article['metaKeywords'] ?? ($article['category'] . ', ' . strtolower($article['title']) . ', digital marketing, TML Agency blog, marketing tips'));
 $canonicalPath = '/blog/' . $slug;
 $ogType = 'article';
 

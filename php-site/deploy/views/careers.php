@@ -29,9 +29,52 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'Careers', 'url' => TML_SITE_URL . '/careers'],
 ]);
+
+// JobPosting schema for each open position
+$jobPostings = [];
+foreach ($positions as $pos) {
+    $jobPostings[] = [
+        '@context' => 'https://schema.org',
+        '@type' => 'JobPosting',
+        'title' => $pos['title'],
+        'description' => $pos['desc'],
+        'hiringOrganization' => [
+            '@type' => 'Organization',
+            'name' => 'TML Agency',
+            'sameAs' => TML_SITE_URL,
+            'logo' => TML_SITE_URL . '/og-image.png',
+        ],
+        'jobLocation' => [
+            '@type' => 'Place',
+            'address' => [
+                '@type' => 'PostalAddress',
+                'streetAddress' => '11930 104 St NW',
+                'addressLocality' => 'Edmonton',
+                'addressRegion' => 'Alberta',
+                'postalCode' => 'T5G 2K1',
+                'addressCountry' => 'CA',
+            ],
+        ],
+        'employmentType' => $pos['type'] === 'Full-time' ? 'FULL_TIME' : ($pos['type'] === 'Part-time' ? 'PART_TIME' : 'OTHER'),
+        'applicantLocationRequirements' => [
+            '@type' => 'Country',
+            'name' => 'CA',
+        ],
+        'baseSalary' => [
+            '@type' => 'PriceSpecification',
+            'priceCurrency' => 'CAD',
+            'price' => '70000-120000',
+        ],
+    ];
+}
+
 $extraHead = [
     tml_json_ld_script($breadcrumbSchema),
 ];
+// Add JobPosting schemas
+foreach ($jobPostings as $jp) {
+    $extraHead[] = tml_json_ld_script($jp);
+}
 require TML_VIEWS . '/partials/head.php';
 ?>
 <main class="bg-[#050505] text-white min-h-screen">
