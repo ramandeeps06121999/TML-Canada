@@ -347,12 +347,13 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
-<!-- Our Creative Work — Carousel before footer -->
-<section class="relative w-full py-12 md:py-16 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-8 scroll-reveal">
+<!-- Our Creative Work — Grid Carousel with Dots Navigation -->
+<section class="relative w-full py-16 md:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 scroll-reveal">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Creative Work</p>
     <h2 class="text-2xl sm:text-3xl font-medium text-white">Brand Identity &amp; Creative Work<span class="text-[#ff4500]">.</span></h2>
   </div>
+
   <?php
   $carouselImages = [
       ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
@@ -368,26 +369,101 @@ require TML_VIEWS . '/partials/head.php';
       ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
       ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
   ];
-  $allCreative = array_merge($carouselImages, $carouselImages);
+  $itemsPerSlide = 3;
+  $totalSlides = ceil(count($carouselImages) / $itemsPerSlide);
   ?>
-  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);">
-    <div class="flex items-center gap-5 marquee-track" style="animation-duration: 35s;">
-      <?php foreach ($allCreative as $cc) : ?>
-      <div class="flex-shrink-0 w-64 md:w-72 group">
-        <div class="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-all duration-500">
-          <div class="aspect-[4/3] relative overflow-hidden">
-            <img src="/media/<?= tml_e($cc[0]) ?>" alt="<?= tml_e($cc[1]) ?> — <?= tml_e($data['title']) ?> by TML Agency" loading="lazy" width="600" height="450" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <!-- Carousel Container -->
+    <div class="relative overflow-hidden">
+      <div id="carouselTrack" class="flex transition-transform duration-500 ease-out" style="transform: translateX(0);">
+        <?php for ($slide = 0; $slide < $totalSlides; $slide++) : ?>
+        <div class="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <?php
+          for ($i = 0; $i < $itemsPerSlide; $i++) {
+            $index = ($slide * $itemsPerSlide) + $i;
+            if ($index < count($carouselImages)) {
+              $cc = $carouselImages[$index];
+          ?>
+          <div class="group">
+            <div class="rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/30 transition-all duration-500 h-full flex flex-col">
+              <div class="aspect-[4/3] relative overflow-hidden flex-shrink-0">
+                <img src="/media/<?= tml_e($cc[0]) ?>" alt="<?= tml_e($cc[1]) ?> — <?= tml_e($data['title']) ?> by TML Agency" loading="lazy" width="600" height="450" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-4">
+                  <p class="text-sm text-white font-medium"><?= tml_e($cc[1]) ?></p>
+                </div>
+              </div>
+              <div class="p-4 flex-grow flex flex-col justify-between">
+                <span class="text-[10px] text-[#ff4500]/70 tracking-[0.15em] uppercase font-semibold"><?= tml_e($cc[2]) ?></span>
+                <p class="text-xs text-white/60 mt-2"><?= tml_e($cc[1]) ?></p>
+              </div>
+            </div>
           </div>
-          <div class="p-4">
-            <span class="text-[10px] text-[#ff4500]/60 tracking-[0.15em] uppercase font-semibold"><?= tml_e($cc[2]) ?></span>
-            <p class="text-sm text-white/80 font-medium mt-1 group-hover:text-white transition-colors"><?= tml_e($cc[1]) ?></p>
-          </div>
+          <?php
+            }
+          }
+          ?>
         </div>
+        <?php endfor; ?>
       </div>
-      <?php endforeach; ?>
+
+      <!-- Navigation Buttons -->
+      <?php if ($totalSlides > 1) : ?>
+      <button onclick="slideCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 rounded-full border border-white/20 hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button onclick="slideCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 rounded-full border border-white/20 hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+      <?php endif; ?>
     </div>
+
+    <!-- Dots Navigation -->
+    <?php if ($totalSlides > 1) : ?>
+    <div class="flex justify-center gap-2 mt-10">
+      <?php for ($i = 0; $i < $totalSlides; $i++) : ?>
+      <button onclick="goToSlide(<?= $i ?>)" class="dot-nav w-2 h-2 rounded-full transition-all duration-300 <?= $i === 0 ? 'bg-[#ff4500] w-8' : 'bg-white/20 hover:bg-white/40' ?>" data-slide="<?= $i ?>"></button>
+      <?php endfor; ?>
+    </div>
+    <?php endif; ?>
   </div>
+
+  <script>
+  let currentSlide = 0;
+  const totalSlides = <?= $totalSlides ?>;
+
+  function slideCarousel(direction) {
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const track = document.getElementById('carouselTrack');
+    if (track) {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    // Update dots
+    document.querySelectorAll('.dot-nav').forEach((dot, index) => {
+      if (index === currentSlide) {
+        dot.className = 'dot-nav w-8 h-2 rounded-full bg-[#ff4500] transition-all duration-300';
+      } else {
+        dot.className = 'dot-nav w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300';
+      }
+    });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') slideCarousel(-1);
+    if (e.key === 'ArrowRight') slideCarousel(1);
+  });
+  </script>
 </section>
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
