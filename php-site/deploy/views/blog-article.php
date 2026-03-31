@@ -23,6 +23,7 @@ $articleModifiedTime = isset($article['updatedDate']) && $article['updatedDate']
     ? (($d = date_create($article['updatedDate'])) ? $d->format('Y-m-d\TH:i:sP') : $articlePublishedTime)
     : $articlePublishedTime;
 
+$articleAuthor = $article['author'] ?? 'Raman Makkar';
 $articleSchema = [
     '@context' => 'https://schema.org',
     '@type' => 'Article',
@@ -31,13 +32,16 @@ $articleSchema = [
     'datePublished' => $articlePublishedTime,
     'dateModified' => $articleModifiedTime,
     'author' => [
-        '@type' => 'Organization',
-        'name' => $article['author'] ?? 'TML Agency',
-        'url' => TML_SITE_URL,
+        '@type' => 'Person',
+        'name' => $articleAuthor,
+        'url' => TML_SITE_URL . '/about-us',
+        'description' => 'Founder & Chief SEO Strategist at TML Agency',
     ],
+    'creator' => $articleAuthor,
     'publisher' => [
         '@type' => 'Organization',
         'name' => 'TML Agency',
+        'url' => TML_SITE_URL,
         'logo' => ['@type' => 'ImageObject', 'url' => TML_SITE_URL . '/og-image.png'],
     ],
     'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => TML_SITE_URL . '/blog/' . $slug],

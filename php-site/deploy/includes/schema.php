@@ -7,6 +7,7 @@ const TML_SCHEMA_PROVIDER = [
     'name' => 'TML Agency',
     'url' => 'https://townmedialabs.ca',
     'telephone' => '+14036048692',
+    'email' => 'hello@townmedialabs.ca',
     'address' => [
         '@type' => 'PostalAddress',
         'streetAddress' => '11930 104 St NW',
@@ -14,6 +15,16 @@ const TML_SCHEMA_PROVIDER = [
         'addressRegion' => 'Alberta',
         'addressCountry' => 'CA',
         'postalCode' => 'T5G 2K1',
+    ],
+    'founder' => [
+        '@type' => 'Person',
+        'name' => 'Raman Makkar',
+        'description' => 'Chief SEO Strategist & Founder',
+    ],
+    'sameAs' => [
+        'https://www.linkedin.com/company/tml-agency',
+        'https://twitter.com/tml_agency',
+        'https://www.instagram.com/tml.agency',
     ],
 ];
 
@@ -154,6 +165,33 @@ function tml_schema_local_business(array $p): array
             }, $p['services']),
         ],
     ];
+}
+
+/**
+ * Generate comprehensive Organization schema with E-E-A-T signals
+ */
+function tml_schema_organization(): array
+{
+    return array_merge(TML_SCHEMA_PROVIDER, [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'description' => 'Full-service digital marketing and branding agency in Edmonton serving 1,000+ brands across Canada and North America. Expertise in SEO, web design, paid ads, content marketing, and brand strategy.',
+        'knowsAbout' => [
+            'Digital Marketing',
+            'SEO',
+            'Branding',
+            'Web Design',
+            'Content Marketing',
+            'Paid Advertising',
+            'Social Media Marketing',
+            'Marketing Automation',
+        ],
+        'makesOffer' => [
+            '@type' => 'AggregateOffer',
+            'priceCurrency' => 'CAD',
+            'availability' => 'http://schema.org/InStock',
+        ],
+    ]);
 }
 
 function tml_json_ld_script(array $data): string
