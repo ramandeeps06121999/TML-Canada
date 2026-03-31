@@ -1,0 +1,933 @@
+{
+  "edmonton": {
+    "slug": "edmonton",
+    "name": "Edmonton",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Edmonton, St. Albert, Sherwood Park, and the greater Edmonton metropolitan area",
+    "description": "Alberta's capital city and a major hub for oil, tech, and innovation",
+    "landmarks": ["Downtown Edmonton", "Whyte Avenue", "West Edmonton Mall", "Ice District", "104 Street NW"],
+    "industries": ["oil & gas", "tech startups", "government", "construction", "agriculture", "healthcare", "education", "logistics"],
+    "uniqueContent": [
+      "Edmonton is home to TML Agency's Canadian office at 11930 104 St NW. We serve businesses across Alberta including Calgary, Red Deer, and Fort McMurray with local expertise and competitive pricing.",
+      "As Alberta's capital, Edmonton's economy is diversifying rapidly from oil & gas into tech, clean energy, and innovation. Businesses here need digital marketing partners who understand both the traditional industries and the emerging startup ecosystem.",
+      "Our Edmonton team provides bilingual support (English/Punjabi) and understands the unique cultural landscape of Alberta's business community. From Ice District developments to Whyte Avenue retail, we help Edmonton businesses compete digitally."
+    ]
+  },
+  "calgary": {
+    "slug": "calgary",
+    "name": "Calgary",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Calgary, Airdrie, Cochrane, and southern Alberta",
+    "description": "Canada's energy capital and a growing tech hub",
+    "landmarks": ["Downtown Calgary", "Stephen Avenue", "Kensington", "Beltline", "University District"],
+    "industries": ["oil & gas", "finance", "tech", "agriculture", "tourism", "construction", "film"],
+    "uniqueContent": [
+      "Calgary's energy sector is the backbone of Alberta's economy, but the city's tech corridor along Stephen Avenue and the Beltline is growing fast. TML helps Calgary businesses bridge the gap between traditional oil & gas marketing and modern digital-first strategies that attract talent and clients.",
+      "The Calgary market is fiercely competitive, with businesses on Stephen Avenue, in Kensington, and across the Beltline all vying for the same digitally engaged consumer. Our geo-targeted campaigns and local SEO strategies ensure your Calgary business appears exactly where your customers are searching.",
+      "From our Edmonton office, TML serves Calgary clients with the advantage of Alberta-based understanding and face-to-face collaboration. We know Calgary's boom-and-bust cycles, the Stampede marketing window, and how to position brands for both the energy executive in the Bow Tower and the creative entrepreneur in the East Village."
+    ]
+  },
+  "toronto": {
+    "slug": "toronto",
+    "name": "Toronto",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Toronto, Mississauga, Brampton, Vaughan, and the Greater Toronto Area",
+    "description": "Canada's largest city and the nation's financial and cultural capital",
+    "landmarks": ["CN Tower", "Distillery District", "Kensington Market", "Bay Street Financial District", "Harbourfront Centre"],
+    "industries": ["finance", "tech", "media & entertainment", "real estate", "healthcare", "retail", "manufacturing", "professional services"],
+    "uniqueContent": [
+      "Toronto is Canada's most competitive digital market, where over 2.9 million businesses fight for the attention of a diverse, highly connected consumer base. TML Agency brings an outside-the-echo-chamber perspective from our Edmonton HQ, offering Toronto businesses data-driven SEO, paid media, and branding strategies that cut through the noise of one of North America's most saturated markets.",
+      "The GTA's multicultural composition — with significant South Asian, East Asian, and Caribbean communities — demands nuanced, culturally aware marketing. TML's bilingual capabilities and multicultural content strategies help Toronto brands connect authentically with every segment of this diverse audience, from Bay Street boardrooms to Kensington Market boutiques.",
+      "Whether you're a Fintech startup scaling out of MaRS Discovery District, a retailer on Queen Street West, or a real estate developer in Etobicoke, TML Agency delivers the digital infrastructure — from technical SEO to conversion-optimized landing pages — that Toronto's high-stakes business environment demands."
+    ]
+  },
+  "vancouver": {
+    "slug": "vancouver",
+    "name": "Vancouver",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Vancouver, Burnaby, Surrey, Richmond, and the Metro Vancouver area",
+    "description": "Canada's Pacific gateway and a global hub for tech, film, and sustainability",
+    "landmarks": ["Stanley Park", "Granville Island", "Gastown", "Robson Street", "Science World"],
+    "industries": ["tech", "film & TV production", "real estate", "tourism", "sustainability", "port & logistics", "finance", "gaming"],
+    "uniqueContent": [
+      "Vancouver sits at the intersection of tech innovation and natural beauty, attracting global talent and investment at an unprecedented rate. TML Agency helps Vancouver businesses capitalize on this momentum with digital marketing strategies tailored to BC's unique regulatory environment, bilingual consumer base, and sustainability-focused buying behaviour.",
+      "The Vancouver tech sector — anchored by companies like Hootsuite, Slack's Canadian ops, and a thriving game development scene — demands marketing partners who speak the language of growth-stage and enterprise tech alike. TML's performance marketing and brand storytelling services are built for the ambition of Vancouver's innovation corridor from Yaletown to the Broadway Tech Corridor.",
+      "From our Edmonton headquarters, TML serves Vancouver clients with the speed and responsiveness of a local agency backed by a national perspective. We understand how Metro Vancouver's real estate boom, port-driven logistics economy, and film industry create unique marketing opportunities that generic agencies routinely miss."
+    ]
+  },
+  "montreal": {
+    "slug": "montreal",
+    "name": "Montreal",
+    "state": "Quebec",
+    "country": "Canada",
+    "region": "Montreal, Laval, Longueuil, and the greater Montreal metropolitan area",
+    "description": "Canada's cultural capital and a bilingual hub for AI, gaming, and aerospace",
+    "landmarks": ["Mount Royal Park", "Old Montreal", "McGill University", "Plateau-Mont-Royal", "Place des Arts"],
+    "industries": ["AI & tech", "gaming", "aerospace", "film & TV", "fashion", "biotech", "finance", "tourism"],
+    "uniqueContent": [
+      "Montreal's bilingual business environment is one of the most nuanced in North America — where every campaign must resonate equally in French and English. TML Agency's multilingual content capabilities and deep understanding of Quebec's distinct consumer culture make us the ideal digital marketing partner for businesses competing in the Montreal market.",
+      "The city's emergence as a global AI hub, anchored by Element AI alumni and Mila — the Quebec AI Institute — has attracted tech talent and investment that's reshaping every industry from gaming studios in Mile-Ex to aerospace giants in Saint-Laurent. TML builds digital marketing ecosystems that position Montreal tech companies in front of the global audiences their innovations deserve.",
+      "From Old Montreal's tourism-dependent boutiques to Plateau-Mont-Royal's creative economy, TML Agency delivers SEO, social media, and paid advertising strategies calibrated to Montreal's unique mix of European sensibility and North American commercial energy. Our Edmonton-based team coordinates seamlessly across time zones to deliver campaigns that work around the clock for your Montreal business."
+    ]
+  },
+  "ottawa": {
+    "slug": "ottawa",
+    "name": "Ottawa",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Ottawa, Gatineau, Kanata, and the National Capital Region",
+    "description": "Canada's national capital and a thriving hub for tech, government, and defence",
+    "landmarks": ["Parliament Hill", "ByWard Market", "Rideau Canal", "Kanata North Technology Park", "National Gallery of Canada"],
+    "industries": ["government", "tech", "defence", "telecommunications", "healthcare", "education", "public service", "cybersecurity"],
+    "uniqueContent": [
+      "Ottawa's government-dominated economy creates a unique B2G (business-to-government) marketing landscape that few agencies understand deeply. TML Agency has experience crafting compliant, credibility-first digital strategies that help Ottawa businesses win government contracts, attract public-sector clients, and build the institutional trust that the capital demands.",
+      "The Kanata North Technology Park is one of North America's largest tech clusters, home to Shopify, Nokia, and hundreds of fast-growing startups. TML serves Ottawa's tech corridor with performance-driven digital marketing — from LinkedIn B2B campaigns targeting federal procurement officers to SEO strategies that rank Ottawa tech companies in competitive global searches.",
+      "Ottawa's bilingual (English/French) requirement for federal contractors and many professional service firms mirrors the operational reality we navigate daily from our Edmonton headquarters. TML builds marketing systems that serve both official language communities authentically, helping Ottawa businesses meet compliance requirements while growing their digital footprint across the National Capital Region."
+    ]
+  },
+  "winnipeg": {
+    "slug": "winnipeg",
+    "name": "Winnipeg",
+    "state": "Manitoba",
+    "country": "Canada",
+    "region": "Winnipeg, Steinbach, Portage la Prairie, and the greater Winnipeg metropolitan area",
+    "description": "The heart of the continent — Manitoba's economic and cultural capital",
+    "landmarks": ["The Forks National Historic Site", "Assiniboine Park", "Exchange District", "Canadian Museum for Human Rights", "Portage and Main"],
+    "industries": ["agriculture & food processing", "manufacturing", "retail", "transportation & logistics", "healthcare", "education", "aerospace", "finance"],
+    "uniqueContent": [
+      "Winnipeg's strategic position at the geographic centre of North America makes it a critical logistics and distribution hub, and its diverse economy — spanning agriculture, aerospace, and a burgeoning tech scene in the Exchange District — offers TML Agency clients a wide range of growth opportunities to amplify through digital marketing.",
+      "Manitoba's agricultural heartland economy creates strong demand for industrial, B2B, and agri-business digital marketing. TML crafts targeted content marketing and SEO strategies that connect Winnipeg's food processing giants and equipment suppliers with buyers across North America, leveraging Winnipeg's role as a continental crossroads.",
+      "The Winnipeg market rewards authenticity and community connection. From the culturally rich North End to the growing Waverley West suburbs, TML Agency brings Edmonton-honed expertise in local SEO, Google Business Profile optimization, and community-focused social media to help Winnipeg businesses become the clear local choice in their industry."
+    ]
+  },
+  "quebec-city": {
+    "slug": "quebec-city",
+    "name": "Quebec City",
+    "state": "Quebec",
+    "country": "Canada",
+    "region": "Quebec City, Lévis, Beauport, and the Capitale-Nationale region",
+    "description": "North America's only walled city and the historic heart of French Canada",
+    "landmarks": ["Château Frontenac", "Old Quebec (UNESCO World Heritage Site)", "Plains of Abraham", "Rue Saint-Jean", "Quartier Petit Champlain"],
+    "industries": ["tourism", "government", "insurance", "IT & cybersecurity", "food & beverage", "education", "healthcare", "construction"],
+    "uniqueContent": [
+      "Quebec City's predominantly French-speaking market requires a degree of linguistic and cultural fluency that most English-Canadian agencies simply cannot provide. TML Agency's francophone content capabilities ensure your Quebec City business communicates with the authenticity and respect that Quebec consumers expect — from Quartier Petit Champlain boutiques to insurance giants in Sainte-Foy.",
+      "As Quebec's provincial capital, the city hosts a concentration of government, legal, and professional services firms that require B2G and B2B digital marketing with a tone of institutional authority. TML builds credibility-first digital strategies — combining technical SEO, authoritative content marketing, and targeted LinkedIn campaigns — that position Quebec City firms as trusted leaders in their fields.",
+      "Quebec City's tourism economy, built around the UNESCO-recognized Old Quebec, creates seasonal marketing opportunities that require year-round strategic planning. TML Agency helps hospitality businesses, tour operators, and retailers in the Saint-Jean-Baptiste neighbourhood build digital presences that convert international visitors and domestic travellers alike, backed by the operational depth of our Edmonton headquarters."
+    ]
+  },
+  "hamilton": {
+    "slug": "hamilton",
+    "name": "Hamilton",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Hamilton, Burlington, Grimsby, and the greater Hamilton-Niagara region",
+    "description": "The Ambitious City — a steel town reinventing itself as a creative and tech hub",
+    "landmarks": ["Dundurn National Historic Site", "Hamilton Waterfront", "Locke Street South", "McMaster University", "Art Gallery of Hamilton"],
+    "industries": ["steel & manufacturing", "healthcare", "education", "arts & culture", "tech startups", "logistics", "real estate", "hospitality"],
+    "uniqueContent": [
+      "Hamilton's remarkable transformation from steel city to creative hub is one of Canada's great urban reinvention stories. TML Agency helps Hamilton businesses ride this wave of change — whether you're a legacy manufacturer adapting to Industry 4.0, an artist collective on James Street North, or a tech startup spinning out of McMaster's innovation ecosystem.",
+      "The Hamilton real estate market's affordability relative to Toronto has attracted a wave of young entrepreneurs and remote workers who demand digitally sophisticated local businesses. TML's hyper-local SEO strategies and geo-targeted paid media campaigns position Hamilton businesses in front of this growing, digitally engaged resident base before they default to Toronto alternatives.",
+      "From our Edmonton headquarters, TML serves Hamilton clients with an understanding of mid-size Canadian cities that larger Toronto-centric agencies lack. We know how to build digital marketing programs that work for Hamilton's mixed economy — connecting the healthcare professionals at Hamilton Health Sciences with patients, positioning Locke Street retailers for weekend visitors, and helping manufacturers on the Industrial Parkway compete for national contracts."
+    ]
+  },
+  "kitchener": {
+    "slug": "kitchener",
+    "name": "Kitchener",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Kitchener, Waterloo, Cambridge, and the Waterloo Region",
+    "description": "The Silicon Valley of the North — Canada's fastest-growing tech corridor",
+    "landmarks": ["Communitech Hub", "Victoria Park", "Market Lane", "The Tannery District", "Waterloo Region Museum"],
+    "industries": ["tech & software", "insurance", "advanced manufacturing", "education", "startup ecosystem", "financial services", "biotech", "logistics"],
+    "uniqueContent": [
+      "Waterloo Region's technology ecosystem — anchored by the University of Waterloo, Wilfrid Laurier, and the Communitech accelerator — has produced some of Canada's most valuable tech companies, including BlackBerry, OpenText, and Shopify's early talent. TML Agency brings digital marketing expertise calibrated to the pace and ambition of Kitchener's startup culture.",
+      "The Kitchener-Waterloo market is unusual in that it requires marketing to both highly technical B2B buyers in the tech sector and traditional consumer audiences in retail, insurance, and hospitality. TML's versatile approach — combining technical content marketing for SaaS companies with conversion-focused e-commerce strategies for local retailers — serves the full breadth of the Waterloo Region economy.",
+      "From our Edmonton headquarters, TML works with Kitchener businesses to build the digital infrastructure that scales. We understand the Waterloo Region's talent-attraction challenge and help tech companies craft employer branding campaigns that compete nationally for engineering and marketing talent, while also building local SEO foundations that drive walk-in traffic for retail and service businesses in the Market Lane district."
+    ]
+  },
+  "halifax": {
+    "slug": "halifax",
+    "name": "Halifax",
+    "state": "Nova Scotia",
+    "country": "Canada",
+    "region": "Halifax, Dartmouth, Bedford, and the Halifax Regional Municipality",
+    "description": "Atlantic Canada's economic capital and a rapidly growing ocean tech hub",
+    "landmarks": ["Halifax Waterfront Boardwalk", "Citadel Hill National Historic Site", "Peggy's Cove (nearby)", "Spring Garden Road", "Dartmouth Crossing"],
+    "industries": ["ocean technology", "defence", "government", "fisheries & aquaculture", "film & TV", "healthcare", "education", "tourism"],
+    "uniqueContent": [
+      "Halifax is Atlantic Canada's most dynamic economy, growing faster than many Ontario cities thanks to an influx of interprovincial migrants, international students from Dalhousie and Saint Mary's, and federal defence spending centred on CFB Halifax. TML Agency helps Halifax businesses capitalize on this population boom with scalable digital marketing systems built for sustained growth.",
+      "The Halifax ocean technology sector — spanning offshore energy, marine robotics, and aquaculture innovation — creates unique B2B marketing needs that generic agencies rarely understand. TML builds content marketing and LinkedIn strategies that connect Halifax ocean tech firms with global maritime industry buyers, leveraging Halifax's reputation as a world leader in ocean science.",
+      "From our Edmonton headquarters, TML serves Halifax clients with the perspective of a nationally operating agency that knows how Atlantic Canadian markets differ from central Canadian ones. We understand the Halifax Waterfront's seasonal tourism dynamics, the year-round defence procurement cycle at CFB, and how to build Google Business Profiles that capture the Spring Garden Road foot traffic that drives Halifax's retail economy."
+    ]
+  },
+  "victoria": {
+    "slug": "victoria",
+    "name": "Victoria",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Victoria, Saanich, Oak Bay, and Greater Victoria on Vancouver Island",
+    "description": "BC's garden capital — a tech-forward city blending colonial heritage with innovation",
+    "landmarks": ["Inner Harbour", "BC Legislature Buildings", "Fisherman's Wharf", "Fan Tan Alley", "Beacon Hill Park"],
+    "industries": ["tech & software", "government", "tourism", "healthcare", "education", "marine industry", "real estate", "arts & culture"],
+    "uniqueContent": [
+      "Victoria's tech sector has grown quietly into one of Canada's most productive per-capita, with companies like Metalab, Checkfront, and a thriving indie gaming scene drawing talent who value Vancouver Island's quality of life. TML Agency helps Victoria tech companies build the digital marketing foundations that match their product ambitions — from SaaS SEO to investor-ready brand narratives.",
+      "Greater Victoria's tourism economy, centred on the iconic Inner Harbour and the heritage of the Empress Hotel, demands digital marketing that works across all four seasons and converts both domestic and international visitors. TML's hotel, restaurant, and tourism-specific SEO and social media strategies help Victoria hospitality businesses maximize occupancy and average spend year-round.",
+      "The Victoria market's high concentration of retirees, government workers, and university students creates a unique demographic blend that rewards targeted, audience-specific digital marketing. From our Edmonton headquarters, TML crafts Victoria campaigns that speak to the eco-conscious consumer, the federal public servant in James Bay, and the tech professional commuting from Saanich — ensuring your Victoria business captures every available customer segment."
+    ]
+  },
+  "london-on": {
+    "slug": "london-on",
+    "name": "London",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "London, St. Thomas, Strathroy, and southwestern Ontario",
+    "description": "The Forest City — a major healthcare, education, and manufacturing hub in southwestern Ontario",
+    "landmarks": ["Covent Garden Market", "Museum London", "Victoria Park", "Budweiser Gardens", "Fanshawe Conservation Area"],
+    "industries": ["healthcare", "education", "manufacturing", "insurance", "tech", "retail", "agriculture", "logistics"],
+    "uniqueContent": [
+      "London, Ontario punches well above its weight as a healthcare and education city — anchored by Western University, Fanshawe College, and one of Canada's largest hospital networks at London Health Sciences Centre. TML Agency builds digital marketing programs that help London's healthcare, education, and professional services firms attract patients, students, and clients from across southwestern Ontario.",
+      "The London manufacturing corridor along the 401 corridor is transitioning rapidly toward advanced manufacturing and EV supply chain components, creating new B2B marketing demands that require sophisticated LinkedIn and content strategies. TML helps London manufacturers communicate their capabilities to national OEM buyers and international procurement teams who increasingly rely on digital channels to qualify suppliers.",
+      "From our Edmonton headquarters, TML serves London, Ontario clients with the insight that southwestern Ontario's mid-size city market is underserved by both Toronto giants (who overlook it) and small local agencies (who lack digital depth). We fill that gap with enterprise-grade SEO, Google Ads management, and social media strategies calibrated to the Forest City's competitive, community-focused business environment."
+    ]
+  },
+  "windsor": {
+    "slug": "windsor",
+    "name": "Windsor",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Windsor, LaSalle, Tecumseh, and the Windsor-Essex region",
+    "description": "Canada's automotive capital, reinventing itself with EV manufacturing and cross-border commerce",
+    "landmarks": ["Windsor Riverfront", "Caesars Windsor", "Art Gallery of Windsor", "Jackson Park", "Ambassador Bridge"],
+    "industries": ["automotive & EV", "tourism & casino", "agriculture & greenhouse", "cross-border trade", "manufacturing", "healthcare", "education", "logistics"],
+    "uniqueContent": [
+      "Windsor's automotive heritage — home to Stellantis and Ford assembly plants — is evolving dramatically with the NextStar Energy battery plant bringing tens of billions in EV investment to the region. TML Agency helps Windsor businesses position themselves for this industrial transformation, whether you're a Tier 1 automotive supplier updating your B2B digital presence or a local restaurant serving the new EV workforce.",
+      "The Windsor-Detroit cross-border corridor creates unique marketing opportunities and challenges — businesses must often speak to both Canadian and American audiences, navigate two regulatory environments, and convert customers arriving via the Ambassador Bridge and the Gordie Howe International Bridge. TML's cross-border digital marketing expertise ensures Windsor businesses maximize both markets.",
+      "From our Edmonton headquarters, TML brings a western Canadian perspective to Windsor's eastern Ontario market that helps break the parochialism that can limit local agency thinking. We deliver Windsor businesses the SEO depth, Google Ads precision, and social media storytelling that the city's ambitious transformation from automotive town to diversified economic powerhouse demands."
+    ]
+  },
+  "oshawa": {
+    "slug": "oshawa",
+    "name": "Oshawa",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Oshawa, Whitby, Clarington, and the Durham Region",
+    "description": "Durham Region's largest city and a key player in the GTA's eastern growth corridor",
+    "landmarks": ["Canadian Automotive Museum", "Oshawa Centre", "Lakeview Park", "Parkwood National Historic Site", "Ontario Tech University"],
+    "industries": ["automotive", "advanced manufacturing", "education", "healthcare", "retail", "logistics", "tech", "construction"],
+    "uniqueContent": [
+      "Oshawa's identity as Canada's Motor City is evolving with General Motors' Oshawa Assembly retooling for electric vehicles and Ontario Tech University producing the next generation of engineers and digital talent. TML Agency helps Oshawa businesses navigate this transition with digital marketing strategies that speak to both the legacy automotive economy and the emerging tech talent base.",
+      "Durham Region's rapid residential growth — driven by Toronto commuters seeking affordability along the GO Transit corridor — is creating strong demand for local services, retail, and healthcare. TML's hyper-local SEO strategies and Google Business Profile optimization help Oshawa businesses capture these new residents before they establish loyalty with GTA alternatives.",
+      "From our Edmonton headquarters, TML serves Oshawa businesses with the agility of a lean, dedicated team focused on results. We understand Durham Region's growth dynamics — from Whitby's expanding suburbs to Clarington's industrial parks — and build integrated digital marketing campaigns that position Oshawa businesses as the obvious local choice across the entire eastern GTA."
+    ]
+  },
+  "barrie": {
+    "slug": "barrie",
+    "name": "Barrie",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Barrie, Innisfil, Orillia, and Simcoe County",
+    "description": "Gateway to cottage country — one of Ontario's fastest-growing mid-size cities",
+    "landmarks": ["Barrie Waterfront", "Centennial Park", "Barrie City Hall", "Georgian College", "Kempenfelt Bay"],
+    "industries": ["retail & hospitality", "construction", "healthcare", "education", "tourism", "real estate", "manufacturing", "professional services"],
+    "uniqueContent": [
+      "Barrie's explosive population growth — fuelled by Toronto commuters attracted by affordability and the expanding GO Train service — has created one of Ontario's most dynamic local business markets. TML Agency helps Barrie businesses build digital presences that capture this influx of new residents who arrive with higher spending power and digital-first purchasing habits.",
+      "The seasonal tourism economy around Georgian Bay and Simcoe County drives significant revenue swings for Barrie businesses, demanding digital marketing strategies that can pivot from winter ski promotion to summer cottage-country hospitality. TML builds year-round content calendars and paid media strategies that smooth revenue seasonality and build loyal customer relationships across all four seasons.",
+      "From our Edmonton headquarters, TML brings the infrastructure and digital sophistication of a nationally operating agency to Barrie's rapidly professionalizing business community. Whether you're a construction firm capitalizing on Barrie's housing boom, a retailer competing with Georgian Mall for the city's growing consumer base, or a healthcare provider serving the expanding Simcoe County population, TML delivers the digital marketing firepower your Barrie growth ambitions require."
+    ]
+  },
+  "kingston": {
+    "slug": "kingston",
+    "name": "Kingston",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Kingston, Napanee, Frontenac County, and the Limestone City region",
+    "description": "The Limestone City — a historic university town bridging the GTA and Ottawa corridor",
+    "landmarks": ["Fort Henry National Historic Site", "Queen's University", "Kingston City Hall", "Market Square", "Portsmouth Olympic Harbour"],
+    "industries": ["education", "government & defence", "healthcare", "tourism", "tech", "manufacturing", "agriculture", "professional services"],
+    "uniqueContent": [
+      "Kingston's economy is anchored by three pillars — Queen's University, the Kingston Health Sciences Centre, and a significant federal government and defence presence at CFB Kingston and RMC — creating a stable, educated consumer base and strong B2G marketing opportunities. TML Agency helps Kingston professional services, tech, and healthcare businesses build the digital credibility that these discerning clients expect.",
+      "The Queen's University student population of 25,000 brings Kingston a young, digitally engaged consumer segment that demands mobile-first experiences and social media presence from local businesses. TML's social media management and Instagram-optimized content strategies help Kingston restaurants, retailers, and service providers capture student spending effectively throughout the academic year.",
+      "From our Edmonton headquarters, TML serves Kingston with the insight that the Limestone City's mid-size market is often neglected by Toronto agencies who focus on larger accounts. We dedicate the same strategic rigour to Kingston's boutique hospitality operators on Princess Street, growing tech firms near Innovation Park, and healthcare service providers serving the broader Frontenac County area."
+    ]
+  },
+  "guelph": {
+    "slug": "guelph",
+    "name": "Guelph",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Guelph, Centre Wellington, and the Royal City region of Ontario",
+    "description": "The Royal City — a sustainable, innovation-forward city in the heart of southwestern Ontario",
+    "landmarks": ["Guelph City Hall", "Church of Our Lady Immaculate", "University of Guelph", "Speed River Trail System", "The Bookshelf Cinema"],
+    "industries": ["agri-tech & food science", "education", "manufacturing", "tech", "healthcare", "environmental services", "retail", "construction"],
+    "uniqueContent": [
+      "Guelph's University of Guelph is a world leader in agri-food research, and the city has built an innovation ecosystem around food science, agri-tech, and environmental technology that is attracting venture capital and global partnerships. TML Agency helps Guelph's innovation-driven businesses tell complex, technical stories in compelling digital formats that convert investors, partners, and enterprise clients.",
+      "The Royal City's reputation for sustainability and progressive business practices resonates with a consumer base that actively rewards brands demonstrating environmental responsibility. TML builds purpose-driven content marketing and brand narratives that authentically showcase your Guelph business's commitment to sustainability — differentiating you in a market where values-alignment is a genuine competitive advantage.",
+      "From our Edmonton headquarters, TML serves Guelph businesses with a national perspective that helps position the Royal City's innovative companies in front of national and global audiences. Whether you're a food tech startup spinning out of the University of Guelph's research corridors, a manufacturer on Woodlawn Road, or a retail business competing in the Stone Road Mall catchment, TML delivers the digital marketing precision your Guelph growth strategy demands."
+    ]
+  },
+  "st-catharines": {
+    "slug": "st-catharines",
+    "name": "St. Catharines",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "St. Catharines, Niagara Falls, Welland, and the Niagara Region",
+    "description": "The Garden City — Niagara's largest city and a growing hub for wine, tourism, and manufacturing",
+    "landmarks": ["Montebello Park", "Port Dalhousie", "Brock University", "Meridian Centre", "Niagara Falls (nearby)"],
+    "industries": ["wine & agri-tourism", "manufacturing", "education", "healthcare", "tourism", "retail", "logistics", "construction"],
+    "uniqueContent": [
+      "The Niagara wine country, centred around St. Catharines and the Twenty Valley, is one of Canada's most distinctive tourism and agri-business regions. TML Agency builds digital marketing ecosystems for Niagara wineries, agri-tourism operators, and hospitality businesses that convert both day-trip visitors from the GTA and international wine tourists arriving via Niagara Falls.",
+      "St. Catharines' manufacturing base — strong in automotive parts, food processing, and specialized industrial manufacturing — requires B2B digital marketing that reaches national procurement managers who rarely visit the Niagara Region in person. TML's LinkedIn advertising and technical content marketing strategies put St. Catharines manufacturers in front of the buyers who matter most.",
+      "From our Edmonton headquarters, TML serves the Niagara Region with the understanding that St. Catharines businesses must simultaneously compete for local Niagara customers, Toronto day-trippers, American cross-border visitors, and national B2B buyers. Our integrated, multi-audience digital strategies ensure your St. Catharines business maximizes every revenue stream available in this uniquely positioned region."
+    ]
+  },
+  "sudbury": {
+    "slug": "sudbury",
+    "name": "Sudbury",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Greater Sudbury, Nickel Belt, Espanola, and Northern Ontario",
+    "description": "Northern Ontario's largest city and the world's nickel mining capital",
+    "landmarks": ["Dynamic Earth (Big Nickel)", "Science North", "Ramsey Lake", "Bell Park", "Tom Davies Square"],
+    "industries": ["mining & metals", "healthcare", "education", "government", "tech", "tourism", "construction", "forestry"],
+    "uniqueContent": [
+      "Sudbury's mining industry — led by Vale and Glencore operating some of the world's largest nickel operations — creates substantial B2B marketing opportunities for suppliers, technology providers, and professional services firms serving the extractive sector. TML Agency builds the digital credibility and content marketing infrastructure that helps Sudbury businesses win mining contracts and attract industry partnerships.",
+      "As Northern Ontario's regional capital, Sudbury serves a vast catchment area spanning from Manitoulin Island to Timmins. TML's regional SEO strategies ensure that Sudbury's healthcare providers, retailers, and professional services firms capture searches from communities across Northern Ontario who look to Sudbury as their go-to urban centre.",
+      "From our Edmonton headquarters, TML brings resource-sector marketing expertise to Sudbury's mining economy that matches our deep experience serving Alberta's oil & gas industry. We understand how B2B procurement works in resource-extraction environments, how to build digital presences that inspire trust among industrial buyers, and how to position Sudbury businesses as the regional leaders they are."
+    ]
+  },
+  "thunder-bay": {
+    "slug": "thunder-bay",
+    "name": "Thunder Bay",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Thunder Bay, Fort William First Nation, and Northwestern Ontario",
+    "description": "The Lakehead — Northwestern Ontario's gateway to natural resources, grain shipping, and outdoor adventure",
+    "landmarks": ["Sleeping Giant Provincial Park", "Terry Fox Memorial", "Prince Arthur's Landing", "Lakehead University", "Fort William Historical Park"],
+    "industries": ["forestry & paper", "mining", "grain handling & logistics", "healthcare", "education", "tourism", "government", "construction"],
+    "uniqueContent": [
+      "Thunder Bay's position as the Great Lakes-St. Lawrence Seaway's western terminus makes it one of Canada's most strategically important grain and resource shipping hubs. TML Agency helps Thunder Bay's logistics, forestry, and industrial businesses build digital marketing programs that connect them with national and international buyers who source from Northwestern Ontario's resource-rich hinterland.",
+      "Lakehead University and Confederation College anchor a young, educated population in Thunder Bay who expect the businesses they patronize to maintain strong digital presences and modern customer experiences. TML's local SEO and social media strategies help Thunder Bay retailers, restaurants, and service businesses build online reputations that retain local customers and attract newcomers exploring Canada's growing northern communities.",
+      "From our Edmonton headquarters, TML serves Thunder Bay with the northern resource-economy perspective that understands how business works in cities where resource cycles drive everything from real estate to retail sales. We build digital marketing programs for Thunder Bay businesses that are resilient across commodity cycles and positioned for long-term growth in Northwestern Ontario's evolving economic landscape."
+    ]
+  },
+  "peterborough": {
+    "slug": "peterborough",
+    "name": "Peterborough",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Peterborough, Kawartha Lakes, Northumberland County, and the Kawarthas region",
+    "description": "The Electric City — a growing creative and outdoor recreation economy in the heart of the Kawarthas",
+    "landmarks": ["Peterborough Lift Lock National Historic Site", "Trent University", "Del Crary Park", "Peterborough Museum & Archives", "Jackson Park"],
+    "industries": ["manufacturing", "education", "healthcare", "tourism & outdoor recreation", "creative industries", "agriculture", "retail", "professional services"],
+    "uniqueContent": [
+      "Peterborough's Kawarthas location makes it the gateway to one of Ontario's most beloved cottage and recreational regions, driving strong tourism and seasonal hospitality revenue. TML Agency builds digital marketing strategies that help Peterborough's tourism, hospitality, and outdoor recreation businesses capture the Toronto-area cottage crowd across every digital channel, from Google vacation searches to Instagram-driven travel inspiration.",
+      "The Electric City's manufacturing heritage — with companies like Peterborough Canoe and GE Canada historically anchoring the economy — is transitioning toward a creative, knowledge-based economy centred around Trent University and Trent University's environmental research programs. TML helps Peterborough businesses navigate this economic evolution with digital strategies that attract the creative talent and knowledge-economy clients the city is cultivating.",
+      "From our Edmonton headquarters, TML serves Peterborough businesses with a commitment to the same rigorous, data-driven digital marketing we deliver to clients in major Canadian metros. We understand that Peterborough's competitive local market requires sharper digital differentiation than businesses often realize, and we build the SEO foundations, paid media programs, and social content that make Peterborough businesses stand out in a crowded regional marketplace."
+    ]
+  },
+  "saskatoon": {
+    "slug": "saskatoon",
+    "name": "Saskatoon",
+    "state": "Saskatchewan",
+    "country": "Canada",
+    "region": "Saskatoon, Warman, Martensville, and the greater Saskatoon metropolitan area",
+    "description": "Saskatchewan's largest city and the innovation capital of Canada's prairie agricultural heartland",
+    "landmarks": ["Broadway Avenue", "University of Saskatchewan", "Meewasin Valley Trail", "Remai Modern Art Gallery", "River Landing"],
+    "industries": ["agriculture & agri-tech", "potash & mining", "biotech & plant science", "education", "healthcare", "tech", "government", "construction"],
+    "uniqueContent": [
+      "Saskatoon is Canada's agri-tech capital, home to the University of Saskatchewan's world-renowned College of Agriculture and the Global Institute for Food Security. TML Agency helps Saskatoon's agri-tech startups, biotech companies, and agricultural equipment businesses build digital marketing programs that connect them with farmers, co-ops, and agri-business buyers across the global agricultural supply chain.",
+      "The potash mining industry, led by Nutrien and Mosaic operating world-scale facilities around Saskatoon, drives substantial B2B services demand from engineering firms, equipment suppliers, and professional services companies. TML builds LinkedIn-led B2B marketing strategies that position Saskatoon companies in front of global mining procurement teams who increasingly rely on digital channels to source suppliers.",
+      "From our Edmonton headquarters, TML serves Saskatoon with the prairie business perspective that understands how Alberta and Saskatchewan's intertwined resource economies create natural synergies for businesses operating across both provinces. We bring Saskatoon businesses the same data-driven digital marketing infrastructure we've built for Alberta's energy sector, calibrated for Saskatchewan's agricultural and mining economy."
+    ]
+  },
+  "regina": {
+    "slug": "regina",
+    "name": "Regina",
+    "state": "Saskatchewan",
+    "country": "Canada",
+    "region": "Regina, Moose Jaw, White City, and the greater Regina metropolitan area",
+    "description": "Saskatchewan's provincial capital and the economic heart of Canada's grain-growing south",
+    "landmarks": ["Wascana Centre Park", "Saskatchewan Legislative Assembly", "Royal Saskatchewan Museum", "Victoria Park", "Taylor Field Area"],
+    "industries": ["oil & gas", "government", "agriculture", "finance & insurance", "steel manufacturing", "tech", "healthcare", "education"],
+    "uniqueContent": [
+      "Regina's role as Saskatchewan's provincial capital concentrates government, regulatory, and legal services in the city, creating strong B2G marketing opportunities for professional services, IT, and consulting firms. TML Agency builds the institutional credibility and digital authority that Regina businesses need to win government procurement and position themselves as trusted public-sector partners.",
+      "The Saskatchewan oil patch, concentrated around Regina's Weyburn-Estevan producing region, creates ongoing B2B demand for oilfield services, engineering, and equipment companies based in the capital. TML's resource-sector digital marketing expertise — developed serving Alberta's energy industry from our Edmonton headquarters — translates directly to Regina's oil and potash economy.",
+      "From our Edmonton headquarters just across the provincial border, TML serves Regina businesses with the proximity of a near-local agency and the capabilities of a national digital marketing firm. We understand Saskatchewan's unique business culture, the rhythm of agricultural seasons, and how to build digital presences that serve both Regina's urban business community and the vast rural catchment area that looks to the capital for professional services."
+    ]
+  },
+  "kelowna": {
+    "slug": "kelowna",
+    "name": "Kelowna",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Kelowna, West Kelowna, Lake Country, and the Central Okanagan",
+    "description": "The Okanagan's wine and technology capital — Canada's fastest-growing non-metro city",
+    "landmarks": ["Okanagan Lake Waterfront", "Mission Hill Family Estate Winery", "Kelowna Farmers & Crafters Market", "UBC Okanagan", "Prospera Place"],
+    "industries": ["wine & agri-tourism", "tech & software", "real estate", "tourism", "healthcare", "education", "agriculture", "construction"],
+    "uniqueContent": [
+      "Kelowna's Okanagan tech corridor has become one of Canada's most talked-about startup ecosystems, attracting remote workers, scale-up companies, and VC investment drawn by the combination of tech talent from UBC Okanagan and exceptional quality of life around Okanagan Lake. TML Agency helps Kelowna tech companies build the digital marketing infrastructure that matches their growth ambitions and positions them for national and international expansion.",
+      "The Okanagan wine industry — with over 200 licensed wineries spanning from Osoyoos to Salmon Arm — demands sophisticated digital marketing to differentiate in a crowded market and attract both tourists and direct-to-consumer wine club members. TML builds wine tourism SEO strategies, social media content programs, and email marketing systems that help Kelowna wineries grow direct relationships with their best customers.",
+      "From our Edmonton headquarters, TML serves Kelowna clients with an understanding of BC Interior market dynamics that Vancouver-centric agencies often miss. We know how to build digital marketing programs that capture Kelowna's summer tourism peak, convert shoulder-season visitors, attract the Alberta snowbird market, and build year-round loyalty among Kelowna's rapidly growing permanent resident base."
+    ]
+  },
+  "kamloops": {
+    "slug": "kamloops",
+    "name": "Kamloops",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Kamloops, Logan Lake, Merritt, and the Thompson-Nicola region",
+    "description": "The Tournament Capital of Canada — BC Interior's transportation and resource hub",
+    "landmarks": ["Riverside Park", "Kamloops Heritage Railway", "Thompson Rivers University", "Sun Peaks Resort (nearby)", "Kamloops Art Gallery"],
+    "industries": ["mining", "forestry", "healthcare", "education", "tourism & outdoor recreation", "transportation & logistics", "government", "retail"],
+    "uniqueContent": [
+      "Kamloops' position at the convergence of three major highways and the CP and CN rail lines makes it BC Interior's most critical logistics and distribution hub. TML Agency helps Kamloops transportation, trucking, and logistics companies build digital presences that attract the shipper relationships and carrier partnerships that grow their businesses beyond the Thompson-Nicola region.",
+      "Thompson Rivers University's growing enrollment and Kamloops' designation as the Tournament Capital of Canada — hosting over 100 provincial and national sporting events annually — create year-round hospitality and services demand that benefits digitally prepared businesses. TML's local SEO and event-driven content marketing strategies ensure Kamloops hotels, restaurants, and retailers capture every visitor dollar.",
+      "From our Edmonton headquarters, TML brings BC Interior market expertise to Kamloops businesses that understands the resource economy rhythms of mining and forestry that underpin the city's commercial vitality. We deliver Kamloops businesses the digital marketing depth — from Google Ads to comprehensive local SEO — that helps them compete effectively against both regional rivals and the inevitable comparison to larger Vancouver and Kelowna markets."
+    ]
+  },
+  "nanaimo": {
+    "slug": "nanaimo",
+    "name": "Nanaimo",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Nanaimo, Lantzville, Parksville, and central Vancouver Island",
+    "description": "The Harbour City — Vancouver Island's second-largest city and growing business hub",
+    "landmarks": ["Nanaimo Harbourfront", "Bastion Tower", "Vancouver Island University", "Departure Bay Ferry Terminal", "Morrell Nature Sanctuary"],
+    "industries": ["forestry & wood products", "healthcare", "education", "real estate", "tourism", "retail", "construction", "tech"],
+    "uniqueContent": [
+      "Nanaimo's position as the Vancouver Island ferry hub — with BC Ferries connections to both the Mainland and the Gulf Islands — makes it central Vancouver Island's commercial centre, attracting shoppers, professionals, and tourists from communities stretching from Parksville to Ladysmith. TML Agency helps Nanaimo businesses build digital presences that capture this island-wide catchment, not just local Nanaimo searches.",
+      "Vancouver Island University's presence gives Nanaimo a young, educated talent pool and a growing creative economy that's attracting remote workers and digital-first entrepreneurs from the Lower Mainland. TML's brand storytelling and social media marketing services help Nanaimo businesses attract this influx of digitally sophisticated new residents and build the online reputation that earns their loyalty.",
+      "From our Edmonton headquarters, TML serves Nanaimo businesses with the understanding that Vancouver Island's geographic isolation from Mainland BC creates both challenges and opportunities. Businesses that build strong digital presences can capture island-wide market share that physical location limits would otherwise deny, and TML builds the SEO and paid media programs that make Nanaimo businesses the undisputed leaders across central Vancouver Island."
+    ]
+  },
+  "abbotsford": {
+    "slug": "abbotsford",
+    "name": "Abbotsford",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Abbotsford, Mission, Chilliwack, and the Fraser Valley",
+    "description": "The Raspberry Capital of Canada — Fraser Valley's agricultural and commercial hub",
+    "landmarks": ["Abbotsford International Airport", "Mill Lake Park", "University of the Fraser Valley", "Abbotsford Centre", "Sumas Mountain Regional Park"],
+    "industries": ["agriculture & food processing", "aerospace", "logistics & warehousing", "healthcare", "education", "retail", "construction", "tech"],
+    "uniqueContent": [
+      "Abbotsford is Canada's berry-growing capital and BC's most agriculturally productive region, with a food processing and agri-business sector that increasingly requires sophisticated digital marketing to reach national grocery chains, food service buyers, and export markets. TML Agency builds B2B digital marketing strategies that connect Fraser Valley agri-businesses with the buyers who value BC's premium agricultural products.",
+      "The Fraser Valley's rapid population growth — driven by affordability relative to Metro Vancouver and excellent highway connectivity — is creating strong demand for local professional services, healthcare, and retail. TML's hyper-local SEO and Google Business Profile optimization strategies help Abbotsford businesses capture the searches of thousands of new Fraser Valley residents who are establishing their service provider relationships.",
+      "Abbotsford International Airport's growing cargo and charter operations, combined with the region's warehousing and logistics corridor along Highway 1, create strong B2B marketing opportunities in transportation and logistics. From our Edmonton headquarters, TML serves Abbotsford businesses with the logistics-sector marketing expertise developed serving Alberta's distribution economy, now applied to Fraser Valley's rapidly expanding warehousing and fulfillment cluster."
+    ]
+  },
+  "red-deer": {
+    "slug": "red-deer",
+    "name": "Red Deer",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Red Deer, Lacombe, Blackfalds, and central Alberta",
+    "description": "Central Alberta's commercial hub — the midpoint between Edmonton and Calgary",
+    "landmarks": ["Bower Ponds", "Red Deer Museum and Art Gallery", "Collicutt Centre", "Waskasoo Park", "Kerry Wood Nature Centre"],
+    "industries": ["oil & gas", "agriculture", "retail", "healthcare", "construction", "manufacturing", "government", "education"],
+    "uniqueContent": [
+      "Red Deer's position exactly halfway between Edmonton and Calgary on the QEII corridor makes it central Alberta's undisputed commercial centre, with a trade area encompassing over 300,000 residents from Ponoka to Innisfail. TML Agency — based in Edmonton — serves Red Deer businesses with the Alberta market knowledge that helps them capture both local shoppers and the highway travellers who stop in Red Deer as a natural waypoint.",
+      "The central Alberta oil patch — spanning the Pembina and Wainwright heavy oil areas — creates strong B2B demand for oilfield services, equipment, and professional services companies headquartered in Red Deer. TML's oilfield services marketing expertise, developed from years of serving Alberta's energy industry, helps Red Deer suppliers build digital presences that win contracts from operators across the province.",
+      "Red Deer's retail sector anchored by Bower Place and Red Deer Crossing competes directly with Edmonton and Calgary for the central Alberta consumer. TML helps Red Deer retailers build local SEO strategies, Google Shopping campaigns, and social media presences that convince central Alberta shoppers to buy local rather than make the two-hour drive to the major metros — protecting Red Deer's commercial vitality in the face of big-city competition."
+    ]
+  },
+  "lethbridge": {
+    "slug": "lethbridge",
+    "name": "Lethbridge",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Lethbridge, Coaldale, Taber, and southern Alberta",
+    "description": "Southern Alberta's agriculture and post-secondary hub, gateway to the Rocky Mountains and Montana",
+    "landmarks": ["High Level Bridge (Lethbridge Viaduct)", "Helen Schuler Nature Centre", "University of Lethbridge", "Nikka Yuko Japanese Garden", "Fort Whoop-Up National Historic Site"],
+    "industries": ["agriculture & food processing", "education", "healthcare", "oil & gas", "retail", "government", "tourism", "construction"],
+    "uniqueContent": [
+      "Lethbridge anchors southern Alberta's agriculture economy — one of Canada's most productive irrigated farming regions producing sugar beets, potatoes, and canola at global scale. TML Agency helps Lethbridge agri-businesses, food processors, and farm equipment dealers build digital marketing programs that reach buyers and distributors across the national and international agricultural supply chain.",
+      "The University of Lethbridge and Lethbridge College give the city a young, educated population base and a growing tech and creative sector that's beginning to attract remote workers and entrepreneurs seeking Alberta's low taxes with a smaller-city quality of life. TML builds digital marketing strategies for Lethbridge's emerging knowledge economy businesses that position them for talent attraction and client development.",
+      "From our Edmonton headquarters, TML serves Lethbridge businesses with Alberta-based expertise and the efficiency of a team that understands southern Alberta's distinct business culture — more conservative, community-rooted, and agriculture-connected than the major metros. We deliver Lethbridge businesses the digital marketing foundations that help them compete effectively across southern Alberta's wide geographic trade area."
+    ]
+  },
+  "moncton": {
+    "slug": "moncton",
+    "name": "Moncton",
+    "state": "New Brunswick",
+    "country": "Canada",
+    "region": "Moncton, Riverview, Dieppe, and the Greater Moncton area",
+    "description": "The Hub City of Atlantic Canada — a bilingual commercial and logistics powerhouse",
+    "landmarks": ["Magnetic Hill", "Moncton Market", "Crystal Palace Amusement Park", "Resurgo Place Museum", "Victoria Park"],
+    "industries": ["transportation & logistics", "finance", "retail", "IT & call centres", "healthcare", "education", "government", "tourism"],
+    "uniqueContent": [
+      "Moncton's geographic position at the centre of Atlantic Canada's highway network — with Trans-Canada routes connecting New Brunswick to all four Atlantic provinces — has made it the region's dominant logistics, distribution, and call-centre hub. TML Agency helps Moncton's transportation, logistics, and business process outsourcing companies build digital marketing strategies that attract national shipper relationships and enterprise client contracts.",
+      "Greater Moncton is one of Canada's fastest-growing metropolitan areas, driven by strong interprovincial immigration and an Atlantic immigration push that's bringing thousands of new residents to this bilingual (English/French) community. TML's multicultural and bilingual content marketing capabilities help Moncton businesses welcome and serve these new communities, building brand loyalty from day one of their New Brunswick lives.",
+      "From our Edmonton headquarters, TML serves Moncton businesses with a western Canadian perspective that brings fresh marketing approaches to Atlantic Canada's commercial hub. We understand Moncton's bilingual business environment, the city's role as Atlantic Canada's retail and logistics anchor, and how to build digital presences that serve the entire Atlantic region from a Moncton base."
+    ]
+  },
+  "fredericton": {
+    "slug": "fredericton",
+    "name": "Fredericton",
+    "state": "New Brunswick",
+    "country": "Canada",
+    "region": "Fredericton, Oromocto, and the greater Fredericton Capital Region",
+    "description": "New Brunswick's knowledge capital — a growing tech and government centre on the Saint John River",
+    "landmarks": ["Historic Garrison District", "Beaverbrook Art Gallery", "University of New Brunswick", "Regent Mall", "Science East Science Centre"],
+    "industries": ["government", "education", "tech & IT", "defence", "healthcare", "professional services", "forestry", "tourism"],
+    "uniqueContent": [
+      "Fredericton has quietly become one of Atlantic Canada's most impressive tech ecosystems, with Caro Analytical, Spielo International, and a growing cluster of SaaS companies calling the provincial capital home. TML Agency helps Fredericton's tech businesses build the digital marketing programs — from technical SEO to LinkedIn B2B campaigns — that accelerate their growth beyond the Saint John River valley to national and international markets.",
+      "The University of New Brunswick's computer science and engineering programs, combined with government defence spending at CFB Gagetown, create a steady flow of technical talent and procurement opportunities that make Fredericton a surprisingly robust B2G and B2B market. TML builds credibility-first digital strategies that help Fredericton professional services and tech firms win the institutional contracts that drive their growth.",
+      "From our Edmonton headquarters, TML serves Fredericton businesses with the understanding that New Brunswick's bilingual requirement — French and English — is a genuine competitive differentiator for businesses that embrace it effectively. We build bilingual digital marketing programs that serve both the English-dominant Greater Fredericton catchment and the French-speaking communities across northern New Brunswick that look to the capital for government and professional services."
+    ]
+  },
+  "surrey": {
+    "slug": "surrey",
+    "name": "Surrey",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Surrey, White Rock, Delta, and Metro Vancouver's southern tier",
+    "description": "Metro Vancouver's fastest-growing city and the Lower Mainland's emerging second downtown",
+    "landmarks": ["Surrey City Centre", "Holland Park", "Cloverdale Historic District", "SFU Surrey Campus", "South Surrey Athletic Park"],
+    "industries": ["real estate & construction", "tech", "healthcare", "education", "retail", "manufacturing", "logistics", "professional services"],
+    "uniqueContent": [
+      "Surrey's population has surpassed Vancouver's, making it BC's largest city by land area and one of Canada's fastest-growing urban centres. TML Agency helps Surrey businesses capitalize on this growth wave with local SEO strategies that capture the thousands of new residents entering the market monthly, establishing brand relationships before competitors even know these customers exist.",
+      "Surrey City Centre's emergence as Metro Vancouver's second urban core — with SFU Surrey, City Hall, and major retail anchors — is creating strong demand for professional services, healthcare, and retail that digitally prepared Surrey businesses can capture at scale. TML builds the Google Business Profile optimization, local citation networks, and review generation systems that make Surrey businesses the obvious choice for new and existing residents.",
+      "From our Edmonton headquarters, TML brings a perspective to Surrey's incredibly diverse South Asian, East Asian, and Filipino communities that recognizes cultural marketing nuance as a competitive advantage. Surrey's demographic reality demands multilingual, culturally resonant digital marketing — and TML's multicultural content capabilities ensure your Surrey business communicates with authenticity across every community it serves."
+    ]
+  },
+  "burnaby": {
+    "slug": "burnaby",
+    "name": "Burnaby",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Burnaby, New Westminster, and the central Metro Vancouver area",
+    "description": "Metro Vancouver's tech and media hub, home to major post-secondary institutions and gaming giants",
+    "landmarks": ["Burnaby Mountain & SFU", "Metrotown Centre", "Deer Lake Park", "BCIT Campus", "Brentwood Town Centre"],
+    "industries": ["tech & gaming", "film & TV production", "education", "retail", "healthcare", "real estate", "finance", "professional services"],
+    "uniqueContent": [
+      "Burnaby is Metro Vancouver's tech and media powerhouse — home to Electronic Arts, Hootsuite, and Ballard Power Systems, as well as SFU and BCIT producing the talent pipeline that fuels them. TML Agency helps Burnaby's tech and media companies build digital marketing programs that attract top talent, win enterprise clients, and build the brand authority that distinguishes them in one of the world's most competitive tech corridors.",
+      "The Metrotown corridor is Metro Vancouver's largest retail destination, drawing shoppers from across the region and requiring retailers to maintain strong digital presences that capture both local and regional intent. TML's retail-focused SEO, Google Shopping, and social media advertising strategies help Burnaby retailers compete effectively against both the Metrotown anchors and the growing threat of e-commerce alternatives.",
+      "From our Edmonton headquarters, TML serves Burnaby's diverse business community — from BCIT spinout tech startups to established Japanese and Korean business communities in the Edmonds area — with the cultural versatility and digital marketing depth that Burnaby's cosmopolitan economy demands. We build Burnaby businesses the digital infrastructure that scales from local awareness to national brand recognition."
+    ]
+  },
+  "mississauga": {
+    "slug": "mississauga",
+    "name": "Mississauga",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Mississauga, Brampton, and the western GTA",
+    "description": "Canada's sixth-largest city and the GTA's corporate and pharmaceutical hub",
+    "landmarks": ["Square One Shopping Centre", "Port Credit Village", "Absolute World Towers (Marilyn Monroe Buildings)", "Mississauga Civic Centre", "Credit Valley Trail"],
+    "industries": ["pharma & life sciences", "IT & tech", "finance", "advanced manufacturing", "logistics", "real estate", "retail", "professional services"],
+    "uniqueContent": [
+      "Mississauga is Canada's pharmaceutical capital — home to the Canadian headquarters of Pfizer, Janssen, Novartis, and over 150 life sciences companies clustered around the Meadowvale and Erin Mills corporate corridors. TML Agency helps Mississauga's life sciences businesses build the regulatory-compliant, credibility-first digital marketing programs that pharma and biotech companies require to reach healthcare professionals and institutional buyers.",
+      "The Mississauga corporate park landscape — stretching from the Airport Corporate Centre to Heartland Town Centre — houses the Canadian headquarters of hundreds of global enterprises, creating intense competition for B2B services, facilities management, and professional services providers. TML's account-based marketing strategies and LinkedIn advertising programs help Mississauga B2B companies penetrate these corporate headquarters with the right message at the right time.",
+      "From our Edmonton headquarters, TML serves Mississauga businesses with the perspective that Canada's sixth-largest city is often overlooked as a marketing battleground because it lacks the profile of Toronto next door. We leverage this underappreciation, building hyper-targeted Mississauga digital marketing strategies that dominate local search results and capture the immense commercial activity happening daily in Mississauga's corporate corridors and retail centres."
+    ]
+  },
+  "brampton": {
+    "slug": "brampton",
+    "name": "Brampton",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Brampton, Caledon, and the northwest GTA",
+    "description": "The Flower City — Canada's third-fastest-growing city and the GTA's trucking capital",
+    "landmarks": ["Garden Square", "Gage Park", "Brampton Civic Hospital", "Shoppers World Brampton", "Chinguacousy Park"],
+    "industries": ["trucking & logistics", "manufacturing", "retail", "healthcare", "construction", "agriculture", "professional services", "tech"],
+    "uniqueContent": [
+      "Brampton is Canada's trucking capital — with the highest concentration of transport trucks per capita of any Canadian city — creating enormous B2B marketing opportunities for fleet suppliers, logistics technology firms, insurance providers, and mechanical services businesses. TML Agency builds digital marketing programs calibrated to Brampton's trucking ecosystem that reach owner-operators and fleet managers through the specific channels they trust.",
+      "Brampton's South Asian community — one of Canada's largest, representing a significant proportion of the city's nearly 700,000 residents — creates demand for culturally authentic digital marketing that speaks to Punjabi, Gujarati, and Hindi-speaking business owners and consumers. TML's bilingual (English/Punjabi) capabilities and multicultural marketing expertise make us a natural partner for Brampton businesses serving this community.",
+      "From our Edmonton headquarters, TML serves Brampton businesses with the understanding that this fast-growing GTA city is evolving its commercial landscape rapidly, with new business parks, retail power centres, and mixed-use developments constantly reshaping the competitive environment. We deliver Brampton businesses the adaptive digital marketing strategies that keep pace with the city's relentless growth and the ever-changing needs of its diverse consumer base."
+    ]
+  },
+  "markham": {
+    "slug": "markham",
+    "name": "Markham",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Markham, Stouffville, and the northern York Region",
+    "description": "Canada's High-Tech Capital — the GTA's innovation corridor and East Asian business hub",
+    "landmarks": ["Main Street Unionville", "Markham Civic Centre", "York University Markham Campus", "Markham Pan Am Centre", "First Markham Place"],
+    "industries": ["tech & IT", "financial services", "pharma", "retail", "healthcare", "real estate", "professional services", "education"],
+    "uniqueContent": [
+      "Markham has earned its designation as Canada's High-Tech Capital with good reason — IBM, Motorola, AMD, and hundreds of tech companies have chosen Markham for their Canadian operations. TML Agency helps Markham's tech businesses build the digital marketing programs that attract global enterprise clients, compete for specialized technical talent, and position themselves as Canadian leaders in their technology niches.",
+      "Markham's Chinese-Canadian business community is one of the largest and most commercially active in North America, creating unique marketing opportunities for businesses that invest in authentic Mandarin and Cantonese digital marketing. TML builds multilingual digital strategies — including WeChat marketing, Mandarin-language SEO, and Cantonese social content — that help Markham businesses connect meaningfully with the East Asian community that defines much of Markham's commercial character.",
+      "From our Edmonton headquarters, TML serves Markham businesses with the insight that York Region's suburban landscape, despite its corporate density, is underserved by agencies that focus exclusively on Toronto's downtown core. We build Markham-specific digital marketing programs that capture the intense commercial activity on Highway 7, in Unionville, and across the technology parks that make Markham one of the GTA's most economically dynamic cities."
+    ]
+  },
+  "vaughan": {
+    "slug": "vaughan",
+    "name": "Vaughan",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Vaughan, Woodbridge, Thornhill, and central York Region",
+    "description": "The City Above Toronto — a rapidly growing Italian-influenced commercial hub in York Region",
+    "landmarks": ["Vaughan Mills Shopping Centre", "Canada's Wonderland", "McMichael Canadian Art Collection", "Woodbridge Village", "Cortellucci Vaughan Hospital"],
+    "industries": ["construction & real estate", "retail", "manufacturing", "professional services", "healthcare", "food & beverage", "tech", "logistics"],
+    "uniqueContent": [
+      "Vaughan's Italian-Canadian community has built one of the GTA's most vibrant commercial corridors along Islington Avenue in Woodbridge, where family-owned businesses in construction, food, and professional services have thrived for generations. TML Agency respects this community heritage while helping Vaughan businesses modernize their digital marketing to reach the next generation of Italian-Canadian and diverse new-resident customers.",
+      "The opening of the Cortellucci Vaughan Hospital and the continuing expansion of Highway 400-corridor industrial parks are driving Vaughan's transformation from bedroom community to full-service city. TML builds local SEO and Google Business Profile strategies that position Vaughan healthcare, retail, and service businesses to capture the thousands of new residents arriving monthly as Vaughan builds toward its 500,000-person population target.",
+      "From our Edmonton headquarters, TML serves Vaughan businesses with an appreciation for the city's unique character — neither fully suburban nor fully urban — that requires digital marketing strategies bridging community-focused local campaigns with the broader GTA digital marketplace. We deliver Vaughan businesses the precision targeting and brand storytelling that earns loyalty in this competitive, growth-charged York Region market."
+    ]
+  },
+  "richmond-hill": {
+    "slug": "richmond-hill",
+    "name": "Richmond Hill",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Richmond Hill, Aurora, Newmarket, and northern York Region",
+    "description": "One of Canada's most multicultural communities — a thriving commercial hub in northern York Region",
+    "landmarks": ["Richmond Green Sports Centre", "David Dunlap Observatory", "Yonge Street Corridor", "Mill Pond Park", "Richmond Hill Performing Arts Centre"],
+    "industries": ["retail", "healthcare", "tech", "real estate", "professional services", "education", "food & hospitality", "manufacturing"],
+    "uniqueContent": [
+      "Richmond Hill's extraordinary diversity — with significant Iranian, Chinese, South Korean, and Indian communities each numbering in the tens of thousands — creates a unique marketing environment where cultural fluency is a genuine competitive advantage. TML Agency's multilingual capabilities and multicultural marketing expertise help Richmond Hill businesses speak authentically to each of these communities, building the trust that drives long-term customer loyalty.",
+      "The Yonge Street corridor through Richmond Hill is one of York Region's highest-traffic commercial strips, connecting Toronto to the northern suburbs and carrying enormous consumer spending volume daily. TML's local SEO, Google Maps optimization, and hyperlocal paid media campaigns ensure your Richmond Hill business captures maximum visibility along this critical commercial artery.",
+      "From our Edmonton headquarters, TML serves Richmond Hill businesses with the understanding that York Region's northern tier — spanning Richmond Hill through Aurora and Newmarket — is a distinct market that rewards local expertise. We build Richmond Hill-specific digital marketing strategies that account for the community's unique demographic profile, seasonal commercial patterns, and the competitive dynamics of one of Ontario's wealthiest suburban markets."
+    ]
+  },
+  "oakville": {
+    "slug": "oakville",
+    "name": "Oakville",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Oakville, Milton, Halton Hills, and the Halton Region",
+    "description": "One of Canada's most affluent communities — a premium lifestyle and corporate destination on Lake Ontario",
+    "landmarks": ["Oakville Harbour", "Downtown Oakville", "Bronte Heritage Waterfront Park", "Sheridan College", "Ford Canada Headquarters"],
+    "landmarks": ["Oakville Harbour", "Downtown Oakville", "Bronte Heritage Waterfront Park", "Sheridan College", "Ford Canada Headquarters"],
+    "industries": ["pharma & life sciences", "finance", "professional services", "tech", "retail", "healthcare", "education", "real estate"],
+    "uniqueContent": [
+      "Oakville's status as one of Canada's wealthiest communities — with median household incomes among the highest in the GTA — creates a premium consumer market that rewards sophisticated, aspirational digital marketing. TML Agency helps Oakville businesses build luxury-tier brand presences across digital channels that match the expectations of an audience accustomed to premium experiences in every aspect of their lives.",
+      "The Oakville corporate campus zone — home to Ford Canada, Siemens Canada, and dozens of multinational pharmaceutical and financial services headquarters — creates intense B2B competition for professional services, facilities, and enterprise technology providers. TML builds account-based marketing programs and LinkedIn strategies that help Oakville B2B businesses penetrate these high-value corporate headquarters.",
+      "From our Edmonton headquarters, TML serves Oakville businesses with the understanding that this community's premium positioning requires digital marketing that never compromises on quality, visual standards, or brand consistency. We deliver Oakville businesses the polished, sophisticated digital presences — from website SEO to Instagram aesthetics — that reflect Oakville's character as one of Canada's most desirable places to live and do business."
+    ]
+  },
+  "burlington": {
+    "slug": "burlington",
+    "name": "Burlington",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Burlington, Flamborough, and the eastern Halton Region",
+    "description": "A vibrant waterfront city perfectly positioned between Toronto and the Niagara Region",
+    "landmarks": ["Spencer Smith Park", "Royal Botanical Gardens", "Burlington Pier", "Mapleview Centre", "Art Gallery of Burlington"],
+    "industries": ["manufacturing", "professional services", "retail", "healthcare", "real estate", "tech", "logistics", "food & beverage"],
+    "uniqueContent": [
+      "Burlington's position at the intersection of the QEW and Highways 403/407 makes it one of the GTA's most strategically located industrial and commercial cities, with manufacturing and logistics companies choosing Burlington for access to both Toronto and Niagara markets. TML Agency helps Burlington B2B businesses build the digital infrastructure that converts this geographic advantage into a commercial advantage — attracting the national clients that their central location can efficiently serve.",
+      "Burlington's downtown waterfront, anchored by Spencer Smith Park and a thriving local restaurant and retail scene, has become a destination for both Burlington residents and day-trippers from Oakville and Hamilton seeking a vibrant lakeside experience. TML builds destination marketing strategies for Burlington's hospitality and retail businesses that capture this regional visitor traffic and convert it into loyal local customer relationships.",
+      "From our Edmonton headquarters, TML serves Burlington businesses with a perspective that appreciates how Burlington's slightly overlooked identity — often overshadowed by neighbouring Oakville and Hamilton — creates marketing opportunities. We position Burlington businesses as hidden gems with superior value propositions, building digital presences that attract customers who discover Burlington as a premium alternative to the pricier Oakville scene or the gritty Hamilton industrial aesthetic."
+    ]
+  },
+  "cambridge": {
+    "slug": "cambridge",
+    "name": "Cambridge",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Cambridge, North Dumfries, and the southern Waterloo Region",
+    "description": "The Textile Capital of Canada — a heritage manufacturing city reinventing itself in the digital economy",
+    "landmarks": ["Cambridge Mill", "Hespeler Road Corridor", "McDougall Cottage Historic Site", "Riverside Park", "Toyota Canada Manufacturing Plant"],
+    "industries": ["automotive manufacturing", "advanced manufacturing", "retail", "food processing", "healthcare", "education", "logistics", "professional services"],
+    "uniqueContent": [
+      "Cambridge is home to the Toyota Canada Manufacturing plant — one of Canada's most productive automotive facilities — and a manufacturing ecosystem of suppliers, tooling companies, and logistics firms that serve the automotive supply chain. TML Agency builds B2B digital marketing programs that help Cambridge manufacturers and suppliers capture national automotive procurement opportunities through LinkedIn, trade publication SEO, and technical content marketing.",
+      "The Cambridge retail corridor along Hespeler Road is one of Waterloo Region's most competitive commercial strips, where local businesses compete against national chains for the spending of 140,000 Cambridge residents and the broader Waterloo Region trade area. TML's local SEO, Google Ads management, and social media strategies ensure Cambridge retailers capture their fair share of this competitive commercial environment.",
+      "From our Edmonton headquarters, TML serves Cambridge with the understanding that this city's rich textile and manufacturing heritage gives its businesses a depth of craft and quality that deserves better digital storytelling than most Cambridge firms currently practice. We help Cambridge businesses articulate the heritage, precision, and community investment that makes them genuinely superior to the national chain alternatives, building local digital loyalties that survive any competitive challenge."
+    ]
+  },
+  "waterloo": {
+    "slug": "waterloo",
+    "name": "Waterloo",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Waterloo, Kitchener, and the Region of Waterloo",
+    "description": "The Innovation City — Canada's most startup-dense community per capita",
+    "landmarks": ["University of Waterloo", "Wilfrid Laurier University", "Waterloo Park", "Uptown Waterloo", "Velocity Garage"],
+    "industries": ["tech & software", "insurance", "quantum computing", "education", "biotech", "finance", "AI & machine learning", "startup ecosystem"],
+    "uniqueContent": [
+      "Waterloo is arguably the most startup-dense city in Canada per capita, with the University of Waterloo's co-op program and Velocity accelerator producing an outsized number of the country's most successful tech companies. TML Agency helps Waterloo tech startups build the digital marketing foundations — from launch SEO to growth-stage paid acquisition — that turn great technology into commercially successful businesses.",
+      "The insurance sector, anchored by Manulife, Sun Life, and Equitable Life of Canada all having major Waterloo operations, creates strong demand for professional services, compliance technology, and employee engagement solutions. TML builds the credibility-first digital marketing programs that help professional services and B2B tech companies win business from Waterloo's sophisticated insurance sector buyers.",
+      "From our Edmonton headquarters, TML serves Waterloo's innovation community with a marketing perspective that bridges the technical depth of Waterloo's engineering culture and the commercial storytelling that converts engineers' innovations into market-leading products. We understand the Waterloo ecosystem's unique language — MRR, churn, NPS — and build digital marketing programs that speak it fluently while generating the measurable business results that data-driven Waterloo founders demand."
+    ]
+  },
+  "brantford": {
+    "slug": "brantford",
+    "name": "Brantford",
+    "state": "Ontario",
+    "country": "Canada",
+    "region": "Brantford, Brant County, and the Six Nations Grand River Territory",
+    "description": "The Telephone City — a heritage industrial city reinventing itself through post-secondary growth",
+    "landmarks": ["Bell Homestead National Historic Site", "Woodland Cultural Centre", "Sanderson Centre for the Performing Arts", "Wilfrid Laurier University Brantford", "Wayne Gretzky Sports Centre"],
+    "industries": ["manufacturing", "logistics & warehousing", "education", "healthcare", "agriculture", "retail", "construction", "professional services"],
+    "uniqueContent": [
+      "Brantford's logistics and warehousing economy has exploded in recent years, with major distribution centres for Amazon, Walmart, and dozens of national retailers choosing Brantford for its Highway 403 access and lower costs than the GTA. TML Agency helps Brantford logistics companies, staffing agencies, and industrial services firms build B2B digital presences that capture the business relationships flowing from this distribution boom.",
+      "Wilfrid Laurier's Brantford campus has brought thousands of students to the downtown core, catalyzing a hospitality and retail renaissance along Colborne Street. TML builds social media and local SEO strategies for Brantford's food, retail, and entertainment businesses that capture student spending year-round and build the downtown vitality that attracts further investment.",
+      "From our Edmonton headquarters, TML serves Brantford businesses with the understanding that the Telephone City's manufacturing heritage — from agricultural equipment to auto parts — creates deep B2B marketing opportunities that generic agencies overlook. We build content marketing and trade show follow-up digital strategies that help Brantford manufacturers convert industry contacts into long-term commercial relationships."
+    ]
+  },
+  "prince-george": {
+    "slug": "prince-george",
+    "name": "Prince George",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Prince George, Vanderhoof, Fort St. James, and northern British Columbia",
+    "description": "The Northern Capital of BC — the gateway to resource-rich northern British Columbia",
+    "landmarks": ["Two Rivers Gallery", "Fort George Park", "University of Northern BC", "Cottonwood Island Nature Park", "CN Centre"],
+    "industries": ["forestry & wood products", "mining", "oil & gas", "healthcare", "education", "retail", "government", "transportation"],
+    "uniqueContent": [
+      "Prince George is northern BC's undisputed regional capital — the commercial, healthcare, and educational hub for a vast region stretching from the Alberta border to the Pacific. TML Agency helps Prince George businesses build digital presences that serve not just the city's 75,000 residents but the hundreds of thousands of northern BC residents who travel to PG for goods, services, and specialized expertise unavailable closer to home.",
+      "UNBC's presence gives Prince George an innovation and sustainability-focused research ecosystem that's beginning to attract cleantech and bioeconomy investment to northern BC. TML helps UNBC spinouts and Prince George-based entrepreneurs build the digital marketing foundations that connect northern BC's forestry and resource innovation with the national and international buyers who value sustainable resource management.",
+      "From our Edmonton headquarters, TML serves Prince George businesses with the northern resource-economy perspective that understands forestry cycles, the impact of mountain pine beetle on lumber economics, and how to build marketing programs resilient to the commodity swings that have always defined northern BC's commercial landscape. We deliver Prince George businesses the digital sophistication they need to compete nationally while serving the vast northern BC region that depends on them."
+    ]
+  },
+  "chilliwack": {
+    "slug": "chilliwack",
+    "name": "Chilliwack",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Chilliwack, Hope, Agassiz, and the eastern Fraser Valley",
+    "description": "The Agricultural Heart of the Eastern Fraser Valley",
+    "landmarks": ["Cultus Lake Provincial Park", "Chilliwack Lake Provincial Park", "Prospera Centre", "UFV Campus", "Downtown Chilliwack"],
+    "industries": ["agriculture", "agri-tourism", "retail", "construction", "healthcare", "education", "logistics", "tourism"],
+    "uniqueContent": [
+      "Chilliwack anchors the eastern Fraser Valley's agricultural economy — one of BC's most productive regions for dairy, berry, and corn farming — while simultaneously serving as the last major service centre before the Coquihalla Highway climb to the Interior. TML Agency helps Chilliwack businesses build digital marketing programs that serve both local agricultural commerce and the highway-traveller market flowing between the Lower Mainland and Interior BC.",
+      "The University of the Fraser Valley's Chilliwack campus and the city's growing real estate market are attracting a new generation of professionals and families who expect the businesses they patronize to maintain strong online presences. TML builds local SEO and Google Business Profile strategies for Chilliwack service businesses that capture these new residents before they establish purchasing habits in Abbotsford or Vancouver.",
+      "From our Edmonton headquarters, TML serves Chilliwack businesses with the Fraser Valley market knowledge that helps them compete effectively in BC's most agriculturally productive region. We understand the seasonal rhythms of agri-tourism — from corn maze fall season to berry U-pick summer — and build digital marketing calendars that maximize revenue capture in every season of Chilliwack's distinct agricultural calendar."
+    ]
+  },
+  "new-westminster": {
+    "slug": "new-westminster",
+    "name": "New Westminster",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "New Westminster, Burnaby, and the central Metro Vancouver area",
+    "description": "The Royal City — Metro Vancouver's original capital, a heritage city with a thriving arts scene",
+    "landmarks": ["Westminster Quay Public Market", "Anvil Centre", "Douglas College", "Front Street Heritage District", "Queen's Park"],
+    "industries": ["healthcare", "education", "retail", "professional services", "tech", "real estate", "arts & culture", "hospitality"],
+    "uniqueContent": [
+      "New Westminster's Uptown and Downtown commercial corridors are undergoing a renaissance driven by SkyTrain connectivity, affordable commercial rents relative to Vancouver, and a growing arts and dining scene. TML Agency helps New Westminster businesses build digital presences that position them as destination businesses for the broader Metro Vancouver market — turning New West's accessibility via SkyTrain into a competitive advantage over higher-rent Vancouver competitors.",
+      "Douglas College's New Westminster campus generates substantial student spending and creative energy in the Royal City, supporting a local economy of cafes, restaurants, independent retail, and professional services. TML builds social media and local SEO strategies for New Westminster businesses that capture student patronage, build word-of-mouth among the college community, and establish lasting loyalties with graduates who remain in the area.",
+      "From our Edmonton headquarters, TML serves New Westminster businesses with the insight that Metro Vancouver's smaller municipalities — New West, Burnaby, Port Coquitlam — often offer better ROI on digital marketing investment than Vancouver proper because competition for digital attention is lower and local loyalty is stronger. We build New Westminster businesses the hyper-local digital marketing programs that maximize this efficiency advantage."
+    ]
+  },
+  "langley": {
+    "slug": "langley",
+    "name": "Langley",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Langley City, Township of Langley, and the eastern Metro Vancouver region",
+    "description": "The Horse Capital of BC — a growing eastern Metro Vancouver hub for equestrian sports, agri-business, and suburban retail",
+    "landmarks": ["Fort Langley National Historic Site", "Willowbrook Shopping Centre", "Thunderbird Show Park", "Kwantlen Polytechnic University", "Derby Reach Regional Park"],
+    "industries": ["agriculture & equestrian", "retail", "manufacturing", "healthcare", "education", "real estate", "logistics", "professional services"],
+    "uniqueContent": [
+      "Langley's combination of equestrian culture, agricultural land, and rapidly developing suburban commercial centres creates a uniquely diverse business environment spanning everything from horse breeding operations to national retail anchors at Willowbrook. TML Agency builds digital marketing strategies that serve the full breadth of Langley's mixed economy, from agri-tourism operators at the historic Fort Langley National Historic Site to B2B manufacturers in Langley's extensive industrial park network.",
+      "The Township of Langley's rapid residential growth — driven by Metro Vancouver affordability dynamics and SkyTrain Expo Line extension progress — is bringing tens of thousands of new residents who represent fresh commercial opportunities for digitally prepared Langley businesses. TML's local SEO and Google Business Profile management helps Langley businesses capture these new residents from the moment they move in.",
+      "From our Edmonton headquarters, TML serves Langley businesses with the Fraser Valley regional perspective that understands how Langley's unique position — rural enough for genuine agri-tourism but urban enough for national retail — creates marketing opportunities that cookie-cutter Metro Vancouver agencies miss. We build Langley businesses the nuanced, community-rooted digital marketing programs that resonate with both longtime Langley farm families and new suburban residents."
+    ]
+  },
+  "coquitlam": {
+    "slug": "coquitlam",
+    "name": "Coquitlam",
+    "state": "British Columbia",
+    "country": "Canada",
+    "region": "Coquitlam, Port Coquitlam, Port Moody, and the Tri-Cities",
+    "description": "Metro Vancouver's Tri-Cities hub — a rapidly growing family-oriented commercial and residential centre",
+    "landmarks": ["Coquitlam Centre Mall", "Lafarge Lake-Douglas SkyTrain Station", "Rocky Point Park (Port Moody)", "Town Centre Park", "Douglas College Coquitlam"],
+    "industries": ["retail", "healthcare", "education", "real estate & construction", "professional services", "tech", "food & hospitality", "logistics"],
+    "uniqueContent": [
+      "Coquitlam Centre and the Lincoln SkyTrain station area represent one of Metro Vancouver's most ambitious transit-oriented development projects, creating a new urban hub that's attracting major retail, residential, and commercial investment. TML Agency helps Coquitlam businesses position themselves to benefit from this transformation — building digital presences that capture the influx of new residents and workers arriving as the Tri-Cities area urbanizes.",
+      "The Tri-Cities area — Coquitlam, Port Coquitlam, and Port Moody — collectively form one of Metro Vancouver's largest residential communities, with a combined population approaching 250,000 that demands high-quality local professional services, healthcare, and retail. TML builds local SEO strategies that help Coquitlam businesses serve this entire Tri-Cities catchment area, not just city-limited Coquitlam searches.",
+      "From our Edmonton headquarters, TML serves Coquitlam businesses with the Metro Vancouver suburban market knowledge that helps businesses in the Tri-Cities compete effectively against both downtown Vancouver prestige businesses and Burnaby's established commercial centres. We position Coquitlam businesses as the smart, convenient choice for the growing Tri-Cities population that increasingly prefers local over the commute to Vancouver's core."
+    ]
+  },
+  "saint-john": {
+    "slug": "saint-john",
+    "name": "Saint John",
+    "state": "New Brunswick",
+    "country": "Canada",
+    "region": "Saint John, Quispamsis, Rothesay, and the greater Saint John area",
+    "description": "New Brunswick's industrial port city — Canada's oldest incorporated city reinventing its economy",
+    "landmarks": ["Reversing Falls", "Uptown Saint John", "Saint John City Market", "Irving Oil Refinery", "Fort Howe"],
+    "industries": ["petroleum refining", "port & logistics", "healthcare", "education", "food & beverage", "tourism", "professional services", "construction"],
+    "uniqueContent": [
+      "Saint John's economy is anchored by the Irving Oil refinery — Canada's largest — and the port of Saint John, one of the Atlantic seaboard's most significant bulk commodity handlers. TML Agency helps Saint John's industrial services, port logistics, and professional services businesses build B2B digital marketing programs that capture opportunities in the energy, shipping, and trade sectors that flow through Canada's oldest incorporated city.",
+      "Uptown Saint John's revitalization — centred on the pedestrianized City Market district and the waterfront development — is creating new retail, hospitality, and creative industry opportunities in a downtown core that's increasingly attracting young professionals and entrepreneurs. TML builds destination marketing strategies for Uptown Saint John businesses that position the historic uptown as a compelling alternative to suburban retail and capture tourist spending from the Bay of Fundy region.",
+      "From our Edmonton headquarters, TML serves Saint John with the energy-sector marketing expertise developed for Alberta's oil & gas economy, now calibrated for New Brunswick's petroleum refining and port logistics context. We understand how B2B marketing works in heavy industrial environments and help Saint John's service companies build the digital credibility that wins long-term contracts with the Irving-anchored industrial complex that defines the city's commercial character."
+    ]
+  },
+  "st-johns": {
+    "slug": "st-johns",
+    "name": "St. John's",
+    "state": "Newfoundland and Labrador",
+    "country": "Canada",
+    "region": "St. John's, Mount Pearl, Conception Bay South, and the Avalon Peninsula",
+    "description": "North America's oldest city — Newfoundland's cultural capital and offshore oil hub",
+    "landmarks": ["Signal Hill National Historic Site", "George Street", "Cape Spear (most easterly point in North America)", "The Rooms Provincial Museum", "Quidi Vidi Lake"],
+    "industries": ["offshore oil & gas", "ocean technology", "fisheries", "tourism", "healthcare", "education", "government", "construction"],
+    "uniqueContent": [
+      "St. John's has transformed from a fisheries-dependent economy into one of Canada's most dynamic offshore energy centres, with Hibernia, Terra Nova, and White Rose offshore oil fields creating massive B2B opportunities for marine services, engineering, and technology companies based on the Avalon Peninsula. TML Agency helps St. John's businesses build the digital presences that connect them with global offshore energy procurement teams who increasingly evaluate suppliers digitally before flying in for site visits.",
+      "Newfoundland's distinctive culture — renowned for its music, storytelling, and fierce local loyalty — creates exceptional brand marketing opportunities for businesses that authentically embrace and celebrate their Newfoundland identity. TML builds brand narratives rooted in NL's cultural richness that create the emotional connections national and international visitors form with St. John's businesses they encounter on George Street or at Cape Spear.",
+      "From our Edmonton headquarters, TML serves St. John's with the offshore energy marketing expertise that bridges Alberta's onshore oil & gas economy and Newfoundland's offshore production context. We understand the rig cycle, the offshore procurement process, and how to build digital marketing programs that position St. John's service companies as credible partners for the multinational operators managing Canada's most productive offshore oil province."
+    ]
+  },
+  "corner-brook": {
+    "slug": "corner-brook",
+    "name": "Corner Brook",
+    "state": "Newfoundland and Labrador",
+    "country": "Canada",
+    "region": "Corner Brook, Deer Lake, Stephenville, and western Newfoundland",
+    "description": "Western Newfoundland's largest city — gateway to Gros Morne and the Corner Brook Pulp Mill",
+    "landmarks": ["Marble Mountain Ski Resort", "Corner Brook Stream Trail", "Grenfell Campus Memorial University", "Captain James Cook Monument", "Gros Morne National Park (nearby)"],
+    "industries": ["forestry & paper", "tourism & outdoor recreation", "healthcare", "education", "retail", "government", "construction", "fisheries"],
+    "uniqueContent": [
+      "Corner Brook's economy revolves around Marble Mountain skiing, Gros Morne National Park tourism, and the Corner Brook Pulp and Paper mill — creating a distinctive mix of adventure tourism, natural resource, and forest industry marketing needs. TML Agency builds seasonal digital marketing strategies for Corner Brook businesses that maximize summer Gros Morne visitors, convert ski enthusiasts planning Marble Mountain trips, and serve the year-round local economy.",
+      "Grenfell Campus Memorial University gives Corner Brook an academic and creative community that punches above the city's weight in arts, culture, and research output. TML helps Corner Brook's creative businesses, restaurants, and specialty retailers leverage this intellectual capital to build distinctive brand identities that attract both the student community and the cultural tourists who visit western Newfoundland for its UNESCO World Heritage landscape.",
+      "From our Edmonton headquarters, TML serves Corner Brook businesses with the understanding that western Newfoundland's geographic isolation creates both a captive local market and a unique opportunity to build destination marketing that draws visitors who must fly or drive to reach this spectacular corner of Canada. We build Corner Brook businesses the digital visibility that ensures adventure travellers, wildlife enthusiasts, and UNESCO heritage tourists find them first."
+    ]
+  },
+  "charlottetown": {
+    "slug": "charlottetown",
+    "name": "Charlottetown",
+    "state": "Prince Edward Island",
+    "country": "Canada",
+    "region": "Charlottetown, Stratford, Cornwall, and the greater Charlottetown area",
+    "description": "The Birthplace of Confederation — PEI's capital and Canada's most charming small city",
+    "landmarks": ["Province House National Historic Site", "Victoria Row", "Confederation Centre of the Arts", "Peake's Wharf", "UPEI Campus"],
+    "industries": ["tourism", "government", "agri-food", "aerospace", "bioscience", "education", "healthcare", "professional services"],
+    "uniqueContent": [
+      "Charlottetown's tourism economy — built on the Anne of Green Gables brand, Confederation heritage, and PEI's legendary food scene — demands sophisticated digital marketing that converts both domestic Canadian visitors and the growing international tourist base from Japan, Germany, and the United States. TML Agency builds destination marketing strategies for Charlottetown hospitality, retail, and cultural businesses that capture global tourist interest and convert searches into bookings.",
+      "Prince Edward Island's agri-food sector — famous for PEI potatoes, oysters, and an emerging wine industry — creates unique digital marketing opportunities for food producers, processors, and exporters who want to leverage the Island's extraordinary culinary reputation in national and international markets. TML builds the brand storytelling and e-commerce strategies that help PEI agri-food businesses capitalize on Charlottetown's role as the island's commercial and culinary capital.",
+      "From our Edmonton headquarters, TML serves Charlottetown businesses with the national marketing perspective that helps PEI companies punch above their provincial weight in federal procurement and national business development. We understand how to leverage Charlottetown's Birthplace of Confederation identity as a genuine brand differentiator, building digital presences that earn the attention and respect of national partners who might otherwise overlook Canada's smallest province."
+    ]
+  },
+  "brandon": {
+    "slug": "brandon",
+    "name": "Brandon",
+    "state": "Manitoba",
+    "country": "Canada",
+    "region": "Brandon, Virden, Portage la Prairie, and western Manitoba",
+    "description": "Manitoba's second city — the commercial and agricultural hub of western Manitoba",
+    "landmarks": ["Daly House Museum", "Brandon University", "Keystone Centre", "Commonwealth Air Training Plan Museum", "Riverbank Discovery Centre"],
+    "industries": ["agriculture & food processing", "oil & gas", "healthcare", "education", "retail", "government", "construction", "manufacturing"],
+    "uniqueContent": [
+      "Brandon is western Manitoba's commercial capital, serving a trade area encompassing hundreds of farming communities across the prairie region between Portage la Prairie and the Saskatchewan border. TML Agency helps Brandon businesses build local SEO and Google advertising programs that capture the agricultural purchasing, healthcare, and retail spending of this vast rural trade area — converting what might be considered a small urban market into a substantial regional commercial opportunity.",
+      "The Brandon oil field, centred on the Virden area to the southwest, creates B2B demand for oilfield services, equipment dealers, and professional services companies based in Brandon. TML's oilfield services marketing expertise — developed from years serving Alberta's energy industry from our Edmonton headquarters — is directly applicable to Brandon's prairie oil economy, helping local businesses compete for oil patch contracts.",
+      "Brandon University and Assiniboine Community College give the Wheat City a young professional base that expects modern digital experiences from the businesses they patronize. TML builds digital marketing programs for Brandon businesses that balance the community's agricultural heritage with the expectations of a new generation of prairie consumers who research online before buying, compare on social media, and share experiences through Google reviews."
+    ]
+  },
+  "prince-albert": {
+    "slug": "prince-albert",
+    "name": "Prince Albert",
+    "state": "Saskatchewan",
+    "country": "Canada",
+    "region": "Prince Albert, Shellbrook, Nipawin, and central-northern Saskatchewan",
+    "description": "The Gateway to the North — Saskatchewan's northern commercial hub",
+    "landmarks": ["Prince Albert National Park", "E.A. Rawlinson Centre for the Arts", "Little Red River Park", "Eben Ezer Chapel", "River Street Historic District"],
+    "industries": ["forestry", "mining", "agriculture", "healthcare", "government", "retail", "education", "construction"],
+    "uniqueContent": [
+      "Prince Albert serves as the last major commercial centre before Saskatchewan's vast northern boreal forest begins, making it the service hub for miners, forestry workers, sport hunters, and First Nations communities across the northern half of the province. TML Agency helps Prince Albert businesses build digital marketing programs that serve this enormous northern catchment area — ensuring that residents from La Ronge to Meadow Lake find PA businesses when they search for products and services online.",
+      "The Prince Albert National Park draws tourists seeking elk sightings, grey wolf country, and Grey Owl's cabin from across North America, creating hospitality and outfitting marketing opportunities for PA businesses that TML helps capture through national-level SEO and content marketing that positions Prince Albert as northern Saskatchewan's premier outdoor destination gateway.",
+      "From our Edmonton headquarters, TML serves Prince Albert businesses with the northern Saskatchewan perspective developed through years of serving resource-industry clients across western Canada. We understand how forestry and mining cycles drive PA's commercial economy and build marketing programs resilient to the commodity swings that have always defined Saskatchewan's northern economy."
+    ]
+  },
+  "moose-jaw": {
+    "slug": "moose-jaw",
+    "name": "Moose Jaw",
+    "state": "Saskatchewan",
+    "country": "Canada",
+    "region": "Moose Jaw, Caronport, and the Thunder Creek region of Saskatchewan",
+    "description": "The Friendly City — Saskatchewan's heritage resort town and agriculture hub",
+    "landmarks": ["Temple Gardens Hotel & Spa", "Tunnels of Moose Jaw", "Sukanen Ship Pioneer Village & Museum", "Wild Animal Park", "Main Street Historic District"],
+    "industries": ["agriculture", "potash", "tourism", "healthcare", "education", "retail", "government", "oil & gas"],
+    "uniqueContent": [
+      "Moose Jaw's Tunnels attraction and Temple Gardens geothermal spa have positioned the Friendly City as Saskatchewan's premier domestic tourism destination, drawing hundreds of thousands of visitors annually from Regina, Saskatoon, and across the prairies. TML Agency builds destination marketing strategies for Moose Jaw's hospitality and tourism businesses that capture this strong domestic visitor market and build the national and international travel brand recognition that TJ's attractions deserve.",
+      "Saskatchewan's potash industry creates significant commercial activity around Moose Jaw, with Nutrien's Patience Lake facility and other potash operations generating supply chain demand for equipment, professional services, and logistics businesses based in the city. TML helps Moose Jaw B2B businesses build digital marketing programs that position them for potash industry procurement opportunities.",
+      "From our Edmonton headquarters, TML serves Moose Jaw businesses with the prairie business perspective that appreciates how the Friendly City's genuine community warmth is a digital marketing asset — not just a tourism tagline but an authentic brand differentiator that attracts new residents, business investment, and loyal customers from across southern Saskatchewan."
+    ]
+  },
+  "medicine-hat": {
+    "slug": "medicine-hat",
+    "name": "Medicine Hat",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Medicine Hat, Redcliff, and southeastern Alberta",
+    "description": "The Gas City — southeastern Alberta's sunny, energy-independent commercial hub",
+    "landmarks": ["Medicine Hat Courthouse (National Historic Site)", "Medicine Hat Museum and Art Gallery", "Cypress Hills Interprovincial Park", "Seven Persons Creek", "Esplanade Arts & Heritage Centre"],
+    "industries": ["natural gas", "agriculture", "manufacturing", "oil & gas services", "retail", "healthcare", "education", "tourism"],
+    "uniqueContent": [
+      "Medicine Hat's natural gas abundance — sitting atop one of North America's largest natural gas fields — has historically powered the city's industrial economy and attracted energy-intensive manufacturing. TML Agency helps Medicine Hat's industrial businesses, natural gas processors, and manufacturers build B2B digital marketing programs that connect them with the national energy buyers and industrial procurement teams that source from southeastern Alberta.",
+      "The Gas City's sunshine advantage — Medicine Hat is Canada's sunniest city by hours of annual sunlight — creates unique marketing opportunities for solar energy, agriculture, and outdoor tourism businesses seeking to leverage this natural asset. TML builds content marketing and SEO strategies that position Medicine Hat's renewable energy companies and agri-businesses as beneficiaries of Alberta's most solar-rich location.",
+      "From our Edmonton headquarters, TML serves Medicine Hat businesses with the Alberta market knowledge that helps this southeastern city compete effectively for customers, talent, and investment against the gravitational pull of Calgary and Lethbridge. We build Medicine Hat businesses the digital marketing firepower that makes the Gas City's genuine quality-of-life advantages — affordable real estate, low traffic, sunshine — compelling for businesses and residents comparing options across southern Alberta."
+    ]
+  },
+  "grande-prairie": {
+    "slug": "grande-prairie",
+    "name": "Grande Prairie",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Grande Prairie, Clairmont, Sexsmith, and the Peace Country region",
+    "description": "Alberta's northwest oil and gas capital and Peace Country's commercial hub",
+    "landmarks": ["Muskoseepi Park", "Grande Prairie Museum", "Eastlink Centre", "Philip J. Currie Dinosaur Museum (Wembley)", "Prairie Mall"],
+    "industries": ["oil & gas", "forestry", "agriculture", "construction", "retail", "healthcare", "education", "transportation"],
+    "uniqueContent": [
+      "Grande Prairie anchors Alberta's Peace Country economy — one of Canada's most productive regions for Montney natural gas, agricultural grain, and forestry products. TML Agency helps Grande Prairie's oilfield services, agricultural supply, and forestry businesses build the B2B digital marketing infrastructure that connects them with the national energy companies, grain handlers, and forestry buyers who source from northwest Alberta.",
+      "Prairie Mall serves an enormous trade area stretching from Fort St. John, BC to High Prairie, AB — hundreds of thousands of people who travel to Grande Prairie for shopping, healthcare, and services unavailable in smaller communities. TML helps Grande Prairie retailers and service businesses build local SEO and Google Ads strategies that capture this vast Peace Country trade area before online retailers siphon that spending away.",
+      "From our Edmonton headquarters, TML is uniquely positioned to serve Grande Prairie businesses with the northwest Alberta market knowledge that most digital agencies lack. We understand the Montney boom-and-bust cycle, the Peace Country's distinct agricultural character, and how to build marketing programs that work for businesses serving both the energy sector workforce and the farming communities that have anchored northwest Alberta's economy for generations."
+    ]
+  },
+  "airdrie": {
+    "slug": "airdrie",
+    "name": "Airdrie",
+    "state": "Alberta",
+    "country": "Canada",
+    "region": "Airdrie, Crossfield, Carstairs, and the Calgary commuter belt",
+    "description": "Alberta's fastest-growing city — Calgary's thriving northern satellite community",
+    "landmarks": ["Nose Creek Regional Park", "Airdrie Town Hall", "Genesis Place Recreation Centre", "Bert Church Live Theatre", "Kingsview Market"],
+    "industries": ["oil & gas services", "construction", "retail", "professional services", "logistics", "healthcare", "education", "manufacturing"],
+    "uniqueContent": [
+      "Airdrie is Canada's fastest-growing city by percentage, driven by Calgary commuters seeking detached housing affordability without sacrificing QEW-level highway access to Alberta's largest city. TML Agency helps Airdrie businesses build digital marketing programs that capture these tens of thousands of new residents as they establish shopping habits, healthcare providers, and service relationships in their new community.",
+      "Airdrie's strong entrepreneurial culture — the city hosts a higher concentration of small business owners per capita than almost any Alberta city — creates natural demand for the B2B digital marketing, branding, and lead generation services that TML specializes in. We serve Airdrie's owner-operated businesses with the same enterprise-grade digital marketing strategies that large Calgary corporations receive, calibrated for small business budgets and community-scale ambitions.",
+      "From our Edmonton headquarters, just 90 minutes up the QEII from Airdrie, TML serves this growing community with Alberta-based proximity and the understanding that Airdrie businesses must compete simultaneously for local Airdrie customers, the Calgary market to the south, and the rural Rocky View County area to the north and east. We build Airdrie businesses the multi-catchment digital marketing strategies that maximize commercial opportunity across this entire central Alberta corridor."
+    ]
+  },
+  "gatineau": {
+    "slug": "gatineau",
+    "name": "Gatineau",
+    "state": "Quebec",
+    "country": "Canada",
+    "region": "Gatineau, Aylmer, Hull, and the Quebec side of the National Capital Region",
+    "description": "The Quebec gateway to Canada's capital — a bilingual government and tech hub on the Ottawa River",
+    "landmarks": ["Canadian Museum of History", "Parc de la Gatineau", "Jacques Cartier Park", "Hull Casino (Casino du Lac-Leamy)", "Maison du Citoyen"],
+    "industries": ["government & public service", "tech & IT", "tourism", "real estate", "healthcare", "education", "arts & culture", "professional services"],
+    "uniqueContent": [
+      "Gatineau's position across the Ottawa River from Parliament Hill gives it one of Canada's highest concentrations of federal government workers, creating strong B2G opportunities for professional services, IT, and consulting firms that understand Quebec's bilingual, francophone-first business culture. TML Agency builds bilingual digital marketing programs — French-primary, English-compliant — that position Gatineau businesses as natural partners for federal procurement.",
+      "The tech cluster around Gatineau's Aylmer and Old Hull areas is growing rapidly, attracted by Quebec's R&D tax credits, lower commercial rents than Ottawa, and a talented bilingual workforce from the Université du Québec en Outaouais. TML helps Gatineau tech companies build the English-language SEO and thought leadership content that reaches the national and international clients beyond Quebec's borders.",
+      "From our Edmonton headquarters, TML serves Gatineau businesses with the bilingual marketing expertise that the National Capital Region demands. We understand how Gatineau's Quebec identity creates distinct marketing requirements from neighboring Ottawa — different regulatory context, French-language law requirements, and consumer cultural expectations — and build digital marketing programs that honour Gatineau's francophone character while connecting businesses to the bilingual federal market next door."
+    ]
+  },
+  "sherbrooke": {
+    "slug": "sherbrooke",
+    "name": "Sherbrooke",
+    "state": "Quebec",
+    "country": "Canada",
+    "region": "Sherbrooke, Magog, Coaticook, and the Eastern Townships of Quebec",
+    "description": "The Queen of the Eastern Townships — a university city and regional capital in Quebec's beautiful south",
+    "landmarks": ["Musée des beaux-arts de Sherbrooke", "Parc du Mont-Bellevue", "Carrefour de l'Estrie Shopping Centre", "Université de Sherbrooke", "Bishop's University (Lennoxville)"],
+    "industries": ["education", "healthcare", "IT & cybersecurity", "manufacturing", "agriculture & agri-food", "tourism", "finance", "professional services"],
+    "uniqueContent": [
+      "Sherbrooke's university cluster — anchored by the Université de Sherbrooke and Bishop's University in Lennoxville — makes the city a significant research and innovation hub, particularly in health sciences, IT, and environmental engineering. TML Agency helps Sherbrooke's tech companies and research spinouts build French-language digital marketing programs that connect them with Quebec government R&D funding and the francophone technology market.",
+      "The Eastern Townships' agri-tourism and outdoor recreation economy — centred on the Cantons-de-l'Est wine region, Mont Orford, and Lac Mégantic area — creates year-round hospitality marketing opportunities for Sherbrooke businesses serving both the regional tourism market and Montrealers making the 90-minute drive east. TML builds seasonal content marketing and SEO strategies that position Sherbrooke businesses as the natural gateway to Eastern Townships recreation.",
+      "From our Edmonton headquarters, TML serves Sherbrooke businesses with French-language marketing capabilities that respect Quebec's linguistic legislation while building the bilingual digital presences that give Sherbrooke companies access to the national anglophone market. We understand the Université de Sherbrooke's enormous influence on the local economy and build marketing programs that serve both the student community and the broader Eastern Townships business landscape."
+    ]
+  },
+  "whitehorse": {
+    "slug": "whitehorse",
+    "name": "Whitehorse",
+    "state": "Yukon",
+    "country": "Canada",
+    "region": "Whitehorse and the greater Yukon Territory",
+    "description": "The Heart of the Yukon — Canada's most northern major city and the gateway to the Last Frontier",
+    "landmarks": ["SS Klondike National Historic Site", "Miles Canyon", "Yukon Wildlife Preserve", "Arts Underground", "Mount McIntyre Recreation Area"],
+    "industries": ["mining & exploration", "tourism & outdoor adventure", "government", "construction", "healthcare", "retail", "environmental services", "education"],
+    "uniqueContent": [
+      "Whitehorse serves as the commercial hub for the entire Yukon Territory and beyond, with businesses serving not just the city's 30,000 residents but the tens of thousands of remote workers, miners, First Nations communities, and adventure tourists spread across Canada's most geographically vast territory. TML Agency builds digital marketing programs for Whitehorse businesses that capture this enormous northern catchment area — ensuring that anyone in the Yukon searching online finds Whitehorse businesses first.",
+      "Yukon's mining sector — gold, silver, zinc, and the emerging critical minerals race for lithium and cobalt — generates substantial B2B demand for Whitehorse-based equipment dealers, environmental consultants, and professional services firms serving active and exploration-stage mines across the territory. TML helps Whitehorse's mining services companies build digital presences that reach global mining procurement teams sourcing from Canada's northwest.",
+      "The Northern Lights and Kluane National Park draw an increasingly global adventure tourism market to Whitehorse, creating hospitality and outdoor guiding marketing opportunities that TML helps capture through international SEO, Google Hotels strategies, and Instagram content programs that position Whitehorse tours and lodges in front of Japanese, European, and American adventure travellers who dream of Canada's Far North. From our Edmonton headquarters, TML brings northern Canada market expertise that few agencies outside the territories possess."
+    ]
+  }
+}

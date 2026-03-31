@@ -91,14 +91,12 @@ if ($isTier1) {
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <?php foreach ($v2['stats'] as $stat) :
           $val = $stat['value'];
-          $isNum = preg_match('/^\d/', $val);
-          $num = $isNum ? (int) preg_replace('/\D/', '', $val) : 0;
-          $suffix = $isNum ? preg_replace('/\d/', '', $val) : '';
+          $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', $val, $m);
           ?>
       <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
         <div class="text-2xl md:text-3xl font-bold text-white mb-1">
-          <?php if ($isNum && $num > 0) : ?>
-            <span data-counter-target="<?= (int) $num ?>" data-counter-suffix="<?= tml_e($suffix) ?>">0</span>
+          <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
+            <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
             <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
           <?php endif; ?>
@@ -177,18 +175,75 @@ if ($isTier1) {
 <?php endif; ?>
 
 <?php if (!empty($v2['content'])) : ?>
+<?php
+// Split content into sections by h2/h3 tags for visual layout
+$rawContent = (string) $v2['content'];
+$contentSections = preg_split('/(?=<h[23][^>]*>)/', $rawContent, -1, PREG_SPLIT_NO_EMPTY);
+$contentImages = [
+    '/media/digital-marketing-creative.webp',
+    '/media/brand-strategy-visual.webp',
+    '/media/web-design-landing-page.webp',
+    '/media/saas-website-design.webp',
+    '/media/marketing-campaign-visual.webp',
+    '/media/creative-design-portfolio.webp',
+];
+$sectionIcons = [
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+];
+?>
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
-  <div class="relative mx-auto max-w-3xl">
-    <div class="prose prose-invert prose-sm md:prose-base max-w-none
-                prose-headings:font-semibold prose-headings:text-white prose-headings:tracking-tight
-                prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-white/45 prose-p:leading-[1.8]
-                prose-li:text-white/45 prose-li:leading-[1.8]
-                prose-strong:text-white/70 prose-strong:font-semibold
-                prose-a:text-[#ff4500] prose-a:no-underline hover:prose-a:underline
-                scroll-reveal">
-      <?= $v2['content'] ?>
+  <div class="relative mx-auto max-w-6xl">
+    <div class="flex items-center gap-4 mb-12 scroll-reveal">
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> Marketing Guide</p>
+      <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
+    </div>
+    <div class="space-y-16 md:space-y-24">
+      <?php foreach ($contentSections as $si => $section) :
+          $isEven = $si % 2 === 0;
+          $img = $contentImages[$si % count($contentImages)];
+          $icon = $sectionIcons[$si % count($sectionIcons)];
+      ?>
+      <div class="scroll-reveal">
+        <div class="flex flex-col <?= $isEven ? 'md:flex-row' : 'md:flex-row-reverse' ?> gap-8 md:gap-12 items-start">
+          <!-- Image side -->
+          <div class="md:w-2/5 md:sticky md:top-32">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/[0.06]">
+              <img src="<?= tml_e($img) ?>" alt="<?= tml_e($name) ?> digital marketing — section <?= $si + 1 ?>" loading="lazy" class="w-full h-full object-cover" width="600" height="450" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-[#ff4500]/20 backdrop-blur-sm flex items-center justify-center"><?= $icon ?></div>
+                <span class="text-[10px] text-white/60 tracking-wider uppercase font-medium"><?= tml_e($name) ?></span>
+              </div>
+            </div>
+          </div>
+          <!-- Content side -->
+          <div class="md:w-3/5">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-xs font-mono text-[#ff4500]/50 font-bold"><?= str_pad((string) ($si + 1), 2, '0', STR_PAD_LEFT) ?></span>
+              <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
+            </div>
+            <div class="prose prose-invert prose-sm md:prose-base max-w-none
+                        prose-headings:font-semibold prose-headings:text-white prose-headings:tracking-tight
+                        prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-0 prose-h2:mb-6
+                        prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-4
+                        prose-p:text-white/50 prose-p:leading-[1.8]
+                        prose-li:text-white/50 prose-li:leading-[1.8]
+                        prose-strong:text-white/80 prose-strong:font-semibold
+                        prose-a:text-[#ff4500] prose-a:no-underline hover:prose-a:underline
+                        pl-5 border-l border-white/[0.06]">
+              <?= $section ?>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -311,14 +366,12 @@ if ($isTier1) {
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <?php foreach ($legacy['stats'] as $stat) :
           $val = $stat['value'];
-          $isNum = preg_match('/^\d/', $val);
-          $num = $isNum ? (int) preg_replace('/\D/', '', $val) : 0;
-          $suffix = $isNum ? preg_replace('/\d/', '', $val) : '';
+          $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', $val, $m);
           ?>
       <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
         <div class="text-2xl md:text-3xl font-bold text-white mb-1">
-          <?php if ($isNum && $num > 0) : ?>
-            <span data-counter-target="<?= (int) $num ?>" data-counter-suffix="<?= tml_e($suffix) ?>">0</span>
+          <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
+            <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
             <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
           <?php endif; ?>
@@ -426,18 +479,72 @@ foreach ($legacy['services'] ?? [] as $svcSlug) {
 <?php endif; ?>
 
 <?php if (!empty($legacy['content'])) : ?>
+<?php
+$rawContent = (string) $legacy['content'];
+$contentSections = preg_split('/(?=<h[23][^>]*>)/', $rawContent, -1, PREG_SPLIT_NO_EMPTY);
+$contentImages = [
+    '/media/digital-marketing-creative.webp',
+    '/media/brand-strategy-visual.webp',
+    '/media/web-design-landing-page.webp',
+    '/media/saas-website-design.webp',
+    '/media/marketing-campaign-visual.webp',
+    '/media/creative-design-portfolio.webp',
+];
+$sectionIcons = [
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>',
+];
+?>
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-3xl">
-    <div class="prose prose-invert prose-sm md:prose-base max-w-none
-                prose-headings:font-semibold prose-headings:text-white prose-headings:tracking-tight
-                prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-white/45 prose-p:leading-[1.8]
-                prose-li:text-white/45 prose-li:leading-[1.8]
-                prose-strong:text-white/70 prose-strong:font-semibold
-                prose-a:text-[#ff4500] prose-a:no-underline hover:prose-a:underline
-                scroll-reveal">
-      <?= $legacy['content'] ?>
+  <div class="relative mx-auto max-w-6xl">
+    <div class="flex items-center gap-4 mb-12 scroll-reveal">
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> Marketing Guide</p>
+      <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
+    </div>
+    <div class="space-y-16 md:space-y-24">
+      <?php foreach ($contentSections as $si => $section) :
+          $isEven = $si % 2 === 0;
+          $img = $contentImages[$si % count($contentImages)];
+          $icon = $sectionIcons[$si % count($sectionIcons)];
+      ?>
+      <div class="scroll-reveal">
+        <div class="flex flex-col <?= $isEven ? 'md:flex-row' : 'md:flex-row-reverse' ?> gap-8 md:gap-12 items-start">
+          <div class="md:w-2/5 md:sticky md:top-32">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/3] border border-white/[0.06]">
+              <img src="<?= tml_e($img) ?>" alt="<?= tml_e($name) ?> digital marketing — section <?= $si + 1 ?>" loading="lazy" class="w-full h-full object-cover" width="600" height="450" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-[#ff4500]/20 backdrop-blur-sm flex items-center justify-center"><?= $icon ?></div>
+                <span class="text-[10px] text-white/60 tracking-wider uppercase font-medium"><?= tml_e($name) ?></span>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-3/5">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="text-xs font-mono text-[#ff4500]/50 font-bold"><?= str_pad((string) ($si + 1), 2, '0', STR_PAD_LEFT) ?></span>
+              <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
+            </div>
+            <div class="prose prose-invert prose-sm md:prose-base max-w-none
+                        prose-headings:font-semibold prose-headings:text-white prose-headings:tracking-tight
+                        prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-0 prose-h2:mb-6
+                        prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-4
+                        prose-p:text-white/50 prose-p:leading-[1.8]
+                        prose-li:text-white/50 prose-li:leading-[1.8]
+                        prose-strong:text-white/80 prose-strong:font-semibold
+                        prose-a:text-[#ff4500] prose-a:no-underline hover:prose-a:underline
+                        pl-5 border-l border-white/[0.06]">
+              <?= $section ?>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
