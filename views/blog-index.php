@@ -47,7 +47,7 @@ $blogsRest = array_slice($blogs, 1);
   <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-[#ff4500]/3 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="relative z-10">
+  <div class="relative z-10 max-w-7xl mx-auto">
     <!-- Breadcrumb -->
     <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-10" aria-label="Breadcrumb">
       <ol class="flex items-center gap-1.5 text-[11px]">
@@ -59,8 +59,8 @@ $blogsRest = array_slice($blogs, 1);
 
     <!-- Header -->
     <div class="mb-12 scroll-reveal">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
-      <p class="text-lg text-white/70 max-w-2xl leading-relaxed">Expert insights on SEO, content marketing, branding, paid advertising, and AI-driven growth strategies. Stay ahead of the curve with weekly articles from our team.</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
+      <p class="text-base text-white/70 max-w-2xl leading-relaxed">Expert insights on SEO, content marketing, branding, paid advertising, and AI-driven growth strategies. Stay ahead of the curve with weekly articles from our team.</p>
     </div>
 
     <!-- Category Pills -->
@@ -79,7 +79,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- Featured Article -->
 <section class="px-6 lg:px-12 py-16 md:py-20">
-  <div>
+  <div class="max-w-7xl mx-auto">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase mb-6 scroll-reveal">Featured Article</p>
     <a href="/blog/<?= tml_e($featuredSlug) ?>" class="group block scroll-reveal">
       <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br from-[#080808] to-[#0a0a0a] hover:border-[#ff4500]/30 transition-all duration-500 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12">
@@ -117,7 +117,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- Articles Grid -->
 <section class="px-6 lg:px-12 pb-20">
-  <div>
+  <div class="max-w-7xl mx-auto">
     <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($blogsRest as $slug => $article) : ?>
       <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block p-6 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#ff4500]/30 transition-all duration-500" data-category="<?= tml_e($article['category']) ?>">
