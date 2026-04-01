@@ -75,6 +75,7 @@ function tml_convert_price_range(string $range, string $country): string
         return $range;
     }
     $currencyMap = [
+        'Canada' => ['symbol' => '$', 'rate' => 0.02],
         'New Zealand' => ['symbol' => 'NZ$', 'rate' => 0.02],
         'United Kingdom' => ['symbol' => '£', 'rate' => 0.0095],
         'United States' => ['symbol' => '$', 'rate' => 0.012],
