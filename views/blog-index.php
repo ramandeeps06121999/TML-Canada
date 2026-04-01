@@ -60,7 +60,7 @@ $blogsRest = array_slice($blogs, 1);
     <!-- Header -->
     <div class="mb-12 scroll-reveal">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
-      <p class="text-base text-white/70 max-w-2xl leading-relaxed">Expert insights on SEO, content marketing, branding, paid advertising, and AI-driven growth strategies. Stay ahead of the curve with weekly articles from our team.</p>
+      <p class="text-lg text-white/70 max-w-2xl leading-relaxed">Expert insights on SEO, content marketing, branding, paid advertising, and AI-driven growth strategies. Stay ahead of the curve with weekly articles from our team.</p>
     </div>
 
     <!-- Category Pills -->
