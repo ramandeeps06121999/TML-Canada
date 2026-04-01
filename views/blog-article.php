@@ -179,12 +179,12 @@ if ($imageUrl !== '') {
 
 <!-- Main Content -->
 <section class="px-6 lg:px-12 py-16">
-  <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+  <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-4 gap-8">
 
     <!-- Article Content (Left) -->
-    <div class="lg:col-span-2">
+    <div class="lg:col-span-3">
       <!-- Table of Contents -->
-      <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08] sticky top-24">
+      <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08]">
         <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-wider">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
           Contents
@@ -232,7 +232,7 @@ if ($imageUrl !== '') {
 
     <!-- Sidebar (Right) -->
     <div class="lg:col-span-1">
-      <div class="sticky top-24 space-y-6">
+      <div class="space-y-6">
         <!-- Primary CTA -->
         <div class="p-8 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] shadow-lg shadow-[#ff4500]/20">
           <h3 class="text-lg font-bold text-white mb-3">Ready to Level Up?</h3>
