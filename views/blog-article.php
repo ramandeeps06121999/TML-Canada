@@ -194,10 +194,8 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 
 <!-- Main Content Layout -->
 <div class="px-6 lg:px-12 pb-20">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-    <!-- Main Article Content -->
-    <article class="lg:col-span-2">
+  <!-- Main Article Content -->
+  <article class="mb-20">
       <!-- Table of Contents -->
       <div class="mb-12 p-6 rounded-xl bg-[#080808] border border-white/[0.06]">
         <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
@@ -243,12 +241,12 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
           </div>
         </div>
       </div>
-    </article>
+  </article>
 
-    <!-- Sidebar -->
-    <aside class="lg:col-span-1">
-      <!-- CTA Cards -->
-      <div class="sticky top-32 space-y-5">
+  <!-- Sidebar -->
+  <aside class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- CTA Cards -->
+    <div class="space-y-5">
         <!-- Free Strategy Call CTA -->
         <div class="p-6 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white">
           <h3 class="text-sm font-semibold mb-2">Ready to Dominate?</h3>
@@ -294,8 +292,8 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
           </form>
         </div>
       </div>
-    </aside>
-  </div>
+    </div>
+  </aside>
 </div>
 
 <?php require TML_VIEWS . '/partials/footer.php'; ?>
