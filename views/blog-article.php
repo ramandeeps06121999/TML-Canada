@@ -89,75 +89,65 @@ if (count($relatedArticles) < 3) {
 ?>
 <style>
 .blog-content { font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content h2 { font-size: 1.75rem; font-weight: 700; margin: 3.5rem 0 1.5rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; letter-spacing: -0.5px; }
-.blog-content h2:first-child { margin-top: 0; }
-.blog-content h3 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
-.blog-content > p { margin: 1.25rem 0; line-height: 1.9; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; }
-.blog-content li { margin: 0.75rem 0; line-height: 1.9; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; }
-.blog-content ul, .blog-content ol { padding-left: 2rem; margin: 1.5rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content ul li { list-style: disc; }
-.blog-content ol li { list-style: decimal; }
-.blog-content a { color: #ff4500; text-decoration: none; border-bottom: 2px solid rgba(255,69,0,0.3); transition: all 0.3s; font-family: var(--font-inter), system-ui, sans-serif; font-weight: 500; }
+.blog-content h2 { font-size: 1.75rem; font-weight: 700; margin: 3rem 0 1.25rem; color: #fff; font-family: var(--font-syne); scroll-margin-top: 120px; }
+.blog-content h3 { font-size: 1.35rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #fff; font-family: var(--font-syne); scroll-margin-top: 120px; }
+.blog-content > p { margin: 1.5rem 0; line-height: 1.85; color: rgba(255,255,255,0.85); font-size: 1.05rem; }
+.blog-content ul, .blog-content ol { padding-left: 2rem; margin: 1.5rem 0; }
+.blog-content li { margin: 0.75rem 0; line-height: 1.85; color: rgba(255,255,255,0.85); }
+.blog-content a { color: #ff4500; font-weight: 500; text-decoration: none; border-bottom: 2px solid rgba(255,69,0,0.3); transition: all 0.3s; }
 .blog-content a:hover { border-bottom-color: #ff4500; color: #ff6a33; }
-.blog-content strong { font-weight: 700; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content em { font-style: italic; color: rgba(255,255,255,0.9); }
-.blog-content blockquote { border-left: 4px solid #ff4500; padding: 1.5rem 2rem; margin: 2.5rem 0; color: rgba(255,255,255,0.85); font-style: italic; background: rgba(255,69,0,0.08); border-radius: 0.5rem; font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; line-height: 1.8; }
-.blog-content blockquote p { margin: 0; }
-.blog-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem; overflow: hidden; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content th { background: rgba(255,69,0,0.12); border-bottom: 2px solid rgba(255,69,0,0.4); padding: 1rem 0.75rem; text-align: left; font-weight: 700; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 0.75rem; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content hr { margin: 3rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.1); }
-.highlight-box { background: rgba(255,69,0,0.08); border-left: 3px solid #ff4500; padding: 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; }
-.highlight-box p { margin: 0; }
-.toc-item { display: block; padding: 0.4rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 2px solid transparent; padding-left: 0.75rem; margin-left: 0; font-size: 0.875rem; line-height: 1.4; }
+.blog-content strong { font-weight: 700; color: #fff; }
+.blog-content blockquote { border-left: 4px solid #ff4500; padding: 2rem; margin: 2.5rem 0; color: rgba(255,255,255,0.9); font-style: italic; background: rgba(255,69,0,0.08); border-radius: 0.75rem; font-size: 1.1rem; line-height: 1.8; }
+.blog-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+.blog-content th { background: rgba(255,69,0,0.15); border-bottom: 2px solid #ff4500; padding: 1rem; text-align: left; font-weight: 700; color: #fff; }
+.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 1rem; color: rgba(255,255,255,0.8); }
+.toc-item { display: block; padding: 0.5rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 3px solid transparent; padding-left: 1rem; }
 .toc-item:hover { border-left-color: #ff4500; color: #ff6a33; }
-.toc-item.level-3 { padding-left: 1.75rem; margin-left: 0; }
+.toc-item.level-3 { padding-left: 2rem; }
 </style>
 
 <main class="bg-[#050505] text-white min-h-screen">
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <!-- Hero Section -->
-<section class="pt-28 md:pt-36 px-6 lg:px-12 pb-12 md:pb-16 relative overflow-hidden bg-gradient-to-b from-[#080808] to-[#050505]">
-  <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="relative z-10 mx-auto" style="width: 85%; max-width: 1400px;">
-    <!-- Breadcrumb -->
-    <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-8" aria-label="Breadcrumb">
-      <ol class="flex items-center gap-1.5 flex-wrap text-[11px]">
-        <li><a href="/" class="text-white/40 hover:text-white/90 transition-colors">Home</a></li>
-        <li class="text-white/20">/</li>
-        <li><a href="/blog" class="text-white/40 hover:text-white/90 transition-colors">Blog</a></li>
-        <li class="text-white/20">/</li>
-        <li><span class="text-[#ff4500] font-medium" aria-current="page"><?= tml_e($article['title']) ?></span></li>
-      </ol>
-    </nav>
+<section class="pt-24 md:pt-32 px-6 lg:px-12 pb-16 md:pb-20 bg-gradient-to-b from-[#080808] to-[#050505] border-b border-white/[0.05]">
+  <div class="mx-auto max-w-7xl">
+    <div class="max-w-4xl">
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 text-xs text-white/50">
+          <li><a href="/" class="hover:text-white/80 transition-colors">Home</a></li>
+          <li>/</li>
+          <li><a href="/blog" class="hover:text-white/80 transition-colors">Blog</a></li>
+          <li>/</li>
+          <li class="text-[#ff4500] font-medium"><?= tml_e($article['category']) ?></li>
+        </ol>
+      </nav>
 
-    <!-- Header Content -->
-    <div class="mb-8">
-      <span class="inline-block text-[10px] tracking-wider uppercase bg-[#ff4500]/15 text-[#ff4500] rounded-full px-4 py-1.5 font-semibold mb-6 border border-[#ff4500]/20"><?= tml_e($article['category']) ?></span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-tight mb-6"><?= tml_e($article['title']) ?></h1>
-      <p class="text-lg text-white/70 mb-8 max-w-2xl leading-relaxed"><?= tml_e($article['metaDescription']) ?></p>
+      <!-- Category Badge -->
+      <div class="mb-6">
+        <span class="inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ff4500]/20 text-[#ff4500] border border-[#ff4500]/40"><?= tml_e($article['category']) ?></span>
+      </div>
 
-      <!-- Author & Meta Info -->
-      <div class="flex flex-col sm:flex-row sm:items-center gap-6 py-6 border-t border-b border-white/10">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-lg">
-            <?= mb_substr($articleAuthor, 0, 1) ?>
-          </div>
-          <div>
-            <p class="font-medium text-white"><?= tml_e($articleAuthor) ?></p>
-            <p class="text-xs text-white/50">Founder & SEO Strategist</p>
-          </div>
+      <!-- Title -->
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight font-syne"><?= tml_e($article['title']) ?></h1>
+
+      <!-- Description -->
+      <p class="text-xl text-white/75 mb-8 max-w-2xl leading-relaxed"><?= tml_e($article['metaDescription']) ?></p>
+
+      <!-- Metadata -->
+      <div class="flex flex-wrap items-center gap-6 text-sm text-white/60">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span><?= tml_e($article['date']) ?></span>
         </div>
-        <div class="flex items-center gap-6 text-sm text-white/50 flex-wrap">
-          <span class="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <?= tml_e($article['date']) ?>
-          </span>
-          <span class="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <?= tml_e($article['readTime']) ?>
-          </span>
+        <div class="flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span><?= tml_e($article['readTime']) ?></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span><?= tml_e($articleAuthor) ?></span>
         </div>
       </div>
     </div>
@@ -166,7 +156,7 @@ if (count($relatedArticles) < 3) {
 
 <!-- Featured Image -->
 <?php
-$imageUrl   = $article['image'] ?? '';
+$imageUrl = $article['image'] ?? '';
 $imageValid = false;
 if ($imageUrl !== '') {
     if (str_starts_with($imageUrl, 'http://') || str_starts_with($imageUrl, 'https://')) {
@@ -178,157 +168,140 @@ if ($imageUrl !== '') {
 }
 ?>
 <?php if ($imageValid) : ?>
-<div class="px-6 lg:px-12 py-16">
-  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
-    <div class="rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
-      <img src="<?= tml_e($imageUrl) ?>" alt="<?= tml_e($article['title']) ?> — TML Agency Blog" class="w-full h-auto object-cover" width="1200" height="630" loading="lazy" />
+<section class="px-6 lg:px-12 py-12">
+  <div class="mx-auto max-w-7xl">
+    <div class="rounded-2xl overflow-hidden border border-white/[0.08] aspect-[2/1] md:aspect-[3/1]">
+      <img src="<?= tml_e($imageUrl) ?>" alt="<?= tml_e($article['title']) ?>" class="w-full h-full object-cover" loading="lazy" />
     </div>
   </div>
-</div>
-<?php elseif ($imageUrl !== '') : ?>
-<?php
-$colors = ['from-[#ff4500]/20 to-[#ff6a00]/10', 'from-[#ff4500]/15 to-purple-900/20', 'from-orange-900/20 to-[#050505]'];
-$gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
-?>
-<div class="px-6 lg:px-12 py-16">
-  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
-    <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br <?= $gradient ?> aspect-[1200/630] flex items-center justify-center">
-      <span class="text-white/10 text-6xl font-bold tracking-widest select-none uppercase"><?= tml_e(mb_substr($article['category'], 0, 3)) ?></span>
-    </div>
-  </div>
-</div>
+</section>
 <?php endif; ?>
 
-<!-- Main Content Layout -->
-<div class="px-6 lg:px-12 py-20">
-  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-      <!-- Main Article Content -->
-      <article class="lg:col-span-2">
-        <!-- Table of Contents -->
-        <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08] sticky top-32">
-          <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-            Table of Contents
-          </h3>
-          <div id="toc-list" class="space-y-1 text-xs"></div>
-        </div>
+<!-- Main Content -->
+<section class="px-6 lg:px-12 py-16">
+  <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+    <!-- Article Content (Left) -->
+    <div class="lg:col-span-2">
+      <!-- Table of Contents -->
+      <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08] sticky top-24">
+        <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-wider">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
+          Contents
+        </h3>
+        <div id="toc-list" class="space-y-1 text-xs"></div>
+      </div>
 
       <!-- Article Content -->
-      <div class="blog-content max-w-none">
+      <div class="blog-content">
         <?= $safeContent ?>
       </div>
 
-      <!-- Author Bio (at end of article) -->
-      <div class="mt-20 p-8 rounded-xl bg-white/[0.05] border border-white/[0.1] hover:border-white/[0.15] transition-all duration-300">
-        <div class="flex gap-4 items-start">
+      <!-- Author Card -->
+      <div class="mt-16 p-8 rounded-xl border border-white/[0.08] bg-white/[0.02]">
+        <div class="flex gap-5 items-start">
           <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
             <?= mb_substr($articleAuthor, 0, 1) ?>
           </div>
-          <div class="flex-1">
-            <h4 class="text-lg font-semibold text-white mb-2"><?= tml_e($articleAuthor) ?></h4>
-            <p class="text-sm text-white/75 mb-3 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven marketing solutions. Helping businesses dominate search rankings and grow their online presence.</p>
-            <a href="/about-us" class="inline-flex items-center gap-2 text-sm text-[#ff4500] font-semibold hover:text-[#ff6a33] transition-colors">
-              Learn More <span>→</span>
+          <div>
+            <h4 class="text-lg font-bold text-white mb-2"><?= tml_e($articleAuthor) ?></h4>
+            <p class="text-sm text-white/70 mb-4 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven solutions.</p>
+            <a href="/about-us" class="inline-flex items-center gap-2 text-sm font-bold text-[#ff4500] hover:text-[#ff6a33] transition-colors">
+              View Profile <span>→</span>
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Share Buttons (at end) -->
+      <!-- Share Section -->
       <div class="mt-12 pt-8 border-t border-white/[0.08]">
-        <p class="text-sm font-semibold text-white/70 mb-5">Share article</p>
-        <div class="flex items-center gap-3">
-          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on Twitter">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
+        <h4 class="text-sm font-bold text-white mb-5 uppercase tracking-wider">Share This Article</h4>
+        <div class="flex items-center gap-4">
+          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-white/6 border border-white/10 flex items-center justify-center hover:bg-[#ff4500]/15 hover:border-[#ff4500]/40 transition-all">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
           </a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on LinkedIn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="w-12 h-12 rounded-full bg-white/6 border border-white/10 flex items-center justify-center hover:bg-[#ff4500]/15 hover:border-[#ff4500]/40 transition-all">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share via Email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="w-12 h-12 rounded-full bg-white/6 border border-white/10 flex items-center justify-center hover:bg-[#ff4500]/15 hover:border-[#ff4500]/40 transition-all">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
       </div>
-      </article>
+    </div>
 
-      <!-- Sidebar (Right) -->
-      <aside class="lg:col-span-1">
-        <div class="sticky top-32 space-y-6">
-          <!-- Free Strategy Call CTA -->
-          <div class="p-7 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white shadow-xl">
-            <h3 class="text-base font-bold mb-3">Ready to Dominate?</h3>
-            <p class="text-sm text-white/90 mb-5 leading-relaxed">Get a personalized digital marketing strategy tailored to your business goals.</p>
-            <a href="/contact-us" class="block w-full text-center py-3 bg-white text-[#ff4500] font-bold rounded-lg hover:bg-white/95 transition-all duration-300 text-sm">Book Free Call</a>
-          </div>
+    <!-- Sidebar (Right) -->
+    <div class="lg:col-span-1">
+      <div class="sticky top-24 space-y-6">
+        <!-- Primary CTA -->
+        <div class="p-8 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] shadow-lg shadow-[#ff4500]/20">
+          <h3 class="text-lg font-bold text-white mb-3">Ready to Level Up?</h3>
+          <p class="text-sm text-white/90 mb-6 leading-relaxed">Get a personalized digital marketing strategy from our experts.</p>
+          <a href="/contact-us" class="block w-full text-center py-3 bg-white text-[#ff4500] font-bold rounded-lg hover:bg-white/95 transition-all text-sm">
+            Book Free Strategy Call
+          </a>
+        </div>
 
-          <!-- Free Audit CTA -->
-          <div class="p-7 rounded-xl bg-white/[0.06] border border-white/[0.12] hover:border-[#ff4500]/30 transition-all duration-300">
-            <h3 class="text-base font-bold text-white mb-3">Free SEO Audit</h3>
-            <p class="text-sm text-white/70 mb-5 leading-relaxed">Discover what's holding your site back.</p>
-            <a href="/services/seo" class="block w-full text-center py-3 bg-[#ff4500]/15 text-[#ff4500] font-bold rounded-lg hover:bg-[#ff4500]/25 transition-all duration-300 text-sm border border-[#ff4500]/30">Get Free Audit</a>
-          </div>
+        <!-- Secondary CTA -->
+        <div class="p-6 rounded-xl bg-white/[0.05] border border-white/[0.1] hover:border-[#ff4500]/40 transition-all">
+          <h4 class="font-bold text-white mb-2">🎯 Free SEO Audit</h4>
+          <p class="text-xs text-white/70 mb-4">Discover ranking opportunities for your site.</p>
+          <a href="/services/seo" class="text-sm font-bold text-[#ff4500] hover:text-[#ff6a33] transition-colors">
+            Get Audit →
+          </a>
+        </div>
 
-          <!-- Related Articles -->
-          <?php if (count($relatedArticles) > 0) : ?>
-          <div class="p-7 rounded-xl bg-white/[0.04] border border-white/[0.08]">
-            <h3 class="text-base font-bold text-white mb-5 flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Related
-            </h3>
-            <div class="space-y-3">
-              <?php foreach ($relatedArticles as $rSlug => $rArticle) : ?>
-              <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-4 rounded-lg bg-white/[0.05] border border-white/[0.08] hover:border-[#ff4500]/40 hover:bg-white/[0.08] transition-all duration-300">
-                <h4 class="text-sm font-semibold text-white/80 group-hover:text-[#ff4500] transition-colors line-clamp-2"><?= tml_e($rArticle['title']) ?></h4>
-                <p class="text-xs text-white/40 mt-2"><?= tml_e($rArticle['category']) ?></p>
-              </a>
-              <?php endforeach; ?>
-            </div>
-          </div>
-          <?php endif; ?>
-
-          <!-- Newsletter -->
-          <div class="p-7 rounded-xl bg-white/[0.04] border border-white/[0.08]">
-            <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Weekly Tips
-            </h3>
-            <p class="text-xs text-white/60 mb-4">Get marketing insights every week.</p>
-            <form action="/contact-us" method="POST" class="space-y-3">
-              <input type="email" placeholder="your@email.com" required class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-xs focus:border-[#ff4500]/50 focus:outline-none transition-all" />
-              <button type="submit" class="w-full py-2 bg-[#ff4500]/15 hover:bg-[#ff4500]/25 text-[#ff4500] font-bold rounded-lg text-xs transition-all border border-[#ff4500]/30">Subscribe</button>
-            </form>
+        <!-- Related Articles -->
+        <?php if (count($relatedArticles) > 0) : ?>
+        <div class="p-6 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+          <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">📚 Related Reading</h4>
+          <div class="space-y-3">
+            <?php foreach ($relatedArticles as $rSlug => $rArticle) : ?>
+            <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-3 rounded-lg bg-white/[0.03] border border-white/[0.06] hover:border-[#ff4500]/30 hover:bg-white/[0.07] transition-all">
+              <h5 class="text-xs font-bold text-white/80 group-hover:text-[#ff4500] line-clamp-2 transition-colors"><?= tml_e($rArticle['title']) ?></h5>
+              <p class="text-[10px] text-white/40 mt-1"><?= tml_e($rArticle['category']) ?></p>
+            </a>
+            <?php endforeach; ?>
           </div>
         </div>
-      </aside>
+        <?php endif; ?>
+
+        <!-- Newsletter -->
+        <div class="p-6 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+          <h4 class="font-bold text-white mb-3 text-sm uppercase tracking-wider">💡 Weekly Insights</h4>
+          <p class="text-xs text-white/60 mb-4">Expert marketing tips delivered weekly.</p>
+          <form action="/contact-us" method="POST" class="space-y-2">
+            <input type="email" placeholder="your@email.com" required class="w-full px-3 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-xs focus:border-[#ff4500]/50 focus:outline-none transition-all" />
+            <button type="submit" class="w-full py-2.5 bg-[#ff4500]/20 hover:bg-[#ff4500]/30 text-[#ff4500] font-bold rounded-lg text-xs transition-all border border-[#ff4500]/40">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <?php require TML_VIEWS . '/partials/footer.php'; ?>
 <?php require TML_VIEWS . '/partials/foot.php'; ?>
 
 <script>
-// Generate table of contents from h2 and h3 headings
 document.addEventListener('DOMContentLoaded', function() {
   const articleContent = document.querySelector('.blog-content');
   if (!articleContent) return;
 
   const headings = Array.from(articleContent.querySelectorAll('h2, h3'));
   const tocList = document.getElementById('toc-list');
-
   if (headings.length === 0 || !tocList) return;
 
   headings.forEach((heading, index) => {
     const id = 'heading-' + index;
     heading.id = id;
-
     const level = heading.tagName === 'H2' ? 2 : 3;
     const link = document.createElement('a');
     link.href = '#' + id;
     link.textContent = heading.textContent;
     link.className = 'toc-item' + (level === 3 ? ' level-3' : '');
-
     tocList.appendChild(link);
   });
 });

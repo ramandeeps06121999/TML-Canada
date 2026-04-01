@@ -33,44 +33,80 @@ $featured = reset($blogs);
 $blogsRest = array_slice($blogs, 1);
 ?>
 <style>
-.blog-card { transition: all 0.4s cubic-bezier(.23,1,.32,1); }
-.blog-card:hover { transform: translateY(-4px); }
-.category-filter { transition: all 0.3s; }
-.category-filter.active { background: #ff4500; color: white; border-color: #ff4500; }
+.blog-card {
+  transition: all 0.4s cubic-bezier(.23,1,.32,1);
+}
+.blog-card:hover {
+  transform: translateY(-6px);
+  border-color: #ff4500;
+  background-color: rgba(255, 69, 0, 0.05);
+}
+.category-filter {
+  transition: all 0.3s cubic-bezier(.23,1,.32,1);
+  position: relative;
+}
+.category-filter.active {
+  background: #ff4500;
+  color: white;
+  border-color: #ff4500;
+}
+.category-filter:hover {
+  border-color: #ff4500;
+}
+.scroll-reveal {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+.scroll-delay-1 { animation-delay: 0.1s; }
+.scroll-delay-2 { animation-delay: 0.2s; }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
 
 <main class="bg-[#050505] text-white min-h-screen">
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <!-- Hero Section -->
-<section class="pt-28 md:pt-36 px-6 lg:px-12 pb-12 md:pb-16 relative overflow-hidden bg-gradient-to-b from-[#080808] to-[#050505]">
-  <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-[#ff4500]/3 rounded-full blur-3xl pointer-events-none"></div>
+<section class="pt-24 md:pt-32 px-6 lg:px-12 pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-b from-[#080808] via-[#050505] to-[#050505]">
+  <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff4500]/8 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 -right-40 w-80 h-80 bg-[#ff4500]/4 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-[#ff4500]/3 rounded-full blur-3xl pointer-events-none opacity-50"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto">
+  <div class="relative z-10 mx-auto max-w-7xl">
     <!-- Breadcrumb -->
-    <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-10" aria-label="Breadcrumb">
-      <ol class="flex items-center gap-1.5 text-[11px]">
-        <li><a href="/" class="text-white/40 hover:text-white/90 transition-colors">Home</a></li>
-        <li class="text-white/20">/</li>
+    <nav class="border-l-2 border-[#ff4500]/40 pl-4 mb-12 scroll-reveal" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-xs text-white/60">
+        <li><a href="/" class="hover:text-[#ff4500] transition-colors">Home</a></li>
+        <li>/</li>
         <li><span class="text-[#ff4500] font-medium">Blog</span></li>
       </ol>
     </nav>
 
     <!-- Header -->
-    <div class="mb-12 scroll-reveal">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
-      <p class="text-lg text-white/70 max-w-2xl leading-relaxed">Expert insights on SEO, content marketing, branding, paid advertising, and AI-driven growth strategies. Stay ahead of the curve with weekly articles from our team.</p>
+    <div class="mb-14 scroll-reveal">
+      <div class="mb-6">
+        <span class="inline-block text-xs tracking-[0.25em] uppercase text-[#ff4500] font-semibold">Expert Insights</span>
+      </div>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
+      <p class="text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed">Cutting-edge strategies, industry trends, and proven tactics from our expert team. Discover how to elevate your brand with SEO, content, paid media, and AI-driven marketing.</p>
     </div>
 
     <!-- Category Pills -->
-    <div class="flex flex-wrap gap-2 scroll-reveal scroll-delay-1">
-      <button onclick="filterCategory('all')" class="category-filter active px-4 py-2 rounded-full text-sm font-medium bg-[#ff4500] text-white border border-[#ff4500] cursor-pointer hover:bg-[#ff6a33]">
+    <div class="flex flex-wrap gap-3 scroll-reveal scroll-delay-1">
+      <button onclick="filterCategory('all')" class="category-filter active px-5 py-2.5 rounded-full text-sm font-medium bg-[#ff4500] text-white border border-[#ff4500] cursor-pointer transition-all hover:bg-[#ff6a33] hover:border-[#ff6a33]">
         All Articles (<?= count($blogs) ?>)
       </button>
       <?php foreach ($categories as $cat => $count) : ?>
-      <button onclick="filterCategory('<?= tml_e($cat) ?>')" class="category-filter px-4 py-2 rounded-full text-sm font-medium bg-transparent text-white/70 border border-white/20 cursor-pointer hover:border-[#ff4500]/50 hover:text-[#ff4500]">
-        <?= tml_e($cat) ?> (<?= $count ?>)
+      <button onclick="filterCategory('<?= tml_e($cat) ?>')" class="category-filter px-5 py-2.5 rounded-full text-sm font-medium bg-white/[0.03] text-white/80 border border-white/15 cursor-pointer transition-all hover:bg-white/[0.06] hover:border-[#ff4500]/60 hover:text-[#ff4500]">
+        <?= tml_e($cat) ?> <span class="text-white/50">(<?= $count ?>)</span>
       </button>
       <?php endforeach; ?>
     </div>
@@ -78,36 +114,44 @@ $blogsRest = array_slice($blogs, 1);
 </section>
 
 <!-- Featured Article -->
-<section class="px-6 lg:px-12 py-16 md:py-20">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-xs text-white/40 tracking-[0.25em] uppercase mb-6 scroll-reveal">Featured Article</p>
+<section class="px-6 lg:px-12 py-16 md:py-24 relative">
+  <div class="mx-auto max-w-7xl">
+    <div class="mb-8 scroll-reveal">
+      <span class="text-xs tracking-[0.25em] uppercase text-white/50 font-semibold">Featured Article</span>
+    </div>
+
     <a href="/blog/<?= tml_e($featuredSlug) ?>" class="group block scroll-reveal">
-      <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br from-[#080808] to-[#0a0a0a] hover:border-[#ff4500]/30 transition-all duration-500 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12">
+      <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br from-[#080808] via-[#0a0a0a] to-[#050505] hover:border-[#ff4500]/40 transition-all duration-500 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-14">
         <!-- Content -->
         <div class="md:col-span-2 flex flex-col justify-center">
-          <span class="inline-block w-fit text-[10px] tracking-wider uppercase bg-[#ff4500]/15 text-[#ff4500] rounded-full px-4 py-1.5 font-semibold mb-6 border border-[#ff4500]/20 group-hover:bg-[#ff4500]/25 transition-colors">Featured — <?= tml_e($featured['category']) ?></span>
-          <h2 class="text-3xl md:text-4xl font-medium text-white mb-4 group-hover:text-[#ff4500] transition-colors leading-tight"><?= tml_e($featured['title']) ?></h2>
-          <p class="text-base text-white/70 mb-6 leading-relaxed"><?= tml_e($featured['metaDescription']) ?></p>
-          <div class="flex items-center gap-6 text-sm text-white/50">
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <?= tml_e($featured['date']) ?>
+          <div class="mb-6">
+            <span class="inline-block text-[10px] tracking-wider uppercase bg-[#ff4500]/15 text-[#ff4500] rounded-full px-4 py-1.5 font-semibold border border-[#ff4500]/30 group-hover:bg-[#ff4500]/25 group-hover:border-[#ff4500]/50 transition-all">Featured — <?= tml_e($featured['category']) ?></span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-5 group-hover:text-[#ff4500] transition-colors leading-tight"><?= tml_e($featured['title']) ?></h2>
+
+          <p class="text-base md:text-lg text-white/70 mb-8 leading-relaxed line-clamp-3"><?= tml_e($featured['metaDescription']) ?></p>
+
+          <div class="flex flex-wrap items-center gap-6 text-sm text-white/60">
+            <span class="flex items-center gap-2.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#ff4500]"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span><?= tml_e($featured['date']) ?></span>
             </span>
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              <?= tml_e($featured['readTime']) ?>
+            <span class="flex items-center gap-2.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#ff4500]"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span><?= tml_e($featured['readTime']) ?></span>
             </span>
-            <span class="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Read Article
+            <span class="flex items-center gap-2.5 text-[#ff4500] font-medium group-hover:translate-x-1 transition-transform">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <span>Read Article</span>
             </span>
           </div>
         </div>
 
         <!-- Visual -->
         <div class="md:col-span-1 flex items-center justify-center">
-          <div class="w-full aspect-square rounded-xl bg-gradient-to-br from-[#ff4500]/20 to-[#ff6a33]/10 flex items-center justify-center border border-white/[0.06]">
-            <span class="text-6xl font-bold text-white/5 text-center select-none"><?= tml_e(mb_substr($featured['category'], 0, 2)) ?></span>
+          <div class="w-full aspect-square rounded-xl bg-gradient-to-br from-[#ff4500]/20 to-[#ff6a33]/10 flex items-center justify-center border border-white/[0.06] group-hover:border-[#ff4500]/30 group-hover:from-[#ff4500]/30 group-hover:to-[#ff6a33]/20 transition-all">
+            <span class="text-6xl font-bold text-white/8 text-center select-none"><?= tml_e(mb_substr($featured['category'], 0, 2)) ?></span>
           </div>
         </div>
       </div>
@@ -116,31 +160,37 @@ $blogsRest = array_slice($blogs, 1);
 </section>
 
 <!-- Articles Grid -->
-<section class="px-6 lg:px-12 pb-20">
-  <div class="max-w-7xl mx-auto">
-    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<section class="px-6 lg:px-12 py-16 md:py-20">
+  <div class="mx-auto max-w-7xl">
+    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
       <?php foreach ($blogsRest as $slug => $article) : ?>
-      <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block p-6 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#ff4500]/30 transition-all duration-500" data-category="<?= tml_e($article['category']) ?>">
+      <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block rounded-xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.06] hover:border-[#ff4500]/40 flex flex-col" data-category="<?= tml_e($article['category']) ?>">
         <!-- Image/Placeholder -->
-        <div class="rounded-lg bg-gradient-to-br from-[#ff4500]/15 to-[#ff6a33]/5 aspect-video flex items-center justify-center mb-5 group-hover:from-[#ff4500]/25 group-hover:to-[#ff6a33]/15 transition-all">
-          <span class="text-5xl font-bold text-white/5 select-none"><?= tml_e(mb_substr($article['category'], 0, 2)) ?></span>
+        <div class="rounded-t-xl bg-gradient-to-br from-[#ff4500]/18 via-[#ff6a33]/10 to-[#050505]/20 aspect-video flex items-center justify-center overflow-hidden group-hover:from-[#ff4500]/28 group-hover:via-[#ff6a33]/20 transition-all">
+          <span class="text-5xl font-bold text-white/8 select-none"><?= tml_e(mb_substr($article['category'], 0, 2)) ?></span>
         </div>
 
         <!-- Content -->
-        <span class="inline-block text-[10px] tracking-wider uppercase bg-[#ff4500]/15 text-[#ff4500] rounded-full px-3 py-1 font-semibold mb-3 border border-[#ff4500]/20 group-hover:bg-[#ff4500]/25 transition-colors"><?= tml_e($article['category']) ?></span>
-        <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors leading-tight line-clamp-2"><?= tml_e($article['title']) ?></h3>
-        <p class="text-sm text-white/60 mb-4 line-clamp-2 leading-relaxed"><?= tml_e($article['metaDescription']) ?></p>
+        <div class="p-6 flex flex-col flex-grow">
+          <div class="mb-4">
+            <span class="inline-block text-[9px] tracking-widest uppercase bg-[#ff4500]/15 text-[#ff4500] rounded-full px-3 py-1 font-semibold border border-[#ff4500]/30 group-hover:bg-[#ff4500]/25 group-hover:border-[#ff4500]/50 transition-all"><?= tml_e($article['category']) ?></span>
+          </div>
 
-        <!-- Meta -->
-        <div class="flex items-center gap-4 text-xs text-white/40">
-          <span class="flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <?= tml_e($article['date']) ?>
-          </span>
-          <span class="flex items-center gap-1.5">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <?= tml_e($article['readTime']) ?>
-          </span>
+          <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors leading-tight line-clamp-2"><?= tml_e($article['title']) ?></h3>
+
+          <p class="text-sm text-white/60 mb-5 line-clamp-2 leading-relaxed flex-grow"><?= tml_e($article['metaDescription']) ?></p>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between text-xs text-white/50 border-t border-white/[0.06] pt-4">
+            <span class="flex items-center gap-2">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/40"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span><?= tml_e($article['date']) ?></span>
+            </span>
+            <span class="flex items-center gap-2">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/40"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span><?= tml_e($article['readTime']) ?></span>
+            </span>
+          </div>
         </div>
       </a>
       <?php endforeach; ?>
@@ -149,13 +199,28 @@ $blogsRest = array_slice($blogs, 1);
 </section>
 
 <!-- CTA Section -->
-<section class="px-6 lg:px-12 py-16 md:py-20 bg-gradient-to-r from-[#ff4500]/10 to-transparent border-t border-white/[0.06]">
-  <div class="text-center scroll-reveal max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-medium text-white mb-4">Want Personalized Strategy?</h2>
-    <p class="text-lg text-white/70 mb-8">Get expert guidance tailored to your business goals. Our team is ready to help.</p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/contact-us" class="glow-button px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Book Free Strategy Call</a>
-      <a href="/blog" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">Browse More Articles</a>
+<section class="px-6 lg:px-12 py-20 md:py-28 relative overflow-hidden border-t border-white/[0.06]">
+  <div class="absolute -top-40 left-1/4 w-80 h-80 bg-[#ff4500]/8 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-32 right-1/4 w-72 h-72 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative z-10 mx-auto max-w-4xl text-center">
+    <div class="scroll-reveal">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 leading-tight">
+        Ready to Elevate Your<br>
+        <span class="text-[#ff4500]">Digital Presence?</span>
+      </h2>
+      <p class="text-lg md:text-xl text-white/70 mb-10 leading-relaxed">
+        Get expert marketing strategy tailored to your business. Our team combines data-driven insights with creative excellence to deliver results.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 scroll-reveal scroll-delay-1">
+      <a href="/contact-us" class="px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm transition-all hover:bg-[#ff6a33] hover:shadow-lg hover:shadow-[#ff4500]/30 active:scale-95">
+        Book Free Strategy Call
+      </a>
+      <a href="/blog" class="px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-sm transition-all hover:border-[#ff4500]/60 hover:bg-white/[0.05] hover:text-white active:scale-95">
+        Explore More Articles
+      </a>
     </div>
   </div>
 </section>
