@@ -47,7 +47,7 @@ $blogsRest = array_slice($blogs, 1);
   <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-[#ff4500]/3 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="relative z-10 max-w-7xl mx-auto">
+  <div class="relative z-10">
     <!-- Breadcrumb -->
     <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-10" aria-label="Breadcrumb">
       <ol class="flex items-center gap-1.5 text-[11px]">
@@ -79,7 +79,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- Featured Article -->
 <section class="px-6 lg:px-12 py-16 md:py-20">
-  <div class="max-w-7xl mx-auto">
+  <div>
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase mb-6 scroll-reveal">Featured Article</p>
     <a href="/blog/<?= tml_e($featuredSlug) ?>" class="group block scroll-reveal">
       <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br from-[#080808] to-[#0a0a0a] hover:border-[#ff4500]/30 transition-all duration-500 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12">
@@ -117,7 +117,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- Articles Grid -->
 <section class="px-6 lg:px-12 pb-20">
-  <div class="max-w-7xl mx-auto">
+  <div>
     <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <?php foreach ($blogsRest as $slug => $article) : ?>
       <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block p-6 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] hover:border-[#ff4500]/30 transition-all duration-500" data-category="<?= tml_e($article['category']) ?>">
@@ -150,7 +150,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- CTA Section -->
 <section class="px-6 lg:px-12 py-16 md:py-20 bg-gradient-to-r from-[#ff4500]/10 to-transparent border-t border-white/[0.06]">
-  <div class="max-w-3xl mx-auto text-center scroll-reveal">
+  <div class="text-center scroll-reveal max-w-3xl mx-auto">
     <h2 class="text-3xl md:text-4xl font-medium text-white mb-4">Want Personalized Strategy?</h2>
     <p class="text-lg text-white/70 mb-8">Get expert guidance tailored to your business goals. Our team is ready to help.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">

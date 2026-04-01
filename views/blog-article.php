@@ -113,7 +113,7 @@ if (count($relatedArticles) < 3) {
 <!-- Hero Section -->
 <section class="pt-28 md:pt-36 px-6 lg:px-12 pb-12 md:pb-16 relative overflow-hidden bg-gradient-to-b from-[#080808] to-[#050505]">
   <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="relative z-10 max-w-4xl mx-auto">
+  <div class="relative z-10">
     <!-- Breadcrumb -->
     <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-8" aria-label="Breadcrumb">
       <ol class="flex items-center gap-1.5 flex-wrap text-[11px]">
@@ -172,7 +172,7 @@ if ($imageUrl !== '') {
 ?>
 <?php if ($imageValid) : ?>
 <div class="px-6 lg:px-12 pb-16">
-  <div class="max-w-4xl mx-auto">
+  <div>
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
       <img src="<?= tml_e($imageUrl) ?>" alt="<?= tml_e($article['title']) ?> — TML Agency Blog" class="w-full h-auto object-cover" width="1200" height="630" loading="lazy" />
     </div>
@@ -184,7 +184,7 @@ $colors = ['from-[#ff4500]/20 to-[#ff6a00]/10', 'from-[#ff4500]/15 to-purple-900
 $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 ?>
 <div class="px-6 lg:px-12 pb-16">
-  <div class="max-w-4xl mx-auto">
+  <div>
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br <?= $gradient ?> aspect-[1200/630] flex items-center justify-center">
       <span class="text-white/10 text-6xl font-bold tracking-widest select-none uppercase"><?= tml_e(mb_substr($article['category'], 0, 3)) ?></span>
     </div>
@@ -194,7 +194,7 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 
 <!-- Main Content Layout -->
 <div class="px-6 lg:px-12 pb-20">
-  <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
     <!-- Main Article Content -->
     <article class="lg:col-span-2">
