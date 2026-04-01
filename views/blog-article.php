@@ -89,18 +89,24 @@ if (count($relatedArticles) < 3) {
 ?>
 <style>
 .blog-content { font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1.25rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; background: linear-gradient(135deg, #ff4500 0%, #ff6a33 100%); padding: 0.75rem 1rem; border-radius: 0.5rem; display: inline-block; }
-.blog-content h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; border-left: 4px solid #ff4500; padding-left: 1rem; }
-.blog-content > p, .blog-content li { margin: 1rem 0; line-height: 1.8; color: rgba(255,255,255,0.85); font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content ul, .blog-content ol { padding-left: 1.75rem; margin: 1.25rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content li { margin: 0.5rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content a { color: #ff4500; text-decoration: none; border-bottom: 1px solid rgba(255,69,0,0.4); transition: all 0.3s; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content h2 { font-size: 1.75rem; font-weight: 700; margin: 3.5rem 0 1.5rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; letter-spacing: -0.5px; }
+.blog-content h2:first-child { margin-top: 0; }
+.blog-content h3 { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
+.blog-content > p { margin: 1.25rem 0; line-height: 1.9; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; }
+.blog-content li { margin: 0.75rem 0; line-height: 1.9; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; }
+.blog-content ul, .blog-content ol { padding-left: 2rem; margin: 1.5rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content ul li { list-style: disc; }
+.blog-content ol li { list-style: decimal; }
+.blog-content a { color: #ff4500; text-decoration: none; border-bottom: 2px solid rgba(255,69,0,0.3); transition: all 0.3s; font-family: var(--font-inter), system-ui, sans-serif; font-weight: 500; }
 .blog-content a:hover { border-bottom-color: #ff4500; color: #ff6a33; }
-.blog-content strong { font-weight: 600; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content blockquote { border-left: 3px solid #ff4500; padding-left: 1.5rem; margin: 2rem 0; color: rgba(255,255,255,0.8); font-style: italic; background: rgba(255,69,0,0.05); padding: 1.25rem 1.5rem; border-radius: 0.5rem; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem; overflow: hidden; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content th { background: rgba(255,69,0,0.1); border-bottom: 2px solid rgba(255,69,0,0.3); padding: 0.75rem; text-align: left; font-weight: 600; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content strong { font-weight: 700; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content em { font-style: italic; color: rgba(255,255,255,0.9); }
+.blog-content blockquote { border-left: 4px solid #ff4500; padding: 1.5rem 2rem; margin: 2.5rem 0; color: rgba(255,255,255,0.85); font-style: italic; background: rgba(255,69,0,0.08); border-radius: 0.5rem; font-family: var(--font-inter), system-ui, sans-serif; font-size: 1.05rem; line-height: 1.8; }
+.blog-content blockquote p { margin: 0; }
+.blog-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem; overflow: hidden; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content th { background: rgba(255,69,0,0.12); border-bottom: 2px solid rgba(255,69,0,0.4); padding: 1rem 0.75rem; text-align: left; font-weight: 700; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 0.75rem; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content hr { margin: 3rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.1); }
 .highlight-box { background: rgba(255,69,0,0.08); border-left: 3px solid #ff4500; padding: 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; }
 .highlight-box p { margin: 0; }
 .toc-item { display: block; padding: 0.5rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 2px solid transparent; padding-left: 1rem; margin-left: 0; }
@@ -172,7 +178,7 @@ if ($imageUrl !== '') {
 }
 ?>
 <?php if ($imageValid) : ?>
-<div class="px-6 lg:px-12 pb-16">
+<div class="px-6 lg:px-12 py-20">
   <div class="max-w-4xl mx-auto">
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
       <img src="<?= tml_e($imageUrl) ?>" alt="<?= tml_e($article['title']) ?> — TML Agency Blog" class="w-full h-auto object-cover" width="1200" height="630" loading="lazy" />
@@ -184,7 +190,7 @@ if ($imageUrl !== '') {
 $colors = ['from-[#ff4500]/20 to-[#ff6a00]/10', 'from-[#ff4500]/15 to-purple-900/20', 'from-orange-900/20 to-[#050505]'];
 $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 ?>
-<div class="px-6 lg:px-12 pb-16">
+<div class="px-6 lg:px-12 py-20">
   <div class="max-w-4xl mx-auto">
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br <?= $gradient ?> aspect-[1200/630] flex items-center justify-center">
       <span class="text-white/10 text-6xl font-bold tracking-widest select-none uppercase"><?= tml_e(mb_substr($article['category'], 0, 3)) ?></span>
@@ -194,49 +200,49 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 <?php endif; ?>
 
 <!-- Main Content Layout -->
-<div class="px-6 lg:px-12 pb-20">
+<div class="px-6 lg:px-12 py-20">
   <div class="max-w-4xl mx-auto">
     <!-- Main Article Content -->
     <article class="mb-20">
       <!-- Table of Contents -->
-      <div class="mb-12 p-6 rounded-xl bg-[#080808] border border-white/[0.06]">
-        <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <div class="mb-16 p-8 rounded-xl bg-white/[0.02] border border-white/[0.08]">
+        <h3 class="text-base font-semibold text-white mb-5 flex items-center gap-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
           Table of Contents
         </h3>
-        <div id="toc-list" class="space-y-1 text-sm"></div>
+        <div id="toc-list" class="space-y-2 text-sm"></div>
       </div>
 
       <!-- Article Content -->
-      <div class="blog-content max-w-none text-base leading-relaxed">
+      <div class="blog-content max-w-none">
         <?= $safeContent ?>
       </div>
 
       <!-- Share Buttons -->
-      <div class="mt-12 pt-8 border-t border-white/[0.06]">
-        <p class="text-sm text-white/50 mb-4">Share this article</p>
-        <div class="flex items-center gap-3">
-          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-[#ff4500]/30 hover:bg-[#ff4500]/10 transition-all duration-300">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 hover:text-[#ff4500]"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
+      <div class="mt-16 pt-10 border-t border-white/[0.08]">
+        <p class="text-base font-semibold text-white/80 mb-6">Share this article</p>
+        <div class="flex items-center gap-4">
+          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 group-hover:text-[#ff4500]"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
           </a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-[#ff4500]/30 hover:bg-[#ff4500]/10 transition-all duration-300">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 hover:text-[#ff4500]"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 group-hover:text-[#ff4500]"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-[#ff4500]/30 hover:bg-[#ff4500]/10 transition-all duration-300">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70 hover:text-[#ff4500]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share via Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70 group-hover:text-[#ff4500]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
       </div>
 
       <!-- Author Bio -->
-      <div class="mt-12 p-8 rounded-xl bg-gradient-to-r from-[#ff4500]/10 to-[#080808] border border-[#ff4500]/20">
-        <div class="flex gap-4 items-start">
-          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+      <div class="mt-20 p-10 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.12] transition-all duration-300">
+        <div class="flex gap-5 items-start">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-3xl flex-shrink-0">
             <?= mb_substr($articleAuthor, 0, 1) ?>
           </div>
-          <div>
-            <h4 class="text-lg font-semibold text-white mb-2"><?= tml_e($articleAuthor) ?></h4>
-            <p class="text-sm text-white/70 mb-4">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven marketing solutions. Helping businesses dominate search rankings and grow their online presence.</p>
+          <div class="flex-1">
+            <h4 class="text-xl font-semibold text-white mb-3"><?= tml_e($articleAuthor) ?></h4>
+            <p class="text-base text-white/75 mb-5 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven marketing solutions. Helping businesses dominate search rankings and grow their online presence.</p>
             <a href="/about-us" class="inline-flex items-center gap-2 text-sm text-[#ff4500] font-semibold hover:text-[#ff6a33] transition-colors">
               Learn More About <?= tml_e($articleAuthor) ?> <span>→</span>
             </a>
@@ -247,37 +253,37 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
   </div>
 
   <!-- Sidebar -->
-  <div class="mt-20">
+  <div class="mt-24 pt-20 border-t border-white/[0.08]">
     <div class="max-w-4xl mx-auto">
-      <aside class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <aside class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <!-- CTA Cards -->
-    <div class="space-y-5">
+    <div class="space-y-6">
         <!-- Free Strategy Call CTA -->
-        <div class="p-6 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white">
-          <h3 class="text-sm font-semibold mb-2">Ready to Dominate?</h3>
-          <p class="text-xs text-white/90 mb-4 leading-relaxed">Get a personalized digital marketing strategy tailored to your business goals.</p>
+        <div class="p-8 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white">
+          <h3 class="text-base font-semibold mb-3">Ready to Dominate?</h3>
+          <p class="text-sm text-white/90 mb-6 leading-relaxed">Get a personalized digital marketing strategy tailored to your business goals.</p>
           <a href="/contact-us" class="inline-block w-full text-center py-3 bg-white text-[#ff4500] font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 text-sm">Book Free Strategy Call</a>
         </div>
 
         <!-- Free Audit CTA -->
-        <div class="p-6 rounded-xl bg-white/5 border border-white/[0.1] hover:border-[#ff4500]/30 transition-all duration-300">
-          <h3 class="text-sm font-semibold text-white mb-2">Free SEO Audit</h3>
-          <p class="text-xs text-white/70 mb-4 leading-relaxed">Discover what's holding your site back and unlock ranking potential.</p>
-          <a href="/services/seo" class="inline-block w-full text-center py-2.5 bg-[#ff4500]/10 text-[#ff4500] font-semibold rounded-lg hover:bg-[#ff4500]/20 transition-all duration-300 text-sm border border-[#ff4500]/20">Get Free Audit</a>
+        <div class="p-8 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-[#ff4500]/30 transition-all duration-300">
+          <h3 class="text-base font-semibold text-white mb-3">Free SEO Audit</h3>
+          <p class="text-sm text-white/70 mb-6 leading-relaxed">Discover what's holding your site back and unlock ranking potential.</p>
+          <a href="/services/seo" class="inline-block w-full text-center py-3 bg-[#ff4500]/10 text-[#ff4500] font-semibold rounded-lg hover:bg-[#ff4500]/20 transition-all duration-300 text-sm border border-[#ff4500]/20">Get Free Audit</a>
         </div>
 
         <!-- Related Articles -->
         <?php if (count($relatedArticles) > 0) : ?>
-        <div class="mt-8 pt-8 border-t border-white/[0.06]">
-          <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="pt-6 border-t border-white/[0.08]">
+          <h3 class="text-base font-semibold text-white mb-5 flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             Related Articles
           </h3>
-          <div class="space-y-3">
+          <div class="space-y-4">
             <?php foreach ($relatedArticles as $rSlug => $rArticle) : ?>
-            <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-3 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-[#ff4500]/30 hover:bg-white/[0.05] transition-all duration-300">
-              <h4 class="text-xs font-semibold text-white/80 group-hover:text-[#ff4500] transition-colors line-clamp-2 mb-1"><?= tml_e($rArticle['title']) ?></h4>
-              <p class="text-[10px] text-white/40"><?= tml_e($rArticle['category']) ?></p>
+            <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-4 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:border-[#ff4500]/30 hover:bg-white/[0.06] transition-all duration-300">
+              <h4 class="text-sm font-semibold text-white/85 group-hover:text-[#ff4500] transition-colors line-clamp-2 mb-2"><?= tml_e($rArticle['title']) ?></h4>
+              <p class="text-xs text-white/45"><?= tml_e($rArticle['category']) ?></p>
             </a>
             <?php endforeach; ?>
           </div>
@@ -285,15 +291,15 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
         <?php endif; ?>
 
         <!-- Newsletter -->
-        <div class="mt-8 pt-8 border-t border-white/[0.06]">
-          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="pt-6 border-t border-white/[0.08]">
+          <h3 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             Weekly Insights
           </h3>
-          <p class="text-xs text-white/60 mb-3">Get marketing tips & SEO insights in your inbox every week.</p>
-          <form action="/contact-us" method="POST" class="space-y-2">
-            <input type="email" placeholder="your@email.com" required class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-xs focus:border-[#ff4500]/50 focus:outline-none transition-all" />
-            <button type="submit" class="w-full py-2 bg-[#ff4500]/10 hover:bg-[#ff4500]/20 text-[#ff4500] font-semibold rounded-lg text-xs transition-all duration-300 border border-[#ff4500]/20">Subscribe</button>
+          <p class="text-sm text-white/60 mb-4">Get marketing tips & SEO insights in your inbox every week.</p>
+          <form action="/contact-us" method="POST" class="space-y-3">
+            <input type="email" placeholder="your@email.com" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-sm focus:border-[#ff4500]/50 focus:outline-none transition-all" />
+            <button type="submit" class="w-full py-3 bg-[#ff4500]/15 hover:bg-[#ff4500]/25 text-[#ff4500] font-semibold rounded-lg text-sm transition-all duration-300 border border-[#ff4500]/30">Subscribe</button>
           </form>
         </div>
       </div>
