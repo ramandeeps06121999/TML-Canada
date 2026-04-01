@@ -89,8 +89,8 @@ if (count($relatedArticles) < 3) {
 ?>
 <style>
 .blog-content { font-family: var(--font-inter), system-ui, sans-serif; }
-.blog-content h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1.25rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
-.blog-content h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
+.blog-content h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1.25rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; background: linear-gradient(135deg, #ff4500 0%, #ff6a33 100%); padding: 0.75rem 1rem; border-radius: 0.5rem; display: inline-block; }
+.blog-content h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; border-left: 4px solid #ff4500; padding-left: 1rem; }
 .blog-content > p, .blog-content li { margin: 1rem 0; line-height: 1.8; color: rgba(255,255,255,0.85); font-family: var(--font-inter), system-ui, sans-serif; }
 .blog-content ul, .blog-content ol { padding-left: 1.75rem; margin: 1.25rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
 .blog-content li { margin: 0.5rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
