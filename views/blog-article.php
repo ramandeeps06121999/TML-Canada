@@ -88,18 +88,19 @@ if (count($relatedArticles) < 3) {
 }
 ?>
 <style>
+.blog-content { font-family: var(--font-inter), system-ui, sans-serif; }
 .blog-content h2 { font-size: 1.5rem; font-weight: 600; margin: 2.5rem 0 1.25rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
 .blog-content h3 { font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: #fff; font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; scroll-margin-top: 120px; }
-.blog-content > p, .blog-content li { margin: 1rem 0; line-height: 1.8; color: rgba(255,255,255,0.85); }
-.blog-content ul, .blog-content ol { padding-left: 1.75rem; margin: 1.25rem 0; }
-.blog-content li { margin: 0.5rem 0; }
-.blog-content a { color: #ff4500; text-decoration: none; border-bottom: 1px solid rgba(255,69,0,0.4); transition: all 0.3s; }
+.blog-content > p, .blog-content li { margin: 1rem 0; line-height: 1.8; color: rgba(255,255,255,0.85); font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content ul, .blog-content ol { padding-left: 1.75rem; margin: 1.25rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content li { margin: 0.5rem 0; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content a { color: #ff4500; text-decoration: none; border-bottom: 1px solid rgba(255,69,0,0.4); transition: all 0.3s; font-family: var(--font-inter), system-ui, sans-serif; }
 .blog-content a:hover { border-bottom-color: #ff4500; color: #ff6a33; }
-.blog-content strong { font-weight: 600; color: #fff; }
-.blog-content blockquote { border-left: 3px solid #ff4500; padding-left: 1.5rem; margin: 2rem 0; color: rgba(255,255,255,0.8); font-style: italic; background: rgba(255,69,0,0.05); padding: 1.25rem 1.5rem; border-radius: 0.5rem; }
-.blog-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem; overflow: hidden; }
-.blog-content th { background: rgba(255,69,0,0.1); border-bottom: 2px solid rgba(255,69,0,0.3); padding: 0.75rem; text-align: left; font-weight: 600; color: #fff; }
-.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; color: rgba(255,255,255,0.8); }
+.blog-content strong { font-weight: 600; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content blockquote { border-left: 3px solid #ff4500; padding-left: 1.5rem; margin: 2rem 0; color: rgba(255,255,255,0.8); font-style: italic; background: rgba(255,69,0,0.05); padding: 1.25rem 1.5rem; border-radius: 0.5rem; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 0.5rem; overflow: hidden; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content th { background: rgba(255,69,0,0.1); border-bottom: 2px solid rgba(255,69,0,0.3); padding: 0.75rem; text-align: left; font-weight: 600; color: #fff; font-family: var(--font-inter), system-ui, sans-serif; }
+.blog-content td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0.75rem; color: rgba(255,255,255,0.8); font-family: var(--font-inter), system-ui, sans-serif; }
 .highlight-box { background: rgba(255,69,0,0.08); border-left: 3px solid #ff4500; padding: 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; }
 .highlight-box p { margin: 0; }
 .toc-item { display: block; padding: 0.5rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 2px solid transparent; padding-left: 1rem; margin-left: 0; }
