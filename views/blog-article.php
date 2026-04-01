@@ -109,9 +109,9 @@ if (count($relatedArticles) < 3) {
 .blog-content hr { margin: 3rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.1); }
 .highlight-box { background: rgba(255,69,0,0.08); border-left: 3px solid #ff4500; padding: 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; }
 .highlight-box p { margin: 0; }
-.toc-item { display: block; padding: 0.5rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 2px solid transparent; padding-left: 1rem; margin-left: 0; }
+.toc-item { display: block; padding: 0.4rem 0; color: #ff4500; text-decoration: none; transition: all 0.3s; border-left: 2px solid transparent; padding-left: 0.75rem; margin-left: 0; font-size: 0.875rem; line-height: 1.4; }
 .toc-item:hover { border-left-color: #ff4500; color: #ff6a33; }
-.toc-item.level-3 { padding-left: 2rem; margin-left: 0; }
+.toc-item.level-3 { padding-left: 1.75rem; margin-left: 0; }
 </style>
 
 <main class="bg-[#050505] text-white min-h-screen">
@@ -120,7 +120,7 @@ if (count($relatedArticles) < 3) {
 <!-- Hero Section -->
 <section class="pt-28 md:pt-36 px-6 lg:px-12 pb-12 md:pb-16 relative overflow-hidden bg-gradient-to-b from-[#080808] to-[#050505]">
   <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#ff4500]/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="relative z-10 max-w-4xl mx-auto">
+  <div class="relative z-10 mx-auto" style="width: 85%; max-width: 1400px;">
     <!-- Breadcrumb -->
     <nav class="border-l-2 border-[#ff4500]/30 pl-4 mb-8" aria-label="Breadcrumb">
       <ol class="flex items-center gap-1.5 flex-wrap text-[11px]">
@@ -178,8 +178,8 @@ if ($imageUrl !== '') {
 }
 ?>
 <?php if ($imageValid) : ?>
-<div class="px-6 lg:px-12 py-20">
-  <div class="max-w-4xl mx-auto">
+<div class="px-6 lg:px-12 py-16">
+  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl">
       <img src="<?= tml_e($imageUrl) ?>" alt="<?= tml_e($article['title']) ?> — TML Agency Blog" class="w-full h-auto object-cover" width="1200" height="630" loading="lazy" />
     </div>
@@ -190,8 +190,8 @@ if ($imageUrl !== '') {
 $colors = ['from-[#ff4500]/20 to-[#ff6a00]/10', 'from-[#ff4500]/15 to-purple-900/20', 'from-orange-900/20 to-[#050505]'];
 $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 ?>
-<div class="px-6 lg:px-12 py-20">
-  <div class="max-w-4xl mx-auto">
+<div class="px-6 lg:px-12 py-16">
+  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
     <div class="rounded-2xl overflow-hidden border border-white/[0.08] bg-gradient-to-br <?= $gradient ?> aspect-[1200/630] flex items-center justify-center">
       <span class="text-white/10 text-6xl font-bold tracking-widest select-none uppercase"><?= tml_e(mb_substr($article['category'], 0, 3)) ?></span>
     </div>
@@ -201,109 +201,105 @@ $gradient = $colors[abs(crc32($imageUrl)) % count($colors)];
 
 <!-- Main Content Layout -->
 <div class="px-6 lg:px-12 py-20">
-  <div class="max-w-4xl mx-auto">
-    <!-- Main Article Content -->
-    <article class="mb-20">
-      <!-- Table of Contents -->
-      <div class="mb-16 p-8 rounded-xl bg-white/[0.02] border border-white/[0.08]">
-        <h3 class="text-base font-semibold text-white mb-5 flex items-center gap-3">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          Table of Contents
-        </h3>
-        <div id="toc-list" class="space-y-2 text-sm"></div>
-      </div>
+  <div class="mx-auto" style="width: 85%; max-width: 1400px;">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <!-- Main Article Content -->
+      <article class="lg:col-span-2">
+        <!-- Table of Contents -->
+        <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08] sticky top-32">
+          <h3 class="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            Table of Contents
+          </h3>
+          <div id="toc-list" class="space-y-1 text-xs"></div>
+        </div>
 
       <!-- Article Content -->
       <div class="blog-content max-w-none">
         <?= $safeContent ?>
       </div>
 
-      <!-- Share Buttons -->
-      <div class="mt-16 pt-10 border-t border-white/[0.08]">
-        <p class="text-base font-semibold text-white/80 mb-6">Share this article</p>
-        <div class="flex items-center gap-4">
-          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on Twitter">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 group-hover:text-[#ff4500]"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-white/70 group-hover:text-[#ff4500]"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="flex items-center justify-center w-12 h-12 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share via Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70 group-hover:text-[#ff4500]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Author Bio -->
-      <div class="mt-20 p-10 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-white/[0.12] transition-all duration-300">
-        <div class="flex gap-5 items-start">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-3xl flex-shrink-0">
+      <!-- Author Bio (at end of article) -->
+      <div class="mt-20 p-8 rounded-xl bg-white/[0.05] border border-white/[0.1] hover:border-white/[0.15] transition-all duration-300">
+        <div class="flex gap-4 items-start">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
             <?= mb_substr($articleAuthor, 0, 1) ?>
           </div>
           <div class="flex-1">
-            <h4 class="text-xl font-semibold text-white mb-3"><?= tml_e($articleAuthor) ?></h4>
-            <p class="text-base text-white/75 mb-5 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven marketing solutions. Helping businesses dominate search rankings and grow their online presence.</p>
+            <h4 class="text-lg font-semibold text-white mb-2"><?= tml_e($articleAuthor) ?></h4>
+            <p class="text-sm text-white/75 mb-3 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven marketing solutions. Helping businesses dominate search rankings and grow their online presence.</p>
             <a href="/about-us" class="inline-flex items-center gap-2 text-sm text-[#ff4500] font-semibold hover:text-[#ff6a33] transition-colors">
-              Learn More About <?= tml_e($articleAuthor) ?> <span>→</span>
+              Learn More <span>→</span>
             </a>
           </div>
         </div>
       </div>
-    </article>
-  </div>
 
-  <!-- Sidebar -->
-  <div class="mt-24 pt-20 border-t border-white/[0.08]">
-    <div class="max-w-4xl mx-auto">
-      <aside class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <!-- CTA Cards -->
-    <div class="space-y-6">
-        <!-- Free Strategy Call CTA -->
-        <div class="p-8 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white">
-          <h3 class="text-base font-semibold mb-3">Ready to Dominate?</h3>
-          <p class="text-sm text-white/90 mb-6 leading-relaxed">Get a personalized digital marketing strategy tailored to your business goals.</p>
-          <a href="/contact-us" class="inline-block w-full text-center py-3 bg-white text-[#ff4500] font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 text-sm">Book Free Strategy Call</a>
-        </div>
-
-        <!-- Free Audit CTA -->
-        <div class="p-8 rounded-xl bg-white/[0.04] border border-white/[0.08] hover:border-[#ff4500]/30 transition-all duration-300">
-          <h3 class="text-base font-semibold text-white mb-3">Free SEO Audit</h3>
-          <p class="text-sm text-white/70 mb-6 leading-relaxed">Discover what's holding your site back and unlock ranking potential.</p>
-          <a href="/services/seo" class="inline-block w-full text-center py-3 bg-[#ff4500]/10 text-[#ff4500] font-semibold rounded-lg hover:bg-[#ff4500]/20 transition-all duration-300 text-sm border border-[#ff4500]/20">Get Free Audit</a>
-        </div>
-
-        <!-- Related Articles -->
-        <?php if (count($relatedArticles) > 0) : ?>
-        <div class="pt-6 border-t border-white/[0.08]">
-          <h3 class="text-base font-semibold text-white mb-5 flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Related Articles
-          </h3>
-          <div class="space-y-4">
-            <?php foreach ($relatedArticles as $rSlug => $rArticle) : ?>
-            <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-4 rounded-lg bg-white/[0.03] border border-white/[0.08] hover:border-[#ff4500]/30 hover:bg-white/[0.06] transition-all duration-300">
-              <h4 class="text-sm font-semibold text-white/85 group-hover:text-[#ff4500] transition-colors line-clamp-2 mb-2"><?= tml_e($rArticle['title']) ?></h4>
-              <p class="text-xs text-white/45"><?= tml_e($rArticle['category']) ?></p>
-            </a>
-            <?php endforeach; ?>
-          </div>
-        </div>
-        <?php endif; ?>
-
-        <!-- Newsletter -->
-        <div class="pt-6 border-t border-white/[0.08]">
-          <h3 class="text-base font-semibold text-white mb-4 flex items-center gap-2">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Weekly Insights
-          </h3>
-          <p class="text-sm text-white/60 mb-4">Get marketing tips & SEO insights in your inbox every week.</p>
-          <form action="/contact-us" method="POST" class="space-y-3">
-            <input type="email" placeholder="your@email.com" required class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-sm focus:border-[#ff4500]/50 focus:outline-none transition-all" />
-            <button type="submit" class="w-full py-3 bg-[#ff4500]/15 hover:bg-[#ff4500]/25 text-[#ff4500] font-semibold rounded-lg text-sm transition-all duration-300 border border-[#ff4500]/30">Subscribe</button>
-          </form>
+      <!-- Share Buttons (at end) -->
+      <div class="mt-12 pt-8 border-t border-white/[0.08]">
+        <p class="text-sm font-semibold text-white/70 mb-5">Share article</p>
+        <div class="flex items-center gap-3">
+          <a href="https://twitter.com/intent/tweet?text=<?= urlencode($article['title']) ?>&url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on Twitter">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7a10.6 10.6 0 01-9 5M21 3a6 6 0 01-6 6M3 21a6 6 0 016-6"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?= urlencode(TML_SITE_URL . '/blog/' . $slug) ?>" target="_blank" rel="noopener" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share on LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/70"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:?subject=<?= urlencode($article['title']) ?>&body=<?= urlencode($article['metaDescription'] . '\n\n' . TML_SITE_URL . '/blog/' . $slug) ?>" class="flex items-center justify-center w-11 h-11 rounded-full bg-white/6 border border-white/12 hover:border-[#ff4500]/40 hover:bg-[#ff4500]/12 transition-all duration-300" title="Share via Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
         </div>
       </div>
-    </div>
+      </article>
+
+      <!-- Sidebar (Right) -->
+      <aside class="lg:col-span-1">
+        <div class="sticky top-32 space-y-6">
+          <!-- Free Strategy Call CTA -->
+          <div class="p-7 rounded-xl bg-gradient-to-br from-[#ff4500] to-[#ff6a33] text-white shadow-xl">
+            <h3 class="text-base font-bold mb-3">Ready to Dominate?</h3>
+            <p class="text-sm text-white/90 mb-5 leading-relaxed">Get a personalized digital marketing strategy tailored to your business goals.</p>
+            <a href="/contact-us" class="block w-full text-center py-3 bg-white text-[#ff4500] font-bold rounded-lg hover:bg-white/95 transition-all duration-300 text-sm">Book Free Call</a>
+          </div>
+
+          <!-- Free Audit CTA -->
+          <div class="p-7 rounded-xl bg-white/[0.06] border border-white/[0.12] hover:border-[#ff4500]/30 transition-all duration-300">
+            <h3 class="text-base font-bold text-white mb-3">Free SEO Audit</h3>
+            <p class="text-sm text-white/70 mb-5 leading-relaxed">Discover what's holding your site back.</p>
+            <a href="/services/seo" class="block w-full text-center py-3 bg-[#ff4500]/15 text-[#ff4500] font-bold rounded-lg hover:bg-[#ff4500]/25 transition-all duration-300 text-sm border border-[#ff4500]/30">Get Free Audit</a>
+          </div>
+
+          <!-- Related Articles -->
+          <?php if (count($relatedArticles) > 0) : ?>
+          <div class="p-7 rounded-xl bg-white/[0.04] border border-white/[0.08]">
+            <h3 class="text-base font-bold text-white mb-5 flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Related
+            </h3>
+            <div class="space-y-3">
+              <?php foreach ($relatedArticles as $rSlug => $rArticle) : ?>
+              <a href="/blog/<?= tml_e($rSlug) ?>" class="group block p-4 rounded-lg bg-white/[0.05] border border-white/[0.08] hover:border-[#ff4500]/40 hover:bg-white/[0.08] transition-all duration-300">
+                <h4 class="text-sm font-semibold text-white/80 group-hover:text-[#ff4500] transition-colors line-clamp-2"><?= tml_e($rArticle['title']) ?></h4>
+                <p class="text-xs text-white/40 mt-2"><?= tml_e($rArticle['category']) ?></p>
+              </a>
+              <?php endforeach; ?>
+            </div>
+          </div>
+          <?php endif; ?>
+
+          <!-- Newsletter -->
+          <div class="p-7 rounded-xl bg-white/[0.04] border border-white/[0.08]">
+            <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Weekly Tips
+            </h3>
+            <p class="text-xs text-white/60 mb-4">Get marketing insights every week.</p>
+            <form action="/contact-us" method="POST" class="space-y-3">
+              <input type="email" placeholder="your@email.com" required class="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 text-xs focus:border-[#ff4500]/50 focus:outline-none transition-all" />
+              <button type="submit" class="w-full py-2 bg-[#ff4500]/15 hover:bg-[#ff4500]/25 text-[#ff4500] font-bold rounded-lg text-xs transition-all border border-[#ff4500]/30">Subscribe</button>
+            </form>
+          </div>
+        </div>
       </aside>
     </div>
   </div>
