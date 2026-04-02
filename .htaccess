@@ -2,12 +2,16 @@
     RewriteEngine On
     RewriteBase /
 
-    # Don't rewrite actual files or directories
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
+    # Don't rewrite actual files
+    RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # Route all other requests to router.php
+    # For directories: If they have index.php, don't rewrite. Otherwise, route to router.php
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteCond %{REQUEST_FILENAME}/index.php -f
+    RewriteRule ^ - [L]
+
+    # Route all other requests (including directories without index.php) to router.php
     RewriteRule ^(.*)$ router.php [L,QSA]
 </IfModule>
 
