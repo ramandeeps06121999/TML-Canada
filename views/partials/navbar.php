@@ -35,7 +35,7 @@
     <div class="bg-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.5)] text-left">
       <div class="flex items-center justify-between mb-5">
         <p class="text-[10px] text-white/30 tracking-[0.2em] uppercase font-medium">Our Services</p>
-        <a href="/services" class="text-[11px] text-[#ff4500] font-medium hover:underline">View All 36 Services &rarr;</a>
+        <a href="/services" class="text-[11px] text-[#ff4500] font-medium hover:underline">View All 39 Services &rarr;</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;font-size:12px">
         <!-- Column 1: Branding & Development -->
@@ -51,6 +51,9 @@
           <a href="/services/wordpress-development" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/[0.04] text-white/70 hover:text-white transition-colors"><span class="w-1 h-1 shrink-0 rounded-full bg-[#ff4500]/40"></span>WordPress</a>
           <a href="/services/shopify-development" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/[0.04] text-white/70 hover:text-white transition-colors"><span class="w-1 h-1 shrink-0 rounded-full bg-[#ff4500]/40"></span>Shopify <span class="text-[9px] text-[#ff4500]/60 font-medium ml-auto shrink-0">NEW</span></a>
           <a href="/services/mobile-app-development" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/[0.04] text-white/70 hover:text-white transition-colors"><span class="w-1 h-1 shrink-0 rounded-full bg-[#ff4500]/40"></span>Mobile Apps <span class="text-[9px] text-[#ff4500]/60 font-medium ml-auto shrink-0">NEW</span></a>
+          <a href="/services/custom-software-development" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/[0.04] text-white/70 hover:text-white transition-colors"><span class="w-1 h-1 shrink-0 rounded-full bg-[#ff4500]/40"></span>Custom Software <span class="text-[9px] text-[#ff4500]/60 font-medium ml-auto shrink-0">NEW</span></a>
+          <p class="text-[10px] text-white/40 uppercase mb-3 mt-5" style="letter-spacing:0.1em;font-weight:600">AI &amp; Technology</p>
+          <a href="/services/ai-automation" class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/[0.04] text-white/70 hover:text-white transition-colors"><span class="w-1 h-1 shrink-0 rounded-full bg-[#ff4500]/40"></span>AI Automation <span class="text-[9px] text-[#ff4500]/60 font-medium ml-auto shrink-0">NEW</span></a>
         </div>
         <!-- Column 2: SEO & Paid -->
         <div>
@@ -88,7 +91,7 @@
         </div>
       </div>
       <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-        <p class="text-[11px] text-white/30">36 services across branding, marketing &amp; development.</p>
+        <p class="text-[11px] text-white/30">39 services across branding, marketing, development &amp; AI technology.</p>
         <a href="/contact-us" class="text-[11px] px-4 py-2 rounded-full bg-[#ff4500]/10 border border-[#ff4500]/20 text-[#ff4500] font-semibold hover:bg-[#ff4500]/20 transition-colors">Free Consultation</a>
       </div>
     </div>
@@ -131,12 +134,14 @@
     <summary class="flex items-center justify-between py-3 text-sm text-white/70 hover:text-white cursor-pointer list-none">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg></summary>
     <div class="pl-4 pb-2 space-y-1">
       <a href="/services/branding" class="block py-2 text-xs text-white/40 hover:text-white">Branding</a>
+      <a href="/services/ai-automation" class="block py-2 text-xs text-white/40 hover:text-white">🆕 AI Automation</a>
+      <a href="/services/custom-software-development" class="block py-2 text-xs text-white/40 hover:text-white">🆕 Custom Software</a>
+      <a href="/services/mobile-app-development" class="block py-2 text-xs text-white/40 hover:text-white">🆕 Mobile Apps</a>
       <a href="/services/google-ads" class="block py-2 text-xs text-white/40 hover:text-white">Google Ads</a>
       <a href="/services/seo" class="block py-2 text-xs text-white/40 hover:text-white">SEO</a>
       <a href="/services/website-development" class="block py-2 text-xs text-white/40 hover:text-white">Web Development</a>
       <a href="/services/social-media" class="block py-2 text-xs text-white/40 hover:text-white">Social Media</a>
-      <a href="/services/lead-generation" class="block py-2 text-xs text-white/40 hover:text-white">Lead Generation</a>
-      <a href="/services" class="block py-2 text-xs text-[#ff4500] font-medium">View All &rarr;</a>
+      <a href="/services" class="block py-2 text-xs text-[#ff4500] font-medium">View All 39 →</a>
     </div>
   </details>
   <details class="group">
