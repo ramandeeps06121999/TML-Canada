@@ -1,1 +1,192 @@
-{"seo":["how-much-does-seo-cost","how-to-do-keyword-research","local-seo-guide-small-business"],"google-ads":["how-much-do-google-ads-cost","google-ads-vs-seo-which-is-better","facebook-ads-vs-google-ads"],"website-development":["how-much-does-website-cost","website-loading-slow-how-to-fix","wordpress-vs-nextjs-which-is-better"],"social-media":["social-media-marketing-cost","social-media-marketing-strategy-2025","seo-vs-social-media-marketing"],"branding":["branding-cost-small-business","branding-mistakes-small-business","top-10-branding-agencies-chandigarh"],"ai-influencer-management":["what-are-ai-influencers-how-to-create-earn-money","ai-in-digital-marketing-2025","social-media-marketing-strategy-2025"],"lead-generation":["lead-generation-cost","not-getting-leads-from-website","how-to-choose-digital-marketing-agency"],"music-release":["best-way-to-promote-song-online-free","how-to-make-song-trending-on-spotify","how-to-make-song-viral-on-instagram"],"video-editing":["video-editing-cost","social-media-marketing-strategy-2025","how-to-choose-digital-marketing-agency"],"branding-packaging":["branding-cost-small-business","branding-mistakes-small-business","how-to-choose-digital-marketing-agency"],"graphic-design":["branding-cost-small-business","signs-you-need-website-redesign","branding-mistakes-small-business"],"link-building":["how-much-does-seo-cost","how-to-do-keyword-research","ecommerce-seo-guide-2025"],"meta-ads":["facebook-ads-vs-google-ads","how-to-run-facebook-ads-beginners","social-media-marketing-cost"],"content-writing":["how-to-write-blog-posts-that-rank","content-marketing-roi-guide","how-to-do-keyword-research"],"gmb-listing":["how-to-create-google-business-profile","how-to-get-more-google-reviews","local-seo-guide-small-business"],"technical-seo":["website-loading-slow-how-to-fix","website-not-mobile-friendly-fix","website-not-showing-on-google-fix"],"content-marketing":["content-marketing-roi-guide","how-to-write-blog-posts-that-rank","seo-vs-social-media-marketing"],"email-marketing":["how-to-build-email-list","content-marketing-roi-guide","digital-marketing-cost-india"],"influencer-marketing":["what-are-ai-influencers-how-to-create-earn-money","social-media-marketing-strategy-2025","social-media-marketing-cost"],"ppc-management":["how-much-do-google-ads-cost","google-ads-not-working","google-ads-vs-seo-which-is-better"],"online-reputation-management":["how-to-get-more-google-reviews","how-to-create-google-business-profile","branding-mistakes-small-business"],"conversion-rate-optimization":["not-getting-leads-from-website","website-not-getting-traffic","signs-you-need-website-redesign"],"ecommerce-marketing":["ecommerce-seo-guide-2025","shopify-vs-woocommerce","organic-vs-paid-marketing"],"shopify-development":["shopify-vs-woocommerce","ecommerce-seo-guide-2025","how-much-does-website-cost"],"tiktok-ads":["social-media-marketing-strategy-2025","facebook-ads-vs-google-ads","social-media-marketing-cost"],"web-design":["how-much-does-website-cost","signs-you-need-website-redesign","website-loading-slow-how-to-fix"],"wordpress-development":["wordpress-vs-nextjs-which-is-better","how-much-does-website-cost","website-loading-slow-how-to-fix"],"linkedin-ads":["facebook-ads-vs-google-ads","how-much-do-google-ads-cost","digital-marketing-cost-india"],"marketing-automation":["content-marketing-roi-guide","how-to-build-email-list","how-to-choose-digital-marketing-agency"],"amazon-marketing":["ecommerce-seo-guide-2025","shopify-vs-woocommerce","organic-vs-paid-marketing"],"geo-optimization":["how-to-do-keyword-research","website-not-showing-on-google-fix","local-seo-guide-small-business"],"ux-ui-design":["signs-you-need-website-redesign","how-much-does-website-cost","not-getting-leads-from-website"],"mobile-app-development":["how-much-does-website-cost","website-not-mobile-friendly-fix","how-to-choose-digital-marketing-agency"],"video-production":["video-editing-cost","social-media-marketing-strategy-2025","best-way-to-promote-song-online-free"],"microsoft-ads":["how-much-do-google-ads-cost","google-ads-vs-seo-which-is-better","facebook-ads-vs-google-ads"],"local-seo":["local-seo-guide-small-business","how-to-create-google-business-profile","how-to-get-more-google-reviews"]}
+{
+  "seo": [
+    "how-much-does-seo-cost",
+    "how-to-do-keyword-research",
+    "local-seo-guide-small-business"
+  ],
+  "google-ads": [
+    "how-much-do-google-ads-cost",
+    "google-ads-vs-seo-which-is-better",
+    "facebook-ads-vs-google-ads"
+  ],
+  "website-development": [
+    "how-much-does-website-cost",
+    "website-loading-slow-how-to-fix",
+    "wordpress-vs-nextjs-which-is-better"
+  ],
+  "social-media": [
+    "social-media-marketing-cost",
+    "social-media-marketing-strategy-2025",
+    "seo-vs-social-media-marketing"
+  ],
+  "branding": [
+    "branding-cost-small-business",
+    "branding-mistakes-small-business",
+    "top-10-branding-agencies-chandigarh"
+  ],
+  "ai-influencer-management": [
+    "what-are-ai-influencers-how-to-create-earn-money",
+    "ai-in-digital-marketing-2025",
+    "social-media-marketing-strategy-2025"
+  ],
+  "lead-generation": [
+    "lead-generation-cost",
+    "not-getting-leads-from-website",
+    "how-to-choose-digital-marketing-agency"
+  ],
+  "music-release": [
+    "best-way-to-promote-song-online-free",
+    "how-to-make-song-trending-on-spotify",
+    "how-to-make-song-viral-on-instagram"
+  ],
+  "video-editing": [
+    "video-editing-cost",
+    "social-media-marketing-strategy-2025",
+    "how-to-choose-digital-marketing-agency"
+  ],
+  "branding-packaging": [
+    "branding-cost-small-business",
+    "branding-mistakes-small-business",
+    "how-to-choose-digital-marketing-agency"
+  ],
+  "graphic-design": [
+    "branding-cost-small-business",
+    "signs-you-need-website-redesign",
+    "branding-mistakes-small-business"
+  ],
+  "link-building": [
+    "how-much-does-seo-cost",
+    "how-to-do-keyword-research",
+    "ecommerce-seo-guide-2025"
+  ],
+  "meta-ads": [
+    "facebook-ads-vs-google-ads",
+    "how-to-run-facebook-ads-beginners",
+    "social-media-marketing-cost"
+  ],
+  "content-writing": [
+    "how-to-write-blog-posts-that-rank",
+    "content-marketing-roi-guide",
+    "how-to-do-keyword-research"
+  ],
+  "gmb-listing": [
+    "how-to-create-google-business-profile",
+    "how-to-get-more-google-reviews",
+    "local-seo-guide-small-business"
+  ],
+  "technical-seo": [
+    "website-loading-slow-how-to-fix",
+    "website-not-mobile-friendly-fix",
+    "website-not-showing-on-google-fix"
+  ],
+  "content-marketing": [
+    "content-marketing-roi-guide",
+    "how-to-write-blog-posts-that-rank",
+    "seo-vs-social-media-marketing"
+  ],
+  "email-marketing": [
+    "how-to-build-email-list",
+    "content-marketing-roi-guide",
+    "digital-marketing-cost-india"
+  ],
+  "influencer-marketing": [
+    "what-are-ai-influencers-how-to-create-earn-money",
+    "social-media-marketing-strategy-2025",
+    "social-media-marketing-cost"
+  ],
+  "ppc-management": [
+    "how-much-do-google-ads-cost",
+    "google-ads-not-working",
+    "google-ads-vs-seo-which-is-better"
+  ],
+  "online-reputation-management": [
+    "how-to-get-more-google-reviews",
+    "how-to-create-google-business-profile",
+    "branding-mistakes-small-business"
+  ],
+  "conversion-rate-optimization": [
+    "not-getting-leads-from-website",
+    "website-not-getting-traffic",
+    "signs-you-need-website-redesign"
+  ],
+  "ecommerce-marketing": [
+    "ecommerce-seo-guide-2025",
+    "shopify-vs-woocommerce",
+    "organic-vs-paid-marketing"
+  ],
+  "shopify-development": [
+    "shopify-vs-woocommerce",
+    "ecommerce-seo-guide-2025",
+    "how-much-does-website-cost"
+  ],
+  "tiktok-ads": [
+    "social-media-marketing-strategy-2025",
+    "facebook-ads-vs-google-ads",
+    "social-media-marketing-cost"
+  ],
+  "web-design": [
+    "how-much-does-website-cost",
+    "signs-you-need-website-redesign",
+    "website-loading-slow-how-to-fix"
+  ],
+  "wordpress-development": [
+    "wordpress-vs-nextjs-which-is-better",
+    "how-much-does-website-cost",
+    "website-loading-slow-how-to-fix"
+  ],
+  "linkedin-ads": [
+    "facebook-ads-vs-google-ads",
+    "how-much-do-google-ads-cost",
+    "digital-marketing-cost-india"
+  ],
+  "marketing-automation": [
+    "content-marketing-roi-guide",
+    "how-to-build-email-list",
+    "how-to-choose-digital-marketing-agency"
+  ],
+  "amazon-marketing": [
+    "ecommerce-seo-guide-2025",
+    "shopify-vs-woocommerce",
+    "organic-vs-paid-marketing"
+  ],
+  "geo-optimization": [
+    "how-to-do-keyword-research",
+    "website-not-showing-on-google-fix",
+    "local-seo-guide-small-business"
+  ],
+  "ux-ui-design": [
+    "signs-you-need-website-redesign",
+    "how-much-does-website-cost",
+    "not-getting-leads-from-website"
+  ],
+  "mobile-app-development": [
+    "ecommerce-marketing-strategy",
+    "digital-marketing-for-restaurants-guide",
+    "digital-marketing-guide-small-business-2025"
+  ],
+  "video-production": [
+    "video-editing-cost",
+    "social-media-marketing-strategy-2025",
+    "best-way-to-promote-song-online-free"
+  ],
+  "microsoft-ads": [
+    "how-much-do-google-ads-cost",
+    "google-ads-vs-seo-which-is-better",
+    "facebook-ads-vs-google-ads"
+  ],
+  "local-seo": [
+    "local-seo-guide-small-business",
+    "how-to-create-google-business-profile",
+    "how-to-get-more-google-reviews"
+  ],
+  "ai-automation": [
+    "ai-in-digital-marketing-2025",
+    "what-are-ai-influencers-how-to-create-earn-money",
+    "digital-marketing-trends-canada-2026"
+  ],
+  "custom-software-development": [
+    "digital-marketing-guide-small-business-2025",
+    "digital-marketing-trends-canada-2026",
+    "how-much-does-digital-marketing-cost-in-canada"
+  ]
+}

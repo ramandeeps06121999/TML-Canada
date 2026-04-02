@@ -178,5 +178,65 @@
         "description": "Advanced strategies, multichannel marketing, marketplace optimization, and dedicated team"
       }
     ]
+  },
+  "ai-automation": {
+    "currency": "CAD",
+    "tiers": [
+      {
+        "name": "Starter Chatbot",
+        "price": "2999",
+        "description": "Simple chatbot for customer support, FAQ automation, or lead qualification. 6–8 week delivery."
+      },
+      {
+        "name": "Custom AI System",
+        "price": "7499",
+        "description": "Custom model training, integration with your systems, and process automation. 12–16 week delivery."
+      },
+      {
+        "name": "Enterprise AI",
+        "price": "19999",
+        "description": "Multi-model systems, predictive analytics, advanced integrations, and ongoing optimization. 16–24 week delivery."
+      }
+    ]
+  },
+  "custom-software-development": {
+    "currency": "CAD",
+    "tiers": [
+      {
+        "name": "Starter Web App",
+        "price": "9999",
+        "description": "Small web application with basic features, 5–8 users. 8–10 weeks."
+      },
+      {
+        "name": "Growth Application",
+        "price": "24999",
+        "description": "Medium complexity app with integrations, 50+ users. 12–16 weeks."
+      },
+      {
+        "name": "Enterprise System",
+        "price": "74999",
+        "description": "Complex enterprise solution, custom architecture, 500+ users. 16–24 weeks."
+      }
+    ]
+  },
+  "mobile-app-development": {
+    "currency": "CAD",
+    "tiers": [
+      {
+        "name": "iOS or Android",
+        "price": "7999",
+        "description": "Single platform native app with core features. 10–12 weeks."
+      },
+      {
+        "name": "iOS + Android Native",
+        "price": "19999",
+        "description": "Native apps for both platforms with identical features. 14–18 weeks."
+      },
+      {
+        "name": "Cross-Platform Premium",
+        "price": "12999",
+        "description": "React Native cross-platform app for iOS and Android. 12–14 weeks, 30% cost savings."
+      }
+    ]
   }
 }
