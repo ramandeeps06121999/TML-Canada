@@ -53,10 +53,43 @@ $webSiteSchema = [
         'query-input' => 'required name=search_term_string',
     ],
 ];
+$localBusinessSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'ProfessionalService',
+    'name' => 'TML Agency - Calgary Digital Marketing',
+    'description' => 'Digital marketing agency serving Calgary and Alberta. SEO, Google Ads, branding, web design for local businesses.',
+    'url' => TML_SITE_URL,
+    'telephone' => '+14036048692',
+    'email' => 'hello@townmedialabs.ca',
+    'areaServed' => [
+        ['@type' => 'City', 'name' => 'Calgary'],
+        ['@type' => 'City', 'name' => 'Edmonton'],
+        ['@type' => 'City', 'name' => 'Vancouver'],
+        ['@type' => 'State', 'name' => 'Alberta'],
+    ],
+    'address' => [
+        '@type' => 'PostalAddress',
+        'streetAddress' => '11930 104 St NW',
+        'addressLocality' => 'Edmonton',
+        'addressRegion' => 'Alberta',
+        'postalCode' => 'T5G 2K1',
+        'addressCountry' => 'CA',
+    ],
+    'priceRange' => '$$',
+    'knowsAbout' => [
+        'Digital Marketing',
+        'SEO Services',
+        'Google Ads',
+        'Web Design',
+        'Branding',
+        'Content Marketing',
+    ],
+];
 $extraHead = [
     tml_json_ld_script($orgSchema),
     tml_json_ld_script($webSiteSchema),
     tml_json_ld_script($faqSchema),
+    tml_json_ld_script($localBusinessSchema),
 ];
 require TML_VIEWS . '/partials/head.php';
 ?>

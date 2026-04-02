@@ -29,7 +29,20 @@
       "Bash(__NEW_LINE_9130ce93252d395c__ echo:*)",
       "Bash(__NEW_LINE_f9e75bbb8a87bbc9__ git:*)",
       "Bash(__NEW_LINE_f9e75bbb8a87bbc9__ git commit -m \"Add COMPLETE, FULLY FUNCTIONAL website with ALL pages, services, industries & media:*)",
-      "Bash(__NEW_LINE_9defbc74a94a9f7b__ git:*)"
+      "Bash(__NEW_LINE_9defbc74a94a9f7b__ git:*)",
+      "Bash(__NEW_LINE_b55ba36cc8687dda__ git:*)",
+      "Bash(__NEW_LINE_b55ba36cc8687dda__ git commit -m \"Fix URL routing for service pages:*)",
+      "Bash(__NEW_LINE_368bbb695683a00a__ git:*)",
+      "Bash(__NEW_LINE_368bbb695683a00a__ echo:*)",
+      "Bash(__NEW_LINE_19f730f4274daf20__ cat:*)",
+      "Bash(.gitignore:*)",
+      "Bash(__NEW_LINE_19f730f4274daf20__ echo:*)",
+      "Bash(npx claude-code-templates@latest --skill creative-design/frontend-design)",
+      "Bash(npx claude-code-templates@latest --skill creative-design/ui-ux-pro-max)",
+      "Bash(npx claude-code-templates@latest --skill business-marketing/seo-optimizer)",
+      "Bash(curl -s -I \"https://townmedialabs.ca/\")",
+      "Bash(curl -s https://townmedialabs.ca/)",
+      "WebFetch(domain:growmemarketing.ca)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs"

@@ -11,8 +11,30 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'Blog', 'url' => TML_SITE_URL . '/blog'],
 ]);
+$collectionPageSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'CollectionPage',
+    'name' => 'TML Agency Blog',
+    'description' => 'Expert insights on digital marketing, branding, SEO, AI, social media, and ad strategy.',
+    'url' => TML_SITE_URL . '/blog',
+    'mainEntity' => [
+        '@type' => 'ItemList',
+        'name' => 'Blog Articles',
+        'itemListElement' => array_map(static function ($slug, $article, $pos) {
+            return [
+                '@type' => 'ListItem',
+                'position' => $pos,
+                '@id' => TML_SITE_URL . '/blog/' . tml_e($slug),
+                'name' => $article['title'] ?? '',
+                'description' => $article['description'] ?? '',
+                'datePublished' => $article['date'] ?? '',
+            ];
+        }, array_keys($blogs), $blogs, array_keys(array_fill(0, count($blogs), 0))),
+    ],
+];
 $extraHead = [
     tml_json_ld_script($breadcrumbSchema),
+    tml_json_ld_script($collectionPageSchema),
 ];
 require TML_VIEWS . '/partials/head.php';
 
