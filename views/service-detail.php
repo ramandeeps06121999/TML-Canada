@@ -9,8 +9,20 @@ if (!$data) {
     exit;
 }
 
-// Title pattern: "Best {Service} Services in Canada | TML Agency"
-$title = 'Best ' . $data['title'] . ' Services in Canada | TML Agency';
+// Title pattern: "Best {Service} Services in Canada | TML Agency" (max 60 chars)
+$shortTitles = [
+    'ai-influencer-management' => 'AI Influencer',
+    'music-release' => 'Music Release',
+    'video-editing' => 'Video Editing',
+    'branding-packaging' => 'Packaging Design',
+    'online-reputation-management' => 'ORM',
+    'conversion-rate-optimization' => 'CRO',
+    'geo-optimization' => 'GEO',
+    'ai-automation' => 'AI Automation',
+    'custom-software-development' => 'Custom Software',
+];
+$titleName = $shortTitles[$slug] ?? $data['title'];
+$title = 'Best ' . $titleName . ' Services in Canada | TML Agency';
 // Unique meta description with service + CTA
 $description = $data['metaDescription'] ?? ('Expert ' . strtolower($data['title']) . ' services by TML Agency. We help businesses grow with proven strategy and creative execution. Get a free quote today.');
 $keywords = is_array($data['metaKeywords'] ?? null)

@@ -105,6 +105,7 @@ $redirects = [
     'contact' => '/contact-us',
     'carrer' => '/careers',
     'services/digital-marketing' => '/services/seo',
+    'blog/website-not-showing-on-google' => '/blog/website-not-showing-on-google-fix',
 ];
 $rkey = implode('/', $segments);
 if (isset($redirects[$rkey])) {
