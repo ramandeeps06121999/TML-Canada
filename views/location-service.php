@@ -29,8 +29,8 @@ $serviceName = $serviceData['title'];
 $cityName = $location['name'];
 $canonicalUrl = TML_SITE_URL . '/services/' . $urlSlug;
 
-// Title pattern: "Best {Service} in {City} | TML Agency"
-$metaTitle = $enrichment['metaTitle'] ?? ('Best ' . $serviceName . ' in ' . $cityName . ' | TML Agency');
+// Title pattern: "Best {Service} Agency in {City} | TML Agency"
+$metaTitle = $enrichment['metaTitle'] ?? ('Best ' . $serviceName . ' Agency in ' . $cityName . ' | TML Agency');
 // Meta description: unique per page — city + service + CTA
 $metaDesc = $enrichment['metaDescription'] ?? ('Looking for expert ' . strtolower($serviceName) . ' in ' . $cityName . '? TML Agency delivers proven results for ' . $cityName . ' businesses. Get a free consultation today.');
 
