@@ -1,6 +1,6 @@
 <?php
 $title = 'Free Marketing Tools & Calculators | TML Agency';
-$description = 'Use TML Agency\'s free marketing tools and calculators. SEO audit checklist, website speed calculator, social media post generator, Google Ads budget planner, ROI calculator, and meta tag generator. No signup required.';
+$description = 'Free marketing tools by TML Agency. SEO audit checklist, speed calculator, social media generator, Google Ads planner & ROI calculator. No signup.';
 $keywords = 'free SEO tools, marketing calculator, Google Ads budget planner, ROI calculator, meta tag generator, social media post generator, free marketing tools, website speed calculator';
 $canonicalPath = '/free-tools';
 $breadcrumbSchema = tml_schema_breadcrumb([

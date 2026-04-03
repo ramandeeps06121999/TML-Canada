@@ -1,5 +1,5 @@
 <?php
-$title = 'Our Portfolio | TML Agency — Digital Marketing & Branding Work';
+$title = 'Best Portfolio | TML Agency — Marketing & Branding';
 $description = 'Explore TML Agency\'s portfolio — web design, branding, UI/UX, social media, advertising campaigns, and product photography for 500+ brands.';
 $keywords = 'digital marketing portfolio, web design examples, branding portfolio Edmonton, UI UX design work, social media campaign examples, TML Agency portfolio, creative agency work Canada';
 $canonicalPath = '/portfolio';

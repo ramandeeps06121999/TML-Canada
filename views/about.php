@@ -1,5 +1,5 @@
 <?php
-$title = 'About TML Agency | Leading Digital Marketing Agency in Edmonton, Canada';
+$title = 'About TML Agency | Best Marketing Agency Edmonton';
 $description = 'Discover TML Agency — Edmonton\'s top digital marketing, branding & web development agency. 500+ clients, 70+ experts, 15+ years.';
 $keywords = 'about TML Agency, digital marketing agency Edmonton, Edmonton marketing company, branding agency Canada, web development agency Alberta, TML Agency team';
 $canonicalPath = '/about-us';

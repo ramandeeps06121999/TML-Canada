@@ -15,7 +15,7 @@ $isTier1 = $v2 !== null;
 if ($isTier1) {
     $name = (string) ($v2['name'] ?? '');
     $title = (string) ($v2['metaTitle'] ?? 'Digital Marketing for ' . $name . ' | TML Agency');
-    $description = (string) ($v2['metaDescription'] ?? '');
+    $description = (string) ($v2['metaDescription'] ?? ('Best ' . $name . ' digital marketing services. SEO, ads, branding & web design for ' . $name . ' businesses. Get results with TML Agency.'));
     $keywords = (string) ($v2['metaKeywords'] ?? strtolower($name) . ' marketing, digital marketing ' . strtolower($name) . ', ' . strtolower($name) . ' advertising, ' . strtolower($name) . ' SEO, ' . strtolower($name) . ' branding, TML Agency ' . strtolower($name));
     $canonicalPath = '/industries/' . $slug;
 

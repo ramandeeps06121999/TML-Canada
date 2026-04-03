@@ -1,6 +1,6 @@
 <?php
 $title = 'Industries We Serve | TML Agency';
-$description = 'TML Agency provides specialised digital marketing services across dozens of industries. From real estate and healthcare to SaaS and hospitality — we understand your market and deliver results.';
+$description = 'TML Agency provides digital marketing across dozens of industries. Real estate, healthcare, SaaS, hospitality — we understand your market.';
 $keywords = 'industry marketing Edmonton, healthcare marketing, real estate marketing, e-commerce marketing, SaaS marketing, construction marketing, legal marketing, hospitality marketing, TML Agency industries';
 $canonicalPath = '/industries';
 $industryPages = tml_industry_pages();

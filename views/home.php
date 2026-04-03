@@ -1,5 +1,5 @@
 <?php
-$title = 'TML Agency | #1 Digital Marketing Agency in Edmonton, Canada | SEO, Branding & Ads';
+$title = '#1 Digital Marketing Agency Edmonton | TML Agency';
 $description = 'TML Agency is Edmonton\'s top digital marketing agency. SEO, Google Ads, branding, web development & social media marketing. 500+ brands scaled. Get a free audit.';
 $keywords = 'digital marketing agency Edmonton, SEO Edmonton, Google Ads Edmonton, branding agency Edmonton, web development Edmonton, social media marketing Edmonton, TML Agency, marketing company Canada, Edmonton marketing agency';
 $canonicalPath = '/';
