@@ -9,8 +9,8 @@ if (!$data) {
     exit;
 }
 
-// Title pattern: "{Service} Services | TML Agency"
-$title = $data['metaTitle'] ?? ($data['title'] . ' Services | TML Agency');
+// Title pattern: "Best {Service} Services in Canada | TML Agency"
+$title = 'Best ' . $data['title'] . ' Services in Canada | TML Agency';
 // Unique meta description with service + CTA
 $description = $data['metaDescription'] ?? ('Expert ' . strtolower($data['title']) . ' services by TML Agency. We help businesses grow with proven strategy and creative execution. Get a free quote today.');
 $keywords = is_array($data['metaKeywords'] ?? null)
@@ -129,7 +129,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <a href="/services" class="inline-flex items-center gap-2 text-[11px] text-white/90 tracking-[0.2em] uppercase hover:text-white mb-8">← All Services</a>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6"><?= tml_e($data['title']) ?> Services<span class="text-[#ff4500]">.</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Best <?= tml_e($data['title']) ?> Services<span class="text-[#ff4500]">.</span></h1>
     <p class="text-lg md:text-xl text-white/90 font-medium mb-4"><?= tml_e($data['tagline']) ?></p>
     <p class="text-sm md:text-base text-white/30 leading-relaxed max-w-2xl mx-auto mb-8"><?= tml_e($data['heroDescription']) ?></p>
     <!-- Author Attribution -->

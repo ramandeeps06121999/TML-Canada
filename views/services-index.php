@@ -1,5 +1,5 @@
 <?php
-$title = 'Our Services | TML Agency — Full-Service Digital Marketing';
+$title = 'Best Digital Marketing Services in Canada | TML Agency';
 $description = 'Explore TML Agency\'s full range of digital marketing services — Branding, SEO, Google Ads, Social Media, Web Development, AI Influencer Management, Lead Generation, and more.';
 $keywords = 'digital marketing services Edmonton, SEO services, Google Ads management, branding services, web development services, social media marketing, lead generation, PPC management, content marketing Edmonton';
 $canonicalPath = '/services';
@@ -8,6 +8,7 @@ $categories = [
     ['category' => 'Branding & Design', 'services' => ['branding', 'graphic-design', 'branding-packaging', 'ui-design']],
     ['category' => 'Performance Marketing', 'services' => ['google-ads', 'seo', 'lead-generation']],
     ['category' => 'Digital & Social', 'services' => ['website-development', 'social-media', 'ai-influencer-management']],
+    ['category' => 'AI & Software Development', 'services' => ['ai-automation', 'custom-software-development', 'mobile-app-development']],
     ['category' => 'Media Production', 'services' => ['video-editing', 'music-release']],
 ];
 $stats = [['label' => 'Services', 'value' => '12+'], ['label' => 'Brands Served', 'value' => '500+'], ['label' => 'Team Members', 'value' => '70+'], ['label' => 'Years Experience', 'value' => '15+']];
@@ -32,7 +33,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Our Services</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Our Digital Marketing<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Services</span><span class="text-[#ff4500]">.</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Best Digital Marketing<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Services in Canada</span><span class="text-[#ff4500]">.</span></h1>
     <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">From brand strategy to AI-powered marketing — we offer a complete suite of services to help you stand out, attract customers, and scale your business.</p>
     <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
       <?php foreach ($stats as $i => $stat) : ?>
