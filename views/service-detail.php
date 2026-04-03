@@ -203,8 +203,6 @@ require TML_VIEWS . '/partials/head.php';
       <figure class="relative overflow-hidden rounded-2xl aspect-video bg-white/[0.03]">
         <img
           src="/media/<?= tml_e($imgFile) ?>"
-          srcset="/media/<?= tml_e($imgFile) ?> 1920w, /media/<?= tml_e(preg_replace('/\.(webp|jpg|png)$/i', '-1024.$1', $imgFile)) ?> 1024w, /media/<?= tml_e(preg_replace('/\.(webp|jpg|png)$/i', '-640.$1', $imgFile)) ?> 640w"
-          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           alt="<?= $altText ?>"
           class="w-full h-full object-cover"
           loading="<?= $imgIdx === 0 ? 'eager' : 'lazy' ?>"

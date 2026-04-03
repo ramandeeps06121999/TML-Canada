@@ -29,8 +29,8 @@ $serviceName = $serviceData['title'];
 $cityName = $location['name'];
 $canonicalUrl = TML_SITE_URL . '/services/' . $urlSlug;
 
-// Title pattern: "Best {Service} Agency in {City} | TML Agency"
-$metaTitle = $enrichment['metaTitle'] ?? ('Best ' . $serviceName . ' Agency in ' . $cityName . ' | TML Agency');
+// Title pattern: "Best {Service} Company in {City} | TML Agency"
+$metaTitle = $enrichment['metaTitle'] ?? ('Best ' . $serviceName . ' Company in ' . $cityName . ' | TML Agency');
 // Meta description: unique per page — city + service + CTA
 $metaDesc = $enrichment['metaDescription'] ?? ('Looking for expert ' . strtolower($serviceName) . ' in ' . $cityName . '? TML Agency delivers proven results for ' . $cityName . ' businesses. Get a free consultation today.');
 
@@ -285,7 +285,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         ?>
         <br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">in <?= tml_e($cityName) ?></span>
       <?php else : ?>
-        Best <?= tml_e($serviceName) ?> Agency<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">in <?= tml_e($cityName) ?></span>
+        Best <?= tml_e($serviceName) ?> Company<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">in <?= tml_e($cityName) ?></span>
       <?php endif; ?>
     </h1>
     <p class="text-lg md:text-xl text-white/90 font-medium mb-4"><?= tml_e($enrichment['tagline'] ?? ('Grow your ' . $cityName . ' business with expert ' . strtolower($serviceName) . ' services.')) ?></p>
