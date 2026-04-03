@@ -27,3 +27,7 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+# Local tools (not deployed)
+all-links.html
+all-links.php
