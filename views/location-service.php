@@ -91,45 +91,10 @@ foreach ($locationFaqs as $f) {
 }
 $faqSchema = tml_schema_faq($faqForSchema);
 
-// ── Image ownership ────────────────────────────────────────────────────
-// Each image belongs to exactly ONE service across ALL maps.
-// 4-img services: svc=[A,B] mid=[C,D] footer=[A,B,C]   (no cross-svc sharing)
-// 3-img services: svc=[A,B] mid=[A,C] footer=[A,B,C]   (reuse within same svc)
-//
-// Ownership registry (42 services, 147 images):
-//  1  branding                     → brand-identity-design.webp, branding-shoot.jpg, brand-photography.jpg, brand-identity-design-2.webp
-//  2  google-ads                   → creative-ad-roofing-company.webp, creative-ad-protein-fitness.webp, creative-ad-back-to-school-cairo.webp, advertising-photography.jpg
-//  3  seo                          → graphic-design-story-social-post.webp, graphic-design-social-story-3.webp, graphic-design-social-story-4.webp, graphic-design-social-story-minimal.webp
-//  4  website-development          → web-design-community-platform.webp, web-design-finance-hero.webp, web-design-travel-adventure.jpg, web-design-web3-platform.jpg
-//  5  social-media                 → social-media-content-mockup.png, social-media-brand-feed.webp, social-media-podcast-grid.jpg, social-media-real-estate-posts-grid.webp
-//  6  graphic-design               → graphic-design-creative.webp, graphic-design-illustration.webp, graphic-design-denim-heels.jpg, graphic-design-spice-sauce-ad.webp
-//  7  lead-generation              → digital-marketing-creative.webp, marketing-campaign-visual.webp, creative-design-portfolio.webp, graphic-design-fried-chicken-ad.webp
-//  8  video-editing                → visual-storytelling.jpg, studio-photography.jpg, art-direction.jpg, editorial-photography.jpg
-//  9  branding-packaging           → packaging-design-creative.webp, packaging-design-minimalist-cans.webp, packaging-design-candy-characters.webp, packaging-design-character-cups.webp
-// 10  ai-influencer-management     → social-media-influencer-content.webp, social-media-instagram-mockup.webp, social-media-turkish-agency.jpg, instagram-feed-design.webp
-// 11  music-release                → poster-design-weeknd-blinding-lights.webp, poster-design-netflix-induction.webp, visual-content-design.webp, artistic-photography.jpg
-// 12  shopify-development          → ecommerce-branding-creative.webp, product-photography-sneakers.webp, product-photography-styled-still-life.webp, product-branding-campaign.webp
-// 13  tiktok-ads                   → social-media-instagram-lifestyle.jpg, social-media-promo-grid.jpg, social-media-chupa-chups.webp
-// 14  web-design                   → saas-website-design.webp, web-design-travel-app.webp, web-design-landing-page.webp, web-design-productivity-tool.webp
-// 15  wordpress-development        → web-design-creative-agency-dark.jpg, web-design-ai-design-tool.jpg, graphic-design-brand-showcase.webp
-// 16  linkedin-ads                 → creative-ad-legal-education-red.webp, creative-ad-eyewear-fashion.webp, creative-ad-dental-clinic-fly.webp, graphic-design-clean-minimal-ad.webp
-// 17  marketing-automation         → brand-strategy-visual.webp, graphic-design-ai-brand.webp, graphic-design-minimal-brand-ad.webp
-// 18  amazon-marketing             → product-photography-handbag-sunset.webp, product-photography-luxury-skincare.webp, product-photography-jewelry.webp, product-photography-lipstick-beauty.webp
-// 19  geo-optimization             → graphic-design-pepsi-billboard.jpg, graphic-design-clarity-brand.jpg, graphic-design-coca-cola-billboard.jpg
-// 20  ux-ui-design                 → ux-design-illustration.webp, graphic-design-3d-ux-concept.webp, graphic-design-product-layout.webp, graphic-design-product-showcase.webp
-// 21  mobile-app-development       → web-design-web3-platform.jpg, graphic-design-creative-brand.webp, graphic-design-dark-story-ad.webp
-// 22  video-production             → campaign-photography.jpg, commercial-photography.jpg, creative-shoot.jpg, professional-photography.jpg
-// 23  microsoft-ads                → billboard-advertising-campaign.jpg, outdoor-advertising-billboard.webp, creative-ad-durex-football.webp
-// 24  local-seo                    → graphic-design-minimal-story.webp, graphic-design-social-media-story.webp, graphic-design-social-story-1.webp
-// 25  link-building                → graphic-design-brand-typography.webp, graphic-design-brand-story-layout.webp, graphic-design-brand-story-creative.webp
-// 26  meta-ads                     → graphic-design-creative-story-ad.webp, graphic-design-story-brand-post.webp, graphic-design-fitness-billboard.webp
-// 27  content-writing              → graphic-design-creative-photography.webp, graphic-design-dental-creative.webp, graphic-design-minimal-brand-ad.webp
-// ... wait — minimal-brand-ad assigned to marketing-automation already
-// Let me redo #27 onward once I fix overlaps.
-// ───────────────────────────────────────────────────────────────────────
-// Instead of error-prone manual tracking, define a single ownership
-// array and derive all three maps programmatically.
-
+// Service image ownership: each image belongs to exactly ONE service.
+// 4-img services: svc=[0,1]  mid=[2,3]  footer=[0,1,2]
+// 3-img services: svc=[0,1]  mid=[0,2]  footer=[0,1,2]
+// Maps are derived programmatically below — no manual duplication.
 $_imgPool = [
     // 21 services with 4 exclusively-owned images (84 images total)
     'branding'                 => ['brand-identity-design.webp', 'branding-shoot.jpg', 'brand-photography.jpg', 'brand-identity-design-2.webp'],
@@ -171,7 +136,7 @@ $_imgPool = [
     'email-marketing'               => ['lifestyle-brand.jpg', 'lifestyle-photography.jpg', 'landscape-photography.jpg'],
     'influencer-marketing'          => ['social-media-agency-grid.jpg', 'fashion-editorial.jpg', 'fashion-photography.jpg'],
     'ppc-management'                => ['architectural-photography.jpg', 'creative-photography.jpg', 'magazine-photography.jpg'],
-    'online-reputation-management'  => ['portrait-photography.jpg', 'brand-identity-design-2.webp', 'product-shoot.jpg'],
+    'online-reputation-management'  => ['portrait-photography.jpg', 'product-photography-brand-lifestyle.jpg', 'product-shoot.jpg'],
     'conversion-rate-optimization'  => ['beauty-product-photography.webp', 'food-photography.jpg', 'product-photography-fine-art.webp'],
     'ai-automation'                 => ['product-photography-cinematic-portrait.webp', 'product-photography-cocktails.webp', 'product-photography-facial-cream.jpg'],
     'custom-software-development'   => ['product-photography-food-croissant.webp', 'product-photography-lifestyle-drinks.webp', 'product-photography-blue-brand.jpg'],
@@ -204,6 +169,12 @@ $preFooterImages = $preFooterImageMap[$serviceSlug] ?? ['graphic-design-creative
 
 // OG image uses the first service-specific image
 $ogImage = TML_SITE_URL . '/media/' . $serviceImages[0];
+// Build unique image list so each page section uses a DIFFERENT image
+$_allImgs = array_values(array_unique(array_merge($serviceImages, $midImages, $preFooterImages)));
+$_overflow = ['packaging-design-goody-candy-sour-sweet.webp','packaging-design-kids-sandwich-box.webp','packaging-design-moody-snacks.webp','product-photography-cocktails.webp','product-photography-food-croissant.webp','product-photography-lipstick-beauty.webp','product-photography-fine-art.webp','social-media-real-estate-posts-grid.webp','creative-ad-back-to-school-cairo.webp','poster-design-weeknd-blinding-lights.webp'];
+foreach ($_overflow as $_o) { if (!in_array($_o, $_allImgs, true)) { $_allImgs[] = $_o; } }
+// Section assignments: 0=WhyChoose, 1=Process, 2=Services, 3=Local01, 4=Local02, 5=Local03
+$sectionImg = function(int $idx) use ($_allImgs) { return $_allImgs[$idx % count($_allImgs)]; };
 
 // Override head.php OG image with the service-specific one
 $ogImageOverride = $ogImage;
@@ -374,7 +345,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
       <!-- Left: Image -->
       <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-        <img src="/media/<?= tml_e($serviceImages[0] ?? 'digital-marketing-creative.webp') ?>" alt="Why choose TML for <?= tml_e($serviceName) ?> in <?= tml_e($cityName) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <img src="/media/<?= tml_e($sectionImg(0)) ?>" alt="Why choose TML for <?= tml_e($serviceName) ?> in <?= tml_e($cityName) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </figure>
       <!-- Right: Why Choose cards -->
@@ -425,31 +396,14 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       </div>
       <!-- Right: Image -->
       <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-        <img src="/media/<?= tml_e($midImages[0] ?? $serviceImages[1] ?? 'brand-strategy-visual.webp') ?>" alt="Our <?= tml_e($serviceName) ?> process in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <img src="/media/<?= tml_e($sectionImg(1)) ?>" alt="Our <?= tml_e($serviceName) ?> process in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- Mid-page visual showcase -->
-<div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div></div>
-<section class="relative w-full px-6 py-14 md:py-20 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-7xl">
-    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-6">Selected Work</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-      <?php foreach ($midImages as $mi => $mImg) : ?>
-      <figure class="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[16/10] bg-white/[0.03] group">
-        <img src="/media/<?= tml_e($mImg) ?>" alt="<?= tml_e($serviceName) ?> work for <?= tml_e($cityName) ?> businesses — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="500" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <span class="text-[10px] text-white/70 tracking-wider uppercase font-medium"><?= tml_e($serviceName) ?> &middot; <?= tml_e($cityName) ?></span>
-        </div>
-      </figure>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+<?php /* Mid-page gallery removed — images are now integrated into each section above */ ?>
 
 <div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div></div>
 
@@ -471,7 +425,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
       <!-- Left: Image (stretches to match cards height) -->
       <figure class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500 min-h-[400px]">
-        <img src="/media/<?= tml_e($preFooterImages[0] ?? $serviceImages[2] ?? 'creative-design-portfolio.webp') ?>" alt="<?= tml_e($serviceName) ?> services for <?= tml_e($cityName) ?> businesses — TML Agency" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <img src="/media/<?= tml_e($sectionImg(2)) ?>" alt="<?= tml_e($serviceName) ?> services for <?= tml_e($cityName) ?> businesses — TML Agency" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </figure>
       <!-- Right: Feature cards -->
@@ -549,7 +503,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             </div>
           </div>
           <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-            <img src="/media/<?= tml_e($serviceImages[0] ?? 'digital-marketing-creative.webp') ?>" alt="<?= tml_e($serviceName) ?> services in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <img src="/media/<?= tml_e($sectionImg(3)) ?>" alt="<?= tml_e($serviceName) ?> services in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </figure>
         </div>
@@ -563,7 +517,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
           <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-            <img src="/media/<?= tml_e($midImages[0] ?? $serviceImages[1] ?? 'brand-strategy-visual.webp') ?>" alt="<?= tml_e($cityName) ?> market — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <img src="/media/<?= tml_e($sectionImg(4)) ?>" alt="<?= tml_e($cityName) ?> market — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </figure>
           <div>
@@ -593,7 +547,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             </div>
           </div>
           <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-            <img src="/media/<?= tml_e($midImages[1] ?? $serviceImages[2] ?? 'creative-design-portfolio.webp') ?>" alt="What makes <?= tml_e($cityName) ?> unique — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <img src="/media/<?= tml_e($sectionImg(5)) ?>" alt="What makes <?= tml_e($cityName) ?> unique — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </figure>
         </div>
@@ -821,24 +775,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 <?php endif; ?>
 
 <!-- Pre-footer visual strip -->
-<div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div></div>
-<section class="relative w-full px-6 py-14 md:py-20 lg:px-12 bg-[#080808] overflow-hidden">
-  <div class="relative mx-auto max-w-7xl">
-    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-3">Our Creative Work</p>
-    <h3 class="text-xl sm:text-2xl font-medium text-white mb-8">Recent Projects<span class="text-[#ff4500]">.</span></h3>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-      <?php foreach ($preFooterImages as $pfi => $pfImg) : ?>
-      <figure class="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[4/3] bg-white/[0.03] group">
-        <img src="/media/<?= tml_e($pfImg) ?>" alt="<?= tml_e($serviceName) ?> creative by TML Agency for <?= tml_e($cityName) ?> clients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="600" height="450" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <span class="text-[10px] text-white/60 tracking-wider uppercase font-medium"><?= tml_e($serviceName) ?> &middot; <?= tml_e($cityName) ?></span>
-        </div>
-      </figure>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+<?php /* Pre-footer gallery removed — images are integrated into each section */ ?>
 
 <div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div></div>
 
@@ -864,20 +801,30 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
   </div>
 
   <?php
-  $carouselImages = [
-      ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
-      ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
-      ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'],
-      ['product-branding-campaign.webp', 'Product Branding', 'Branding'],
-      ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'],
-      ['beauty-product-photography.webp', 'Product Photography', 'Photography'],
-      ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'],
-      ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'],
-      ['instagram-feed-design.webp', 'Instagram Grid', 'Social Media'],
-      ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'],
-      ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
-      ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+  // Filter carousel to EXCLUDE images already shown on this page
+  $_carouselPool = [
+      ['packaging-design-water-bottle-brand.webp', 'Water Bottle Branding', 'Packaging'],
+      ['product-photography-fashion-shoes.webp', 'Fashion Shoes Editorial', 'Photography'],
+      ['social-media-real-estate-posts-grid.webp', 'Real Estate Social', 'Social Media'],
+      ['graphic-design-brand-story-creative.webp', 'Brand Story Creative', 'Branding'],
+      ['product-photography-cocktails.webp', 'Cocktail Photography', 'Photography'],
+      ['packaging-design-minimalist-cans.webp', 'Minimalist Cans', 'Packaging'],
+      ['creative-ad-back-to-school-cairo.webp', 'Back to School Campaign', 'Advertising'],
+      ['social-media-podcast-grid.jpg', 'Podcast Social Grid', 'Social Media'],
+      ['graphic-design-colgate-creative.jpg', 'Colgate Creative', 'Graphic Design'],
+      ['product-photography-lipstick-beauty.webp', 'Lipstick Beauty Shoot', 'Photography'],
+      ['packaging-design-character-cups.webp', 'Character Cups', 'Packaging'],
+      ['product-photography-handbag-sunset.webp', 'Handbag Sunset Shot', 'Photography'],
+      ['graphic-design-denim-fashion.webp', 'Denim Fashion Creative', 'Fashion'],
+      ['product-photography-cinematic-portrait.webp', 'Cinematic Portrait', 'Photography'],
+      ['packaging-design-moody-snacks.webp', 'Moody Snack Packaging', 'Packaging'],
+      ['graphic-design-minimal-brand-ad.webp', 'Minimal Brand Ad', 'Design'],
+      ['product-photography-food-croissant.webp', 'Croissant Food Shoot', 'Photography'],
+      ['poster-design-weeknd-blinding-lights.webp', 'Weeknd Poster Design', 'Design'],
   ];
+  $carouselImages = array_values(array_filter($_carouselPool, function ($img) use ($_allImgs) {
+      return !in_array($img[0], $_allImgs, true);
+  }));
   $itemsPerSlide = 3;
   $totalSlides = ceil(count($carouselImages) / $itemsPerSlide);
   ?>

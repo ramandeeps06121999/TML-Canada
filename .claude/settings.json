@@ -116,7 +116,13 @@
       "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== CLEANING REPOSITORY ===\")",
       "Bash(sort echo:*)",
       "Read(//Users/ramanmakkar/Desktop/tml-php/**)",
-      "Bash(php /tmp/fix-overflow.php)"
+      "Bash(php /tmp/fix-overflow.php)",
+      "Bash(sed -i '' 's/\\\\$\\(\\\\$sectionImg\\)\\(\\\\\\([0-9]\\\\\\)\\)/$sectionImg\\(\\\\1\\)/g' views/location-service.php)",
+      "Bash(sed -i '' '523s/sectionImg\\(0\\)/sectionImg\\(3\\)/' views/location-service.php)",
+      "Bash(sed -i '' '537s/sectionImg\\(1\\)/sectionImg\\(4\\)/' views/location-service.php)",
+      "Bash(sed -i '' '567s|tml_e\\($midImages\\\\[1\\\\] ?? $serviceImages\\\\[2\\\\] ?? '\\\\''creative-design-portfolio.webp'\\\\''\\)|tml_e\\($sectionImg\\(5\\)\\)|' views/location-service.php)",
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== SEO-in-Edmonton - duplicates? ===\" curl -s http://localhost:8000/services/seo-in-edmonton)",
+      "Bash(curl -s http://localhost:8000/services/seo-in-edmonton)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",
