@@ -2,6 +2,52 @@
 $slug = $GLOBALS['tml_industry_slug'] ?? '';
 $industryPages = tml_industry_pages();
 $industries = tml_industries();
+
+// Industry-specific image map (2 unique images per industry, no duplicates)
+$_industryImgMap = [
+    'real-estate'       => ['social-media-real-estate-posts-grid.webp', 'web-design-finance-hero.webp'],
+    'healthcare'        => ['beauty-product-photography.webp', 'product-photography-skincare-set.webp'],
+    'legal'             => ['creative-ad-legal-education-red.webp', 'commercial-photography.jpg'],
+    'ecommerce'         => ['ecommerce-branding-creative.webp', 'product-photography-sneakers.webp'],
+    'saas'              => ['saas-website-design.webp', 'web-design-productivity-tool.webp'],
+    'construction'      => ['creative-ad-roofing-company.webp', 'architectural-photography.jpg'],
+    'restaurants'       => ['product-photography-food-croissant.webp', 'graphic-design-fried-chicken-ad.webp'],
+    'automotive'        => ['product-photography-bicycle-lifestyle.jpg', 'product-photography-bicycle-summer.jpg'],
+    'education'         => ['creative-ad-back-to-school-cairo.webp', 'graphic-design-faber-castell.jpg'],
+    'fitness'           => ['creative-ad-protein-fitness.webp', 'graphic-design-fitness-billboard.webp'],
+    'insurance'         => ['brand-strategy-visual.webp', 'graphic-design-clean-minimal-ad.webp'],
+    'fintech'           => ['web-design-web3-platform.jpg', 'graphic-design-3d-ux-concept.webp'],
+    'immigration'       => ['graphic-design-brand-showcase.webp', 'professional-photography.jpg'],
+    'hair-salons'       => ['product-photography-lipstick-beauty.webp', 'product-photography-luxury-skincare.webp'],
+    'accountants'       => ['graphic-design-clarity-brand.jpg', 'minimalist-design.jpg'],
+    'non-profits'       => ['graphic-design-brand-identity.webp', 'brand-photography.jpg'],
+    'photographers'     => ['creative-photography.jpg', 'fashion-photography.jpg'],
+    'interior-designers'=> ['graphic-design-creative-brand.webp', 'lifestyle-brand.jpg'],
+    'wedding-planners'  => ['product-photography-fashion-editorial.webp', 'product-photography-perfume-shoot.jpg'],
+    'florists'          => ['product-photography-styled-still-life.webp', 'product-photography-cocktails.webp'],
+    'travel'            => ['web-design-travel-adventure.jpg', 'web-design-travel-app.webp'],
+    'tattoo'            => ['graphic-design-denim-fashion.webp', 'graphic-design-creative-fashion-ad.jpg'],
+    'daycare'           => ['packaging-design-kids-sandwich-box.webp', 'packaging-design-candy-characters.webp'],
+    'moving-companies'  => ['creative-ad-dental-clinic-fly.webp', 'outdoor-advertising-billboard.webp'],
+    'oil-gas'           => ['billboard-advertising-campaign.jpg', 'advertising-photography.jpg'],
+    'cannabis'          => ['packaging-design-minimalist-cans.webp', 'packaging-design-moody-snacks.webp'],
+    'agriculture'       => ['landscape-photography.jpg', 'product-photography-sunscreen.jpg'],
+    'tourism'           => ['web-design-community-platform.webp', 'visual-storytelling.jpg'],
+    'film'              => ['poster-design-netflix-induction.webp', 'poster-design-weeknd-blinding-lights.webp'],
+    'clean-energy'      => ['graphic-design-ai-brand.webp', 'graphic-design-minimal-brand-ad.webp'],
+    'logistics'         => ['graphic-design-product-layout.webp', 'graphic-design-product-showcase.webp'],
+    'mining'            => ['product-photography-blue-brand.jpg', 'product-photography-brand-lifestyle.jpg'],
+    'franchises'        => ['graphic-design-coca-cola-marvel.webp', 'graphic-design-coca-cola-billboard.jpg'],
+    'property-management'=> ['web-design-creative-agency-dark.jpg', 'web-design-ai-design-tool.jpg'],
+    'home-services'     => ['creative-ad-eyewear-fashion.webp', 'graphic-design-spice-sauce-ad.webp'],
+    'dental'            => ['graphic-design-dental-creative.webp', 'graphic-design-colgate-creative.jpg'],
+    'veterinary'        => ['product-photography-handbag-sunset.webp', 'product-photography-retro-brand.webp'],
+    'cleaning'          => ['packaging-design-water-bottle-brand.webp', 'packaging-design-eskimo-ice-cream.webp'],
+    'hvac'              => ['graphic-design-sneaker-creative.jpg', 'graphic-design-pepsi-billboard.jpg'],
+    'plumbing'          => ['graphic-design-snickers-guerilla.jpg', 'creative-ad-durex-football.webp'],
+    'roofing'           => ['graphic-design-food-ad.jpg', 'graphic-design-dark-story-ad.webp'],
+];
+$_indImg = $_industryImgMap[$slug] ?? ['digital-marketing-creative.webp', 'marketing-campaign-visual.webp'];
 $v2 = $industryPages[$slug] ?? null;
 $legacy = $industries[$slug] ?? null;
 
@@ -71,8 +117,8 @@ if ($isTier1) {
   <div class="relative mx-auto max-w-5xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
       <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
-        <img src="/media/digital-marketing-creative.webp"
-             alt="Digital marketing creative for <?= tml_e($name) ?>"
+        <img src="/media/<?= tml_e($_indImg[0]) ?>"
+             alt="<?= tml_e($name) ?> marketing — TML Agency"
              loading="lazy"
              width="1920"
              height="1080"
@@ -80,8 +126,8 @@ if ($isTier1) {
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
       <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
-        <img src="/media/brand-strategy-visual.webp"
-             alt="Brand strategy visual for <?= tml_e($name) ?>"
+        <img src="/media/<?= tml_e($_indImg[1]) ?>"
+             alt="<?= tml_e($name) ?> strategy — TML Agency"
              loading="lazy"
              width="1920"
              height="1080"
@@ -353,8 +399,8 @@ $sectionIcons = [
   <div class="relative mx-auto max-w-5xl">
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
       <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
-        <img src="/media/digital-marketing-creative.webp"
-             alt="Digital marketing creative for <?= tml_e($name) ?>"
+        <img src="/media/<?= tml_e($_indImg[0]) ?>"
+             alt="<?= tml_e($name) ?> marketing — TML Agency"
              loading="lazy"
              width="1920"
              height="1080"
@@ -362,8 +408,8 @@ $sectionIcons = [
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
       <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
-        <img src="/media/brand-strategy-visual.webp"
-             alt="Brand strategy visual for <?= tml_e($name) ?>"
+        <img src="/media/<?= tml_e($_indImg[1]) ?>"
+             alt="<?= tml_e($name) ?> strategy — TML Agency"
              loading="lazy"
              width="1920"
              height="1080"

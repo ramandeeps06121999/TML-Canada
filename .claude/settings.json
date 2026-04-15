@@ -122,7 +122,8 @@
       "Bash(sed -i '' '537s/sectionImg\\(1\\)/sectionImg\\(4\\)/' views/location-service.php)",
       "Bash(sed -i '' '567s|tml_e\\($midImages\\\\[1\\\\] ?? $serviceImages\\\\[2\\\\] ?? '\\\\''creative-design-portfolio.webp'\\\\''\\)|tml_e\\($sectionImg\\(5\\)\\)|' views/location-service.php)",
       "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== SEO-in-Edmonton - duplicates? ===\" curl -s http://localhost:8000/services/seo-in-edmonton)",
-      "Bash(curl -s http://localhost:8000/services/seo-in-edmonton)"
+      "Bash(curl -s http://localhost:8000/services/seo-in-edmonton)",
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== Real Estate industry page - duplicate images ===\" curl -s http://localhost:8000/industries/real-estate)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",
