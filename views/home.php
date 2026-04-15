@@ -557,7 +557,6 @@ require TML_VIEWS . '/partials/head.php';
         ['Custom Trucking & Baling', 'Branding & Web', '/portfolio/custom-trucking-baling-branding.jpg'],
         ['Zuri Beauty Academy', 'Web Design', '/portfolio/zuri-beauty-academy-web-design.png'],
         ['Virtual Healthcare', 'Branding & Web', '/portfolio/virtual-healthcare-branding.webp'],
-        ['Advertisement Marketing', 'Web Design', '/portfolio/advertisement-marketing-web-design.png'],
     ];
     ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -581,7 +580,7 @@ require TML_VIEWS . '/partials/head.php';
       <?php endforeach; ?>
     </div>
     <div class="relative rounded-xl overflow-hidden border border-white/[0.04] mb-10 group cursor-pointer hover:border-[#ff4500]/15 transition-colors duration-500 scroll-reveal">
-      <video data-src="/portfolio/tml-portfolio-showreel-2025.mp4" poster="/tml-showreel-poster.jpg" autoplay muted loop playsinline aria-label="TML Agency portfolio showreel 2025" class="w-full aspect-video bg-black group-hover:scale-[1.01] transition-transform duration-700"></video>
+      <video data-src="/pinsnap-5207355815924873-story1.mp4" poster="/tml-showreel-poster.jpg" autoplay muted loop playsinline aria-label="TML Agency portfolio showreel 2025" class="w-full aspect-video bg-black group-hover:scale-[1.01] transition-transform duration-700"></video>
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 pointer-events-none">
         <p class="text-[10px] text-[#ff4500]/80 tracking-[0.15em] uppercase font-semibold mb-2">Showreel 2025</p>
