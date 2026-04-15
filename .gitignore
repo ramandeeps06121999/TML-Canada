@@ -40,3 +40,6 @@ scripts/indexing-logs/
 # Local tools (not deployed)
 all-links.html
 all-links.php
+seo-analysis/
+extra/
+*.DS_Store

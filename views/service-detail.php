@@ -198,36 +198,7 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
-<?php if (!empty($serviceImages)) : ?>
-<section class="relative w-full px-6 py-12 md:py-16 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-6xl">
-    <?php
-    $imgSlice = array_slice($serviceImages, 0, 3);
-    $alts = [
-        tml_e($data['title'] . ' creative work by TML Agency — portfolio showcase'),
-        tml_e($data['title'] . ' project example by TML Agency Canada'),
-        tml_e('Professional ' . strtolower($data['title']) . ' services by TML Agency'),
-    ];
-    ?>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-      <?php foreach ($imgSlice as $imgIdx => $imgFile) : ?>
-      <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-white/[0.03] border border-white/[0.06] hover:border-[#ff4500]/20 transition-all duration-500">
-        <img
-          src="/media/<?= tml_e($imgFile) ?>"
-          alt="<?= $alts[$imgIdx] ?? $alts[0] ?>"
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-          loading="<?= $imgIdx === 0 ? 'eager' : 'lazy' ?>"
-          width="800"
-          height="600"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <figcaption class="sr-only"><?= $alts[$imgIdx] ?? $alts[0] ?></figcaption>
-      </figure>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
+<?php /* Images integrated into each section below */ ?>
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
@@ -246,17 +217,24 @@ require TML_VIEWS . '/partials/head.php';
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>',
     ];
     ?>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <?php foreach ($data['features'] ?? [] as $i => $feature) : ?>
-      <div class="group relative p-6 md:p-8 rounded-2xl glass-card">
-        <div class="absolute top-6 right-6 text-[10px] text-white/20 font-mono"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></div>
-        <div class="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 transition-colors">
-          <?= $featureIcons[$i % count($featureIcons)] ?>
+    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+      <!-- Left: Image -->
+      <figure class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500 min-h-[400px]">
+        <img src="/media/<?= tml_e($serviceImages[0]) ?>" alt="<?= tml_e($data['title']) ?> services by TML Agency Canada" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </figure>
+      <!-- Right: Feature cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
+        <?php foreach ($data['features'] ?? [] as $i => $feature) : ?>
+        <div class="group p-5 rounded-2xl glass-card">
+          <div class="w-9 h-9 rounded-lg bg-[#ff4500]/10 flex items-center justify-center mb-4 group-hover:bg-[#ff4500]/20 transition-colors">
+            <?= $featureIcons[$i % count($featureIcons)] ?>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2"><?= tml_e($feature['title']) ?></h3>
+          <p class="text-xs text-white/60 leading-relaxed"><?= tml_e($feature['description']) ?></p>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($feature['title']) ?></h3>
-        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($feature['description']) ?></p>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -264,15 +242,23 @@ require TML_VIEWS . '/partials/head.php';
 <?php if (!empty($data['seoContent'])) : ?>
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-5xl">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Why Your Business Needs <?= tml_e($data['title']) ?><span class="text-[#ff4500]">.</span></h2>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-3 gap-5">
-      <?php foreach ($data['seoContent'] as $i => $paragraph) : ?>
-      <div class="group relative p-6 md:p-7 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-        <div class="absolute top-5 right-5 text-3xl font-bold text-[#ff4500]/[0.06] select-none"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></div>
-        <div class="w-8 h-[2px] bg-[#ff4500]/40 rounded-full mb-5"></div>
-        <p class="text-sm text-white/90 leading-relaxed"><?= tml_e($paragraph) ?></p>
+    <div class="scroll-reveal grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+      <!-- Left: Text content -->
+      <div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Why Your Business Needs <?= tml_e($data['title']) ?><span class="text-[#ff4500]">.</span></h2>
+        <div class="space-y-4">
+          <?php foreach ($data['seoContent'] as $i => $paragraph) :
+            $trimmed = strlen(strip_tags($paragraph)) > 250 ? substr(strip_tags($paragraph), 0, 250) . '...' : $paragraph;
+          ?>
+          <p class="text-sm text-white/75 leading-[1.75]"><?= $trimmed ?></p>
+          <?php endforeach; ?>
+        </div>
       </div>
-      <?php endforeach; ?>
+      <!-- Right: Image -->
+      <figure class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500 min-h-[400px]">
+        <img src="/media/<?= tml_e($serviceImages[1] ?? $serviceImages[0]) ?>" alt="Why your business needs <?= tml_e(strtolower($data['title'])) ?> — TML Agency" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </figure>
     </div>
   </div>
 </section>

@@ -111,7 +111,9 @@
       "Bash(php -r '$d=json_decode\\(file_get_contents\\(\"data/servicePages.json\"\\),true\\); $c=0; foreach\\($d as $s\\) { foreach\\($s[\"faqs\"]??[] as $f\\) { if\\(isset\\($f[\"question\"]\\)&&!isset\\($f[\"q\"]\\)\\) $c++; } } echo \"$c\\\\n\";')",
       "Bash(find views/ -name \"*.php\" -not -path \"views/_legacy*\" -exec php -l {} \\\\;)",
       "Bash(awk -F: '{s+=$2} END {print s}')",
-      "Bash(php -l /Users/ramanmakkar/Desktop/tml-php/views/location-service.php)"
+      "Bash(php -l /Users/ramanmakkar/Desktop/tml-php/views/location-service.php)",
+      "Bash(php -l /Users/ramanmakkar/Desktop/tml-php/views/service-detail.php)",
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== CLEANING REPOSITORY ===\")"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",
