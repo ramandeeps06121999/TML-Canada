@@ -1,7 +1,7 @@
 <?php
-$title = 'Best Portfolio | TML Agency — Marketing & Branding';
-$description = 'Explore TML Agency\'s portfolio — web design, branding, UI/UX, social media, advertising campaigns, and product photography for 500+ brands.';
-$keywords = 'digital marketing portfolio, web design examples, branding portfolio Edmonton, UI UX design work, social media campaign examples, TML Agency portfolio, creative agency work Canada';
+$title = 'Our Portfolio | 500+ Projects | TML Agency Canada';
+$description = 'Explore TML Agency\'s portfolio of 500+ projects — web design, branding, UI/UX, social media campaigns & product photography. See our best work today.';
+$keywords = 'digital marketing portfolio, web design portfolio Canada, branding portfolio, UI UX design work, social media campaign examples, TML Agency portfolio, creative agency Canada';
 $canonicalPath = '/portfolio';
 
 $projects = [
@@ -17,24 +17,88 @@ $projects = [
     ['title' => 'Advertisement Marketing', 'category' => 'Web Design', 'image' => '/portfolio/advertisement-marketing-web-design.png', 'desc' => 'Marketing agency website with case studies, service pages, and lead capture.'],
 ];
 
-// Creative/media work from /media/ folder
+// Creative/media work from /media/ folder — organized by category
 $creativeWork = [
+    // Branding & Identity
     ['title' => 'Brand Identity System', 'category' => 'Branding', 'image' => '/media/brand-identity-design.webp', 'desc' => 'Complete visual identity — logo, typography, color system, and brand guidelines.'],
-    ['title' => 'Social Media Strategy', 'category' => 'Social Media', 'image' => '/media/social-media-content-mockup.png', 'desc' => 'Content grid, story templates, and engagement strategy for Instagram growth.'],
+    ['title' => 'Brand Identity v2', 'category' => 'Branding', 'image' => '/media/brand-identity-design-2.webp', 'desc' => 'Extended brand identity with application mockups and style guide.'],
+    ['title' => 'Product Branding Campaign', 'category' => 'Branding', 'image' => '/media/product-branding-campaign.webp', 'desc' => 'Product launch branding — packaging, photography, and campaign creative.'],
+    ['title' => 'Brand Strategy Visual', 'category' => 'Branding', 'image' => '/media/brand-strategy-visual.webp', 'desc' => 'Strategic brand positioning framework with visual identity direction.'],
+    ['title' => 'E-Commerce Brand Launch', 'category' => 'Branding', 'image' => '/media/ecommerce-branding-creative.webp', 'desc' => 'E-commerce brand launch — packaging, social ads, and product photography.'],
+    ['title' => 'Creative Direction', 'category' => 'Branding', 'image' => '/media/creative-design-portfolio.webp', 'desc' => 'Art direction and creative strategy for multi-channel brand campaigns.'],
+
+    // Graphic Design
+    ['title' => 'Coca-Cola x Marvel', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-coca-cola-marvel.webp', 'desc' => 'Collaborative brand creative for Coca-Cola and Marvel cross-promotion.'],
+    ['title' => 'Pepsi Billboard', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-pepsi-billboard.jpg', 'desc' => 'Large-format billboard design for Pepsi outdoor campaign.'],
+    ['title' => 'Snickers Guerilla Ad', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-snickers-guerilla.jpg', 'desc' => 'Guerilla marketing creative for Snickers brand activation campaign.'],
+    ['title' => 'Faber-Castell Creative', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-faber-castell.jpg', 'desc' => 'Product-focused creative for Faber-Castell art supply brand.'],
+    ['title' => 'Colgate Creative', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-colgate-creative.jpg', 'desc' => 'Clean, bold product advertising creative for Colgate dental care.'],
+    ['title' => 'Brand Typography System', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-brand-typography.webp', 'desc' => 'Custom typography system for premium brand identity.'],
+    ['title' => 'Brand Showcase Design', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-brand-showcase.webp', 'desc' => 'Visual brand presentation design for investor and client meetings.'],
+    ['title' => 'Fitness Billboard', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-fitness-billboard.webp', 'desc' => 'Bold fitness gym billboard with strong typography and action imagery.'],
+    ['title' => '3D UX Concept', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-3d-ux-concept.webp', 'desc' => '3D rendered UX concept illustration for product design presentation.'],
+    ['title' => 'Netflix Poster Design', 'category' => 'Graphic Design', 'image' => '/media/poster-design-netflix-induction.webp', 'desc' => 'Movie poster design for Netflix feature with cinematic typography.'],
+    ['title' => 'Weeknd Album Poster', 'category' => 'Graphic Design', 'image' => '/media/poster-design-weeknd-blinding-lights.webp', 'desc' => 'Fan art poster design for The Weeknd Blinding Lights visual.'],
+    ['title' => 'Dental Clinic Ad', 'category' => 'Graphic Design', 'image' => '/media/creative-ad-dental-clinic-fly.webp', 'desc' => 'Creative dental clinic advertisement with bold visual metaphor.'],
+    ['title' => 'Spice Sauce Ad', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-spice-sauce-ad.webp', 'desc' => 'Hot sauce product advertising with fiery design elements.'],
+    ['title' => 'Fried Chicken Ad', 'category' => 'Graphic Design', 'image' => '/media/graphic-design-fried-chicken-ad.webp', 'desc' => 'Appetizing fast food advertisement with dynamic food photography.'],
+
+    // Web Design
     ['title' => 'SaaS Landing Page', 'category' => 'Web Design', 'image' => '/media/saas-website-design.webp', 'desc' => 'High-conversion SaaS landing page with waitlist capture and social proof.'],
-    ['title' => 'Billboard Campaign', 'category' => 'Advertising', 'image' => '/media/billboard-advertising-campaign.jpg', 'desc' => 'Large-format outdoor advertising campaign for a global FMCG brand.'],
-    ['title' => 'Product Branding', 'category' => 'Branding', 'image' => '/media/product-branding-campaign.webp', 'desc' => 'Product launch branding — packaging, photography, and campaign creative.'],
+    ['title' => 'Dark Agency Website', 'category' => 'Web Design', 'image' => '/media/web-design-creative-agency-dark.jpg', 'desc' => 'Premium dark-theme creative agency website with immersive experience.'],
+    ['title' => 'Finance Hero Section', 'category' => 'Web Design', 'image' => '/media/web-design-finance-hero.webp', 'desc' => 'Fintech website hero with trust signals and conversion optimization.'],
+    ['title' => 'Web3 Platform', 'category' => 'Web Design', 'image' => '/media/web-design-web3-platform.jpg', 'desc' => 'Blockchain and Web3 platform interface with wallet integration.'],
+    ['title' => 'Travel App Design', 'category' => 'Web Design', 'image' => '/media/web-design-travel-app.webp', 'desc' => 'Travel booking app with destination search and itinerary builder.'],
+    ['title' => 'Community Platform', 'category' => 'Web Design', 'image' => '/media/web-design-community-platform.webp', 'desc' => 'Online community platform with forums, events, and member profiles.'],
+    ['title' => 'Productivity Tool', 'category' => 'Web Design', 'image' => '/media/web-design-productivity-tool.webp', 'desc' => 'Task management and productivity SaaS tool interface design.'],
+    ['title' => 'AI Design Tool', 'category' => 'Web Design', 'image' => '/media/web-design-ai-design-tool.jpg', 'desc' => 'AI-powered design tool landing page with interactive demos.'],
+    ['title' => 'Travel Adventure Site', 'category' => 'Web Design', 'image' => '/media/web-design-travel-adventure.jpg', 'desc' => 'Adventure travel website with immersive full-screen imagery.'],
     ['title' => 'UX Design System', 'category' => 'UI/UX', 'image' => '/media/ux-design-illustration.webp', 'desc' => 'User-facing experience design system for a transportation platform.'],
-    ['title' => 'E-Commerce Creative', 'category' => 'Branding', 'image' => '/media/ecommerce-branding-creative.webp', 'desc' => 'E-commerce brand launch — packaging, social ads, and product photography.'],
+    ['title' => 'Landing Page Design', 'category' => 'Web Design', 'image' => '/media/web-design-landing-page.webp', 'desc' => 'Conversion-optimized landing page with A/B tested hero sections.'],
+
+    // Social Media
+    ['title' => 'Social Media Mockup', 'category' => 'Social Media', 'image' => '/media/social-media-content-mockup.png', 'desc' => 'Content grid, story templates, and engagement strategy for Instagram.'],
     ['title' => 'Instagram Feed Design', 'category' => 'Social Media', 'image' => '/media/instagram-feed-design.webp', 'desc' => 'Curated Instagram feed with cohesive brand aesthetic and content pillars.'],
-    ['title' => 'Beauty Product Shoot', 'category' => 'Photography', 'image' => '/media/beauty-product-photography.webp', 'desc' => 'Studio product photography for a skincare brand — clean, vibrant, shelf-ready.'],
-    ['title' => 'Outdoor Advertising', 'category' => 'Advertising', 'image' => '/media/outdoor-advertising-billboard.webp', 'desc' => 'Attention-grabbing outdoor billboard creative for brand awareness campaign.'],
-    ['title' => 'Packaging Design', 'category' => 'Packaging', 'image' => '/media/packaging-design-creative.webp', 'desc' => 'Consumer packaging design — shelf impact, print-ready artwork, and mockups.'],
-    ['title' => 'Product Photography', 'category' => 'Photography', 'image' => '/media/product-photography-sneakers.webp', 'desc' => 'Lifestyle product photography — vibrant colors, dynamic angles, social-ready.'],
+    ['title' => 'Brand Feed Design', 'category' => 'Social Media', 'image' => '/media/social-media-brand-feed.webp', 'desc' => 'Brand social media feed with consistent visual language and messaging.'],
+    ['title' => 'Real Estate Social Grid', 'category' => 'Social Media', 'image' => '/media/social-media-real-estate-posts-grid.webp', 'desc' => 'Real estate social media content grid with property showcases.'],
+    ['title' => 'Chupa Chups Social', 'category' => 'Social Media', 'image' => '/media/social-media-chupa-chups.webp', 'desc' => 'Playful candy brand social media content design.'],
     ['title' => 'Influencer Content', 'category' => 'Social Media', 'image' => '/media/social-media-influencer-content.webp', 'desc' => 'Influencer-style branded content for social media campaigns.'],
+    ['title' => 'Instagram Mockup', 'category' => 'Social Media', 'image' => '/media/social-media-instagram-mockup.webp', 'desc' => 'Realistic Instagram post and story mockup for client presentations.'],
+    ['title' => 'Podcast Grid Design', 'category' => 'Social Media', 'image' => '/media/social-media-podcast-grid.jpg', 'desc' => 'Podcast social media grid with episode cards and audiogram templates.'],
+
+    // Advertising
+    ['title' => 'Billboard Campaign', 'category' => 'Advertising', 'image' => '/media/billboard-advertising-campaign.jpg', 'desc' => 'Large-format outdoor advertising campaign for a global brand.'],
+    ['title' => 'Outdoor Billboard', 'category' => 'Advertising', 'image' => '/media/outdoor-advertising-billboard.webp', 'desc' => 'Attention-grabbing outdoor billboard creative for brand awareness.'],
+    ['title' => 'Fitness Brand Ad', 'category' => 'Advertising', 'image' => '/media/creative-ad-protein-fitness.webp', 'desc' => 'Performance fitness brand advertising with athletic imagery.'],
+    ['title' => 'Eyewear Fashion Ad', 'category' => 'Advertising', 'image' => '/media/creative-ad-eyewear-fashion.webp', 'desc' => 'Luxury eyewear fashion advertisement with editorial styling.'],
+    ['title' => 'Roofing Company Ad', 'category' => 'Advertising', 'image' => '/media/creative-ad-roofing-company.webp', 'desc' => 'Local service business advertising creative for lead generation.'],
+    ['title' => 'Back to School Campaign', 'category' => 'Advertising', 'image' => '/media/creative-ad-back-to-school-cairo.webp', 'desc' => 'Back-to-school retail campaign with vibrant seasonal creative.'],
+    ['title' => 'Legal Education Ad', 'category' => 'Advertising', 'image' => '/media/creative-ad-legal-education-red.webp', 'desc' => 'Professional legal education institution advertising creative.'],
+
+    // Photography
+    ['title' => 'Beauty Product Shoot', 'category' => 'Photography', 'image' => '/media/beauty-product-photography.webp', 'desc' => 'Studio product photography for a skincare brand — clean and shelf-ready.'],
+    ['title' => 'Jewelry Photography', 'category' => 'Photography', 'image' => '/media/product-photography-jewelry.webp', 'desc' => 'Fine jewelry product photography with studio lighting and detail shots.'],
+    ['title' => 'Sneaker Product Shoot', 'category' => 'Photography', 'image' => '/media/product-photography-sneakers.webp', 'desc' => 'Dynamic sneaker product photography with lifestyle composition.'],
+    ['title' => 'Luxury Skincare', 'category' => 'Photography', 'image' => '/media/product-photography-luxury-skincare.webp', 'desc' => 'High-end skincare product photography with premium brand positioning.'],
+    ['title' => 'Cocktail Photography', 'category' => 'Photography', 'image' => '/media/product-photography-cocktails.webp', 'desc' => 'Creative cocktail and beverage photography for bars and restaurants.'],
+    ['title' => 'Fashion Shoes Editorial', 'category' => 'Photography', 'image' => '/media/product-photography-fashion-shoes.webp', 'desc' => 'Fashion shoes editorial photography with creative art direction.'],
+    ['title' => 'Lipstick Beauty Shoot', 'category' => 'Photography', 'image' => '/media/product-photography-lipstick-beauty.webp', 'desc' => 'Beauty cosmetics product photography with rich color and texture.'],
+    ['title' => 'Handbag Sunset Shot', 'category' => 'Photography', 'image' => '/media/product-photography-handbag-sunset.webp', 'desc' => 'Luxury handbag lifestyle photography with golden hour lighting.'],
     ['title' => 'Food Photography', 'category' => 'Photography', 'image' => '/media/food-photography.jpg', 'desc' => 'Artisan food photography for restaurant and bakery marketing.'],
     ['title' => 'Fashion Editorial', 'category' => 'Photography', 'image' => '/media/fashion-photography.jpg', 'desc' => 'High-fashion editorial photography for brand campaigns and lookbooks.'],
-    ['title' => 'Creative Direction', 'category' => 'Branding', 'image' => '/media/creative-design-portfolio.webp', 'desc' => 'Art direction and creative strategy for multi-channel brand campaigns.'],
+    ['title' => 'Cinematic Portrait', 'category' => 'Photography', 'image' => '/media/product-photography-cinematic-portrait.webp', 'desc' => 'Cinematic portrait photography with dramatic lighting and mood.'],
+    ['title' => 'Croissant Food Shoot', 'category' => 'Photography', 'image' => '/media/product-photography-food-croissant.webp', 'desc' => 'Appetizing bakery product photography with warm, inviting styling.'],
+
+    // Packaging
+    ['title' => 'Packaging Design', 'category' => 'Packaging', 'image' => '/media/packaging-design-creative.webp', 'desc' => 'Consumer packaging design — shelf impact, print-ready artwork, and mockups.'],
+    ['title' => 'Water Bottle Brand', 'category' => 'Packaging', 'image' => '/media/packaging-design-water-bottle-brand.webp', 'desc' => 'Premium water bottle brand packaging with clean minimal design.'],
+    ['title' => 'Candy Character Packaging', 'category' => 'Packaging', 'image' => '/media/packaging-design-candy-characters.webp', 'desc' => 'Fun candy packaging with illustrated character designs for kids market.'],
+    ['title' => 'Ice Cream Packaging', 'category' => 'Packaging', 'image' => '/media/packaging-design-eskimo-ice-cream.webp', 'desc' => 'Ice cream brand packaging with bold colors and playful typography.'],
+    ['title' => 'Minimalist Can Design', 'category' => 'Packaging', 'image' => '/media/packaging-design-minimalist-cans.webp', 'desc' => 'Minimalist beverage can design with contemporary brand aesthetics.'],
+    ['title' => 'Character Cup Design', 'category' => 'Packaging', 'image' => '/media/packaging-design-character-cups.webp', 'desc' => 'Illustrated character cup designs for food service and retail.'],
+    ['title' => 'Snack Packaging', 'category' => 'Packaging', 'image' => '/media/packaging-design-moody-snacks.webp', 'desc' => 'Moody, premium snack packaging with dark brand aesthetic.'],
+    ['title' => 'Kids Sandwich Box', 'category' => 'Packaging', 'image' => '/media/packaging-design-kids-sandwich-box.webp', 'desc' => 'Kids food packaging with fun illustrations and bright colors.'],
+    ['title' => 'Sour Candy Packaging', 'category' => 'Packaging', 'image' => '/media/packaging-design-goody-candy-sour-sweet.webp', 'desc' => 'Vibrant sour candy packaging with playful design and bold graphics.'],
 ];
 
 $allWork = array_merge($projects, $creativeWork);
@@ -95,10 +159,11 @@ require TML_VIEWS . '/partials/head.php';
 <!-- HERO -->
 <section class="relative w-full px-6 pt-12 pb-16 md:pt-16 md:pb-24 lg:px-12 overflow-hidden">
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#ff4500]/[0.04] blur-[180px] pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Our Work</p>
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Our Portfolio<span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm md:text-base text-white/45 max-w-2xl mx-auto mb-10">From pixel-perfect websites to bold brand identities and scroll-stopping campaigns — explore the work that has helped 500+ brands grow.</p>
+    <p class="text-sm md:text-base text-white/75 max-w-2xl mx-auto mb-10">From pixel-perfect websites to bold brand identities and scroll-stopping campaigns — explore the work that has helped 500+ brands grow.</p>
     <div class="flex items-center justify-center gap-6">
       <div class="text-center">
         <p class="text-2xl md:text-3xl font-bold text-white"><span data-counter-target="500" data-counter-suffix="+">0</span></p>
@@ -135,7 +200,7 @@ require TML_VIEWS . '/partials/head.php';
 </section>
 
 <!-- CATEGORY FILTER TABS -->
-<section class="relative w-full px-6 py-8 lg:px-12">
+<section class="relative w-full px-6 py-8 lg:px-12 sticky top-[80px] z-30 bg-[#050505]/90 backdrop-blur-md">
   <div class="relative mx-auto max-w-7xl">
     <?php
     $filterIcons = [
@@ -167,8 +232,9 @@ require TML_VIEWS . '/partials/head.php';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="portfolio-grid">
       <?php foreach ($allWork as $i => $project) :
           $filterClass = strtolower(str_replace([' ', '&'], ['-', ''], $project['category']));
+          $hiddenClass = ($i >= 18) ? ' portfolio-hidden hidden' : '';
           ?>
-      <div class="portfolio-item scroll-reveal" data-category="<?= tml_e($filterClass) ?>">
+      <div class="portfolio-item scroll-reveal<?= $hiddenClass ?>" data-category="<?= tml_e($filterClass) ?>">
         <div class="group rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 hover:-translate-y-1 transition-all duration-500">
           <div class="relative aspect-[4/3] overflow-hidden">
             <img src="<?= tml_e($project['image']) ?>" alt="<?= tml_e($project['title']) ?> — <?= tml_e($project['category']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" width="600" height="450" loading="lazy" />
@@ -187,6 +253,13 @@ require TML_VIEWS . '/partials/head.php';
         </div>
       </div>
       <?php endforeach; ?>
+    </div>
+    <div class="text-center mt-12" id="load-more-wrap">
+      <button id="load-more-btn" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/10 text-white/70 text-sm font-semibold hover:bg-white/5 hover:border-white/20 transition-all duration-300">
+        <span>Load More</span>
+        <span id="load-more-count" class="text-white/30 text-xs"></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-50"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -240,12 +313,13 @@ require TML_VIEWS . '/partials/head.php';
     <div class="w-[600px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px]"></div>
   </div>
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Start Your Next Marketing Project<span class="text-[#ff4500]">.</span></h2>
-    <p class="text-sm md:text-base text-white/45 leading-relaxed mb-10 max-w-xl mx-auto">Let's bring your vision to life. Tell us about your project and we'll craft a plan that delivers results.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to Grow Your Business<span class="text-[#ff4500]">?</span></h2>
+    <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Let's bring your vision to life. Tell us about your project and we'll craft a strategy that delivers measurable results.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)]">Start a Conversation</a>
-      <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">Call +1 (403) 604-8692</a>
+      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>
+      <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
     </div>
+    <p class="text-xs text-white/30 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
   </div>
 </section>
 
@@ -256,6 +330,76 @@ require TML_VIEWS . '/partials/head.php';
 (function() {
   var filters = document.querySelectorAll('.portfolio-filter');
   var items = document.querySelectorAll('.portfolio-item');
+  var loadMoreBtn = document.getElementById('load-more-btn');
+  var loadMoreWrap = document.getElementById('load-more-wrap');
+  var loadMoreCount = document.getElementById('load-more-count');
+  var INITIAL = 18;
+  var BATCH = 12;
+  var currentFilter = 'all';
+
+  function getFilteredItems() {
+    var arr = [];
+    items.forEach(function(item) {
+      if (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter) {
+        arr.push(item);
+      }
+    });
+    return arr;
+  }
+
+  function applyVisibility() {
+    var filtered = getFilteredItems();
+    var visibleCount = 0;
+    items.forEach(function(item) {
+      var matchesFilter = (currentFilter === 'all' || item.getAttribute('data-category') === currentFilter);
+      if (!matchesFilter) {
+        item.style.display = 'none';
+        item.classList.add('hidden');
+      } else {
+        visibleCount++;
+        if (visibleCount <= INITIAL) {
+          item.style.display = '';
+          item.classList.remove('hidden', 'portfolio-hidden');
+        } else if (!item.classList.contains('portfolio-hidden')) {
+          item.style.display = '';
+          item.classList.remove('hidden');
+        } else {
+          item.style.display = 'none';
+          item.classList.add('hidden');
+        }
+      }
+    });
+    updateLoadMore();
+  }
+
+  function updateLoadMore() {
+    var filtered = getFilteredItems();
+    var hiddenCount = 0;
+    filtered.forEach(function(item) {
+      if (item.classList.contains('portfolio-hidden')) hiddenCount++;
+    });
+    if (hiddenCount > 0) {
+      loadMoreWrap.style.display = '';
+      loadMoreCount.textContent = '(' + hiddenCount + ' remaining)';
+    } else {
+      loadMoreWrap.style.display = 'none';
+    }
+  }
+
+  function resetLoadMore() {
+    var filtered = getFilteredItems();
+    filtered.forEach(function(item, idx) {
+      if (idx < INITIAL) {
+        item.classList.remove('portfolio-hidden', 'hidden');
+        item.style.display = '';
+      } else {
+        item.classList.add('portfolio-hidden', 'hidden');
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Filter click
   filters.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filters.forEach(function(b) {
@@ -264,15 +408,27 @@ require TML_VIEWS . '/partials/head.php';
       });
       btn.classList.add('active', 'bg-[#ff4500]/10', 'border-[#ff4500]/30', 'text-[#ff4500]');
       btn.classList.remove('bg-white/[0.02]', 'border-white/[0.08]', 'text-white/50');
-      var filter = btn.getAttribute('data-filter');
-      items.forEach(function(item) {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+      currentFilter = btn.getAttribute('data-filter');
+      resetLoadMore();
+      applyVisibility();
     });
   });
+
+  // Load More click
+  loadMoreBtn.addEventListener('click', function() {
+    var filtered = getFilteredItems();
+    var shown = 0;
+    filtered.forEach(function(item) {
+      if (item.classList.contains('portfolio-hidden') && shown < BATCH) {
+        item.classList.remove('portfolio-hidden', 'hidden');
+        item.style.display = '';
+        shown++;
+      }
+    });
+    updateLoadMore();
+  });
+
+  // Initial state
+  updateLoadMore();
 })();
 </script>

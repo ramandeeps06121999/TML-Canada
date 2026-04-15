@@ -52,20 +52,51 @@
   });
   window.addEventListener("scroll", hidePanels, { passive: true });
 
+  /* ── Scroll Background Transition ── */
+  var navBar = document.querySelector("[data-tml-nav-bar]");
+  if (navBar) {
+    var scrolled = false;
+    window.addEventListener("scroll", function () {
+      var isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        scrolled = isScrolled;
+        if (scrolled) {
+          navBar.classList.remove("bg-black/40");
+          navBar.classList.add("bg-black/80", "shadow-[0_8px_32px_rgba(0,0,0,0.4)]");
+        } else {
+          navBar.classList.add("bg-black/40");
+          navBar.classList.remove("bg-black/80", "shadow-[0_8px_32px_rgba(0,0,0,0.4)]");
+        }
+      }
+    }, { passive: true });
+  }
+
   /* ── Mobile Menu ── */
   var openBtn = document.querySelector("[data-tml-mobile-open]");
   var closeBtn = document.querySelector("[data-tml-mobile-close]");
   var menu = document.querySelector("[data-tml-mobile-menu]");
   var overlay = document.querySelector("[data-tml-mobile-overlay]");
   function openMobile() {
-    if (menu) menu.classList.remove("hidden");
-    if (overlay) overlay.classList.remove("hidden");
+    if (menu) {
+      menu.classList.remove("pointer-events-none", "opacity-0", "-translate-y-4");
+      menu.classList.add("opacity-100", "translate-y-0");
+    }
+    if (overlay) {
+      overlay.classList.remove("pointer-events-none", "opacity-0");
+      overlay.classList.add("opacity-100");
+    }
     if (openBtn) openBtn.classList.add("hidden");
     if (closeBtn) closeBtn.classList.remove("hidden");
   }
   function closeMobile() {
-    if (menu) menu.classList.add("hidden");
-    if (overlay) overlay.classList.add("hidden");
+    if (menu) {
+      menu.classList.add("pointer-events-none", "opacity-0", "-translate-y-4");
+      menu.classList.remove("opacity-100", "translate-y-0");
+    }
+    if (overlay) {
+      overlay.classList.add("pointer-events-none", "opacity-0");
+      overlay.classList.remove("opacity-100");
+    }
     if (openBtn) openBtn.classList.remove("hidden");
     if (closeBtn) closeBtn.classList.add("hidden");
   }

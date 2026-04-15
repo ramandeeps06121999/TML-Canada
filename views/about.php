@@ -1,7 +1,7 @@
 <?php
-$title = 'About TML Agency | Best Marketing Agency Edmonton';
-$description = 'Discover TML Agency — Edmonton\'s top digital marketing, branding & web development agency. 500+ clients, 70+ experts, 15+ years.';
-$keywords = 'about TML Agency, digital marketing agency Edmonton, Edmonton marketing company, branding agency Canada, web development agency Alberta, TML Agency team';
+$title = 'About TML Agency | Digital Marketing Agency Canada';
+$description = 'Meet TML Agency — Canada\'s full-service digital marketing, branding & web development agency. 500+ clients, 70+ experts, 15+ years. Get a free consultation today.';
+$keywords = 'about TML Agency, digital marketing agency Canada, marketing company Canada, branding agency Canada, web development agency Alberta, TML Agency team, marketing agency Edmonton';
 $canonicalPath = '/about-us';
 
 $aboutFaqs = [
@@ -15,20 +15,12 @@ $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
     ['name' => 'About Us', 'url' => TML_SITE_URL . '/about-us'],
 ]);
-$orgSchema = [
-    '@context' => 'https://schema.org',
-    '@type' => 'Organization',
-    'name' => 'TML Agency',
-    'url' => TML_SITE_URL,
+$orgSchema = array_merge(tml_schema_organization(), [
     'logo' => TML_SITE_URL . '/og-image.png',
-    'description' => $description,
     'foundingDate' => '2010',
     'foundingLocation' => 'Edmonton, Canada',
     'numberOfEmployees' => ['@type' => 'QuantitativeValue', 'minValue' => 70],
-    'address' => TML_SCHEMA_PROVIDER['address'],
-    'telephone' => '+14036048692',
-    'sameAs' => [],
-];
+]);
 $faqSchema = tml_schema_faq($aboutFaqs);
 $extraHead = [
     tml_json_ld_script($breadcrumbSchema),
@@ -50,7 +42,9 @@ require TML_VIEWS . '/partials/head.php';
 
 <!-- HERO -->
 <section class="relative w-full px-6 pt-12 pb-16 md:pt-16 md:pb-24 lg:px-12 overflow-hidden">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
+  <!-- Grid Background (behind everything, faded at edges) -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none z-[2]"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="section-label text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 mx-auto w-fit">Who We Are</p>
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">About <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">TML Agency</span><span class="text-[#ff4500]">.</span></h1>
@@ -74,10 +68,15 @@ require TML_VIEWS . '/partials/head.php';
       <div class="space-y-6">
         <p class="text-sm md:text-base text-white/50 leading-relaxed">TML Agency was founded in 2010 with a simple belief: every business, no matter its size, deserves world-class branding and marketing. What started as a small design studio has grown into one of Canada&rsquo;s most trusted full-service digital agencies, headquartered in Edmonton, Alberta.</p>
         <p class="text-sm md:text-base text-white/50 leading-relaxed">Over the past decade and a half, we have expanded our capabilities from branding and graphic design into SEO, Google Ads, web development, social media marketing, AI-powered influencer management, and lead generation &mdash; becoming a true one-stop partner for growth.</p>
-      </div>
-      <div class="space-y-6">
         <p class="text-sm md:text-base text-white/50 leading-relaxed">Today, our team of <strong class="text-white/80 font-semibold">70+ specialists</strong> serves <strong class="text-white/80 font-semibold">500+ clients</strong> across India, the US, Canada, the UK, Australia, New Zealand, and the UAE. From startups launching their first product to enterprises looking to dominate new markets, we bring the same level of strategic depth and creative excellence.</p>
         <p class="text-sm md:text-base text-white/50 leading-relaxed">Our <strong class="text-white/80 font-semibold">98% client retention rate</strong> speaks for itself. We don&rsquo;t just deliver campaigns &mdash; we build lasting partnerships. Every strategy is backed by data, every design is intentional, and every result is measurable.</p>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto group">
+        <img src="/media/brand-photography.jpg"
+             alt="TML Agency team — brand photography session"
+             loading="lazy"
+             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#080808]/60 via-transparent to-transparent pointer-events-none"></div>
       </div>
     </div>
   </div>
@@ -91,19 +90,19 @@ require TML_VIEWS . '/partials/head.php';
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 scroll-reveal scroll-delay-1">
-      <div class="aspect-[4/3] rounded-xl overflow-hidden group">
+      <div class="aspect-[4/3] rounded-xl overflow-hidden group border border-white/[0.06] hover:border-[#ff4500]/20 transition-colors duration-300">
         <img src="/media/creative-design-portfolio.webp"
              alt="Creative design portfolio — TML Agency work"
              loading="lazy"
              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
-      <div class="aspect-[4/3] rounded-xl overflow-hidden group">
+      <div class="aspect-[4/3] rounded-xl overflow-hidden group border border-white/[0.06] hover:border-[#ff4500]/20 transition-colors duration-300">
         <img src="/media/social-media-content-mockup.png"
              alt="Social media content mockup — TML Agency work"
              loading="lazy"
              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
       </div>
-      <div class="aspect-[4/3] rounded-xl overflow-hidden group">
+      <div class="aspect-[4/3] rounded-xl overflow-hidden group border border-white/[0.06] hover:border-[#ff4500]/20 transition-colors duration-300">
         <img src="/media/billboard-advertising-campaign.jpg"
              alt="Billboard advertising campaign — TML Agency work"
              loading="lazy"
@@ -123,7 +122,7 @@ require TML_VIEWS . '/partials/head.php';
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-reveal scroll-delay-1">
       <!-- Mission -->
-      <div class="glass-card rounded-2xl p-8 md:p-10 relative overflow-hidden group">
+      <div class="glass-card rounded-2xl p-8 md:p-10 relative overflow-hidden group hover:border-[#ff4500]/20 transition-all duration-300 hover:-translate-y-1">
         <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-transparent"></div>
         <div class="w-14 h-14 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-6 group-hover:bg-[#ff4500]/20 transition-colors">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -132,7 +131,7 @@ require TML_VIEWS . '/partials/head.php';
         <p class="text-sm text-white/50 leading-relaxed">To deliver measurable results through strategic branding and performance marketing. We exist to help businesses of all sizes build powerful brands, attract the right customers, and achieve sustainable growth &mdash; all driven by data, creativity, and an unwavering commitment to excellence.</p>
       </div>
       <!-- Vision -->
-      <div class="glass-card rounded-2xl p-8 md:p-10 relative overflow-hidden group">
+      <div class="glass-card rounded-2xl p-8 md:p-10 relative overflow-hidden group hover:border-[#ff4500]/20 transition-all duration-300 hover:-translate-y-1">
         <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-transparent"></div>
         <div class="w-14 h-14 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-6 group-hover:bg-[#ff4500]/20 transition-colors">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
@@ -175,8 +174,8 @@ require TML_VIEWS . '/partials/head.php';
     ?>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 scroll-reveal scroll-delay-1">
       <?php foreach ($stats as $i => $s) : ?>
-      <div class="glass-card text-center p-6 rounded-2xl">
-        <div class="mb-2"><?= $statIcons[$i] ?? '' ?></div>
+      <div class="glass-card text-center p-6 rounded-2xl group hover:border-[#ff4500]/20 transition-all duration-300 hover:-translate-y-1">
+        <div class="mb-2 group-hover:scale-110 transition-transform duration-300"><?= $statIcons[$i] ?? '' ?></div>
         <div class="text-2xl md:text-3xl font-bold text-white mb-1"><span data-counter-target="<?= $s['target'] ?>" data-counter-suffix="<?= tml_e($s['suffix']) ?>">0</span></div>
         <p class="text-xs text-white/35 tracking-wide uppercase"><?= tml_e($s['label']) ?></p>
       </div>
@@ -220,13 +219,13 @@ require TML_VIEWS . '/partials/head.php';
     ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 scroll-reveal scroll-delay-1">
       <?php foreach ($values as $i => $val) : ?>
-      <div class="group glass-card rounded-2xl p-6 md:p-8 relative">
+      <div class="group glass-card rounded-2xl p-6 md:p-8 relative hover:border-[#ff4500]/20 transition-all duration-300 hover:-translate-y-1">
         <div class="absolute top-6 right-6 text-[10px] text-white/20 font-mono"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></div>
         <div class="w-12 h-12 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 transition-colors">
           <?= $val['icon'] ?>
         </div>
         <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors"><?= tml_e($val['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($val['desc']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($val['desc']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -241,7 +240,13 @@ require TML_VIEWS . '/partials/head.php';
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">05</span>
     </div>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Meet Our Marketing Team<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Meet Our Marketing Team<span class="text-[#ff4500]">.</span></h2>
+    <div class="scroll-reveal scroll-delay-1 mb-12 rounded-2xl overflow-hidden border border-white/[0.06] max-h-[320px] group">
+      <img src="/media/creative-photography.jpg"
+           alt="TML Agency creative team at work"
+           loading="lazy"
+           class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+    </div>
     <?php
     $team = [
         ['name' => 'Arvinder Singh', 'role' => 'Owner & Founder', 'initials' => 'AS'],
@@ -278,11 +283,11 @@ require TML_VIEWS . '/partials/head.php';
       <?php foreach ($aboutFaqs as $i => $faq) : ?>
       <div class="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors" data-tml-faq>
         <button type="button" class="w-full flex items-center justify-between p-5 md:p-6 text-left" data-tml-faq-toggle>
-          <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" class="flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e($faq['q']) ?></span></span>
+          <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" class="flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e(($faq['q'] ?? $faq['question'] ?? '')) ?></span></span>
           <span class="text-white/30 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
-          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/45 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
+          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e(($faq['a'] ?? $faq['answer'] ?? '')) ?></div>
         </div>
       </div>
       <?php endforeach; ?>
@@ -293,9 +298,10 @@ require TML_VIEWS . '/partials/head.php';
 <!-- CTA -->
 <section class="relative w-full px-6 py-20 md:py-28 lg:px-12 overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#ff4500]/[0.03] to-[#050505] pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-3xl text-center scroll-reveal">
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Start Your Digital Marketing Journey<span class="text-[#ff4500]">.</span></h2>
-    <p class="text-sm md:text-base text-white/45 leading-relaxed mb-10 max-w-xl mx-auto">Partner with Edmonton&rsquo;s most results-driven agency. Let&rsquo;s build a strategy that delivers real, measurable growth for your brand.</p>
+    <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Partner with Edmonton&rsquo;s most results-driven agency. Let&rsquo;s build a strategy that delivers real, measurable growth for your brand.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>
       <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Call +1 (403) 604-8692</a>

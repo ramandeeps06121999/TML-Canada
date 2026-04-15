@@ -1,7 +1,7 @@
 <?php
-$title = 'Blog | TML Agency — Marketing, Branding & AI Insights';
-$description = 'Expert insights on digital marketing, branding, SEO, AI, social media, and ad strategy from TML Agency.';
-$keywords = 'digital marketing blog, SEO tips, branding insights, Google Ads strategies, social media marketing tips, AI marketing, content marketing blog, TML Agency blog';
+$title = 'Digital Marketing Blog | SEO & AI Tips | TML Agency';
+$description = 'Read expert insights on digital marketing, SEO, branding, AI, Google Ads & social media strategy from TML Agency Canada. Actionable tips for growing your brand.';
+$keywords = 'digital marketing blog, SEO tips Canada, branding insights, Google Ads strategies, social media marketing tips, AI marketing blog, content marketing, TML Agency blog';
 $canonicalPath = '/blog';
 $blogs = tml_blog_articles();
 uksort($blogs, static function ($a, $b) use ($blogs) {
@@ -62,6 +62,13 @@ $blogsRest = array_slice($blogs, 1);
   transform: translateY(-6px);
   border-color: #ff4500;
   background-color: rgba(255, 69, 0, 0.05);
+  box-shadow: 0 12px 40px -8px rgba(255, 69, 0, 0.15), 0 4px 16px -4px rgba(0,0,0,0.4);
+}
+.blog-card .blog-card-img {
+  transition: transform 0.6s cubic-bezier(.23,1,.32,1);
+}
+.blog-card:hover .blog-card-img {
+  transform: scale(1.05);
 }
 .category-filter {
   transition: all 0.3s cubic-bezier(.23,1,.32,1);
@@ -98,6 +105,7 @@ $blogsRest = array_slice($blogs, 1);
 
 <!-- Hero Section -->
 <section class="pt-24 md:pt-32 px-6 lg:px-12 pb-16 md:pb-20 relative overflow-hidden bg-gradient-to-b from-[#080808] via-[#050505] to-[#050505]">
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff4500]/8 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute -bottom-32 -right-40 w-80 h-80 bg-[#ff4500]/4 rounded-full blur-3xl pointer-events-none"></div>
   <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-[#ff4500]/3 rounded-full blur-3xl pointer-events-none opacity-50"></div>
@@ -182,14 +190,16 @@ $blogsRest = array_slice($blogs, 1);
 </section>
 
 <!-- Articles Grid -->
-<section class="px-6 lg:px-12 py-16 md:py-20">
+<section class="px-6 lg:px-12 py-16 md:py-24">
   <div class="mx-auto max-w-7xl">
     <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
       <?php foreach ($blogsRest as $slug => $article) : ?>
       <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block rounded-xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.06] hover:border-[#ff4500]/40 flex flex-col" data-category="<?= tml_e($article['category']) ?>">
         <!-- Image/Placeholder -->
-        <div class="rounded-t-xl bg-gradient-to-br from-[#ff4500]/18 via-[#ff6a33]/10 to-[#050505]/20 aspect-video flex items-center justify-center overflow-hidden group-hover:from-[#ff4500]/28 group-hover:via-[#ff6a33]/20 transition-all">
-          <span class="text-5xl font-bold text-white/8 select-none"><?= tml_e(mb_substr($article['category'], 0, 2)) ?></span>
+        <div class="rounded-t-xl bg-gradient-to-br from-[#ff4500]/18 via-[#ff6a33]/10 to-[#050505]/20 aspect-[16/9] flex items-center justify-center overflow-hidden relative">
+          <div class="blog-card-img absolute inset-0 bg-gradient-to-br from-[#ff4500]/18 via-[#ff6a33]/10 to-[#050505]/20"></div>
+          <span class="relative text-5xl font-bold text-white/8 select-none"><?= tml_e(mb_substr($article['category'], 0, 2)) ?></span>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#050505]/40 via-transparent to-transparent pointer-events-none"></div>
         </div>
 
         <!-- Content -->

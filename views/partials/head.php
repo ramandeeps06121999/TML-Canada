@@ -56,12 +56,6 @@ $resolvedOgLocale = $ogLocaleOverride ?? 'en_CA';
   <meta name="twitter:image" content="<?= $ogImg ?>" />
   <style>
     :root { --font-inter: 'Inter', system-ui, sans-serif; --font-syne: 'Syne', system-ui, sans-serif; }
-    body { font-family: var(--font-inter); overflow-x: hidden; }
-    h1, h2, h3 { font-family: var(--font-syne), var(--font-inter), system-ui, sans-serif; }
-    ::selection { background: rgba(255, 69, 0, 0.3); color: #fff; }
-    @media (max-width: 640px) {
-      .section-label::before { display: none; }
-    }
   </style>
   <?php foreach ($extraHead ?? [] as $h) { echo $h . "\n"; } ?>
   <?php if (defined('TML_GA4_ID') && TML_GA4_ID !== ''): ?>

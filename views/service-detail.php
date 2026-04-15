@@ -22,7 +22,8 @@ $shortTitles = [
     'custom-software-development' => 'Custom Software',
 ];
 $titleName = $shortTitles[$slug] ?? $data['title'];
-$title = 'Best ' . $titleName . ' Services in Canada | TML Agency';
+$generatedTitle = 'Best ' . $titleName . ' Services in Canada | TML Agency';
+$title = !empty($data['metaTitle']) ? $data['metaTitle'] : (!empty($data['titleOverride']) ? $data['titleOverride'] : $generatedTitle);
 // Unique meta description with service + CTA
 $description = $data['metaDescription'] ?? ('Expert ' . strtolower($data['title']) . ' services by TML Agency. We help businesses grow with proven strategy and creative execution. Get a free quote today.');
 $keywords = is_array($data['metaKeywords'] ?? null)
@@ -90,6 +91,9 @@ $serviceImageMap = [
     'ecommerce-marketing'      => ['ecommerce-branding-creative.webp',     'product-photography-sneakers.webp',     'product-branding-campaign.webp'],
     'gmb-listing'              => ['digital-marketing-creative.webp',       'web-design-landing-page.webp',          'brand-strategy-visual.webp'],
     'technical-seo'            => ['saas-website-design.webp',              'web-design-landing-page.webp',          'digital-marketing-creative.webp'],
+    'digital-marketing'        => ['digital-marketing-creative.webp',       'brand-strategy-visual.webp',            'marketing-campaign-visual.webp'],
+    'enterprise-seo'           => ['saas-website-design.webp',              'web-design-finance-hero.webp',          'digital-marketing-creative.webp'],
+    'ecommerce-seo'            => ['ecommerce-branding-creative.webp',      'product-branding-campaign.webp',        'product-photography-sneakers.webp'],
 ];
 $serviceImages = $serviceImageMap[$slug] ?? ['digital-marketing-creative.webp', 'brand-identity-design.webp', 'creative-design-portfolio.webp'];
 $ogImageOverride = TML_SITE_URL . '/media/' . $serviceImages[0];
@@ -115,6 +119,7 @@ $serviceSchema = tml_schema_service([
     'name' => $data['title'],
     'description' => $data['description'],
     'url' => TML_SITE_URL . '/services/' . $slug,
+    'areaServed' => 'Canada',
     'category' => $data['title'],
     'pricingTiers' => $pricingTiers,
     'dateModified' => $lastUpdated,
@@ -126,7 +131,7 @@ $breadcrumbSchema = tml_schema_breadcrumb([
 ]);
 $faqItems = [];
 foreach ($data['faqs'] ?? [] as $f) {
-    $faqItems[] = ['question' => $f['q'], 'answer' => $f['a']];
+    $faqItems[] = ['question' => $f['q'] ?? $f['question'] ?? '', 'answer' => $f['a'] ?? $f['answer'] ?? ''];
 }
 $extraHead = [
     tml_json_ld_script($serviceSchema),
@@ -142,6 +147,8 @@ require TML_VIEWS . '/partials/head.php';
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <section class="relative w-full px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:px-12 overflow-hidden">
+  <!-- Grid Background (behind everything, faded at edges) -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative z-10 max-w-5xl mx-auto mb-8">
     <?php
     $items = [
@@ -152,7 +159,7 @@ require TML_VIEWS . '/partials/head.php';
     require TML_VIEWS . '/partials/breadcrumbs.php';
     ?>
   </div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none z-[2]"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <a href="/services" class="inline-flex items-center gap-2 text-[11px] text-white/90 tracking-[0.2em] uppercase hover:text-white mb-8">← All Services</a>
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Best <?= tml_e($data['title']) ?> Services<span class="text-[#ff4500]">.</span></h1>
@@ -193,23 +200,28 @@ require TML_VIEWS . '/partials/head.php';
 
 <?php if (!empty($serviceImages)) : ?>
 <section class="relative w-full px-6 py-12 md:py-16 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-5xl">
-    <div class="grid grid-cols-2 gap-4 md:gap-6">
-      <?php foreach (array_slice($serviceImages, 0, 2) as $imgIdx => $imgFile) :
-          $altText = $imgIdx === 0
-              ? tml_e($data['title'] . ' creative work by TML Agency')
-              : tml_e($data['title'] . ' portfolio example by TML Agency');
-          ?>
-      <figure class="relative overflow-hidden rounded-2xl aspect-video bg-white/[0.03]">
+  <div class="relative mx-auto max-w-6xl">
+    <?php
+    $imgSlice = array_slice($serviceImages, 0, 3);
+    $alts = [
+        tml_e($data['title'] . ' creative work by TML Agency — portfolio showcase'),
+        tml_e($data['title'] . ' project example by TML Agency Canada'),
+        tml_e('Professional ' . strtolower($data['title']) . ' services by TML Agency'),
+    ];
+    ?>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      <?php foreach ($imgSlice as $imgIdx => $imgFile) : ?>
+      <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] bg-white/[0.03] border border-white/[0.06] hover:border-[#ff4500]/20 transition-all duration-500">
         <img
           src="/media/<?= tml_e($imgFile) ?>"
-          alt="<?= $altText ?>"
-          class="w-full h-full object-cover"
+          alt="<?= $alts[$imgIdx] ?? $alts[0] ?>"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           loading="<?= $imgIdx === 0 ? 'eager' : 'lazy' ?>"
-          width="1920"
-          height="1080"
+          width="800"
+          height="600"
         />
-        <figcaption class="sr-only"><?= $altText ?></figcaption>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <figcaption class="sr-only"><?= $alts[$imgIdx] ?? $alts[0] ?></figcaption>
       </figure>
       <?php endforeach; ?>
     </div>
@@ -242,7 +254,7 @@ require TML_VIEWS . '/partials/head.php';
           <?= $featureIcons[$i % count($featureIcons)] ?>
         </div>
         <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($feature['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($feature['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($feature['description']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -271,21 +283,46 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-5xl space-y-16 md:space-y-24">
     <?php foreach ($data['deepContent'] as $sectionIndex => $section) : ?>
     <div class="relative">
-      <div class="flex items-center gap-4 mb-6">
+      <div class="flex items-center gap-4 mb-8">
         <span class="text-xs font-mono text-[#ff4500]/50 font-bold"><?= str_pad((string) ($sectionIndex + 1), 2, '0', STR_PAD_LEFT) ?></span>
         <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
       </div>
-      <div class="flex flex-col <?= $sectionIndex % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row' ?> gap-8 md:gap-12 items-start">
-        <div class="md:w-2/5 md:sticky md:top-32">
-          <h2 class="text-2xl sm:text-3xl md:text-[2rem] font-medium text-white leading-tight"><?= tml_e($section['heading']) ?><span class="text-[#ff4500]">.</span></h2>
-        </div>
-        <div class="md:w-3/5">
-          <div class="space-y-5 pl-5 border-l border-white/[0.06]">
-            <?php foreach ($section['paragraphs'] as $p) : ?>
-              <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]"><?= $p ?></p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch <?= $sectionIndex % 2 === 1 ? 'direction-rtl' : '' ?>">
+        <?php if ($sectionIndex % 2 === 0) : ?>
+        <!-- Text Left, Image Right -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl md:text-[2rem] font-medium text-white leading-tight mb-6"><?= tml_e($section['heading']) ?><span class="text-[#ff4500]">.</span></h2>
+          <div class="space-y-3">
+            <?php foreach (array_slice($section['paragraphs'], 0, 2) as $p) :
+              // Trim long paragraphs to ~200 chars for cleaner layout
+              $trimmed = strlen(strip_tags($p)) > 250 ? substr(strip_tags($p), 0, 250) . '...' : $p;
+            ?>
+              <p class="text-sm text-white/75 leading-[1.75]"><?= $trimmed ?></p>
             <?php endforeach; ?>
           </div>
         </div>
+        <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+          <img src="/media/<?= tml_e($serviceImages[$sectionIndex % count($serviceImages)] ?? $serviceImages[0]) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </figure>
+        <?php else : ?>
+        <!-- Image Left, Text Right -->
+        <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+          <img src="/media/<?= tml_e($serviceImages[$sectionIndex % count($serviceImages)] ?? $serviceImages[0]) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        </figure>
+        <div>
+          <h2 class="text-2xl sm:text-3xl md:text-[2rem] font-medium text-white leading-tight mb-6"><?= tml_e($section['heading']) ?><span class="text-[#ff4500]">.</span></h2>
+          <div class="space-y-3">
+            <?php foreach (array_slice($section['paragraphs'], 0, 2) as $p) :
+              // Trim long paragraphs to ~200 chars for cleaner layout
+              $trimmed = strlen(strip_tags($p)) > 250 ? substr(strip_tags($p), 0, 250) . '...' : $p;
+            ?>
+              <p class="text-sm text-white/75 leading-[1.75]"><?= $trimmed ?></p>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <?php endif; ?>
       </div>
     </div>
     <?php endforeach; ?>
@@ -301,7 +338,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="relative bg-[#0a0a0a] rounded-2xl p-8 md:p-10">
         <p class="text-[10px] text-[#ff4500]/60 tracking-[0.2em] uppercase font-semibold mb-2">Transparent Pricing</p>
         <h2 class="scroll-reveal text-xl md:text-2xl font-semibold text-white mb-4"><?= tml_e($data['title']) ?> Pricing &amp; Investment</h2>
-        <p class="text-sm md:text-[15px] text-white/45 leading-[1.8] mb-6"><?= tml_e($data['pricingNote']) ?></p>
+        <p class="text-sm md:text-[15px] text-white/75 leading-[1.8] mb-6"><?= tml_e($data['pricingNote']) ?></p>
         <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Get a Custom Quote</a>
       </div>
     </div>
@@ -334,10 +371,10 @@ require TML_VIEWS . '/partials/head.php';
         <div class="group text-center">
           <div class="mx-auto w-20 h-20 rounded-2xl bg-gradient-to-br from-[#ff4500]/20 to-[#ff4500]/5 border border-[#ff4500]/20 flex flex-col items-center justify-center mb-6 group-hover:from-[#ff4500]/30 group-hover:to-[#ff4500]/10 group-hover:border-[#ff4500]/40 transition-all duration-300">
             <div class="text-[#ff4500]"><?= $processIcons[$i % count($processIcons)] ?></div>
-            <span class="text-[10px] font-mono text-[#ff4500]/50 mt-1"><?= tml_e($step['step']) ?></span>
+            <span class="text-[10px] font-mono text-[#ff4500]/50 mt-1"><?= tml_e($step['step'] ?? $step['title'] ?? '') ?></span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2"><?= tml_e($step['title']) ?></h3>
-          <p class="text-sm text-white/45 leading-relaxed max-w-[220px] mx-auto"><?= tml_e($step['description']) ?></p>
+          <h3 class="text-lg font-semibold text-white mb-2"><?= tml_e($step['title'] ?? $step['step'] ?? '') ?></h3>
+          <p class="text-sm text-white/75 leading-relaxed max-w-[220px] mx-auto"><?= tml_e($step['description']) ?></p>
         </div>
         <?php endforeach; ?>
       </div>
@@ -359,11 +396,11 @@ require TML_VIEWS . '/partials/head.php';
           <span class="w-8 h-8 rounded-lg bg-[#ff4500]/10 flex items-center justify-center flex-shrink-0">
             <span class="text-xs font-mono text-[#ff4500] font-bold"><?= str_pad((string) ($fi + 1), 2, '0', STR_PAD_LEFT) ?></span>
           </span>
-          <span class="flex-1 text-white font-medium text-sm md:text-base"><?= tml_e($faq['q']) ?></span>
+          <span class="flex-1 text-white font-medium text-sm md:text-base"><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/30 flex-shrink-0 transition-transform duration-200" data-tml-faq-icon><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
-          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-[3.75rem] md:pl-[4.25rem] text-sm text-white/50 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
+          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-[3.75rem] md:pl-[4.25rem] text-sm text-white/50 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
         </div>
       </div>
       <?php endforeach; ?>
@@ -379,19 +416,44 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 
   <?php
-  $carouselImages = [
-      ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
-      ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
-      ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'],
-      ['product-branding-campaign.webp', 'Product Branding', 'Branding'],
-      ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'],
-      ['beauty-product-photography.webp', 'Product Photography', 'Photography'],
-      ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'],
-      ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'],
-      ['instagram-feed-design.webp', 'Instagram Grid', 'Social Media'],
-      ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'],
-      ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
-      ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+  // Service-specific creative work images + general portfolio
+  $serviceCarouselMap = [
+      'branding' => [
+          ['brand-identity-design.webp', 'Brand Identity System', 'Branding'], ['brand-identity-design-2.webp', 'Brand Identity Design', 'Branding'], ['brand-strategy-visual.webp', 'Brand Strategy Visual', 'Strategy'],
+          ['graphic-design-brand-identity.webp', 'Brand Identity Package', 'Branding'], ['graphic-design-brand-showcase.webp', 'Brand Showcase', 'Branding'], ['graphic-design-brand-typography.webp', 'Brand Typography', 'Design'],
+      ],
+      'graphic-design' => [
+          ['graphic-design-coca-cola-marvel.webp', 'Coca-Cola x Marvel Creative', 'Graphic Design'], ['graphic-design-pepsi-billboard.jpg', 'Pepsi Billboard', 'Graphic Design'], ['graphic-design-snickers-guerilla.jpg', 'Snickers Guerilla Ad', 'Graphic Design'],
+          ['graphic-design-faber-castell.jpg', 'Faber-Castell Creative', 'Graphic Design'], ['graphic-design-fitness-billboard.webp', 'Fitness Billboard', 'Advertising'], ['poster-design-netflix-induction.webp', 'Netflix Poster Design', 'Design'],
+          ['graphic-design-colgate-creative.jpg', 'Colgate Creative', 'Graphic Design'], ['graphic-design-sneaker-creative.jpg', 'Sneaker Creative', 'Design'], ['graphic-design-food-ad.jpg', 'Food Ad Design', 'Advertising'],
+      ],
+      'social-media' => [
+          ['social-media-content-mockup.png', 'Social Media Mockup', 'Social Media'], ['instagram-feed-design.webp', 'Instagram Grid Design', 'Social Media'], ['social-media-brand-feed.webp', 'Brand Feed Design', 'Social Media'],
+          ['social-media-real-estate-posts-grid.webp', 'Real Estate Social', 'Social Media'], ['social-media-chupa-chups.webp', 'Chupa Chups Social', 'Social Media'], ['social-media-influencer-content.webp', 'Influencer Content', 'Social Media'],
+          ['social-media-instagram-mockup.webp', 'Instagram Mockup', 'Social Media'], ['social-media-instagram-lifestyle.jpg', 'Lifestyle Content', 'Social Media'], ['social-media-turkish-agency.jpg', 'Agency Social Design', 'Social Media'],
+      ],
+      'web-design' => [
+          ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'], ['saas-website-design.webp', 'SaaS Website', 'Web Design'], ['web-design-creative-agency-dark.jpg', 'Dark Agency Website', 'Web Design'],
+          ['web-design-finance-hero.webp', 'Finance Website', 'Web Design'], ['web-design-web3-platform.jpg', 'Web3 Platform', 'Web Design'], ['web-design-community-platform.webp', 'Community Platform', 'Web Design'],
+          ['web-design-travel-app.webp', 'Travel App Design', 'UI/UX'], ['web-design-productivity-tool.webp', 'Productivity Tool', 'Web Design'], ['web-design-ai-design-tool.jpg', 'AI Design Tool', 'Web Design'],
+      ],
+      'branding-packaging' => [
+          ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'], ['packaging-design-water-bottle-brand.webp', 'Water Bottle Branding', 'Packaging'], ['packaging-design-candy-characters.webp', 'Candy Characters', 'Packaging'],
+          ['packaging-design-eskimo-ice-cream.webp', 'Ice Cream Packaging', 'Packaging'], ['packaging-design-minimalist-cans.webp', 'Minimalist Cans', 'Packaging'], ['packaging-design-character-cups.webp', 'Character Cups', 'Packaging'],
+          ['packaging-design-moody-snacks.webp', 'Snack Packaging', 'Packaging'], ['packaging-design-kids-sandwich-box.webp', 'Kids Sandwich Box', 'Packaging'], ['packaging-design-goody-candy-sour-sweet.webp', 'Candy Packaging', 'Packaging'],
+      ],
+      'google-ads' => [
+          ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'], ['outdoor-advertising-billboard.webp', 'Outdoor Billboard', 'Advertising'], ['creative-ad-protein-fitness.webp', 'Fitness Ad', 'Advertising'],
+          ['creative-ad-roofing-company.webp', 'Roofing Company Ad', 'Advertising'], ['creative-ad-dental-clinic-fly.webp', 'Dental Clinic Ad', 'Advertising'], ['creative-ad-eyewear-fashion.webp', 'Eyewear Fashion Ad', 'Advertising'],
+      ],
+  ];
+  // Use service-specific images if available, otherwise use a general mix
+  $carouselImages = $serviceCarouselMap[$slug] ?? [
+      ['brand-identity-design.webp', 'Brand Identity Design', 'Branding'], ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'], ['graphic-design-coca-cola-marvel.webp', 'Coca-Cola x Marvel', 'Graphic Design'],
+      ['product-branding-campaign.webp', 'Product Branding', 'Branding'], ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'], ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
+      ['creative-ad-protein-fitness.webp', 'Fitness Ad Creative', 'Advertising'], ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'], ['product-photography-jewelry.webp', 'Jewelry Photography', 'Photography'],
+      ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'], ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'], ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+      ['graphic-design-fitness-billboard.webp', 'Fitness Billboard', 'Advertising'], ['poster-design-netflix-induction.webp', 'Netflix Poster', 'Design'], ['product-photography-sneakers.webp', 'Sneaker Photography', 'Photography'],
   ];
   $itemsPerSlide = 3;
   $totalSlides = ceil(count($carouselImages) / $itemsPerSlide);
@@ -493,11 +555,12 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to elevate your <?= tml_e(strtolower($data['title'])) ?><span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our <?= tml_e(strtolower($data['title'])) ?> services can help grow your business.</p>
+    <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our <?= tml_e(strtolower($data['title'])) ?> services can help grow your business.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Book a Free Strategy Call</a>
-      <a href="mailto:info@townmedialabs.ca" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">info@townmedialabs.ca</a>
+      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Book a Free Strategy Call</a>
+      <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
     </div>
+    <p class="text-xs text-white/30 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
   </div>
 </section>
 

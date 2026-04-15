@@ -120,7 +120,7 @@ require TML_VIEWS . '/partials/head.php';
         </div>
         <span class="inline-block text-[11px] tracking-wider uppercase bg-[#ff4500]/10 text-[#ff4500] rounded-full px-3 py-1 font-semibold mb-4"><?= tml_e($tool['category']) ?></span>
         <h3 class="text-xl font-semibold text-white mb-3"><?= tml_e($tool['name']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed mb-6"><?= tml_e($tool['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed mb-6"><?= tml_e($tool['description']) ?></p>
         <span class="inline-flex items-center gap-2 text-xs text-white/25 font-medium px-4 py-2 rounded-full border border-white/[0.06] bg-white/[0.02]">
           <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
           Coming Soon

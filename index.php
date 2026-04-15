@@ -104,7 +104,7 @@ $redirects = [
     'about' => '/about-us',
     'contact' => '/contact-us',
     'carrer' => '/careers',
-    'services/digital-marketing' => '/services/seo',
+    // 'services/digital-marketing' => '/services/seo', // Removed: digital-marketing now has its own service page
     'blog/website-not-showing-on-google' => '/blog/website-not-showing-on-google-fix',
 ];
 $rkey = implode('/', $segments);

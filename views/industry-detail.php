@@ -27,7 +27,7 @@ if ($isTier1) {
 
     $faqItems = [];
     foreach ($v2['faqItems'] ?? [] as $f) {
-        $faqItems[] = ['question' => $f['question'], 'answer' => $f['answer']];
+        $faqItems[] = ['question' => $f['q'] ?? $f['question'] ?? '', 'answer' => $f['a'] ?? $f['answer'] ?? ''];
     }
 
     $extraHead = [
@@ -43,6 +43,7 @@ if ($isTier1) {
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <section class="relative w-full px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:px-12 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative z-10 max-w-5xl mx-auto mb-8">
     <?php
     $items = [
@@ -68,26 +69,24 @@ if ($isTier1) {
 <!-- INDUSTRY VISUAL SHOWCASE -->
 <section class="relative w-full px-6 py-10 md:py-14 lg:px-12">
   <div class="relative mx-auto max-w-5xl">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="aspect-video rounded-2xl overflow-hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+      <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
         <img src="/media/digital-marketing-creative.webp"
              alt="Digital marketing creative for <?= tml_e($name) ?>"
              loading="lazy"
              width="1920"
              height="1080"
-             srcset="/media/digital-marketing-creative-640.webp 640w, /media/digital-marketing-creative-1024.webp 1024w, /media/digital-marketing-creative.webp 1920w"
-             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
-      <div class="aspect-video rounded-2xl overflow-hidden">
+      <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
         <img src="/media/brand-strategy-visual.webp"
              alt="Brand strategy visual for <?= tml_e($name) ?>"
              loading="lazy"
              width="1920"
              height="1080"
-             srcset="/media/brand-strategy-visual-640.webp 640w, /media/brand-strategy-visual-1024.webp 1024w, /media/brand-strategy-visual.webp 1920w"
-             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
     </div>
   </div>
@@ -101,8 +100,8 @@ if ($isTier1) {
           $val = $stat['value'];
           $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', $val, $m);
           ?>
-      <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-        <div class="text-2xl md:text-3xl font-bold text-white mb-1">
+      <div class="text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-colors duration-300">
+        <div class="text-2xl md:text-3xl font-bold text-white mb-2">
           <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
             <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
@@ -140,7 +139,7 @@ if ($isTier1) {
           <?= $challengeIcons[$i % count($challengeIcons)] ?>
         </div>
         <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($challenge['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($challenge['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($challenge['description']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -174,7 +173,7 @@ if ($isTier1) {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
         <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors"><?= tml_e($svc['name']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($svc['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($svc['description']) ?></p>
       </a>
       <?php endforeach; ?>
     </div>
@@ -264,12 +263,12 @@ $sectionIcons = [
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing FAQ<span class="text-[#ff4500]">.</span></h2>
     <div class="space-y-3">
       <?php foreach ($v2['faqItems'] as $faq) : ?>
-      <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors">
+      <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
         <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none text-white font-medium text-sm md:text-base">
-          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['question']) ?></span>
-          <span class="text-white/30 text-xl flex-shrink-0">+</span>
+          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/30 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/90 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['answer']) ?></div>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/70 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
       </details>
       <?php endforeach; ?>
     </div>
@@ -307,7 +306,7 @@ $sectionIcons = [
 
     $legacyFaqItems = [];
     foreach ($legacy['faqs'] ?? [] as $f) {
-        $legacyFaqItems[] = ['question' => $f['question'], 'answer' => $f['answer']];
+        $legacyFaqItems[] = ['question' => $f['q'] ?? $f['question'] ?? '', 'answer' => $f['a'] ?? $f['answer'] ?? ''];
     }
 
     $extraHead = [
@@ -323,6 +322,7 @@ $sectionIcons = [
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <section class="relative w-full px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:px-12 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative z-10 max-w-5xl mx-auto mb-8">
     <?php
     $items = [
@@ -351,26 +351,24 @@ $sectionIcons = [
 <!-- INDUSTRY VISUAL SHOWCASE -->
 <section class="relative w-full px-6 py-10 md:py-14 lg:px-12">
   <div class="relative mx-auto max-w-5xl">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="aspect-video rounded-2xl overflow-hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+      <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
         <img src="/media/digital-marketing-creative.webp"
              alt="Digital marketing creative for <?= tml_e($name) ?>"
              loading="lazy"
              width="1920"
              height="1080"
-             srcset="/media/digital-marketing-creative-640.webp 640w, /media/digital-marketing-creative-1024.webp 1024w, /media/digital-marketing-creative.webp 1920w"
-             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
-      <div class="aspect-video rounded-2xl overflow-hidden">
+      <div class="group aspect-video rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/[0.12] transition-all duration-500 relative">
         <img src="/media/brand-strategy-visual.webp"
              alt="Brand strategy visual for <?= tml_e($name) ?>"
              loading="lazy"
              width="1920"
              height="1080"
-             srcset="/media/brand-strategy-visual-640.webp 640w, /media/brand-strategy-visual-1024.webp 1024w, /media/brand-strategy-visual.webp 1920w"
-             sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
       </div>
     </div>
   </div>
@@ -384,8 +382,8 @@ $sectionIcons = [
           $val = $stat['value'];
           $isSimpleInt = preg_match('/^(\d+)([+%]?)$/', $val, $m);
           ?>
-      <div class="text-center p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
-        <div class="text-2xl md:text-3xl font-bold text-white mb-1">
+      <div class="text-center p-6 md:p-8 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/20 transition-colors duration-300">
+        <div class="text-2xl md:text-3xl font-bold text-white mb-2">
           <?php if ($isSimpleInt && (int) $m[1] > 0) : ?>
             <span data-counter-target="<?= (int) $m[1] ?>" data-counter-suffix="<?= tml_e($m[2]) ?>">0</span>
           <?php else : ?>
@@ -485,7 +483,7 @@ foreach ($legacy['services'] ?? [] as $svcSlug) {
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-[#ff4500] transition-colors"><?= tml_e($ls['data']['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed mb-4 line-clamp-3"><?= tml_e($ls['data']['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed mb-4 line-clamp-3"><?= tml_e($ls['data']['description']) ?></p>
         <span class="text-xs text-[#ff4500] font-medium">Learn More &rarr;</span>
       </a>
       <?php $lsIdx++; endforeach; ?>
@@ -573,12 +571,12 @@ $sectionIcons = [
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing FAQ<span class="text-[#ff4500]">.</span></h2>
     <div class="space-y-3">
       <?php foreach ($legacy['faqs'] as $faq) : ?>
-      <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors">
+      <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
         <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none text-white font-medium text-sm md:text-base">
-          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['question']) ?></span>
-          <span class="text-white/30 text-xl flex-shrink-0">+</span>
+          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/30 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
-        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/90 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['answer']) ?></div>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/70 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
       </details>
       <?php endforeach; ?>
     </div>

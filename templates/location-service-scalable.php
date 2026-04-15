@@ -461,12 +461,12 @@ if (!function_exists('tml_json_ld_script')) {
         <?php foreach ($FAQS as $faq) : ?>
         <details class="group p-6 rounded-2xl border border-white/10 bg-white/[0.02] cursor-pointer">
           <summary class="flex justify-between items-center font-semibold text-white">
-            <span><?= tml_e($faq['q'] ?? '') ?></span>
+            <span><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
             <span class="group-open:rotate-180 transition-transform">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           </summary>
-          <p class="mt-4 text-white/70 leading-relaxed"><?= tml_e($faq['a'] ?? '') ?></p>
+          <p class="mt-4 text-white/70 leading-relaxed"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></p>
         </details>
         <?php endforeach; ?>
       </div>

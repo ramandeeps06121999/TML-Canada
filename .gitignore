@@ -28,6 +28,15 @@ logs/
 *.tmp
 *.temp
 
+# Composer
+vendor/
+composer.lock
+
+# Google Indexing API (sensitive)
+scripts/google-service-account.json
+scripts/indexing-state.json
+scripts/indexing-logs/
+
 # Local tools (not deployed)
 all-links.html
 all-links.php

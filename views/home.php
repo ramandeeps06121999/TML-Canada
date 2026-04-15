@@ -1,7 +1,7 @@
 <?php
-$title = '#1 Digital Marketing Agency Edmonton | TML Agency';
-$description = 'TML Agency is Edmonton\'s top digital marketing agency. SEO, Google Ads, branding, web development & social media marketing. 500+ brands scaled. Get a free audit.';
-$keywords = 'digital marketing agency Edmonton, SEO Edmonton, Google Ads Edmonton, branding agency Edmonton, web development Edmonton, social media marketing Edmonton, TML Agency, marketing company Canada, Edmonton marketing agency';
+$title = 'Digital Marketing Agency in Canada | TML Agency';
+$description = 'TML is a leading digital marketing agency in Canada offering SEO, web design, PPC, and social media marketing. Headquartered in Edmonton, serving businesses nationwide. 500+ brands scaled.';
+$keywords = 'digital marketing agency, marketing agency, digital marketing company, marketing company Canada, SEO agency Canada, Google Ads agency, branding agency, web development, social media marketing, TML Agency, digital marketing services';
 $canonicalPath = '/';
 
 $homeFaqs = [
@@ -17,31 +17,12 @@ $homeFaqs = [
 ];
 
 $faqSchema = tml_schema_faq($homeFaqs);
-$orgSchema = [
-    '@context' => 'https://schema.org',
-    '@type' => 'Organization',
-    'name' => 'TML Agency',
-    'url' => TML_SITE_URL,
+$orgSchema = array_merge(tml_schema_organization(), [
     'logo' => TML_SITE_URL . '/og-image.png',
-    'description' => 'TML Agency is Edmonton\'s top digital marketing agency offering SEO, Google Ads, branding, web development, and social media marketing services.',
     'foundingDate' => '2010',
     'foundingLocation' => 'Edmonton, Canada',
     'numberOfEmployees' => ['@type' => 'QuantitativeValue', 'minValue' => 70, 'maxValue' => 100],
-    'address' => [
-        '@type' => 'PostalAddress',
-        'streetAddress' => '11930 104 St NW',
-        'addressLocality' => 'Edmonton',
-        'addressRegion' => 'Alberta',
-        'postalCode' => 'T5G 2K1',
-        'addressCountry' => 'CA',
-    ],
-    'telephone' => '+14036048692',
-    'sameAs' => [
-        'https://www.instagram.com/tmlagency/',
-        'https://www.facebook.com/tmlagency/',
-        'https://www.linkedin.com/company/tmlagency/',
-    ],
-];
+]);
 $webSiteSchema = [
     '@context' => 'https://schema.org',
     '@type' => 'WebSite',
@@ -53,43 +34,29 @@ $webSiteSchema = [
         'query-input' => 'required name=search_term_string',
     ],
 ];
-$localBusinessSchema = [
-    '@context' => 'https://schema.org',
-    '@type' => 'ProfessionalService',
-    'name' => 'TML Agency - Calgary Digital Marketing',
-    'description' => 'Digital marketing agency serving Calgary and Alberta. SEO, Google Ads, branding, web design for local businesses.',
+$localBusinessSchema = tml_schema_local_business([
+    'name' => 'TML Agency - Edmonton Digital Marketing',
+    'description' => 'Full-service digital marketing agency headquartered in Edmonton, serving businesses across Canada. SEO, Google Ads, branding, web design.',
     'url' => TML_SITE_URL,
-    'telephone' => '+14036048692',
-    'email' => 'hello@townmedialabs.ca',
-    'areaServed' => [
-        ['@type' => 'City', 'name' => 'Calgary'],
-        ['@type' => 'City', 'name' => 'Edmonton'],
-        ['@type' => 'City', 'name' => 'Vancouver'],
-        ['@type' => 'State', 'name' => 'Alberta'],
-    ],
-    'address' => [
-        '@type' => 'PostalAddress',
-        'streetAddress' => '11930 104 St NW',
-        'addressLocality' => 'Edmonton',
-        'addressRegion' => 'Alberta',
-        'postalCode' => 'T5G 2K1',
-        'addressCountry' => 'CA',
-    ],
-    'priceRange' => '$$',
-    'knowsAbout' => [
-        'Digital Marketing',
-        'SEO Services',
-        'Google Ads',
-        'Web Design',
-        'Branding',
-        'Content Marketing',
-    ],
+    'city' => 'Edmonton',
+    'state' => 'Alberta',
+    'services' => ['SEO', 'Google Ads', 'Web Design', 'Branding', 'Content Marketing', 'Social Media Marketing'],
+    'lat' => 53.5461,
+    'lng' => -113.4937,
+    'postalCode' => 'T5G 2K1',
+]);
+$homeTestimonials = [
+    ['quote' => 'TML completely transformed our digital presence. Within 90 days we saw a 3x return on our ad spend and our brand finally felt like us.', 'name' => 'Sarah Mitchell', 'company' => 'Luxe Interiors'],
+    ['quote' => 'Their team feels like an extension of ours. No hand-holding needed — they just get it and deliver, every single time.', 'name' => 'James Carter', 'company' => 'CB Builders'],
+    ['quote' => 'We went from zero online presence to ranking on page one for 12 keywords in under 6 months. The ROI speaks for itself.', 'name' => 'Priya Sharma', 'company' => 'TechVault'],
 ];
+$reviewSchema = tml_schema_reviews($homeTestimonials);
 $extraHead = [
     tml_json_ld_script($orgSchema),
     tml_json_ld_script($webSiteSchema),
     tml_json_ld_script($faqSchema),
     tml_json_ld_script($localBusinessSchema),
+    tml_json_ld_script($reviewSchema),
 ];
 require TML_VIEWS . '/partials/head.php';
 ?>
@@ -99,24 +66,26 @@ require TML_VIEWS . '/partials/head.php';
 <!-- HERO -->
 <section class="relative w-full h-screen min-h-[600px] md:min-h-[800px] flex flex-col justify-end overflow-hidden pb-12 sm:pb-16 pt-24 sm:pt-32 bg-[#111]">
   <div class="absolute inset-0 z-0">
-    <img src="/hero-background.webp" alt="TML Agency creative team" class="absolute inset-0 w-full h-full object-cover object-center opacity-50 mix-blend-screen" width="1920" height="1080" fetchpriority="high" />
+    <video autoplay muted loop playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover object-center" style="filter: brightness(0.45);" fetchpriority="high">
+      <source src="/hero-showreel.mp4" type="video/mp4" />
+    </video>
   </div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-[500px] md:w-[800px] lg:w-[1000px] h-[500px] md:h-[800px] lg:h-[1000px] rounded-full z-[2] opacity-70 mix-blend-color-dodge pointer-events-none" style="background: radial-gradient(circle, rgba(235, 60, 20, 0.4) 0%, rgba(200, 30, 0, 0.1) 50%, transparent 70%)"></div>
-  <div class="absolute inset-0 z-[3] bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent h-full"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-[500px] md:w-[800px] lg:w-[1000px] h-[500px] md:h-[800px] lg:h-[1000px] rounded-full z-[2] opacity-60 pointer-events-none" style="background: radial-gradient(circle, rgba(235, 60, 20, 0.35) 0%, rgba(200, 30, 0, 0.08) 50%, transparent 70%); mix-blend-mode: screen;"></div>
+  <div class="absolute inset-0 z-[3] pointer-events-none" style="background: linear-gradient(to top, #050505 0%, rgba(5,5,5,0.7) 40%, rgba(5,5,5,0.2) 70%, rgba(5,5,5,0.4) 100%);"></div>
   <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col h-full">
     <div class="min-h-[200px] md:min-h-0 flex-1"></div>
     <div class="max-w-5xl mb-4 hero-fade-up">
-      <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-white mb-3 text-balance">Edmonton's <span class="text-[#ff4500]">#1</span> Digital Marketing Agency.</h1>
-      <p class="hero-fade-up hero-delay-1 text-base sm:text-lg md:text-2xl lg:text-3xl text-white/90 tracking-tight leading-snug font-normal text-balance">Branding, SEO, Google Ads &amp; Web Development — helping Edmonton businesses dominate online.</p>
+      <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-white mb-3 text-balance">Canada's Full-Service <span class="text-[#ff4500]">Digital Marketing</span> Agency.</h1>
+      <p class="hero-fade-up hero-delay-1 text-base sm:text-lg md:text-2xl lg:text-3xl text-white/90 tracking-tight leading-snug font-normal text-balance">Branding, SEO, Google Ads &amp; Web Development — headquartered in Edmonton, helping Canadian businesses dominate online.</p>
     </div>
     <div class="flex flex-row gap-3 sm:gap-4 mb-10 hero-fade-up hero-delay-2">
       <a href="/contact-us" class="glow-button relative inline-flex items-center gap-2 rounded-xl bg-[#ff4500] px-5 sm:px-8 py-4 text-sm font-semibold text-white text-center overflow-hidden active:scale-[0.97] transition-transform">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden sm:block"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Say Hi, Don&apos;t Be Shy
+        Get a Free Quote
       </a>
       <a href="#portfolio" class="inline-flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 sm:px-8 py-4 text-sm font-semibold text-white/90 text-center hover:bg-white/[0.06] hover:border-white/[0.15] hover:text-white active:scale-[0.97] transition-all">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        See Our Work
+        View Our Work
       </a>
     </div>
     <div class="w-full h-[1px] bg-gradient-to-r from-white/30 to-transparent mb-8 origin-left hero-scale-x hero-delay-3"></div>
@@ -165,16 +134,19 @@ require TML_VIEWS . '/partials/head.php';
   $logos = ['GOOGLE','MICROSOFT','AMAZON','SHOPIFY','HUBSPOT','META','SPOTIFY','STRIPE','SLACK','ADOBE','NETFLIX','AIRBNB'];
   $logoHtml = '';
   foreach ($logos as $name) {
-      $logoHtml .= '<span class="whitespace-nowrap text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/[0.08] hover:text-white/90 transition-colors duration-500 cursor-default">' . tml_e($name) . '</span>';
-      $logoHtml .= '<span class="text-[#ff4500]/20 text-xs mx-4 select-none">&#9670;</span>';
+      $logoHtml .= '<span class="whitespace-nowrap text-lg sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/40 hover:text-white transition-colors duration-500 cursor-default px-3 sm:px-4 md:px-6">' . tml_e($name) . '</span>';
+      $logoHtml .= '<span class="text-[#ff4500]/20 text-xs mx-2 sm:mx-4 md:mx-6 select-none">&#9670;</span>';
   }
   ?>
-  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-    <div class="flex items-center gap-0 marquee-track py-3"><?= $logoHtml ?><?= $logoHtml ?></div>
-    <div class="flex items-center gap-0 marquee-track py-3" style="animation-direction: reverse;"><?= $logoHtml ?><?= $logoHtml ?></div>
-    <div class="flex items-center gap-0 marquee-track py-3"><?= $logoHtml ?><?= $logoHtml ?></div>
+  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+    <div class="flex items-center marquee-track py-4" style="will-change: transform; gap: 0;"><?= $logoHtml ?><?= $logoHtml ?></div>
+    <div class="flex items-center marquee-track py-4" style="animation-direction: reverse; will-change: transform; gap: 0;"><?= $logoHtml ?><?= $logoHtml ?></div>
+    <div class="flex items-center marquee-track py-4" style="will-change: transform; gap: 0;"><?= $logoHtml ?><?= $logoHtml ?></div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
 
 <!-- ABOUT -->
 <section class="relative py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
@@ -189,10 +161,10 @@ require TML_VIEWS . '/partials/head.php';
       </div>
       <div class="lg:w-1/2 space-y-6 scroll-reveal scroll-delay-1">
         <div class="border-l-2 border-[#ff4500]/30 pl-5">
-          <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]">TML is a full-service branding and digital marketing agency built for businesses that want to move fast and look good doing it. From day one, we embed with your team — learning your market, your audience, and what makes you different.</p>
+          <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">TML is a full-service branding and digital marketing agency built for businesses that want to move fast and look good doing it. From day one, we embed with your team — learning your market, your audience, and what makes you different.</p>
         </div>
         <div class="border-l-2 border-white/10 pl-5">
-          <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]">We combine strategy, design, and performance marketing into one tight operation. No silos. No handoffs. No wasted time. Just sharp work that drives real growth — from branding and web development to SEO, paid ads, and everything in between.</p>
+          <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">We combine strategy, design, and performance marketing into one tight operation. No silos. No handoffs. No wasted time. Just sharp work that drives real growth — from branding and web development to SEO, paid ads, and everything in between.</p>
         </div>
       </div>
     </div>
@@ -208,6 +180,9 @@ require TML_VIEWS . '/partials/head.php';
     </div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
 
 <!-- MEET THE TEAM -->
 <section class="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
@@ -285,6 +260,9 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
+
 <!-- TECH STACK -->
 <section class="py-20 md:py-28 px-6 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="max-w-7xl mx-auto mb-10 scroll-reveal">
@@ -303,11 +281,14 @@ require TML_VIEWS . '/partials/head.php';
       $toolHtml .= '<span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.03] text-sm text-white/50 hover:text-[#ff4500] hover:border-[#ff4500]/30 hover:bg-[#ff4500]/[0.06] transition-all duration-300 whitespace-nowrap cursor-default"><span class="w-1.5 h-1.5 rounded-full bg-[#ff4500]/40"></span>' . tml_e($t) . '</span>';
   }
   ?>
-  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
-    <div class="flex items-center gap-3 marquee-track py-3"><?= $toolHtml ?><?= $toolHtml ?></div>
-    <div class="flex items-center gap-3 marquee-track py-3" style="animation-direction: reverse;"><?= $toolHtml ?><?= $toolHtml ?></div>
+  <div class="relative" style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
+    <div class="flex items-center gap-3 marquee-track py-3" style="will-change: transform;"><?= $toolHtml ?><?= $toolHtml ?></div>
+    <div class="flex items-center gap-3 marquee-track py-3" style="animation-direction: reverse; will-change: transform;"><?= $toolHtml ?><?= $toolHtml ?></div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
 
 <!-- AWARDS & PARTNERS -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
@@ -325,8 +306,7 @@ require TML_VIEWS . '/partials/head.php';
   $awards = [
       ['Clutch Top GenAI 2026', '/awards/Clutch-Top-GenerativeAI-Company2026.png'],
       ['ISO Certified', '/awards/ISO-icon.svg'], ['ISO 27001', '/awards/ISO-icon-1.svg'], ['ISO 9001', '/awards/ISO-icon-2.svg'],
-      ['Flutter Service Award', '/awards/Service-Award-1-flutter.webp'], ['AWS Advanced Tier', '/awards/aws-advance-tier.svg'],
-      ['AWS Security', '/awards/aws-security-1.png'], ['Google Developer', '/awards/google-developer.png'],
+      ['Flutter Service Award', '/awards/Service-Award-1-flutter.webp'],
       ['Red Herring Winner', '/awards/red-hirring.webp'], ['SOC II Compliant', '/awards/socII-icon.svg'],
       ['Top Clutch App Dev', '/awards/top_clutch.co_app_development.webp'],
   ];
@@ -336,8 +316,8 @@ require TML_VIEWS . '/partials/head.php';
   }
   ?>
   <div class="relative mb-20" style="mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);">
-    <div class="flex items-center gap-5 marquee-track py-3"><?= $awardHtml ?><?= $awardHtml ?></div>
-    <div class="flex items-center gap-5 marquee-track py-3" style="animation-direction: reverse; animation-duration: 35s;"><?= $awardHtml ?><?= $awardHtml ?></div>
+    <div class="flex items-center gap-6 marquee-track py-4" style="will-change: transform; animation-duration: 40s;"><?= $awardHtml ?><?= $awardHtml ?></div>
+    <div class="flex items-center gap-6 marquee-track py-4" style="animation-direction: reverse; animation-duration: 45s; will-change: transform;"><?= $awardHtml ?><?= $awardHtml ?></div>
   </div>
   <div class="max-w-7xl mx-auto">
     <div class="w-full h-px bg-gradient-to-r from-[#ff4500]/20 via-white/10 to-transparent mb-12"></div>
@@ -380,8 +360,11 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
+
 <!-- Our Creative Work — Grid Carousel with Dots Navigation -->
-<section class="relative w-full py-16 md:py-24 overflow-hidden">
+<section class="relative w-full py-16 md:py-24 overflow-hidden bg-[#050505]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 scroll-reveal">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Creative Work</p>
     <h2 class="text-3xl sm:text-4xl font-medium text-white leading-tight">Brand Identity &amp; Creative Work<span class="text-[#ff4500]">.</span></h2>
@@ -389,7 +372,7 @@ require TML_VIEWS . '/partials/head.php';
 
   <?php
   $carouselImages = [
-      ['brand-identity-design.webp', 'Brand Identity', 'Branding'],
+      ['brand-identity-design.webp', 'Brand Identity Design', 'Branding'],
       ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
       ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'],
       ['product-branding-campaign.webp', 'Product Branding', 'Branding'],
@@ -397,10 +380,34 @@ require TML_VIEWS . '/partials/head.php';
       ['beauty-product-photography.webp', 'Product Photography', 'Photography'],
       ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'],
       ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'],
-      ['instagram-feed-design.webp', 'Instagram Grid', 'Social Media'],
+      ['instagram-feed-design.webp', 'Instagram Grid Design', 'Social Media'],
       ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'],
       ['creative-design-portfolio.webp', 'Creative Portfolio', 'Design'],
-      ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
+      ['saas-website-design.webp', 'SaaS Website Design', 'Web Design'],
+      ['graphic-design-coca-cola-marvel.webp', 'Coca-Cola x Marvel Creative', 'Graphic Design'],
+      ['packaging-design-water-bottle-brand.webp', 'Water Bottle Packaging', 'Packaging'],
+      ['product-photography-jewelry.webp', 'Jewelry Product Shoot', 'Photography'],
+      ['web-design-creative-agency-dark.jpg', 'Dark Agency Website', 'Web Design'],
+      ['graphic-design-fitness-billboard.webp', 'Fitness Billboard Design', 'Advertising'],
+      ['social-media-real-estate-posts-grid.webp', 'Real Estate Social Grid', 'Social Media'],
+      ['creative-ad-protein-fitness.webp', 'Fitness Brand Ad', 'Advertising'],
+      ['product-photography-sneakers.webp', 'Sneaker Product Shoot', 'Photography'],
+      ['graphic-design-brand-identity.webp', 'Brand Identity System', 'Branding'],
+      ['web-design-finance-hero.webp', 'Finance Website Hero', 'Web Design'],
+      ['packaging-design-candy-characters.webp', 'Candy Character Packaging', 'Packaging'],
+      ['graphic-design-pepsi-billboard.jpg', 'Pepsi Billboard Creative', 'Graphic Design'],
+      ['product-photography-fashion-shoes.webp', 'Fashion Shoes Editorial', 'Photography'],
+      ['creative-ad-eyewear-fashion.webp', 'Eyewear Fashion Ad', 'Advertising'],
+      ['social-media-chupa-chups.webp', 'Chupa Chups Social Design', 'Social Media'],
+      ['web-design-web3-platform.jpg', 'Web3 Platform Design', 'Web Design'],
+      ['graphic-design-snickers-guerilla.jpg', 'Snickers Guerilla Marketing', 'Graphic Design'],
+      ['product-photography-luxury-skincare.webp', 'Luxury Skincare Shoot', 'Photography'],
+      ['poster-design-netflix-induction.webp', 'Netflix Poster Design', 'Graphic Design'],
+      ['packaging-design-eskimo-ice-cream.webp', 'Ice Cream Packaging', 'Packaging'],
+      ['outdoor-advertising-billboard.webp', 'Outdoor Billboard Campaign', 'Advertising'],
+      ['graphic-design-brand-showcase.webp', 'Brand Showcase Design', 'Branding'],
+      ['product-photography-cocktails.webp', 'Cocktail Photography', 'Photography'],
+      ['web-design-community-platform.webp', 'Community Platform Design', 'Web Design'],
   ];
   $itemsPerSlide = 3;
   $totalSlides = ceil(count($carouselImages) / $itemsPerSlide);
@@ -409,7 +416,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
     <!-- Carousel Container -->
     <div class="relative overflow-hidden">
-      <div id="carouselTrack" class="flex transition-transform duration-500 ease-out" style="transform: translateX(0);">
+      <div id="carouselTrack" class="flex" style="transform: translateX(0); transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); will-change: transform;">
         <?php for ($slide = 0; $slide < $totalSlides; $slide++) : ?>
         <div class="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6">
           <?php
@@ -442,62 +449,92 @@ require TML_VIEWS . '/partials/head.php';
 
       <!-- Navigation Buttons -->
       <?php if ($totalSlides > 1) : ?>
-      <button onclick="slideCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 w-10 h-10 rounded-full border border-white/20 hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      <button onclick="slideCarousel(-1)" aria-label="Previous slide" class="absolute -left-2 md:-left-14 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/60 backdrop-blur-sm hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10 hover:scale-110 active:scale-95">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
       </button>
-      <button onclick="slideCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 w-10 h-10 rounded-full border border-white/20 hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      <button onclick="slideCarousel(1)" aria-label="Next slide" class="absolute -right-2 md:-right-14 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/60 backdrop-blur-sm hover:border-[#ff4500]/50 hover:bg-[#ff4500]/10 flex items-center justify-center transition-all duration-300 z-10 hover:scale-110 active:scale-95">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </button>
       <?php endif; ?>
     </div>
 
-    <!-- Dots Navigation -->
+    <!-- Dots Navigation + Slide Counter -->
     <?php if ($totalSlides > 1) : ?>
-    <div class="flex justify-center gap-2 mt-10">
-      <?php for ($i = 0; $i < $totalSlides; $i++) : ?>
-      <button onclick="goToSlide(<?= $i ?>)" class="dot-nav w-2 h-2 rounded-full transition-all duration-300 <?= $i === 0 ? 'bg-[#ff4500] w-8' : 'bg-white/20 hover:bg-white/40' ?>" data-slide="<?= $i ?>"></button>
-      <?php endfor; ?>
+    <div class="flex items-center justify-center gap-3 mt-10">
+      <span class="text-xs text-white/25 font-mono tabular-nums" id="carouselCounter">01 / <?= str_pad((string) $totalSlides, 2, '0', STR_PAD_LEFT) ?></span>
+      <div class="flex gap-2">
+        <?php for ($i = 0; $i < $totalSlides; $i++) : ?>
+        <button onclick="goToSlide(<?= $i ?>)" aria-label="Go to slide <?= $i + 1 ?>" class="dot-nav h-2 rounded-full transition-all duration-500 ease-out <?= $i === 0 ? 'bg-[#ff4500] w-8' : 'bg-white/15 hover:bg-white/30 w-2' ?>" data-slide="<?= $i ?>"></button>
+        <?php endfor; ?>
+      </div>
     </div>
     <?php endif; ?>
   </div>
 
   <script>
-  let currentSlide = 0;
-  const totalSlides = <?= $totalSlides ?>;
+  (function() {
+    var currentSlide = 0;
+    var totalSlides = <?= $totalSlides ?>;
+    var track = document.getElementById('carouselTrack');
 
-  function slideCarousel(direction) {
-    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-    updateCarousel();
-  }
+    window.slideCarousel = function(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      updateCarousel();
+    };
 
-  function goToSlide(index) {
-    currentSlide = index;
-    updateCarousel();
-  }
+    window.goToSlide = function(index) {
+      currentSlide = index;
+      updateCarousel();
+    };
 
-  function updateCarousel() {
-    const track = document.getElementById('carouselTrack');
-    if (track) {
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    function updateCarousel() {
+      if (track) {
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      }
+      // Update dots
+      document.querySelectorAll('.dot-nav').forEach(function(dot, index) {
+        if (index === currentSlide) {
+          dot.className = 'dot-nav w-8 h-2 rounded-full bg-[#ff4500] transition-all duration-500 ease-out';
+        } else {
+          dot.className = 'dot-nav w-2 h-2 rounded-full bg-white/15 hover:bg-white/30 transition-all duration-500 ease-out';
+        }
+      });
+      // Update counter
+      var counter = document.getElementById('carouselCounter');
+      if (counter) {
+        var num = currentSlide + 1;
+        counter.textContent = (num < 10 ? '0' + num : num) + ' / <?= str_pad((string) $totalSlides, 2, '0', STR_PAD_LEFT) ?>';
+      }
     }
 
-    // Update dots
-    document.querySelectorAll('.dot-nav').forEach((dot, index) => {
-      if (index === currentSlide) {
-        dot.className = 'dot-nav w-8 h-2 rounded-full bg-[#ff4500] transition-all duration-300';
-      } else {
-        dot.className = 'dot-nav w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300';
-      }
-    });
-  }
+    // Touch swipe support
+    if (track) {
+      var touchStartX = 0;
+      var touchEndX = 0;
+      track.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      track.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        var diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          slideCarousel(diff > 0 ? 1 : -1);
+        }
+      }, { passive: true });
+    }
 
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') slideCarousel(-1);
-    if (e.key === 'ArrowRight') slideCarousel(1);
-  });
+    // Auto-advance every 6s, pausing on hover
+    var autoTimer = setInterval(function() { slideCarousel(1); }, 6000);
+    if (track) {
+      track.closest('.relative').addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+      track.closest('.relative').addEventListener('mouseleave', function() { autoTimer = setInterval(function() { slideCarousel(1); }, 6000); });
+    }
+  })();
   </script>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="py-24 md:py-32 px-6 lg:px-12 bg-[#080808] overflow-hidden">
@@ -524,8 +561,12 @@ require TML_VIEWS . '/partials/head.php';
     ];
     ?>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-      <?php foreach ($allProjects as $i => $proj) : ?>
-      <div class="group relative rounded-xl overflow-hidden border border-white/[0.04] aspect-[4/3] hover:border-[#ff4500]/20 transition-all duration-500 cursor-pointer scroll-reveal" style="transition-delay: <?= ($i % 3) * 80 ?>ms;">
+      <?php foreach ($allProjects as $i => $proj) :
+        // Last item in a 10-item 3-col grid: span 1 col on lg but use sm:col-span-2 on the 2-col breakpoint to balance the orphan row
+        $isLastItem = ($i === count($allProjects) - 1 && count($allProjects) % 3 === 1);
+        $extraClass = $isLastItem ? ' sm:col-span-2 lg:col-span-1' : '';
+      ?>
+      <div class="group relative rounded-xl overflow-hidden border border-white/[0.04] aspect-[4/3] hover:border-[#ff4500]/20 transition-all duration-500 cursor-pointer scroll-reveal<?= $extraClass ?>" style="transition-delay: <?= ($i % 3) * 80 ?>ms;">
         <img src="<?= tml_e($proj[2]) ?>" alt="<?= tml_e($proj[0]) ?> - <?= tml_e($proj[1]) ?> project by TML Agency" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" loading="lazy" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -568,6 +609,9 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
+
 <!-- VIDEO SHOWCASE -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
   <div class="max-w-7xl mx-auto mb-10 scroll-reveal">
@@ -604,6 +648,9 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
+
 <!-- PROCESS -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="max-w-7xl mx-auto">
@@ -633,7 +680,7 @@ require TML_VIEWS . '/partials/head.php';
               </div>
             </div>
           </div>
-          <p class="text-sm text-white/45 leading-relaxed mb-4"><?= tml_e($step[3]) ?></p>
+          <p class="text-sm text-white/75 leading-relaxed mb-4"><?= tml_e($step[3]) ?></p>
           <div class="flex flex-wrap gap-2">
             <?php foreach ($step[4] as $tool) : ?><span class="text-xs px-3 py-1.5 rounded-full border border-white/[0.06] text-white/25 bg-white/[0.02]"><?= tml_e($tool) ?></span><?php endforeach; ?>
           </div>
@@ -643,6 +690,9 @@ require TML_VIEWS . '/partials/head.php';
     </div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
 
 <!-- CAMPAIGN PLANS -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
@@ -670,7 +720,7 @@ require TML_VIEWS . '/partials/head.php';
         </div>
         <ul class="space-y-3 mb-8">
           <?php foreach ($plan['features'] as $feat) : ?>
-          <li class="flex items-start gap-2 text-sm text-white/45"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg><?= tml_e($feat) ?></li>
+          <li class="flex items-start gap-2 text-sm text-white/75"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="2" class="shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg><?= tml_e($feat) ?></li>
           <?php endforeach; ?>
         </ul>
         <a href="/contact-us" class="block text-center py-3 px-6 rounded-full <?= $plan['popular'] ? 'bg-[#ff4500] text-white glow-button' : 'border border-white/[0.08] text-white/70 hover:bg-white/[0.04]' ?> text-sm font-semibold transition-all active:scale-[0.97]">Get Started</a>
@@ -685,6 +735,9 @@ require TML_VIEWS . '/partials/head.php';
     </div>
   </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
 
 <!-- TESTIMONIALS -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#080808] overflow-hidden">
@@ -723,6 +776,9 @@ require TML_VIEWS . '/partials/head.php';
   </div>
 </section>
 
+<!-- Section Divider -->
+<div class="w-full h-px bg-gradient-to-r from-transparent via-[#ff4500]/15 to-transparent"></div>
+
 <!-- FAQ -->
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
   <div class="max-w-3xl mx-auto">
@@ -734,11 +790,11 @@ require TML_VIEWS . '/partials/head.php';
       <?php foreach ($homeFaqs as $i => $faq) : ?>
       <div class="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors" data-tml-faq>
         <button type="button" class="w-full flex items-center justify-between p-5 md:p-6 text-left" data-tml-faq-toggle>
-          <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e($faq['q']) ?></span></span>
+          <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e(($faq['q'] ?? $faq['question'] ?? '')) ?></span></span>
           <span class="text-white/30 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
-          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/45 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
+          <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e(($faq['a'] ?? $faq['answer'] ?? '')) ?></div>
         </div>
       </div>
       <?php endforeach; ?>
@@ -863,7 +919,7 @@ require TML_VIEWS . '/partials/head.php';
       <video data-src="/tml-showreel.mp4" poster="/tml-showreel-poster.jpg" autoplay muted loop playsinline aria-label="TML Agency brand showreel" class="w-full aspect-video bg-black"></video>
     </div>
 
-    <!-- Say Hi — Image left, Content right -->
+    <!-- CTA — Image left, Content right -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <!-- LEFT: Image -->
       <div class="scroll-reveal scroll-delay-2">
@@ -893,11 +949,11 @@ require TML_VIEWS . '/partials/head.php';
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row items-start gap-4">
-          <a href="/contact-us" class="glow-button inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5722] active:scale-[0.97] transition-all duration-300">
-            Say Hi
+          <a href="/contact-us" class="glow-button inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5722] active:scale-[0.97] transition-all duration-300 shadow-[0_0_30px_rgba(255,69,0,0.3)]">
+            Book a Free Consultation
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </a>
-          <a href="#portfolio" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 text-white/70 font-semibold text-sm hover:bg-white/[0.04] hover:text-white transition-all duration-300 active:scale-[0.97]">View Our Work</a>
+          <a href="tel:+14036048692" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/10 text-white/70 font-semibold text-sm hover:bg-white/[0.04] hover:text-white transition-all duration-300 active:scale-[0.97]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
         </div>
 
         <!-- Trust row -->
@@ -919,6 +975,18 @@ require TML_VIEWS . '/partials/head.php';
     </div>
   </div>
 </section>
+
+<style>
+/* Smoother marquee animation override for homepage */
+.marquee-track { animation-timing-function: linear; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+/* Smoother hover for all glass-card and interactive cards */
+.glass-card, [class*="border-white/[0.04]"], [class*="border-white/[0.06]"] { transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+/* Carousel dot active state pulse */
+.dot-nav.bg-\[\#ff4500\] { box-shadow: 0 0 8px rgba(255, 69, 0, 0.4); }
+/* Consistent hover lift for all portfolio and partner cards */
+#portfolio .group:hover { transform: translateY(-4px); }
+#portfolio .group { transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.5s ease; }
+</style>
 
 <?php require TML_VIEWS . '/partials/footer.php'; ?>
 <?php require TML_VIEWS . '/partials/foot.php'; ?>

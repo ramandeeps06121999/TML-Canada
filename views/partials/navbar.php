@@ -1,27 +1,34 @@
 <?php
 /** Shared nav (matches NavbarHome2 / InnerNavbar layout). */
+$navPath = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH), '/');
+function tml_nav_active(string $navPath, string $href): string {
+    $href = trim($href, '/');
+    if ($href === '' && $navPath === '') return ' text-white';
+    if ($href !== '' && ($navPath === $href || str_starts_with($navPath, $href . '/'))) return ' text-white';
+    return '';
+}
 ?>
 <div class="fixed top-6 left-0 right-0 z-50 flex justify-center w-full px-4" data-tml-nav>
-  <div class="flex items-center justify-between px-2 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full w-full max-w-3xl shadow-2xl">
+  <div class="flex items-center justify-between px-2 py-2 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full w-full max-w-3xl shadow-2xl transition-all duration-500 ease-out" data-tml-nav-bar>
     <a href="/" class="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 mx-2 overflow-hidden hover:bg-white/10 transition-colors"><img src="/logo.jpg" alt="TML Agency" width="40" height="40" class="w-full h-full object-cover rounded-full" /></a>
     <nav aria-label="Main navigation" class="hidden md:flex flex-1 items-center justify-center gap-6 text-[13px] font-medium text-white/70">
-      <a href="/about-us" class="relative hover:text-white transition-colors tracking-wide group">About<span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span></a>
+      <a href="/about-us" class="relative hover:text-white transition-colors duration-200 tracking-wide group<?= tml_nav_active($navPath, 'about-us') ?>">About<span class="absolute -bottom-1.5 left-0 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full<?= str_starts_with($navPath, 'about-us') ? ' !w-full' : '' ?>"></span></a>
       <div class="relative" data-tml-mega="services">
-        <a href="/services" class="relative hover:text-white transition-colors tracking-wide group flex items-center gap-1">Services
+        <a href="/services" class="relative hover:text-white transition-colors duration-200 tracking-wide group flex items-center gap-1<?= tml_nav_active($navPath, 'services') ?>">Services
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="tml-chevron transition-transform duration-200"><path d="M6 9l6 6 6-6"/></svg>
-          <span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span>
+          <span class="absolute -bottom-1.5 left-0 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full<?= str_starts_with($navPath, 'services') ? ' !w-full' : '' ?>"></span>
         </a>
       </div>
       <div class="relative" data-tml-mega="industries">
-        <a href="/industries" class="relative hover:text-white transition-colors tracking-wide group flex items-center gap-1">Industries
+        <a href="/industries" class="relative hover:text-white transition-colors duration-200 tracking-wide group flex items-center gap-1<?= tml_nav_active($navPath, 'industries') ?>">Industries
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="tml-chevron transition-transform duration-200"><path d="M6 9l6 6 6-6"/></svg>
-          <span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span>
+          <span class="absolute -bottom-1.5 left-0 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full<?= str_starts_with($navPath, 'industries') ? ' !w-full' : '' ?>"></span>
         </a>
       </div>
-      <a href="/portfolio" class="relative hover:text-white transition-colors tracking-wide group">Portfolio<span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span></a>
-      <a href="/blog" class="relative hover:text-white transition-colors tracking-wide group">Blog<span class="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full group-hover:left-0 group-hover:translate-x-0"></span></a>
+      <a href="/portfolio" class="relative hover:text-white transition-colors duration-200 tracking-wide group<?= tml_nav_active($navPath, 'portfolio') ?>">Portfolio<span class="absolute -bottom-1.5 left-0 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full<?= str_starts_with($navPath, 'portfolio') ? ' !w-full' : '' ?>"></span></a>
+      <a href="/blog" class="relative hover:text-white transition-colors duration-200 tracking-wide group<?= tml_nav_active($navPath, 'blog') ?>">Blog<span class="absolute -bottom-1.5 left-0 w-0 h-[2px] rounded-full bg-[#ff4500] transition-all duration-300 group-hover:w-full<?= str_starts_with($navPath, 'blog') ? ' !w-full' : '' ?>"></span></a>
     </nav>
-    <a href="/contact-us" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/5 text-[13px] font-semibold text-white transition-all ml-2">Get in Touch</a>
+    <a href="/contact-us" class="hidden sm:inline-flex px-6 py-2.5 rounded-full bg-[#ff4500] hover:bg-[#e03e00] text-[13px] font-semibold text-white transition-all duration-200 ml-2 shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:shadow-[0_0_28px_rgba(255,69,0,0.45)]">Get in Touch</a>
     <button type="button" class="md:hidden text-white ml-2 mr-2" data-tml-mobile-open aria-label="Open menu">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -127,33 +134,33 @@
     </div>
   </div>
 </div>
-<div class="hidden fixed inset-0 z-40 bg-black/60 md:hidden" data-tml-mobile-overlay></div>
-<div class="hidden fixed top-24 left-4 right-4 z-50 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-5 max-h-[70vh] overflow-y-auto md:hidden" data-tml-mobile-menu>
-  <a href="/about-us" class="block py-3 text-sm text-white/70 hover:text-white">About</a>
+<div class="fixed inset-0 z-40 bg-black/60 md:hidden transition-opacity duration-300 opacity-0 pointer-events-none" data-tml-mobile-overlay></div>
+<div class="fixed top-24 left-4 right-4 z-50 bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl p-5 max-h-[70vh] overflow-y-auto md:hidden transition-all duration-300 ease-out opacity-0 -translate-y-4 pointer-events-none" data-tml-mobile-menu>
+  <a href="/about-us" class="block py-3 text-sm text-white/70 hover:text-white transition-colors<?= tml_nav_active($navPath, 'about-us') ?>">About</a>
   <details class="group">
-    <summary class="flex items-center justify-between py-3 text-sm text-white/70 hover:text-white cursor-pointer list-none">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <summary class="flex items-center justify-between py-3 text-sm text-white/70 hover:text-white cursor-pointer list-none<?= tml_nav_active($navPath, 'services') ?>">Services <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-200 group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg></summary>
     <div class="pl-4 pb-2 space-y-1">
-      <a href="/services/branding" class="block py-2 text-xs text-white/40 hover:text-white">Branding</a>
-      <a href="/services/ai-automation" class="block py-2 text-xs text-white/40 hover:text-white">🆕 AI Automation</a>
-      <a href="/services/custom-software-development" class="block py-2 text-xs text-white/40 hover:text-white">🆕 Custom Software</a>
-      <a href="/services/mobile-app-development" class="block py-2 text-xs text-white/40 hover:text-white">🆕 Mobile Apps</a>
-      <a href="/services/google-ads" class="block py-2 text-xs text-white/40 hover:text-white">Google Ads</a>
-      <a href="/services/seo" class="block py-2 text-xs text-white/40 hover:text-white">SEO</a>
-      <a href="/services/website-development" class="block py-2 text-xs text-white/40 hover:text-white">Web Development</a>
-      <a href="/services/social-media" class="block py-2 text-xs text-white/40 hover:text-white">Social Media</a>
-      <a href="/services" class="block py-2 text-xs text-[#ff4500] font-medium">View All 39 →</a>
+      <a href="/services/branding" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Branding</a>
+      <a href="/services/ai-automation" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">AI Automation</a>
+      <a href="/services/custom-software-development" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Custom Software</a>
+      <a href="/services/mobile-app-development" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Mobile Apps</a>
+      <a href="/services/google-ads" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Google Ads</a>
+      <a href="/services/seo" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">SEO</a>
+      <a href="/services/website-development" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Web Development</a>
+      <a href="/services/social-media" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Social Media</a>
+      <a href="/services" class="block py-2 text-xs text-[#ff4500] font-medium">View All 39 &rarr;</a>
     </div>
   </details>
   <details class="group">
-    <summary class="flex items-center justify-between py-3 text-sm text-white/70 hover:text-white cursor-pointer list-none">Industries <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg></summary>
+    <summary class="flex items-center justify-between py-3 text-sm text-white/70 hover:text-white cursor-pointer list-none<?= tml_nav_active($navPath, 'industries') ?>">Industries <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform duration-200 group-open:rotate-180"><path d="M6 9l6 6 6-6"/></svg></summary>
     <div class="pl-4 pb-2 space-y-1">
-      <a href="/industries/healthcare-medical" class="block py-2 text-xs text-white/40 hover:text-white">Healthcare</a>
-      <a href="/industries/real-estate" class="block py-2 text-xs text-white/40 hover:text-white">Real Estate</a>
-      <a href="/industries/e-commerce" class="block py-2 text-xs text-white/40 hover:text-white">E-Commerce</a>
+      <a href="/industries/healthcare-medical" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Healthcare</a>
+      <a href="/industries/real-estate" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">Real Estate</a>
+      <a href="/industries/e-commerce" class="block py-2 text-xs text-white/40 hover:text-white transition-colors">E-Commerce</a>
       <a href="/industries" class="block py-2 text-xs text-[#ff4500] font-medium">View All &rarr;</a>
     </div>
   </details>
-  <a href="/portfolio" class="block py-3 text-sm text-white/70 hover:text-white">Portfolio</a>
-  <a href="/blog" class="block py-3 text-sm text-white/70 hover:text-white">Blog</a>
-  <a href="/contact-us" class="block mt-3 py-3 px-4 text-center text-sm font-semibold bg-[#ff4500]/20 border border-[#ff4500]/30 rounded-xl text-white">Get in Touch</a>
+  <a href="/portfolio" class="block py-3 text-sm text-white/70 hover:text-white transition-colors<?= tml_nav_active($navPath, 'portfolio') ?>">Portfolio</a>
+  <a href="/blog" class="block py-3 text-sm text-white/70 hover:text-white transition-colors<?= tml_nav_active($navPath, 'blog') ?>">Blog</a>
+  <a href="/contact-us" class="block mt-3 py-3 px-4 text-center text-sm font-semibold bg-[#ff4500] rounded-xl text-white hover:bg-[#e03e00] transition-colors">Get in Touch</a>
 </div>

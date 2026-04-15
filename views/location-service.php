@@ -75,6 +75,9 @@ $localBusinessSchema = tml_schema_local_business([
     'city' => $cityName,
     'state' => (string) $location['state'],
     'services' => count($featTitles) ? $featTitles : [$serviceName],
+    'lat' => $location['lat'] ?? $location['latitude'] ?? null,
+    'lng' => $location['lng'] ?? $location['longitude'] ?? null,
+    'postalCode' => $location['postalCode'] ?? null,
 ]);
 $breadcrumbSchema = tml_schema_breadcrumb([
     ['name' => 'Home', 'url' => TML_SITE_URL . '/'],
@@ -84,7 +87,7 @@ $breadcrumbSchema = tml_schema_breadcrumb([
 ]);
 $faqForSchema = [];
 foreach ($locationFaqs as $f) {
-    $faqForSchema[] = ['question' => $f['q'], 'answer' => $f['a']];
+    $faqForSchema[] = ['question' => $f['q'] ?? $f['question'] ?? '', 'answer' => $f['a'] ?? $f['answer'] ?? ''];
 }
 $faqSchema = tml_schema_faq($faqForSchema);
 
@@ -245,7 +248,9 @@ if (!empty($enrichment['crossLinks'])) {
     $crossLocs = array_merge(array_slice($sameCountry, 0, 5), array_slice($otherCountry, 0, 3));
 }
 
-$otherSvcSlugs = ['branding', 'seo', 'google-ads', 'website-development', 'social-media', 'lead-generation', 'graphic-design', 'video-editing', 'branding-packaging', 'ai-influencer-management', 'music-release'];
+$otherSvcSlugs = !empty($serviceData['relatedServices'])
+    ? $serviceData['relatedServices']
+    : array_keys($servicePages);
 $otherSvcSlugs = array_values(array_filter($otherSvcSlugs, static fn ($s) => $s !== $serviceSlug));
 $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 ?>
@@ -254,6 +259,8 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 <?php require TML_VIEWS . '/partials/navbar.php'; ?>
 
 <section class="relative w-full px-6 pt-32 pb-16 md:pt-40 md:pb-24 lg:px-12 overflow-hidden">
+  <!-- Grid Background (behind everything, faded at edges) -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative z-10 max-w-5xl mx-auto mb-8">
     <?php
     $items = [
@@ -265,7 +272,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     require TML_VIEWS . '/partials/breadcrumbs.php';
     ?>
   </div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#ff4500]/[0.05] blur-[180px] pointer-events-none"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-[#ff4500]/[0.05] blur-[180px] pointer-events-none z-[2]"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#ff4500]/20 bg-[#ff4500]/5 mb-8">
       <div class="w-2 h-2 rounded-full bg-[#ff4500] animate-pulse"></div>
@@ -289,6 +296,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <?php endif; ?>
     </h1>
     <p class="text-lg md:text-xl text-white/90 font-medium mb-4"><?= tml_e($enrichment['tagline'] ?? ('Grow your ' . $cityName . ' business with expert ' . strtolower($serviceName) . ' services.')) ?></p>
+    <p class="text-xs text-white/25 tracking-wide mb-4"><?= tml_e($serviceName) ?> Agency &bull; <?= tml_e($serviceName) ?> Company &bull; <?= tml_e($serviceName) ?> Services in <?= tml_e($cityName) ?></p>
     <p class="text-sm md:text-base text-white/30 leading-relaxed max-w-2xl mx-auto mb-10"><?= tml_e($enrichment['heroDescription'] ?? ('TML is a leading ' . strtolower($serviceName) . ' agency serving businesses across ' . (string) $location['region'] . '.')) ?></p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Quote</a>
@@ -313,7 +321,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             <span class="text-[#ff4500]"><?= tml_e($val) ?></span>
           <?php endif; ?>
         </div>
-        <p class="text-xs text-white/45"><?= tml_e($stat['label']) ?></p>
+        <p class="text-xs text-white/75"><?= tml_e($stat['label']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -321,30 +329,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 </section>
 <?php endif; ?>
 
-<?php if (count($serviceImages) > 0) : ?>
-<section class="relative w-full px-6 py-12 md:py-16 lg:px-12 overflow-hidden">
-  <div class="relative mx-auto max-w-7xl">
-    <div class="grid grid-cols-<?= count($serviceImages) >= 3 ? '3' : count($serviceImages) ?> gap-4 md:gap-6">
-      <?php foreach ($serviceImages as $imgIdx => $imgFile) :
-          $ext = pathinfo($imgFile, PATHINFO_EXTENSION);
-          $altText = tml_e($serviceName . ' in ' . $cityName . ' — TML Agency' . ($imgIdx > 0 ? ' portfolio ' . ($imgIdx + 1) : ''));
-          ?>
-      <figure class="relative overflow-hidden rounded-2xl aspect-video bg-white/[0.03]">
-        <img
-          src="/media/<?= tml_e($imgFile) ?>"
-          alt="<?= $altText ?>"
-          class="w-full h-full object-cover"
-          loading="<?= $imgIdx === 0 ? 'eager' : 'lazy' ?>"
-          width="800"
-          height="450"
-        />
-        <figcaption class="sr-only"><?= $altText ?></figcaption>
-      </figure>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
+<div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div></div>
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
@@ -360,16 +345,24 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>',
     ];
     ?>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 gap-5">
-      <?php foreach ($whyChoose as $i => $item) : ?>
-      <div class="group p-6 md:p-8 rounded-2xl glass-card">
-        <div class="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 transition-colors">
-          <?= $whyIcons[$i % count($whyIcons)] ?>
+    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+      <!-- Left: Image -->
+      <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+        <img src="/media/<?= tml_e($serviceImages[0] ?? 'digital-marketing-creative.webp') ?>" alt="Why choose TML for <?= tml_e($serviceName) ?> in <?= tml_e($cityName) ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </figure>
+      <!-- Right: Why Choose cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <?php foreach ($whyChoose as $i => $item) : ?>
+        <div class="group p-5 rounded-2xl glass-card">
+          <div class="w-9 h-9 rounded-lg bg-[#ff4500]/10 flex items-center justify-center mb-4 group-hover:bg-[#ff4500]/20 transition-colors">
+            <?= $whyIcons[$i % count($whyIcons)] ?>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2"><?= tml_e($item['title']) ?></h3>
+          <p class="text-xs text-white/60 leading-relaxed"><?= tml_e($item['description']) ?></p>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($item['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($item['description']) ?></p>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -389,32 +382,42 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
     ];
     ?>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <?php foreach ($processSteps as $item) : ?>
-      <div class="relative p-6 md:p-8 rounded-2xl glass-card">
-        <div class="text-4xl md:text-5xl font-bold text-[#ff4500]/10 absolute top-4 right-4"><?= str_pad((string) $item['step'], 2, '0', STR_PAD_LEFT) ?></div>
-        <div class="w-10 h-10 rounded-full bg-[#ff4500]/10 flex items-center justify-center mb-5">
-          <span class="text-sm font-bold text-[#ff4500]"><?= (int) $item['step'] ?></span>
+    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+      <!-- Left: Process Steps -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <?php foreach ($processSteps as $item) : ?>
+        <div class="relative p-5 rounded-2xl glass-card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-9 h-9 rounded-full bg-[#ff4500]/10 flex items-center justify-center flex-shrink-0">
+              <span class="text-sm font-bold text-[#ff4500]"><?= (int) $item['step'] ?></span>
+            </div>
+            <h3 class="text-base font-semibold text-white"><?= tml_e($item['title']) ?></h3>
+          </div>
+          <p class="text-xs text-white/60 leading-relaxed"><?= tml_e($item['description']) ?></p>
         </div>
-        <div class="mb-3"><?= $processIcons[((int) $item['step'] - 1) % count($processIcons)] ?></div>
-        <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($item['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($item['description']) ?></p>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
+      <!-- Right: Image -->
+      <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+        <img src="/media/<?= tml_e($midImages[0] ?? $serviceImages[1] ?? 'brand-strategy-visual.webp') ?>" alt="Our <?= tml_e($serviceName) ?> process in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- Mid-page visual showcase -->
-<section class="relative w-full px-6 py-12 md:py-16 lg:px-12 overflow-hidden">
+<div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div></div>
+<section class="relative w-full px-6 py-14 md:py-20 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-6">Selected Work</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
       <?php foreach ($midImages as $mi => $mImg) : ?>
-      <figure class="relative overflow-hidden rounded-2xl aspect-[16/10] bg-white/[0.03] group">
+      <figure class="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[16/10] bg-white/[0.03] group">
         <img src="/media/<?= tml_e($mImg) ?>" alt="<?= tml_e($serviceName) ?> work for <?= tml_e($cityName) ?> businesses — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="500" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-        <div class="absolute bottom-4 left-5">
-          <span class="text-[10px] text-white/60 tracking-wider uppercase font-medium"><?= tml_e($serviceName) ?> &middot; <?= tml_e($cityName) ?></span>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="text-[10px] text-white/70 tracking-wider uppercase font-medium"><?= tml_e($serviceName) ?> &middot; <?= tml_e($cityName) ?></span>
         </div>
       </figure>
       <?php endforeach; ?>
@@ -439,17 +442,24 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>',
     ];
     ?>
-    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <?php foreach ($serviceData['features'] as $idx => $f) : ?>
-      <div class="p-6 md:p-8 rounded-2xl glass-card">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-lg bg-[#ff4500]/10 flex items-center justify-center"><?= $featureIcons[$idx % count($featureIcons)] ?></div>
-          <span class="text-[10px] text-white/20 font-mono"><?= str_pad((string) ($idx + 1), 2, '0', STR_PAD_LEFT) ?></span>
+    <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+      <!-- Left: Image (stretches to match cards height) -->
+      <figure class="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500 min-h-[400px]">
+        <img src="/media/<?= tml_e($preFooterImages[0] ?? $serviceImages[2] ?? 'creative-design-portfolio.webp') ?>" alt="<?= tml_e($serviceName) ?> services for <?= tml_e($cityName) ?> businesses — TML Agency" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      </figure>
+      <!-- Right: Feature cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
+        <?php foreach ($serviceData['features'] as $idx => $f) : ?>
+        <div class="p-5 rounded-2xl glass-card">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-[#ff4500]/10 flex items-center justify-center"><?= $featureIcons[$idx % count($featureIcons)] ?></div>
+          </div>
+          <h3 class="text-base font-semibold text-white mb-2"><?= tml_e($f['title']) ?></h3>
+          <p class="text-xs text-white/60 leading-relaxed"><?= tml_e($f['description']) ?></p>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($f['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($f['description']) ?></p>
+        <?php endforeach; ?>
       </div>
-      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -475,7 +485,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
           <span data-counter-target="<?= (int) $it['n'] ?>" data-counter-suffix="<?= tml_e($it['s']) ?>">0</span>
         </div>
         <h3 class="text-lg font-semibold text-white mb-3"><?= tml_e($it['l']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($it['d']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($it['d']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -491,58 +501,75 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
     </div>
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-14"><?= tml_e($serviceName) ?> in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
-    <div class="space-y-16">
+    <div class="space-y-20">
+      <!-- Section 01: Local Partner — Text Left, Image Right -->
       <div>
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-8">
           <span class="text-xs font-mono text-[#ff4500]/50 font-bold">01</span>
           <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
         </div>
-        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          <div class="md:w-2/5">
-            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight">Your Local <?= tml_e($serviceName) ?> Partner<span class="text-[#ff4500]">.</span></h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6">Your Local <?= tml_e($serviceName) ?> Partner<span class="text-[#ff4500]">.</span></h3>
+            <div class="space-y-4">
+              <?php if (!empty($enrichment['localContent'])) : ?>
+                <?php foreach ($enrichment['localContent'] as $p) : ?>
+                  <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($p) ?></p>
+                <?php endforeach; ?>
+              <?php else : ?>
+                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">As a leading <?= tml_e(strtolower($serviceName)) ?> agency serving <?= tml_e($cityName) ?>, TML helps businesses across <?= tml_e((string) $location['region']) ?> hit measurable growth goals.</p>
+                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">From teams near <?= tml_e($location['landmarks'][0] ?? '') ?> to companies across <?= tml_e($location['landmarks'][1] ?? '') ?> and <?= tml_e($location['landmarks'][2] ?? '') ?> — we build <?= tml_e(strtolower($serviceName)) ?> that fits your market.</p>
+              <?php endif; ?>
+            </div>
           </div>
-          <div class="md:w-3/5 space-y-5 pl-5 border-l border-white/[0.06]">
-            <?php if (!empty($enrichment['localContent'])) : ?>
-              <?php foreach ($enrichment['localContent'] as $p) : ?>
-                <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]"><?= tml_e($p) ?></p>
-              <?php endforeach; ?>
-            <?php else : ?>
-              <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]">As a leading <?= tml_e(strtolower($serviceName)) ?> agency serving <?= tml_e($cityName) ?>, TML helps businesses across <?= tml_e((string) $location['region']) ?> hit measurable growth goals.</p>
-              <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]">From teams near <?= tml_e($location['landmarks'][0] ?? '') ?> to companies across <?= tml_e($location['landmarks'][1] ?? '') ?> and <?= tml_e($location['landmarks'][2] ?? '') ?> — we build <?= tml_e(strtolower($serviceName)) ?> that fits your market.</p>
-            <?php endif; ?>
-          </div>
+          <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+            <img src="/media/<?= tml_e($serviceImages[0] ?? 'digital-marketing-creative.webp') ?>" alt="<?= tml_e($serviceName) ?> services in <?= tml_e($cityName) ?> — TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </figure>
         </div>
       </div>
+
+      <!-- Section 02: Market Overview — Image Left, Text Right -->
       <div>
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-8">
           <span class="text-xs font-mono text-[#ff4500]/50 font-bold">02</span>
           <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
         </div>
-        <div class="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-start">
-          <div class="md:w-2/5">
-            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight"><?= tml_e($cityName) ?> Market Overview<span class="text-[#ff4500]">.</span></h3>
-          </div>
-          <div class="md:w-3/5 space-y-5 pl-5 border-l border-white/[0.06]">
-            <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]"><?= tml_e($cityName) ?> is home to thriving <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> industries — each needs a tailored <?= tml_e(strtolower($serviceName)) ?> approach.</p>
-            <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]">We help you find gaps, sharpen positioning, and win demand in <?= tml_e($cityName) ?>.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+          <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+            <img src="/media/<?= tml_e($midImages[0] ?? $serviceImages[1] ?? 'brand-strategy-visual.webp') ?>" alt="<?= tml_e($cityName) ?> market — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </figure>
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6"><?= tml_e($cityName) ?> Market Overview<span class="text-[#ff4500]">.</span></h3>
+            <div class="space-y-4">
+              <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($cityName) ?> is home to thriving <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> industries — each needs a tailored <?= tml_e(strtolower($serviceName)) ?> approach.</p>
+              <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">We help you find gaps, sharpen positioning, and win demand in <?= tml_e($cityName) ?>.</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Section 03: What Makes City Unique — Text Left, Image Right -->
       <?php if (!empty($location['uniqueContent'])) : ?>
       <div>
-        <div class="flex items-center gap-4 mb-6">
+        <div class="flex items-center gap-4 mb-8">
           <span class="text-xs font-mono text-[#ff4500]/50 font-bold">03</span>
           <div class="flex-1 h-[1px] bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
         </div>
-        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-          <div class="md:w-2/5">
-            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight">What Makes <?= tml_e($cityName) ?> Unique<span class="text-[#ff4500]">.</span></h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6">What Makes <?= tml_e($cityName) ?> Unique<span class="text-[#ff4500]">.</span></h3>
+            <div class="space-y-4">
+              <?php foreach ($location['uniqueContent'] as $paragraph) : ?>
+                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($paragraph) ?></p>
+              <?php endforeach; ?>
+            </div>
           </div>
-          <div class="md:w-3/5 space-y-5 pl-5 border-l border-white/[0.06]">
-            <?php foreach ($location['uniqueContent'] as $paragraph) : ?>
-              <p class="text-sm md:text-[15px] text-white/45 leading-[1.8]"><?= tml_e($paragraph) ?></p>
-            <?php endforeach; ?>
-          </div>
+          <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
+            <img src="/media/<?= tml_e($midImages[1] ?? $serviceImages[2] ?? 'creative-design-portfolio.webp') ?>" alt="What makes <?= tml_e($cityName) ?> unique — <?= tml_e($serviceName) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </figure>
         </div>
       </div>
       <?php endif; ?>
@@ -558,9 +585,9 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <div class="p-6 md:p-8 rounded-2xl border border-[#ff4500]/10 bg-[#ff4500]/[0.03]">
       <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
         <div class="text-3xl md:text-4xl font-bold text-[#ff4500]"><?= tml_e($enrichment['marketInsight']['stat']) ?></div>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($enrichment['marketInsight']['headline']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($enrichment['marketInsight']['headline']) ?></p>
       </div>
-      <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($enrichment['marketInsight']['body']) ?></p>
+      <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($enrichment['marketInsight']['body']) ?></p>
     </div>
   </div>
 </section>
@@ -575,7 +602,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <div class="relative bg-[#0a0a0a] rounded-2xl p-8 md:p-10">
         <p class="text-[10px] text-[#ff4500]/60 tracking-[0.2em] uppercase font-semibold mb-2">Transparent Pricing</p>
         <h2 class="scroll-reveal text-xl md:text-2xl font-semibold text-white mb-4"><?= tml_e($serviceName) ?> Investment in <?= tml_e($cityName) ?></h2>
-        <p class="text-sm md:text-[15px] text-white/45 leading-[1.8] mb-6"><?= tml_e($serviceData['pricingNote']) ?></p>
+        <p class="text-sm md:text-[15px] text-white/75 leading-[1.8] mb-6"><?= tml_e($serviceData['pricingNote']) ?></p>
         <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Get a Custom Quote</a>
       </div>
     </div>
@@ -611,7 +638,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <p class="text-lg md:text-xl text-white/90 font-medium mb-2">Trusted by 500+ businesses</p>
       <p class="text-white/30 text-sm mb-6">across <?= tml_e((string) $location['region']) ?></p>
       <div class="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-6"></div>
-      <p class="text-sm md:text-base text-white/45 italic leading-relaxed max-w-2xl mx-auto">&ldquo;TML transformed our digital presence in <?= tml_e($cityName) ?>. Their <?= tml_e(strtolower($serviceName)) ?> expertise delivered results that exceeded expectations.&rdquo;</p>
+      <p class="text-sm md:text-base text-white/75 italic leading-relaxed max-w-2xl mx-auto">&ldquo;TML transformed our digital presence in <?= tml_e($cityName) ?>. Their <?= tml_e(strtolower($serviceName)) ?> expertise delivered results that exceeded expectations.&rdquo;</p>
     </div>
   </div>
 </section>
@@ -623,8 +650,8 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <h2 class="scroll-reveal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white mb-8">Unlock Your Business Potential with Comprehensive <?= tml_e($serviceName) ?> Services in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
     <div class="space-y-12">
       <div>
-        <p class="text-sm md:text-base text-white/45 leading-[1.9] mb-4"><?= tml_e($seoData['intro']) ?></p>
-        <p class="text-sm md:text-base text-white/45 leading-[1.9]">Additionally, businesses in <?= tml_e($cityName) ?> across <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> sectors are increasingly investing in professional <?= tml_e(strtolower($serviceName)) ?>.</p>
+        <p class="text-sm md:text-base text-white/75 leading-[1.9] mb-4"><?= tml_e($seoData['intro']) ?></p>
+        <p class="text-sm md:text-base text-white/75 leading-[1.9]">Additionally, businesses in <?= tml_e($cityName) ?> across <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> sectors are increasingly investing in professional <?= tml_e(strtolower($serviceName)) ?>.</p>
       </div>
       <div>
         <h3 class="text-xl md:text-2xl font-semibold text-white mb-6">Products and Services Offered by a <?= tml_e($serviceName) ?> Agency in <?= tml_e($cityName) ?></h3>
@@ -634,7 +661,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#ff4500] flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
             <div>
               <h4 class="text-base font-semibold text-white/90 mb-1"><?= tml_e($off['title']) ?></h4>
-              <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($off['desc']) ?></p>
+              <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($off['desc']) ?></p>
             </div>
           </div>
           <?php endforeach; ?>
@@ -642,7 +669,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       </div>
       <div>
         <h3 class="text-xl md:text-2xl font-semibold text-white mb-4">Charges for <?= tml_e($serviceName) ?> Services in <?= tml_e($cityName) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed mb-6">Approximate pricing varies depending on scope. Contact us for a customised quote.</p>
+        <p class="text-sm text-white/75 leading-relaxed mb-6">Approximate pricing varies depending on scope. Contact us for a customised quote.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <?php
           $pricingIcons = [
@@ -670,7 +697,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
           <?php foreach ($seoData['benefits'] as $benefit) : ?>
           <div class="flex items-start gap-3 p-3 rounded-lg">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-[#ff4500] flex-shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($benefit) ?></p>
+            <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($benefit) ?></p>
           </div>
           <?php endforeach; ?>
         </div>
@@ -718,10 +745,10 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <?php foreach ($locationFaqs as $faq) : ?>
       <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors">
         <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none text-white font-medium text-sm md:text-base">
-          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['q']) ?></span>
+          <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
           <span class="text-white/30 text-xl flex-shrink-0">+</span>
         </summary>
-        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/45 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a']) ?></div>
+        <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
       </details>
       <?php endforeach; ?>
     </div>
@@ -758,7 +785,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <?php foreach ($resolvedInd as $ind) : ?>
       <a href="/industries/<?= tml_e($ind['slug']) ?>" class="group block p-6 md:p-8 rounded-2xl glass-card h-full">
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-[#ff4500]"><?= tml_e($ind['name']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed mb-4 line-clamp-3"><?= tml_e($ind['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed mb-4 line-clamp-3"><?= tml_e($ind['description']) ?></p>
         <span class="text-xs text-[#ff4500] font-medium">View Industry →</span>
       </a>
       <?php endforeach; ?>
@@ -768,14 +795,19 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 <?php endif; ?>
 
 <!-- Pre-footer visual strip -->
-<section class="relative w-full px-6 py-12 md:py-16 lg:px-12 bg-[#080808] overflow-hidden">
+<div class="mx-auto max-w-5xl px-6 lg:px-12"><div class="h-px bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div></div>
+<section class="relative w-full px-6 py-14 md:py-20 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
-    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-6">Our Creative Work</p>
-    <div class="grid grid-cols-3 gap-3 md:gap-4">
+    <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-3">Our Creative Work</p>
+    <h3 class="text-xl sm:text-2xl font-medium text-white mb-8">Recent Projects<span class="text-[#ff4500]">.</span></h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
       <?php foreach ($preFooterImages as $pfi => $pfImg) : ?>
-      <figure class="relative overflow-hidden rounded-xl aspect-[4/3] bg-white/[0.03] group">
+      <figure class="relative overflow-hidden rounded-2xl border border-white/[0.06] aspect-[4/3] bg-white/[0.03] group">
         <img src="/media/<?= tml_e($pfImg) ?>" alt="<?= tml_e($serviceName) ?> creative by TML Agency for <?= tml_e($cityName) ?> clients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="600" height="450" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+          <span class="text-[10px] text-white/60 tracking-wider uppercase font-medium"><?= tml_e($serviceName) ?> &middot; <?= tml_e($cityName) ?></span>
+        </div>
       </figure>
       <?php endforeach; ?>
     </div>
@@ -790,7 +822,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
   </div>
   <div class="relative mx-auto max-w-3xl text-center">
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to grow in <?= tml_e($cityName) ?><span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/45 mb-10 max-w-xl mx-auto">Get a free consultation for your <?= tml_e(strtolower($serviceName)) ?> needs.</p>
+    <p class="text-sm md:text-base text-white/75 mb-10 max-w-xl mx-auto">Get a free consultation for your <?= tml_e(strtolower($serviceName)) ?> needs.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Get Your Free Consultation</a>
       <a href="tel:+14036048692" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>

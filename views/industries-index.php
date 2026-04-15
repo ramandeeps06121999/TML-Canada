@@ -89,7 +89,7 @@ require TML_VIEWS . '/partials/head.php';
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
         <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors"><?= tml_e($page['name']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed line-clamp-3"><?= tml_e($page['metaDescription']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed line-clamp-3"><?= tml_e($page['metaDescription']) ?></p>
       </a>
       <?php $industryIdx++; endforeach; ?>
     </div>
@@ -119,7 +119,7 @@ require TML_VIEWS . '/partials/head.php';
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
         <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-[#ff4500] transition-colors"><?= tml_e($ind['name']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed line-clamp-3"><?= tml_e($ind['description']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed line-clamp-3"><?= tml_e($ind['description']) ?></p>
       </a>
       <?php endforeach; ?>
     </div>

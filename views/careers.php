@@ -1,7 +1,7 @@
 <?php
-$title = 'Careers at TML Agency | Join Our Creative Team';
-$description = 'Join TML Agency — hiring AI developers, video editors, graphic designers, social media managers & more.';
-$keywords = 'careers TML Agency, marketing jobs Edmonton, digital marketing careers Canada, graphic designer jobs, social media manager jobs Edmonton, creative agency careers Alberta';
+$title = 'Careers at TML Agency | Marketing Jobs Canada';
+$description = 'Join TML Agency — hiring AI developers, video editors, graphic designers & social media managers. Flexible hours, health benefits & creative freedom. Apply now.';
+$keywords = 'careers TML Agency, marketing jobs Canada, digital marketing careers, graphic designer jobs Edmonton, social media manager jobs, creative agency careers Alberta';
 $canonicalPath = '/careers';
 
 $perks = [
@@ -110,7 +110,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="glass-card rounded-2xl p-6 md:p-8 scroll-reveal scroll-delay-<?= ($i % 3) + 1 ?>">
         <div class="w-12 h-12 rounded-xl bg-[#ff4500]/10 flex items-center justify-center text-[#ff4500] mb-5"><?= $perk['icon'] ?></div>
         <h3 class="text-lg font-semibold text-white mb-2"><?= tml_e($perk['title']) ?></h3>
-        <p class="text-sm text-white/45 leading-relaxed"><?= tml_e($perk['desc']) ?></p>
+        <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($perk['desc']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -143,7 +143,7 @@ require TML_VIEWS . '/partials/head.php';
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <?= tml_e($pos['location']) ?>
             </div>
-            <p class="text-sm text-white/45 leading-relaxed mb-5"><?= tml_e($pos['desc']) ?></p>
+            <p class="text-sm text-white/75 leading-relaxed mb-5"><?= tml_e($pos['desc']) ?></p>
             <a href="mailto:careers@townmedialabs.ca?subject=Application: <?= tml_e(rawurlencode($pos['title'])) ?>" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Apply Now <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>

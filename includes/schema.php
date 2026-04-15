@@ -22,9 +22,9 @@ const TML_SCHEMA_PROVIDER = [
         'description' => 'Chief SEO Strategist & Founder',
     ],
     'sameAs' => [
-        'https://www.linkedin.com/company/tml-agency',
-        'https://twitter.com/tml_agency',
-        'https://www.instagram.com/tml.agency',
+        'https://www.instagram.com/tmlagency/',
+        'https://www.facebook.com/tmlagency/',
+        'https://www.linkedin.com/company/tmlagency/',
     ],
 ];
 
@@ -88,7 +88,8 @@ function tml_schema_service(array $p): array
         'provider' => TML_SCHEMA_PROVIDER,
     ];
     if (!empty($p['areaServed'])) {
-        $out['areaServed'] = ['@type' => 'City', 'name' => $p['areaServed']];
+        $areaType = in_array($p['areaServed'], ['Canada', 'United States', 'USA', 'US'], true) ? 'Country' : 'City';
+        $out['areaServed'] = ['@type' => $areaType, 'name' => $p['areaServed']];
     }
     if (!empty($p['category'])) {
         $out['category'] = $p['category'];
@@ -125,10 +126,14 @@ function tml_schema_service(array $p): array
 }
 
 /**
- * @param array{name: string, description: string, url: string, city: string, state: string, services: string[]} $p
+ * @param array{name: string, description: string, url: string, city: string, state: string, services: string[], lat?: float, lng?: float, postalCode?: string} $p
  */
 function tml_schema_local_business(array $p): array
 {
+    $lat = $p['lat'] ?? 53.5461;
+    $lng = $p['lng'] ?? -113.4937;
+    $postalCode = $p['postalCode'] ?? 'T5G 2K1';
+
     return [
         '@context' => 'https://schema.org',
         '@type' => 'ProfessionalService',
@@ -141,12 +146,12 @@ function tml_schema_local_business(array $p): array
             'addressLocality' => $p['city'],
             'addressRegion' => $p['state'],
             'addressCountry' => 'CA',
-            'postalCode' => 'T5G 2K1',
+            'postalCode' => $postalCode,
         ],
         'geo' => [
             '@type' => 'GeoCoordinates',
-            'latitude' => '53.5461',
-            'longitude' => '-113.4937',
+            'latitude' => (string) $lat,
+            'longitude' => (string) $lng,
         ],
         'openingHoursSpecification' => [
             '@type' => 'OpeningHoursSpecification',
@@ -191,7 +196,47 @@ function tml_schema_organization(): array
             'priceCurrency' => 'CAD',
             'availability' => 'http://schema.org/InStock',
         ],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => '4.9',
+            'bestRating' => '5',
+            'worstRating' => '1',
+            'ratingCount' => '500',
+            'reviewCount' => '127',
+        ],
     ]);
+}
+
+/**
+ * Generate Review schema from testimonials array.
+ * @param array<int, array{quote: string, name: string, company: string}> $testimonials
+ */
+function tml_schema_reviews(array $testimonials): array
+{
+    $reviews = [];
+    foreach ($testimonials as $t) {
+        $reviews[] = [
+            '@type' => 'Review',
+            'author' => [
+                '@type' => 'Person',
+                'name' => $t['name'],
+            ],
+            'reviewBody' => $t['quote'],
+            'reviewRating' => [
+                '@type' => 'Rating',
+                'ratingValue' => '5',
+                'bestRating' => '5',
+            ],
+            'publisher' => ['@type' => 'Organization', 'name' => $t['company']],
+        ];
+    }
+    return [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'TML Agency',
+        'url' => 'https://townmedialabs.ca',
+        'review' => $reviews,
+    ];
 }
 
 function tml_json_ld_script(array $data): string

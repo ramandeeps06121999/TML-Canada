@@ -647,10 +647,10 @@ function buildSchemaFaq(array $faqs): array {
     foreach ($faqs as $faq) {
         $items[] = [
             '@type' => 'Question',
-            'name' => $faq['q'] ?? '',
+            'name' => $faq['q'] ?? $faq['question'] ?? '',
             'acceptedAnswer' => [
                 '@type' => 'Answer',
-                'text' => $faq['a'] ?? '',
+                'text' => $faq['a'] ?? $faq['answer'] ?? '',
             ],
         ];
     }
