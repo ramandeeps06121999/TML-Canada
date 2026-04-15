@@ -113,7 +113,10 @@
       "Bash(awk -F: '{s+=$2} END {print s}')",
       "Bash(php -l /Users/ramanmakkar/Desktop/tml-php/views/location-service.php)",
       "Bash(php -l /Users/ramanmakkar/Desktop/tml-php/views/service-detail.php)",
-      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== CLEANING REPOSITORY ===\")"
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== CLEANING REPOSITORY ===\")",
+      "Bash(sort echo:*)",
+      "Read(//Users/ramanmakkar/Desktop/tml-php/**)",
+      "Bash(php /tmp/fix-overflow.php)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",

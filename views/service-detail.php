@@ -50,50 +50,51 @@ foreach ($indSlugs as $is) {
     }
 }
 
-// Service → media image mapping (3 UNIQUE images per service — no duplicates across services)
+// Service → media image mapping (5 UNIQUE images per service — each page section uses a different image)
+// Index 0: Features section | Index 1: SEO Content section | Index 2-4: Deep Content sections
 $serviceImageMap = [
-    'branding'                    => ['brand-identity-design.webp',             'branding-shoot.jpg',                       'graphic-design-brand-identity.webp'],
-    'google-ads'                  => ['billboard-advertising-campaign.jpg',      'creative-ad-roofing-company.webp',         'creative-ad-back-to-school-cairo.webp'],
-    'seo'                         => ['web-design-landing-page.webp',           'digital-marketing-creative.webp',          'web-design-finance-hero.webp'],
-    'website-development'         => ['web-design-creative-agency-dark.jpg',    'web-design-community-platform.webp',       'web-design-travel-app.webp'],
-    'social-media'                => ['social-media-content-mockup.png',        'social-media-brand-feed.webp',             'social-media-real-estate-posts-grid.webp'],
-    'graphic-design'              => ['graphic-design-coca-cola-marvel.webp',   'graphic-design-pepsi-billboard.jpg',       'graphic-design-snickers-guerilla.jpg'],
-    'lead-generation'             => ['marketing-campaign-visual.webp',         'creative-ad-legal-education-red.webp',     'creative-ad-dental-clinic-fly.webp'],
-    'video-editing'               => ['creative-photography.jpg',               'visual-storytelling.jpg',                  'campaign-photography.jpg'],
-    'branding-packaging'          => ['packaging-design-creative.webp',         'packaging-design-water-bottle-brand.webp', 'packaging-design-candy-characters.webp'],
-    'ai-influencer-management'    => ['social-media-influencer-content.webp',   'social-media-instagram-mockup.webp',       'social-media-chupa-chups.webp'],
-    'music-release'               => ['poster-design-weeknd-blinding-lights.webp', 'visual-content-design.webp',           'portrait-photography.jpg'],
-    'shopify-development'         => ['ecommerce-branding-creative.webp',       'product-photography-skincare-set.webp',    'product-photography-retro-brand.webp'],
-    'tiktok-ads'                  => ['social-media-promo-grid.jpg',            'social-media-instagram-lifestyle.jpg',     'social-media-podcast-grid.jpg'],
-    'web-design'                  => ['saas-website-design.webp',               'web-design-productivity-tool.webp',        'web-design-ai-design-tool.jpg'],
-    'wordpress-development'       => ['web-design-web3-platform.jpg',           'web-design-travel-adventure.jpg',          'creative-design-portfolio.webp'],
-    'linkedin-ads'                => ['brand-strategy-visual.webp',             'commercial-photography.jpg',               'professional-photography.jpg'],
-    'marketing-automation'        => ['graphic-design-3d-ux-concept.webp',      'graphic-design-ai-brand.webp',             'graphic-design-clean-minimal-ad.webp'],
-    'amazon-marketing'            => ['product-photography-sneakers.webp',      'product-photography-lifestyle-drinks.webp','product-photography-handbag-sunset.webp'],
-    'geo-optimization'            => ['graphic-design-brand-showcase.webp',     'graphic-design-brand-story-layout.webp',   'graphic-design-brand-typography.webp'],
-    'ux-ui-design'                => ['ux-design-illustration.webp',            'graphic-design-product-layout.webp',       'graphic-design-product-showcase.webp'],
-    'mobile-app-development'      => ['graphic-design-illustration.webp',       'graphic-design-creative.webp',             'graphic-design-minimal-brand-ad.webp'],
-    'video-production'            => ['art-direction.jpg',                      'fashion-editorial.jpg',                    'studio-photography.jpg'],
-    'microsoft-ads'               => ['outdoor-advertising-billboard.webp',     'creative-ad-protein-fitness.webp',         'creative-ad-eyewear-fashion.webp'],
-    'local-seo'                   => ['graphic-design-food-ad.jpg',             'graphic-design-fried-chicken-ad.webp',     'graphic-design-dental-creative.webp'],
-    'ui-design'                   => ['graphic-design-social-media-story.webp', 'graphic-design-minimal-story.webp',        'graphic-design-creative-story-ad.webp'],
-    'ai-automation'               => ['graphic-design-creative-brand.webp',     'graphic-design-denim-fashion.webp',        'graphic-design-dark-story-ad.webp'],
-    'custom-software-development' => ['web-design-landing-page.webp',           'graphic-design-story-brand-post.webp',     'graphic-design-story-social-post.webp'],
-    'content-marketing'           => ['content-photography.jpg',                'editorial-photography.jpg',                'magazine-photography.jpg'],
-    'content-writing'             => ['typography-design.jpg',                  'minimalist-design.jpg',                    'landscape-photography.jpg'],
-    'email-marketing'             => ['graphic-design-social-story-1.webp',     'graphic-design-social-story-3.webp',       'graphic-design-social-story-4.webp'],
-    'link-building'               => ['graphic-design-colgate-creative.jpg',    'graphic-design-faber-castell.jpg',          'graphic-design-sneaker-creative.jpg'],
-    'meta-ads'                    => ['instagram-feed-design.webp',             'social-media-agency-grid.jpg',             'social-media-turkish-agency.jpg'],
-    'influencer-marketing'        => ['product-photography-fashion-editorial.webp','product-photography-fashion-night.webp','product-photography-cinematic-portrait.webp'],
-    'ppc-management'              => ['advertising-photography.jpg',            'graphic-design-fitness-billboard.webp',    'graphic-design-spice-sauce-ad.webp'],
-    'online-reputation-management'=> ['brand-photography.jpg',                  'lifestyle-brand.jpg',                      'lifestyle-photography.jpg'],
-    'conversion-rate-optimization'=> ['graphic-design-clarity-brand.jpg',       'graphic-design-creative-fashion-ad.jpg',   'graphic-design-denim-heels.jpg'],
-    'ecommerce-marketing'         => ['product-branding-campaign.webp',         'product-photography-jewelry.webp',         'product-photography-luxury-skincare.webp'],
-    'gmb-listing'                 => ['graphic-design-creative-photography.webp','beauty-product-photography.webp',         'product-photography-food-croissant.webp'],
-    'technical-seo'               => ['graphic-design-brand-story-creative.webp','poster-design-netflix-induction.webp',    'artistic-photography.jpg'],
-    'digital-marketing'           => ['brand-identity-design-2.webp',           'creative-ad-durex-football.webp',          'architectural-photography.jpg'],
-    'enterprise-seo'              => ['product-photography-blue-brand.jpg',     'product-photography-brand-lifestyle.jpg',  'product-photography-facial-cream.jpg'],
-    'ecommerce-seo'               => ['product-photography-sneaker-sky.webp',   'product-photography-yellow-sneakers.jpg',  'product-photography-styled-still-life.webp'],
+    'branding'                    => ['brand-identity-design.webp',             'branding-shoot.jpg',                       'graphic-design-brand-identity.webp',       'brand-identity-design-2.webp',             'brand-strategy-visual.webp'],
+    'google-ads'                  => ['billboard-advertising-campaign.jpg',      'creative-ad-roofing-company.webp',         'creative-ad-back-to-school-cairo.webp',    'creative-ad-dental-clinic-fly.webp',       'creative-ad-legal-education-red.webp'],
+    'seo'                         => ['web-design-landing-page.webp',           'digital-marketing-creative.webp',          'web-design-finance-hero.webp',             'saas-website-design.webp',                 'graphic-design-brand-showcase.webp'],
+    'website-development'         => ['web-design-creative-agency-dark.jpg',    'web-design-community-platform.webp',       'web-design-travel-app.webp',               'web-design-productivity-tool.webp',        'web-design-ai-design-tool.jpg'],
+    'social-media'                => ['social-media-content-mockup.png',        'social-media-brand-feed.webp',             'social-media-real-estate-posts-grid.webp', 'social-media-chupa-chups.webp',            'social-media-instagram-mockup.webp'],
+    'graphic-design'              => ['graphic-design-coca-cola-marvel.webp',   'graphic-design-pepsi-billboard.jpg',       'graphic-design-snickers-guerilla.jpg',     'graphic-design-faber-castell.jpg',          'graphic-design-colgate-creative.jpg'],
+    'lead-generation'             => ['marketing-campaign-visual.webp',         'creative-ad-protein-fitness.webp',         'creative-ad-eyewear-fashion.webp',         'creative-ad-durex-football.webp',          'brand-photography.jpg'],
+    'video-editing'               => ['creative-photography.jpg',               'visual-storytelling.jpg',                  'campaign-photography.jpg',                 'fashion-editorial.jpg',                    'studio-photography.jpg'],
+    'branding-packaging'          => ['packaging-design-creative.webp',         'packaging-design-water-bottle-brand.webp', 'packaging-design-candy-characters.webp',   'packaging-design-eskimo-ice-cream.webp',   'packaging-design-minimalist-cans.webp'],
+    'ai-influencer-management'    => ['social-media-influencer-content.webp',   'social-media-instagram-lifestyle.jpg',     'social-media-promo-grid.jpg',              'social-media-podcast-grid.jpg',            'social-media-turkish-agency.jpg'],
+    'music-release'               => ['poster-design-weeknd-blinding-lights.webp', 'visual-content-design.webp',           'portrait-photography.jpg',                 'art-direction.jpg',                        'artistic-photography.jpg'],
+    'shopify-development'         => ['ecommerce-branding-creative.webp',       'product-photography-skincare-set.webp',    'product-photography-retro-brand.webp',     'product-photography-skincare-toner.webp',  'product-branding-campaign.webp'],
+    'tiktok-ads'                  => ['social-media-agency-grid.jpg',           'instagram-feed-design.webp',               'social-media-instagram-mockup.webp',       'graphic-design-social-media-story.webp',   'graphic-design-social-story-1.webp'],
+    'web-design'                  => ['saas-website-design.webp',               'web-design-travel-adventure.jpg',          'web-design-web3-platform.jpg',             'creative-design-portfolio.webp',           'web-design-landing-page.webp'],
+    'wordpress-development'       => ['web-design-productivity-tool.webp',      'web-design-ai-design-tool.jpg',            'ux-design-illustration.webp',              'web-design-finance-hero.webp',             'web-design-community-platform.webp'],
+    'linkedin-ads'                => ['commercial-photography.jpg',             'professional-photography.jpg',             'graphic-design-clean-minimal-ad.webp',     'graphic-design-3d-ux-concept.webp',        'graphic-design-ai-brand.webp'],
+    'marketing-automation'        => ['graphic-design-brand-story-layout.webp', 'graphic-design-brand-typography.webp',     'graphic-design-product-layout.webp',       'graphic-design-product-showcase.webp',     'graphic-design-illustration.webp'],
+    'amazon-marketing'            => ['product-photography-sneakers.webp',      'product-photography-lifestyle-drinks.webp','product-photography-handbag-sunset.webp',  'product-photography-jewelry.webp',         'product-photography-luxury-skincare.webp'],
+    'geo-optimization'            => ['graphic-design-creative.webp',           'graphic-design-minimal-brand-ad.webp',     'graphic-design-creative-brand.webp',       'graphic-design-denim-fashion.webp',        'graphic-design-dark-story-ad.webp'],
+    'ux-ui-design'                => ['ux-design-illustration.webp',            'graphic-design-product-layout.webp',       'graphic-design-product-showcase.webp',     'minimalist-design.jpg',                    'typography-design.jpg'],
+    'mobile-app-development'      => ['graphic-design-illustration.webp',       'graphic-design-minimal-story.webp',        'graphic-design-creative-story-ad.webp',    'graphic-design-story-brand-post.webp',     'graphic-design-story-social-post.webp'],
+    'video-production'            => ['fashion-photography.jpg',                'landscape-photography.jpg',                'magazine-photography.jpg',                 'content-photography.jpg',                  'editorial-photography.jpg'],
+    'microsoft-ads'               => ['outdoor-advertising-billboard.webp',     'advertising-photography.jpg',              'graphic-design-fitness-billboard.webp',    'graphic-design-spice-sauce-ad.webp',       'graphic-design-food-ad.jpg'],
+    'local-seo'                   => ['graphic-design-fried-chicken-ad.webp',   'graphic-design-dental-creative.webp',      'graphic-design-sneaker-creative.jpg',      'lifestyle-brand.jpg',                      'lifestyle-photography.jpg'],
+    'ui-design'                   => ['graphic-design-social-media-story.webp', 'graphic-design-social-story-3.webp',       'graphic-design-social-story-4.webp',       'graphic-design-minimal-brand-ad.webp',     'graphic-design-clean-minimal-ad.webp'],
+    'ai-automation'               => ['graphic-design-creative-photography.webp','graphic-design-clarity-brand.jpg',        'graphic-design-creative-fashion-ad.jpg',   'graphic-design-denim-heels.jpg',           'architectural-photography.jpg'],
+    'custom-software-development' => ['web-design-travel-app.webp',             'web-design-creative-agency-dark.jpg',      'graphic-design-brand-story-creative.webp', 'poster-design-netflix-induction.webp',     'graphic-design-food-ad.jpg'],
+    'content-marketing'           => ['content-photography.jpg',                'editorial-photography.jpg',                'magazine-photography.jpg',                 'visual-content-design.webp',               'brand-strategy-visual.webp'],
+    'content-writing'             => ['typography-design.jpg',                  'minimalist-design.jpg',                    'landscape-photography.jpg',                'artistic-photography.jpg',                 'portrait-photography.jpg'],
+    'email-marketing'             => ['graphic-design-social-story-1.webp',     'graphic-design-social-story-3.webp',       'graphic-design-social-story-4.webp',       'graphic-design-social-media-story.webp',   'graphic-design-minimal-story.webp'],
+    'link-building'               => ['graphic-design-colgate-creative.jpg',    'graphic-design-faber-castell.jpg',          'graphic-design-sneaker-creative.jpg',      'graphic-design-coca-cola-billboard.jpg',   'graphic-design-pepsi-billboard.jpg'],
+    'meta-ads'                    => ['instagram-feed-design.webp',             'social-media-agency-grid.jpg',             'social-media-turkish-agency.jpg',          'social-media-influencer-content.webp',     'social-media-brand-feed.webp'],
+    'influencer-marketing'        => ['product-photography-fashion-editorial.webp','product-photography-fashion-night.webp','product-photography-cinematic-portrait.webp','product-photography-perfume-shoot.jpg',  'product-photography-sunscreen.jpg'],
+    'ppc-management'              => ['creative-ad-protein-fitness.webp',        'creative-ad-eyewear-fashion.webp',        'billboard-advertising-campaign.jpg',        'outdoor-advertising-billboard.webp',       'advertising-photography.jpg'],
+    'online-reputation-management'=> ['brand-photography.jpg',                  'lifestyle-brand.jpg',                      'lifestyle-photography.jpg',                'commercial-photography.jpg',               'professional-photography.jpg'],
+    'conversion-rate-optimization'=> ['graphic-design-clarity-brand.jpg',       'graphic-design-creative-fashion-ad.jpg',   'graphic-design-denim-heels.jpg',           'product-photography-blue-brand.jpg',       'product-photography-brand-lifestyle.jpg'],
+    'ecommerce-marketing'         => ['product-branding-campaign.webp',         'product-photography-jewelry.webp',         'product-photography-luxury-skincare.webp', 'product-photography-cocktails.webp',       'product-photography-food-croissant.webp'],
+    'gmb-listing'                 => ['graphic-design-creative-photography.webp','beauty-product-photography.webp',         'product-photography-styled-still-life.webp','product-photography-lipstick-beauty.webp','product-photography-facial-cream.jpg'],
+    'technical-seo'               => ['graphic-design-brand-story-creative.webp','poster-design-netflix-induction.webp',    'artistic-photography.jpg',                 'graphic-design-brand-showcase.webp',       'graphic-design-brand-story-layout.webp'],
+    'digital-marketing'           => ['brand-identity-design-2.webp',           'creative-ad-durex-football.webp',          'architectural-photography.jpg',            'digital-marketing-creative.webp',          'marketing-campaign-visual.webp'],
+    'enterprise-seo'              => ['product-photography-blue-brand.jpg',     'product-photography-brand-lifestyle.jpg',  'product-photography-facial-cream.jpg',     'product-photography-bicycle-lifestyle.jpg','product-photography-bicycle-summer.jpg'],
+    'ecommerce-seo'               => ['product-photography-sneaker-sky.webp',   'product-photography-yellow-sneakers.jpg',  'product-photography-styled-still-life.webp','product-photography-skincare-set.webp',  'ecommerce-branding-creative.webp'],
 ];
 $serviceImages = $serviceImageMap[$slug] ?? ['digital-marketing-creative.webp', 'brand-identity-design.webp', 'creative-design-portfolio.webp'];
 $ogImageOverride = TML_SITE_URL . '/media/' . $serviceImages[0];
@@ -288,13 +289,13 @@ require TML_VIEWS . '/partials/head.php';
           </div>
         </div>
         <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-          <img src="/media/<?= tml_e($serviceImages[$sectionIndex % count($serviceImages)] ?? $serviceImages[0]) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+          <img src="/media/<?= tml_e(($sectionIndex + 2 < count($serviceImages) ? $serviceImages[$sectionIndex + 2] : (['packaging-design-goody-candy-sour-sweet.webp','packaging-design-kids-sandwich-box.webp','packaging-design-moody-snacks.webp','product-photography-cocktails.webp','product-photography-food-croissant.webp','product-photography-lipstick-beauty.webp','product-photography-fine-art.webp','social-media-real-estate-posts-grid.webp','creative-ad-back-to-school-cairo.webp','poster-design-weeknd-blinding-lights.webp'])[($sectionIndex - 3) % 10])) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </figure>
         <?php else : ?>
         <!-- Image Left, Text Right -->
         <figure class="group relative overflow-hidden rounded-2xl aspect-[4/3] border border-white/[0.06] bg-white/[0.03] hover:border-[#ff4500]/20 transition-all duration-500">
-          <img src="/media/<?= tml_e($serviceImages[$sectionIndex % count($serviceImages)] ?? $serviceImages[0]) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
+          <img src="/media/<?= tml_e(($sectionIndex + 2 < count($serviceImages) ? $serviceImages[$sectionIndex + 2] : (['packaging-design-goody-candy-sour-sweet.webp','packaging-design-kids-sandwich-box.webp','packaging-design-moody-snacks.webp','product-photography-cocktails.webp','product-photography-food-croissant.webp','product-photography-lipstick-beauty.webp','product-photography-fine-art.webp','social-media-real-estate-posts-grid.webp','creative-ad-back-to-school-cairo.webp','poster-design-weeknd-blinding-lights.webp'])[($sectionIndex - 3) % 10])) ?>" alt="<?= tml_e($section['heading']) ?> — <?= tml_e($data['title']) ?> by TML Agency" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" width="800" height="600" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </figure>
         <div>
@@ -434,13 +435,39 @@ require TML_VIEWS . '/partials/head.php';
       ],
   ];
   // Use service-specific images if available, otherwise use a general mix
-  $carouselImages = $serviceCarouselMap[$slug] ?? [
-      ['brand-identity-design.webp', 'Brand Identity Design', 'Branding'], ['web-design-landing-page.webp', 'Landing Page Design', 'Web Design'], ['graphic-design-coca-cola-marvel.webp', 'Coca-Cola x Marvel', 'Graphic Design'],
-      ['product-branding-campaign.webp', 'Product Branding', 'Branding'], ['packaging-design-creative.webp', 'Packaging Design', 'Packaging'], ['social-media-content-mockup.png', 'Social Media Design', 'Social Media'],
-      ['creative-ad-protein-fitness.webp', 'Fitness Ad Creative', 'Advertising'], ['ux-design-illustration.webp', 'UX Illustration', 'UI/UX'], ['product-photography-jewelry.webp', 'Jewelry Photography', 'Photography'],
-      ['billboard-advertising-campaign.jpg', 'Billboard Campaign', 'Advertising'], ['ecommerce-branding-creative.webp', 'E-Commerce Branding', 'Branding'], ['saas-website-design.webp', 'SaaS Website', 'Web Design'],
-      ['graphic-design-fitness-billboard.webp', 'Fitness Billboard', 'Advertising'], ['poster-design-netflix-induction.webp', 'Netflix Poster', 'Design'], ['product-photography-sneakers.webp', 'Sneaker Photography', 'Photography'],
+  // IMPORTANT: Exclude images already used on this page ($serviceImages) to prevent duplicates
+  $allCarouselPool = [
+      ['packaging-design-water-bottle-brand.webp', 'Water Bottle Branding', 'Packaging'],
+      ['product-photography-fashion-shoes.webp', 'Fashion Shoes Editorial', 'Photography'],
+      ['social-media-real-estate-posts-grid.webp', 'Real Estate Social', 'Social Media'],
+      ['web-design-travel-app.webp', 'Travel App Design', 'Web Design'],
+      ['graphic-design-brand-story-creative.webp', 'Brand Story Creative', 'Branding'],
+      ['product-photography-cocktails.webp', 'Cocktail Photography', 'Photography'],
+      ['packaging-design-minimalist-cans.webp', 'Minimalist Cans', 'Packaging'],
+      ['creative-ad-back-to-school-cairo.webp', 'Back to School Campaign', 'Advertising'],
+      ['social-media-podcast-grid.jpg', 'Podcast Social Grid', 'Social Media'],
+      ['web-design-productivity-tool.webp', 'Productivity Tool', 'Web Design'],
+      ['graphic-design-colgate-creative.jpg', 'Colgate Creative', 'Graphic Design'],
+      ['product-photography-lipstick-beauty.webp', 'Lipstick Beauty Shoot', 'Photography'],
+      ['packaging-design-character-cups.webp', 'Character Cups', 'Packaging'],
+      ['graphic-design-social-story-1.webp', 'Social Story Design', 'Design'],
+      ['product-photography-handbag-sunset.webp', 'Handbag Sunset Shot', 'Photography'],
+      ['web-design-travel-adventure.jpg', 'Travel Adventure Site', 'Web Design'],
+      ['graphic-design-denim-fashion.webp', 'Denim Fashion Creative', 'Fashion'],
+      ['product-photography-cinematic-portrait.webp', 'Cinematic Portrait', 'Photography'],
+      ['packaging-design-moody-snacks.webp', 'Moody Snack Packaging', 'Packaging'],
+      ['social-media-instagram-lifestyle.jpg', 'Instagram Lifestyle', 'Social Media'],
+      ['graphic-design-minimal-brand-ad.webp', 'Minimal Brand Ad', 'Design'],
+      ['product-photography-food-croissant.webp', 'Croissant Food Shoot', 'Photography'],
+      ['poster-design-weeknd-blinding-lights.webp', 'Weeknd Poster Design', 'Design'],
+      ['graphic-design-creative-brand.webp', 'Creative Brand Design', 'Branding'],
   ];
+  // Filter out ANY image already used in sections above — prevents ALL duplicates on page
+  $usedOnPage = $serviceImages;
+  $rawCarousel = $serviceCarouselMap[$slug] ?? $allCarouselPool;
+  $carouselImages = array_values(array_filter($rawCarousel, function ($img) use ($usedOnPage) {
+      return !in_array($img[0], $usedOnPage, true);
+  }));
   $itemsPerSlide = 3;
   $totalSlides = ceil(count($carouselImages) / $itemsPerSlide);
   ?>
