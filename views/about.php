@@ -1,5 +1,5 @@
 <?php
-$title = 'About TML Agency | Digital Marketing Agency Canada';
+$title = 'About Us | Digital Marketing Agency Canada';
 $description = 'Meet TML Agency — Canada\'s full-service digital marketing, branding & web development agency. 500+ clients, 70+ experts, 15+ years. Get a free consultation today.';
 $keywords = 'about TML Agency, digital marketing agency Canada, marketing company Canada, branding agency Canada, web development agency Alberta, TML Agency team, marketing agency Edmonton';
 $canonicalPath = '/about-us';

@@ -1,5 +1,5 @@
 <?php
-$title = 'Careers at TML Agency | Marketing Jobs Canada';
+$title = 'Marketing Careers Canada | Join Our Agency';
 $description = 'Join TML Agency — hiring AI developers, video editors, graphic designers & social media managers. Flexible hours, health benefits & creative freedom. Apply now.';
 $keywords = 'careers TML Agency, marketing jobs Canada, digital marketing careers, graphic designer jobs Edmonton, social media manager jobs, creative agency careers Alberta';
 $canonicalPath = '/careers';

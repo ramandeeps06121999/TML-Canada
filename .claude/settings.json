@@ -129,7 +129,9 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/services/seo-in-surrey)",
       "Bash(grep -n 'tml_e\\($f\\\\['\\\\''title'\\\\''\\\\]\\)' views/location-service.php)",
       "Bash(grep -n 'tml_e\\($item\\\\['\\\\''title'\\\\''\\\\]\\)' views/location-service.php)",
-      "Bash(curl -s http://localhost:8000/services/seo-in-surrey)"
+      "Bash(curl -s http://localhost:8000/services/seo-in-surrey)",
+      "Bash(curl -s http://localhost:8000/services/google-ads-in-surrey)",
+      "Bash(php -r ' *)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",

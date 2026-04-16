@@ -1,5 +1,5 @@
 <?php
-$title = 'Contact TML Agency | Free Consultation | Canada';
+$title = 'Contact Us | Free Marketing Consultation Canada';
 $description = 'Contact TML Agency for a free marketing consultation. Expert branding, SEO, Google Ads, social media & web development across Canada. Reply in 2-4 hours.';
 $keywords = 'contact TML Agency, free consultation Canada, digital marketing quote, SEO consultation Canada, branding consultation, marketing agency contact Edmonton';
 $canonicalPath = '/contact-us';

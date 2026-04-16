@@ -1,5 +1,5 @@
 <?php
-$title = 'Digital Marketing Agency in Canada | TML Agency';
+$title = 'Digital Marketing Agency in Canada | SEO & Web Design';
 $description = 'TML is a leading digital marketing agency in Canada offering SEO, web design, PPC, and social media marketing. Headquartered in Edmonton, serving businesses nationwide. 500+ brands scaled.';
 $keywords = 'digital marketing agency, marketing agency, digital marketing company, marketing company Canada, SEO agency Canada, Google Ads agency, branding agency, web development, social media marketing, TML Agency, digital marketing services';
 $canonicalPath = '/';
