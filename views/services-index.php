@@ -5,15 +5,15 @@ $keywords = 'digital marketing services Canada, SEO services, Google Ads managem
 $canonicalPath = '/services';
 $servicePages = tml_service_pages();
 $categories = [
-    ['category' => 'Branding & Design', 'services' => ['branding', 'graphic-design', 'branding-packaging', 'ui-design', 'ux-ui-design']],
-    ['category' => 'Web Development', 'services' => ['website-development', 'web-design', 'wordpress-development', 'shopify-development', 'ecommerce-marketing']],
-    ['category' => 'SEO & Search', 'services' => ['seo', 'local-seo', 'technical-seo', 'link-building', 'geo-optimization']],
-    ['category' => 'Performance Marketing', 'services' => ['google-ads', 'meta-ads', 'microsoft-ads', 'linkedin-ads', 'tiktok-ads', 'amazon-marketing', 'ppc-management']],
-    ['category' => 'Content & Email', 'services' => ['content-marketing', 'content-writing', 'email-marketing', 'marketing-automation']],
-    ['category' => 'Lead Generation & CRO', 'services' => ['lead-generation', 'conversion-rate-optimization', 'gmb-listing', 'online-reputation-management']],
-    ['category' => 'Digital & Social', 'services' => ['social-media', 'ai-influencer-management', 'influencer-marketing']],
-    ['category' => 'AI & Software Development', 'services' => ['ai-automation', 'custom-software-development', 'mobile-app-development']],
-    ['category' => 'Media Production', 'services' => ['video-editing', 'video-production', 'music-release']],
+    ['category' => 'Branding & Design Services in Canada', 'services' => ['branding', 'graphic-design', 'branding-packaging', 'ui-design', 'ux-ui-design']],
+    ['category' => 'Web Development Services in Canada', 'services' => ['website-development', 'web-design', 'wordpress-development', 'shopify-development', 'ecommerce-marketing']],
+    ['category' => 'SEO & Search Engine Optimization Services', 'services' => ['seo', 'local-seo', 'technical-seo', 'link-building', 'geo-optimization']],
+    ['category' => 'Performance Marketing & PPC Services Canada', 'services' => ['google-ads', 'meta-ads', 'microsoft-ads', 'linkedin-ads', 'tiktok-ads', 'amazon-marketing', 'ppc-management']],
+    ['category' => 'Content Marketing & Email Services', 'services' => ['content-marketing', 'content-writing', 'email-marketing', 'marketing-automation']],
+    ['category' => 'Lead Generation & CRO Agency', 'services' => ['lead-generation', 'conversion-rate-optimization', 'gmb-listing', 'online-reputation-management']],
+    ['category' => 'Social Media Marketing Services Canada', 'services' => ['social-media', 'ai-influencer-management', 'influencer-marketing']],
+    ['category' => 'AI & Software Development Services', 'services' => ['ai-automation', 'custom-software-development', 'mobile-app-development']],
+    ['category' => 'Media Production Services in Canada', 'services' => ['video-editing', 'video-production', 'music-release']],
 ];
 $stats = [['label' => 'Services', 'value' => '42+'], ['label' => 'Brands Served', 'value' => '500+'], ['label' => 'Team Members', 'value' => '70+'], ['label' => 'Years Experience', 'value' => '15+']];
 $breadcrumbSchema = tml_schema_breadcrumb([
@@ -38,8 +38,8 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Our Services</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Best Digital Marketing<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Services in Canada</span><span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">From brand strategy to AI-powered marketing — we offer a complete suite of services to help you stand out, attract customers, and scale your business.</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Digital Marketing Services Canada<br /><span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Full-Service Agency</span><span class="text-[#ff4500]">.</span></h1>
+    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">Explore 42+ digital marketing services in Canada — from SEO, Google Ads &amp; branding to web development, social media marketing &amp; AI automation. Trusted by 500+ brands.</p>
     <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
       <?php foreach ($stats as $i => $stat) : ?>
         <div class="flex items-center gap-3">
@@ -110,26 +110,26 @@ $serviceIcons = [
 
 <?php
 $categoryImages = [
-    'Branding & Design' => '/media/brand-identity-design.webp',
-    'Web Development' => '/media/web-design-creative-agency-dark.jpg',
-    'SEO & Search' => '/media/digital-marketing-creative.webp',
-    'Performance Marketing' => '/media/marketing-campaign-visual.webp',
-    'Content & Email' => '/media/graphic-design-brand-story-layout.webp',
-    'Lead Generation & CRO' => '/media/creative-design-portfolio.webp',
-    'Digital & Social' => '/media/social-media-brand-feed.webp',
-    'AI & Software Development' => '/media/graphic-design-ai-brand.webp',
-    'Media Production' => '/media/visual-content-design.webp',
+    'Branding & Design Services in Canada' => '/media/brand-identity-design.webp',
+    'Web Development Services in Canada' => '/media/web-design-creative-agency-dark.jpg',
+    'SEO & Search Engine Optimization Services' => '/media/digital-marketing-creative.webp',
+    'Performance Marketing & PPC Services Canada' => '/media/marketing-campaign-visual.webp',
+    'Content Marketing & Email Services' => '/media/graphic-design-brand-story-layout.webp',
+    'Lead Generation & CRO Agency' => '/media/creative-design-portfolio.webp',
+    'Social Media Marketing Services Canada' => '/media/social-media-brand-feed.webp',
+    'AI & Software Development Services' => '/media/graphic-design-ai-brand.webp',
+    'Media Production Services in Canada' => '/media/visual-content-design.webp',
 ];
 $categoryDescriptions = [
-    'Branding & Design' => 'Build a memorable brand identity that sets you apart from the competition.',
-    'Web Development' => 'Custom websites and e-commerce stores built for performance and conversions.',
-    'SEO & Search' => 'Dominate search results with data-driven SEO strategies.',
-    'Performance Marketing' => 'Paid advertising campaigns that maximize your ROI across every platform.',
-    'Content & Email' => 'Engage your audience with compelling content and automated email campaigns.',
-    'Lead Generation & CRO' => 'Turn traffic into leads and leads into customers with optimized funnels.',
-    'Digital & Social' => 'Grow your brand presence and community across social platforms.',
-    'AI & Software Development' => 'Custom software, mobile apps, and AI-powered automation solutions.',
-    'Media Production' => 'Professional video production, editing, and music release services.',
+    'Branding & Design Services in Canada' => 'Build a memorable brand identity with our Canadian branding agency. Logo design, packaging, and UI/UX services.',
+    'Web Development Services in Canada' => 'Custom websites, WordPress, Shopify, and e-commerce stores built for performance and conversions across Canada.',
+    'SEO & Search Engine Optimization Services' => 'Dominate Google search results with data-driven SEO strategies — local SEO, technical SEO, and link building.',
+    'Performance Marketing & PPC Services Canada' => 'Google Ads, Meta Ads, LinkedIn, TikTok, and Amazon PPC campaigns that maximize your ROI across every platform.',
+    'Content Marketing & Email Services' => 'Engage your audience with compelling content marketing, copywriting, and automated email campaigns.',
+    'Lead Generation & CRO Agency' => 'Turn traffic into leads and leads into customers with optimized funnels, GMB listings, and reputation management.',
+    'Social Media Marketing Services Canada' => 'Grow your brand presence and community with social media management and influencer marketing across Canada.',
+    'AI & Software Development Services' => 'Custom software development, mobile apps, and AI-powered marketing automation solutions for Canadian businesses.',
+    'Media Production Services in Canada' => 'Professional video production, editing, and music release services for brands across Canada.',
 ];
 ?>
 <?php foreach ($categories as $catIndex => $cat) : ?>
@@ -182,7 +182,7 @@ $categoryDescriptions = [
   <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#ff4500]/[0.03] to-[#050505] pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-3xl text-center scroll-reveal">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to Grow Your Business<span class="text-[#ff4500]">?</span></h2>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to Grow Your Business with a Digital Marketing Agency<span class="text-[#ff4500]">?</span></h2>
     <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Tell us about your goals and we'll build a custom marketing strategy that drives real, measurable results for your brand.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>

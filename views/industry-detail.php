@@ -166,7 +166,7 @@ if ($isTier1) {
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Challenges</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16"><?= tml_e($name) ?> Marketing Challenges<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16"><?= tml_e($name) ?> Marketing &amp; SEO Challenges<span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 gap-5">
       <?php
       $challengeIcons = [
@@ -197,7 +197,7 @@ if ($isTier1) {
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">What We Offer</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our Services for <?= tml_e($name) ?><span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our Marketing Services for <?= tml_e($name) ?><span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php
       $svcIcons = [
@@ -218,7 +218,7 @@ if ($isTier1) {
           </div>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors"><?= tml_e($svc['name']) ?></h3>
+        <h3 class="text-lg font-semibold text-white mb-3 group-hover:text-[#ff4500] transition-colors"><?= tml_e($svc['name']) ?> for <?= tml_e($name) ?></h3>
         <p class="text-sm text-white/75 leading-relaxed"><?= tml_e($svc['description']) ?></p>
       </a>
       <?php endforeach; ?>
@@ -254,7 +254,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-6xl">
     <div class="flex items-center gap-4 mb-12 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> Marketing Guide</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> SEO &amp; Marketing Guide</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
     </div>
     <div class="space-y-16 md:space-y-24">
@@ -306,7 +306,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-3xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4 text-center">FAQ</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing FAQ<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing &amp; SEO FAQ<span class="text-[#ff4500]">.</span></h2>
     <div class="space-y-3">
       <?php foreach ($v2['faqItems'] as $faq) : ?>
       <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
@@ -324,10 +324,10 @@ $sectionIcons = [
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to grow your <?= tml_e(strtolower($name)) ?> business<span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our marketing services can drive real results for your <?= tml_e(strtolower($name)) ?> brand.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Why <?= tml_e($name) ?> Businesses Choose Our Marketing Agency<span class="text-[#ff4500]">.</span></h2>
+    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our <?= tml_e(strtolower($name)) ?> marketing and SEO services can drive real results for your brand.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Book a Free Strategy Call</a>
+      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Get Your Free <?= tml_e($name) ?> Marketing Strategy</a>
       <a href="/industries" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">View All Industries</a>
     </div>
   </div>
@@ -448,7 +448,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Pain Points</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16"><?= tml_e($name) ?> Marketing Challenges We Solve<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16"><?= tml_e($name) ?> Marketing &amp; SEO Challenges We Solve<span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php
       $painIcons = [
@@ -478,7 +478,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Benefits</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Benefits of <?= tml_e($name) ?> Digital Marketing<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Benefits of <?= tml_e($name) ?> SEO &amp; Digital Marketing<span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php foreach ($legacy['benefits'] as $i => $benefit) : ?>
       <div class="group relative p-6 md:p-8 rounded-2xl glass-card">
@@ -507,7 +507,7 @@ foreach ($legacy['services'] ?? [] as $svcSlug) {
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Recommended Services</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Services for <?= tml_e($name) ?><span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our Marketing Services for <?= tml_e($name) ?><span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php
       $svcIcons = [
@@ -528,7 +528,7 @@ foreach ($legacy['services'] ?? [] as $svcSlug) {
           </div>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/20 group-hover:text-[#ff4500] transition-colors"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-[#ff4500] transition-colors"><?= tml_e($ls['data']['title']) ?></h3>
+        <h3 class="text-lg font-semibold text-white mb-2 group-hover:text-[#ff4500] transition-colors"><?= tml_e($ls['data']['title']) ?> for <?= tml_e($name) ?></h3>
         <p class="text-sm text-white/75 leading-relaxed mb-4 line-clamp-3"><?= tml_e($ls['data']['description']) ?></p>
         <span class="text-xs text-[#ff4500] font-medium">Learn More &rarr;</span>
       </a>
@@ -564,7 +564,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-6xl">
     <div class="flex items-center gap-4 mb-12 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> Marketing Guide</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase"><?= tml_e($name) ?> SEO &amp; Marketing Guide</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
     </div>
     <div class="space-y-16 md:space-y-24">
@@ -614,7 +614,7 @@ $sectionIcons = [
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4 text-center">FAQ</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing FAQ<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 text-center"><?= tml_e($name) ?> Marketing &amp; SEO FAQ<span class="text-[#ff4500]">.</span></h2>
     <div class="space-y-3">
       <?php foreach ($legacy['faqs'] as $faq) : ?>
       <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.12] hover:bg-white/[0.03] transition-all duration-300">
@@ -632,10 +632,10 @@ $sectionIcons = [
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to grow your <?= tml_e(strtolower($name)) ?> business<span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our marketing services can drive real results for your <?= tml_e(strtolower($name)) ?> brand.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Why <?= tml_e($name) ?> Businesses Choose Our Marketing Agency<span class="text-[#ff4500]">.</span></h2>
+    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Let&apos;s discuss how our <?= tml_e(strtolower($name)) ?> marketing and SEO services can drive real results for your brand.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Book a Free Strategy Call</a>
+      <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Get Your Free <?= tml_e($name) ?> Marketing Strategy</a>
       <a href="/industries" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">View All Industries</a>
     </div>
   </div>

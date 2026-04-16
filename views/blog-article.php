@@ -132,7 +132,7 @@ if (count($relatedArticles) < 3) {
       <!-- Title -->
       <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight font-syne"><?= tml_e($article['title']) ?></h1>
 
-      <!-- Description -->
+      <!-- Description / keyword-rich subtitle -->
       <p class="text-xl text-white/75 mb-8 max-w-2xl leading-relaxed"><?= tml_e($article['metaDescription']) ?></p>
 
       <!-- Metadata -->
@@ -185,10 +185,10 @@ if ($imageUrl !== '') {
     <div class="lg:col-span-3">
       <!-- Table of Contents -->
       <div class="mb-12 p-6 rounded-xl bg-white/[0.03] border border-white/[0.08]">
-        <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-wider">
+        <p class="text-sm font-bold text-white mb-4 flex items-center gap-2 uppercase tracking-wider" aria-label="Table of contents">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/></svg>
           Contents
-        </h3>
+        </p>
         <div id="toc-list" class="space-y-1 text-xs"></div>
       </div>
 

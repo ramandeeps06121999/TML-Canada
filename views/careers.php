@@ -92,8 +92,8 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">We&apos;re hiring</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Careers at TML Agency<span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">Join a 70+ member team of designers, developers, strategists, and creators building brands that matter. If you&apos;re driven, curious, and ready to do the best work of your career — we want to hear from you.</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Join Our Digital Marketing Agency Team<span class="text-[#ff4500]">.</span></h1>
+    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">Careers at TML Agency — a 70+ member team of designers, developers, strategists, and creators building brands that matter. If you&apos;re driven, curious, and ready to do the best work of your career at a leading Canadian marketing agency — we want to hear from you.</p>
     <a href="#positions" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">View Open Positions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
   </div>
 </section>
@@ -103,7 +103,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-7xl">
     <div class="text-center mb-16 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">Perks &amp; Benefits</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Why Work at TML Agency<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Why Work at a Top Digital Marketing Agency<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <?php foreach ($perks as $i => $perk) : ?>
@@ -122,7 +122,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-3xl">
     <div class="text-center mb-16 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">Open Roles</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Current Job Openings<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Open Marketing Agency Jobs in Edmonton<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="space-y-3">
       <?php foreach ($positions as $i => $pos) : ?>
@@ -156,8 +156,8 @@ require TML_VIEWS . '/partials/head.php';
 <!-- CTA -->
 <section class="relative w-full px-6 py-20 md:py-28 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Don&apos;t see your role<span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">We&apos;re always looking for talented people. Send us your resume and tell us how you&apos;d contribute to the team.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Don&apos;t See Your Marketing Role<span class="text-[#ff4500]">?</span></h2>
+    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">We&apos;re always looking for talented digital marketing professionals. Send us your resume and tell us how you&apos;d contribute to TML Agency.</p>
     <a href="mailto:careers@townmedialabs.ca?subject=General Application" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Send Your Resume</a>
   </div>
 </section>

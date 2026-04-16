@@ -47,7 +47,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none z-[2]"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="section-label text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 mx-auto w-fit">Who We Are</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">About <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">TML Agency</span><span class="text-[#ff4500]">.</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">About <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">TML</span> &mdash; Digital Marketing Agency in Canada<span class="text-[#ff4500]">.</span></h1>
     <p class="text-sm md:text-base text-white/50 leading-relaxed max-w-2xl mx-auto mb-10">We are a full-service digital marketing and branding agency headquartered in Edmonton, Canada. For over 15 years, we have helped ambitious businesses build unforgettable brands, dominate search rankings, and scale revenue through data-driven marketing.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Work With Us</a>
@@ -60,7 +60,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-12 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Story</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Story &mdash; Full-Service Marketing Company Since 2010</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">01</span>
     </div>
@@ -86,7 +86,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-12 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Work Speaks</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Digital Marketing Work Speaks</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 scroll-reveal scroll-delay-1">
@@ -116,7 +116,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-12 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Mission &amp; Vision</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Marketing Agency Mission &amp; Vision</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">02</span>
     </div>
@@ -127,7 +127,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-14 h-14 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-6 group-hover:bg-[#ff4500]/20 transition-colors">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
         </div>
-        <h3 class="text-2xl font-semibold text-white mb-4">Our Mission</h3>
+        <h3 class="text-2xl font-semibold text-white mb-4">Our Digital Marketing Mission</h3>
         <p class="text-sm text-white/50 leading-relaxed">To deliver measurable results through strategic branding and performance marketing. We exist to help businesses of all sizes build powerful brands, attract the right customers, and achieve sustainable growth &mdash; all driven by data, creativity, and an unwavering commitment to excellence.</p>
       </div>
       <!-- Vision -->
@@ -136,7 +136,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-14 h-14 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-6 group-hover:bg-[#ff4500]/20 transition-colors">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
-        <h3 class="text-2xl font-semibold text-white mb-4">Our Vision</h3>
+        <h3 class="text-2xl font-semibold text-white mb-4">Our Vision for Marketing in Canada</h3>
         <p class="text-sm text-white/50 leading-relaxed">To become India&rsquo;s most trusted digital marketing partner &mdash; a name synonymous with innovation, transparency, and transformative results. We envision a future where every business has access to world-class marketing, and we are building that future, one brand at a time.</p>
       </div>
     </div>
@@ -147,11 +147,11 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-4 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Why Choose TML</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Why Choose TML Marketing Agency</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">03</span>
     </div>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Our Agency Results & Achievements<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Our Digital Marketing Results &amp; Achievements<span class="text-[#ff4500]">.</span></h2>
     <?php
     $stats = [
         ['target' => 500, 'suffix' => '+', 'label' => 'Clients Served'],
@@ -188,11 +188,11 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-4 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Values</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Our Values as a Leading Marketing Agency</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">04</span>
     </div>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Our Core Values & Mission<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12">Core Values That Drive Our Marketing Agency<span class="text-[#ff4500]">.</span></h2>
     <?php
     $values = [
         [
@@ -236,11 +236,11 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <div class="flex items-center gap-4 mb-4 scroll-reveal">
-      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Leadership</p>
+      <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase">Marketing Experts &amp; Leadership</p>
       <div class="flex-1 h-[1px] bg-white/[0.06]"></div>
       <span class="text-xs text-white/20 font-mono">05</span>
     </div>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Meet Our Marketing Team<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Meet Our Marketing Experts &amp; Leadership Team<span class="text-[#ff4500]">.</span></h2>
     <div class="scroll-reveal scroll-delay-1 mb-12 rounded-2xl overflow-hidden border border-white/[0.06] max-h-[320px] group">
       <img src="/media/creative-photography.jpg"
            alt="TML Agency creative team at work"
@@ -277,7 +277,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-12 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">FAQ</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Frequently Asked Questions<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Frequently Asked Questions About Our Agency<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="space-y-3">
       <?php foreach ($aboutFaqs as $i => $faq) : ?>
@@ -300,7 +300,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#ff4500]/[0.03] to-[#050505] pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-3xl text-center scroll-reveal">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Start Your Digital Marketing Journey<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Start Your Digital Marketing Journey With Our Canada Agency<span class="text-[#ff4500]">.</span></h2>
     <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Partner with Edmonton&rsquo;s most results-driven agency. Let&rsquo;s build a strategy that delivers real, measurable growth for your brand.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>

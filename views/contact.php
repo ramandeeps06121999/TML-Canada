@@ -40,7 +40,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none z-[2]"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="section-label text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 mx-auto w-fit">Contact Us</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Contact Our <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Marketing Experts</span><span class="text-[#ff4500]">.</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Contact Our <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Digital Marketing Agency</span><span class="text-[#ff4500]">.</span></h1>
     <p class="text-sm md:text-base text-white/50 leading-relaxed max-w-2xl mx-auto">Whether you need a brand refresh, want to dominate Google, or are ready to scale your marketing &mdash; we&rsquo;re here to help. Get in touch and let&rsquo;s talk strategy.</p>
   </div>
 </section>
@@ -60,7 +60,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-12 h-12 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 group-hover:scale-110 transition-all duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <h3 class="text-base font-semibold text-white mb-2">Edmonton Office</h3>
+        <h3 class="text-base font-semibold text-white mb-2">Edmonton Marketing Agency Office</h3>
         <p class="text-sm text-white/75 leading-relaxed">11930 104 St NW, Edmonton, AB T5G 2K1, Canada</p>
       </div>
       <!-- Phone -->
@@ -68,7 +68,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-12 h-12 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 group-hover:scale-110 transition-all duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
-        <h3 class="text-base font-semibold text-white mb-2">Phone</h3>
+        <h3 class="text-base font-semibold text-white mb-2">Call Our Marketing Team</h3>
         <p class="text-sm text-white/75 group-hover:text-[#ff4500] transition-colors">+1 (403) 604-8692</p>
       </a>
       <!-- Email -->
@@ -76,7 +76,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-12 h-12 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-5 group-hover:bg-[#ff4500]/20 group-hover:scale-110 transition-all duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <h3 class="text-base font-semibold text-white mb-2">Email</h3>
+        <h3 class="text-base font-semibold text-white mb-2">Email Our Experts</h3>
         <p class="text-sm text-white/75 group-hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</p>
       </a>
       <!-- WhatsApp Live Chat -->
@@ -84,7 +84,7 @@ require TML_VIEWS . '/partials/head.php';
         <div class="w-12 h-12 rounded-xl bg-[#25D366]/10 flex items-center justify-center mb-5 group-hover:bg-[#25D366]/20 group-hover:scale-110 transition-all duration-300">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         </div>
-        <h3 class="text-base font-semibold text-white mb-2">Live Chat</h3>
+        <h3 class="text-base font-semibold text-white mb-2">Live Chat Support</h3>
         <p class="text-sm text-white/75 group-hover:text-[#25D366] transition-colors">Chat on WhatsApp</p>
       </a>
     </div>
@@ -252,7 +252,7 @@ require TML_VIEWS . '/partials/head.php';
           <div class="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-4">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3 class="text-base font-semibold text-white mb-4">Office Hours</h3>
+          <h3 class="text-base font-semibold text-white mb-4">Agency Office Hours</h3>
           <ul class="space-y-3 text-sm">
             <li class="flex items-center justify-between">
               <span class="text-white/75">Monday - Friday</span>
@@ -275,14 +275,14 @@ require TML_VIEWS . '/partials/head.php';
           <div class="w-10 h-10 rounded-xl bg-[#ff4500]/10 flex items-center justify-center mb-4">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <h3 class="text-base font-semibold text-white mb-2">Quick Response</h3>
+          <h3 class="text-base font-semibold text-white mb-2">Quick Response Guarantee</h3>
           <p class="text-sm text-white/75 leading-relaxed">We typically respond within <strong class="text-white/70 font-semibold">2-4 business hours</strong>. For urgent matters, call us directly.</p>
         </div>
 
         <!-- Social Links -->
         <div class="glass-card rounded-2xl p-6 md:p-8 relative overflow-hidden">
           <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent"></div>
-          <h3 class="text-base font-semibold text-white mb-4">Follow Us</h3>
+          <h3 class="text-base font-semibold text-white mb-4">Follow TML Agency</h3>
           <div class="flex items-center gap-3">
             <a href="#" class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white/40 hover:text-[#ff4500] hover:border-[#ff4500]/30 hover:bg-[#ff4500]/[0.06] hover:scale-110 transition-all duration-200" aria-label="Instagram">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
@@ -311,7 +311,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-12 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">FAQ</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Contact Us &mdash; Frequently Asked Questions<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Digital Marketing Agency &mdash; Frequently Asked Questions<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="space-y-3">
       <?php foreach ($contactFaqs as $i => $faq) : ?>
@@ -347,7 +347,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#ff4500]/[0.03] to-[#050505] pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-3xl text-center scroll-reveal">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Schedule a Free Consultation Call<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Schedule a Free Marketing Consultation<span class="text-[#ff4500]">.</span></h2>
     <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Skip the form. Call us directly and speak with a strategist who can help you right away.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="tel:+14036048692" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)]">

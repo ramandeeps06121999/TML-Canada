@@ -269,7 +269,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="flex items-center justify-between">
       <div>
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our toolkit</p>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Marketing Technology Stack<span class="text-[#ff4500]">.</span></h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Digital Marketing Technology Stack<span class="text-[#ff4500]">.</span></h2>
       </div>
       <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/30 font-medium">15+ tools</span>
     </div>
@@ -296,7 +296,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
       <div class="max-w-2xl">
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-5">Awards &amp; Certified Partners</p>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight">Awards, Certifications &amp; Partnerships<span class="text-[#ff4500]">.</span></h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight">Awards, Certifications &amp; Marketing Partnerships<span class="text-[#ff4500]">.</span></h2>
         <p class="mt-4 text-sm md:text-base text-white/35 leading-relaxed">Recognized by global platforms and backed by industry-leading certifications that reflect our commitment to excellence.</p>
       </div>
       <span class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.02] text-xs text-white/40 font-medium shrink-0"><span data-counter-target="20" data-counter-suffix="+">0</span>&nbsp;Awards &amp; Certifications</span>
@@ -367,7 +367,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full py-16 md:py-24 overflow-hidden bg-[#050505]">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 scroll-reveal">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Creative Work</p>
-    <h2 class="text-3xl sm:text-4xl font-medium text-white leading-tight">Brand Identity &amp; Creative Work<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="text-3xl sm:text-4xl font-medium text-white leading-tight">Branding Agency Creative Work<span class="text-[#ff4500]">.</span></h2>
   </div>
 
   <?php
@@ -584,7 +584,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 right-0 p-8 md:p-12 pointer-events-none">
         <p class="text-[10px] text-[#ff4500]/80 tracking-[0.15em] uppercase font-semibold mb-2">Showreel 2025</p>
-        <h3 class="text-2xl md:text-3xl font-medium text-white tracking-tight">A year of building brands that matter</h3>
+        <h3 class="text-2xl md:text-3xl font-medium text-white tracking-tight">A year of web design &amp; branding that matters</h3>
         <div class="w-0 group-hover:w-12 h-0.5 bg-[#ff4500] mt-4 transition-all duration-700"></div>
       </div>
     </div>
@@ -615,7 +615,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="py-24 md:py-32 px-6 lg:px-12 bg-[#050505] overflow-hidden">
   <div class="max-w-7xl mx-auto mb-10 scroll-reveal">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our work in motion</p>
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3">Video Production &amp; Brand Films<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3">Video Production &amp; Brand Films for Marketing<span class="text-[#ff4500]">.</span></h2>
     <p class="text-sm text-white/35 max-w-lg">Short-form content, brand films, and animated visuals — crafted to stop the scroll.</p>
   </div>
   <div class="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory cursor-grab" data-tml-video-scroll style="-webkit-overflow-scrolling: touch; scrollbar-width: none;">
@@ -655,7 +655,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-7xl mx-auto">
     <div class="mb-16 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our process</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Proven Marketing Process<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Digital Marketing Agency Process<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="relative">
       <div class="hidden md:block absolute left-8 top-0 bottom-0 w-[2px] bg-white/[0.06]"><div class="absolute inset-0 bg-gradient-to-b from-[#ff4500] to-[#ff4500]/20 origin-top" style="transform: scaleY(0.5);"></div></div>
@@ -698,7 +698,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">Tailored strategies</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3">Campaign Plans &amp; Pricing<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-3">Digital Marketing Packages &amp; Pricing<span class="text-[#ff4500]">.</span></h2>
       <p class="text-sm text-white/35">Let us write a custom plan for you</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -743,7 +743,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16 scroll-reveal">
       <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4 mx-auto w-fit">Client stories</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4">Client Testimonials &amp; Reviews<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4">What Our Marketing Clients Say<span class="text-[#ff4500]">.</span></h2>
       <p class="text-sm text-white/35 max-w-xl mx-auto">Real results from real businesses. Here's what our clients have to say about working with TML.</p>
     </div>
     <div class="flex md:grid md:grid-cols-3 gap-5 overflow-x-auto snap-x snap-mandatory pb-4 md:pb-0 md:overflow-visible" data-tml-testimonial-scroll style="scrollbar-width: none;">
@@ -838,8 +838,8 @@ require TML_VIEWS . '/partials/head.php';
       <div class="flex flex-col scroll-reveal scroll-delay-1">
         <!-- Heading -->
         <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium leading-tight tracking-tight text-white mb-4">
-          Where Cool<br>
-          <span class="italic bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">meets Culture.</span>
+          Life at Our<br>
+          <span class="italic bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Marketing Company.</span>
         </h2>
 
         <!-- Description -->

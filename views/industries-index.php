@@ -54,8 +54,8 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Industry Expertise</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Industries We <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Serve</span><span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">We bring deep domain knowledge and proven marketing strategies to every industry we work with. Your market is unique — your marketing should be too.</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Industries We <span class="bg-gradient-to-r from-[#ff4500] via-[#ff6b35] to-[#ff4500]/60 bg-clip-text text-transparent">Serve</span> — Digital Marketing for Every Sector<span class="text-[#ff4500]">.</span></h1>
+    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto mb-10">From healthcare and real estate to SaaS and e-commerce, TML Agency brings deep domain knowledge and proven digital marketing strategies to every industry. Your market is unique — your SEO, paid ads, and branding should be too.</p>
     <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Discuss Your Industry</a>
   </div>
 </section>
@@ -129,8 +129,8 @@ require TML_VIEWS . '/partials/head.php';
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Don&apos;t see your industry<span class="text-[#ff4500]">?</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">We work with businesses across every sector. Tell us about your industry and we&apos;ll show you how we can help you grow.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Need Digital Marketing for Your Industry<span class="text-[#ff4500]">?</span></h2>
+    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">We work with businesses across every sector — from startups to enterprises. Tell us about your industry and we&apos;ll build a custom SEO, ads, and branding strategy to help you grow.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Book a Free Strategy Call</a>
       <a href="/services" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">View Our Services</a>

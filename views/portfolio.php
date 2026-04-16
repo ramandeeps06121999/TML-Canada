@@ -162,7 +162,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 70%);"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Our Work</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Our Portfolio<span class="text-[#ff4500]">.</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Our Digital Marketing Portfolio <span class="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white/60 mt-2">500+ Projects Delivered</span><span class="text-[#ff4500]">.</span></h1>
     <p class="text-sm md:text-base text-white/75 max-w-2xl mx-auto mb-10">From pixel-perfect websites to bold brand identities and scroll-stopping campaigns — explore the work that has helped 500+ brands grow.</p>
     <div class="flex items-center justify-center gap-6">
       <div class="text-center">
@@ -191,7 +191,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
       <div class="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
         <span class="inline-block text-[11px] tracking-wider uppercase bg-[#ff4500]/20 text-[#ff4500] rounded-full px-3 py-1 font-semibold mb-4">Featured</span>
-        <h2 class="text-2xl md:text-3xl font-semibold text-white mb-3">Brand Identity System</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold text-white mb-3">Brand Identity System — Featured Project</h2>
         <p class="text-sm text-white/60 leading-relaxed mb-4">Complete visual identity — logo, typography, color system, and brand guidelines for a premium brand launch.</p>
         <div class="w-0 group-hover:w-12 h-[2px] bg-[#ff4500] transition-all duration-500"></div>
       </div>
@@ -229,6 +229,19 @@ require TML_VIEWS . '/partials/head.php';
 <!-- MAIN PORTFOLIO GRID — Card grid -->
 <section class="relative w-full px-6 pb-20 md:pb-28 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
+    <div class="mb-10 scroll-reveal">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-4">Browse Our Work by Category</h2>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/40">
+        <h3 class="text-white/50 font-medium">Web Design Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Branding Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Social Media Portfolio</h3>
+        <h3 class="text-white/50 font-medium">UI/UX Design Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Graphic Design Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Product Photography Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Packaging Design Portfolio</h3>
+        <h3 class="text-white/50 font-medium">Advertising Campaign Portfolio</h3>
+      </div>
+    </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="portfolio-grid">
       <?php foreach ($allWork as $i => $project) :
           $filterClass = strtolower(str_replace([' ', '&'], ['-', ''], $project['category']));
@@ -270,7 +283,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 scroll-reveal">
       <div>
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Showreel</p>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Video & <span class="italic text-white/90">Motion Design</span><span class="text-[#ff4500]">.</span></h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Video Production & <span class="italic text-white/90">Motion Design Portfolio</span><span class="text-[#ff4500]">.</span></h2>
       </div>
       <p class="text-sm text-white/30 max-w-sm">Brand films, ad creatives, and motion design — crafted to stop the scroll.</p>
     </div>
@@ -313,7 +326,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="w-[600px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px]"></div>
   </div>
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to Grow Your Business<span class="text-[#ff4500]">?</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Ready to Start Your Next Project<span class="text-[#ff4500]">?</span></h2>
     <p class="text-sm md:text-base text-white/75 leading-relaxed mb-10 max-w-xl mx-auto">Let's bring your vision to life. Tell us about your project and we'll craft a strategy that delivers measurable results.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>

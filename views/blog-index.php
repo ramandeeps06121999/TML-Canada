@@ -1,5 +1,5 @@
 <?php
-$title = 'Digital Marketing Blog | SEO & AI Tips | TML Agency';
+$title = 'Digital Marketing & SEO Blog | AI & Branding Tips | TML Agency';
 $description = 'Read expert insights on digital marketing, SEO, branding, AI, Google Ads & social media strategy from TML Agency Canada. Actionable tips for growing your brand.';
 $keywords = 'digital marketing blog, SEO tips Canada, branding insights, Google Ads strategies, social media marketing tips, AI marketing blog, content marketing, TML Agency blog';
 $canonicalPath = '/blog';
@@ -125,7 +125,7 @@ $blogsRest = array_slice($blogs, 1);
       <div class="mb-6">
         <span class="inline-block text-xs tracking-[0.25em] uppercase text-[#ff4500] font-semibold">Expert Insights</span>
       </div>
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-tight">Digital Marketing Blog<span class="text-[#ff4500]">.</span></h1>
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-medium text-white mb-6 leading-tight">Digital Marketing &amp; SEO Blog<span class="text-[#ff4500]">.</span></h1>
       <p class="text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed">Cutting-edge strategies, industry trends, and proven tactics from our expert team. Discover how to elevate your brand with SEO, content, paid media, and AI-driven marketing.</p>
     </div>
 
@@ -147,7 +147,7 @@ $blogsRest = array_slice($blogs, 1);
 <section class="px-6 lg:px-12 py-16 md:py-24 relative">
   <div class="mx-auto max-w-7xl">
     <div class="mb-8 scroll-reveal">
-      <span class="text-xs tracking-[0.25em] uppercase text-white/50 font-semibold">Featured Article</span>
+      <h2 class="text-xs tracking-[0.25em] uppercase text-white/50 font-semibold m-0">Featured Article</h2>
     </div>
 
     <a href="/blog/<?= tml_e($featuredSlug) ?>" class="group block scroll-reveal">
@@ -192,6 +192,7 @@ $blogsRest = array_slice($blogs, 1);
 <!-- Articles Grid -->
 <section class="px-6 lg:px-12 py-16 md:py-24">
   <div class="mx-auto max-w-7xl">
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-10 font-syne">Latest Marketing Insights &amp; SEO Tips</h2>
     <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
       <?php foreach ($blogsRest as $slug => $article) : ?>
       <a href="/blog/<?= tml_e($slug) ?>" class="blog-card group block rounded-xl border border-white/[0.08] bg-white/[0.02] overflow-hidden transition-all duration-500 hover:bg-white/[0.06] hover:border-[#ff4500]/40 flex flex-col" data-category="<?= tml_e($article['category']) ?>">

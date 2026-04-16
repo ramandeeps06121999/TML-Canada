@@ -92,8 +92,8 @@ require TML_VIEWS . '/partials/head.php';
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-[#ff4500]/[0.04] blur-[150px] pointer-events-none"></div>
   <div class="relative mx-auto max-w-5xl text-center">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Resources</p>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Free <span class="text-[#ff4500]">Marketing</span> Tools<span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto">Powerful calculators and generators to help you make smarter marketing decisions. No signup required.</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Free Digital <span class="text-[#ff4500]">Marketing</span> Tools &amp; Calculators<span class="text-[#ff4500]">.</span></h1>
+    <p class="text-sm md:text-base text-white/90 max-w-2xl mx-auto">Powerful SEO checkers, ad budget planners, ROI calculators, and social media generators to help you make smarter marketing decisions. No signup required.</p>
   </div>
 </section>
 
@@ -133,8 +133,8 @@ require TML_VIEWS . '/partials/head.php';
 
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-3xl text-center">
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Custom Marketing Tools & Dashboards<span class="text-[#ff4500]">.</span></h2>
-    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">We build custom marketing dashboards, calculators, and interactive tools for brands that want to stand out.</p>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-6">Custom Marketing Dashboards &amp; Analytics Tools<span class="text-[#ff4500]">.</span></h2>
+    <p class="text-sm md:text-base text-white/90 leading-relaxed mb-10 max-w-xl mx-auto">Need a bespoke solution? We build custom marketing dashboards, ROI calculators, and interactive analytics tools for brands that want a competitive edge.</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]">Talk to Us</a>
       <a href="/services" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">View Our Services</a>
