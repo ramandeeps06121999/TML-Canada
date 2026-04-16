@@ -369,7 +369,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our Process</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our <?= tml_e($serviceName) ?> Services Process in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">How Our <?= tml_e($serviceName) ?> Process Works in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
     <?php
     $processIcons = [
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>',
@@ -411,7 +411,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 bg-[#080808] overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">What We Offer</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16"><?= tml_e($serviceName) ?> Company Services in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Best <?= tml_e($serviceName) ?> Services in <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h2>
     <?php
     $featureIcons = [
         '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
@@ -523,7 +523,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </figure>
           <div>
-            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6"><?= tml_e($serviceName) ?> Services for <?= tml_e($cityName) ?> Market<span class="text-[#ff4500]">.</span></h3>
+            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6"><?= tml_e($cityName) ?> <?= tml_e($serviceName) ?> Market Overview<span class="text-[#ff4500]">.</span></h3>
             <div class="space-y-4">
               <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($cityName) ?> is home to thriving <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> industries — each needs a tailored <?= tml_e(strtolower($serviceName)) ?> approach.</p>
               <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">We help you find gaps, sharpen positioning, and win demand in <?= tml_e($cityName) ?>.</p>
@@ -541,7 +541,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
           <div>
-            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6"><?= tml_e($serviceName) ?> Expert Insights for <?= tml_e($cityName) ?><span class="text-[#ff4500]">.</span></h3>
+            <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6">What Makes <?= tml_e($cityName) ?> <?= tml_e($serviceName) ?> Different<span class="text-[#ff4500]">.</span></h3>
             <div class="space-y-4">
               <?php foreach ($location['uniqueContent'] as $paragraph) : ?>
                 <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($paragraph) ?></p>
