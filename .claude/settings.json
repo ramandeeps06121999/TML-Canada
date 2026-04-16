@@ -123,11 +123,18 @@
       "Bash(sed -i '' '567s|tml_e\\($midImages\\\\[1\\\\] ?? $serviceImages\\\\[2\\\\] ?? '\\\\''creative-design-portfolio.webp'\\\\''\\)|tml_e\\($sectionImg\\(5\\)\\)|' views/location-service.php)",
       "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== SEO-in-Edmonton - duplicates? ===\" curl -s http://localhost:8000/services/seo-in-edmonton)",
       "Bash(curl -s http://localhost:8000/services/seo-in-edmonton)",
-      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== Real Estate industry page - duplicate images ===\" curl -s http://localhost:8000/industries/real-estate)"
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== Real Estate industry page - duplicate images ===\" curl -s http://localhost:8000/industries/real-estate)",
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php echo \"=== CURRENT H2/H3 HEADINGS ON LOCATION-SERVICE ===\" curl -s http://localhost:8000/services/seo-in-surrey)",
+      "Bash(cd /Users/ramanmakkar/Desktop/tml-php curl -s http://localhost:8000/services/seo-in-surrey)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8000/services/seo-in-surrey)",
+      "Bash(grep -n 'tml_e\\($f\\\\['\\\\''title'\\\\''\\\\]\\)' views/location-service.php)",
+      "Bash(grep -n 'tml_e\\($item\\\\['\\\\''title'\\\\''\\\\]\\)' views/location-service.php)",
+      "Bash(curl -s http://localhost:8000/services/seo-in-surrey)"
     ],
     "additionalDirectories": [
       "/Users/ramanmakkar/Desktop/tml-nextjs",
-      "/Users/ramanmakkar/Desktop/tml-nextjs/src/app"
+      "/Users/ramanmakkar/Desktop/tml-nextjs/src/app",
+      "/tmp"
     ]
   }
 }

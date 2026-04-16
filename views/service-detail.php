@@ -204,7 +204,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="relative w-full px-6 py-16 md:py-24 lg:px-12 overflow-hidden">
   <div class="relative mx-auto max-w-7xl">
     <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">What We Offer</p>
-    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our <?= tml_e($data['title']) ?> Services<span class="text-[#ff4500]">.</span></h2>
+    <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-12 md:mb-16">Our <?= tml_e($data['title']) ?> Agency Services in Canada<span class="text-[#ff4500]">.</span></h2>
     <?php
     $featureIcons = [
         '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500]"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
@@ -246,7 +246,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="scroll-reveal grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-stretch">
       <!-- Left: Text content -->
       <div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Why Your Business Needs <?= tml_e($data['title']) ?><span class="text-[#ff4500]">.</span></h2>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-8">Why Your Business Needs a <?= tml_e($data['title']) ?> Company<span class="text-[#ff4500]">.</span></h2>
         <div class="space-y-4">
           <?php foreach ($data['seoContent'] as $i => $paragraph) :
             $trimmed = strlen(strip_tags($paragraph)) > 250 ? substr(strip_tags($paragraph), 0, 250) . '...' : $paragraph;
@@ -324,7 +324,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#ff4500]/30 via-[#ff4500]/5 to-[#ff4500]/20 opacity-60"></div>
       <div class="relative bg-[#0a0a0a] rounded-2xl p-8 md:p-10">
         <p class="text-[10px] text-[#ff4500]/60 tracking-[0.2em] uppercase font-semibold mb-2">Transparent Pricing</p>
-        <h2 class="scroll-reveal text-xl md:text-2xl font-semibold text-white mb-4"><?= tml_e($data['title']) ?> Pricing &amp; Investment</h2>
+        <h2 class="scroll-reveal text-xl md:text-2xl font-semibold text-white mb-4"><?= tml_e($data['title']) ?> Services Pricing &amp; Investment</h2>
         <p class="text-sm md:text-[15px] text-white/75 leading-[1.8] mb-6"><?= tml_e($data['pricingNote']) ?></p>
         <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors">Get a Custom Quote</a>
       </div>
@@ -338,7 +338,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-6xl">
     <div class="text-center mb-14 scroll-reveal">
       <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">Our Process</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">How Our <?= tml_e($data['title']) ?> Process Works<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">How Our <?= tml_e($data['title']) ?> Expert Process Works<span class="text-[#ff4500]">.</span></h2>
     </div>
     <?php
     $processIcons = [
@@ -374,7 +374,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-3xl">
     <div class="text-center mb-12 scroll-reveal">
       <p class="text-xs text-white/40 tracking-[0.25em] uppercase section-label mb-4">FAQ</p>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white"><?= tml_e($data['title']) ?> Questions Answered<span class="text-[#ff4500]">.</span></h2>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white"><?= tml_e($data['title']) ?> Services — Questions Answered<span class="text-[#ff4500]">.</span></h2>
     </div>
     <div class="space-y-3">
       <?php foreach ($data['faqs'] ?? [] as $fi => $faq) : ?>
