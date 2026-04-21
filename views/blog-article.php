@@ -35,7 +35,9 @@ $articleSchema = [
         '@type' => 'Person',
         'name' => $articleAuthor,
         'url' => TML_SITE_URL . '/about-us',
-        'description' => 'Founder & Chief SEO Strategist at TML Agency',
+        'sameAs' => ['https://ca.linkedin.com/company/town-media-labs'],
+        'jobTitle' => 'Chief SEO Strategist',
+        'description' => 'Founder & Chief SEO Strategist at TML Agency. Recognized Canadian digital marketing expert with a track record of driving scalable growth.',
     ],
     'creator' => $articleAuthor,
     'publisher' => [
@@ -43,6 +45,14 @@ $articleSchema = [
         'name' => 'TML Agency',
         'url' => TML_SITE_URL,
         'logo' => ['@type' => 'ImageObject', 'url' => TML_SITE_URL . '/og-image.png'],
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => '11930 104 St NW',
+            'addressLocality' => 'Edmonton',
+            'addressRegion' => 'AB',
+            'postalCode' => 'T5G 2K1',
+            'addressCountry' => 'CA'
+        ]
     ],
     'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => TML_SITE_URL . '/blog/' . $slug],
 ];
@@ -205,7 +215,14 @@ if ($imageUrl !== '') {
           </div>
           <div>
             <h4 class="text-lg font-bold text-white mb-2"><?= tml_e($articleAuthor) ?></h4>
-            <p class="text-sm text-white/70 mb-4 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Digital marketing expert specializing in SEO, content strategy, and AI-driven solutions.</p>
+            <p class="text-sm text-white/70 mb-4 leading-relaxed">Founder & Chief SEO Strategist at TML Agency. Recognized Canadian digital marketing expert specializing in high-performance Local SEO, conversion optimization, and enterprise growth strategies across North America.</p>
+            <div class="flex flex-wrap items-center gap-4 mb-4">
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-white/60 bg-white/[0.05] border border-white/[0.1] px-2.5 py-1 rounded-md">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Fact Checked
+              </span>
+              <span class="text-xs text-white/40">Last Updated: <?= tml_e(date('M j, Y', strtotime((string)$articleModifiedTime))) ?></span>
+            </div>
             <a href="/about-us" class="inline-flex items-center gap-2 text-sm font-bold text-[#ff4500] hover:text-[#ff6a33] transition-colors">
               View Profile <span>→</span>
             </a>
