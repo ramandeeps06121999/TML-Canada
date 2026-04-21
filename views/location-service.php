@@ -496,11 +496,11 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             <div class="space-y-4">
               <?php if (!empty($enrichment['localContent'])) : ?>
                 <?php foreach ($enrichment['localContent'] as $p) : ?>
-                  <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($p) ?></p>
+                  <p class="text-sm md:text-[15px] text-white leading-[1.8]"><?= tml_e($p) ?></p>
                 <?php endforeach; ?>
               <?php else : ?>
-                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">As a leading <?= tml_e(strtolower($serviceName)) ?> agency serving <?= tml_e($cityName) ?>, TML helps businesses across <?= tml_e((string) $location['region']) ?> hit measurable growth goals.</p>
-                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">From teams near <?= tml_e($location['landmarks'][0] ?? '') ?> to companies across <?= tml_e($location['landmarks'][1] ?? '') ?> and <?= tml_e($location['landmarks'][2] ?? '') ?> — we build <?= tml_e(strtolower($serviceName)) ?> that fits your market.</p>
+                <p class="text-sm md:text-[15px] text-white leading-[1.8]">As a leading <?= tml_e(strtolower($serviceName)) ?> agency serving <?= tml_e($cityName) ?>, TML helps businesses across <?= tml_e((string) $location['region']) ?> hit measurable growth goals.</p>
+                <p class="text-sm md:text-[15px] text-white leading-[1.8]">From teams near <?= tml_e($location['landmarks'][0] ?? '') ?> to companies across <?= tml_e($location['landmarks'][1] ?? '') ?> and <?= tml_e($location['landmarks'][2] ?? '') ?> — we build <?= tml_e(strtolower($serviceName)) ?> that fits your market.</p>
               <?php endif; ?>
             </div>
           </div>
@@ -525,8 +525,8 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
           <div>
             <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6"><?= tml_e($cityName) ?> <?= tml_e($serviceName) ?> Market Overview<span class="text-[#ff4500]">.</span></h3>
             <div class="space-y-4">
-              <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($cityName) ?> is home to thriving <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> industries — each needs a tailored <?= tml_e(strtolower($serviceName)) ?> approach.</p>
-              <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]">We help you find gaps, sharpen positioning, and win demand in <?= tml_e($cityName) ?>.</p>
+              <p class="text-sm md:text-[15px] text-white leading-[1.8]"><?= tml_e($cityName) ?> is home to thriving <?= tml_e(implode(', ', array_slice($location['industries'], 0, 3))) ?> industries — each needs a tailored <?= tml_e(strtolower($serviceName)) ?> approach.</p>
+              <p class="text-sm md:text-[15px] text-white leading-[1.8]">We help you find gaps, sharpen positioning, and win demand in <?= tml_e($cityName) ?>.</p>
             </div>
           </div>
         </div>
@@ -544,7 +544,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
             <h3 class="text-2xl sm:text-3xl font-medium text-white leading-tight mb-6">What Makes <?= tml_e($cityName) ?> <?= tml_e($serviceName) ?> Different<span class="text-[#ff4500]">.</span></h3>
             <div class="space-y-4">
               <?php foreach ($location['uniqueContent'] as $paragraph) : ?>
-                <p class="text-sm md:text-[15px] text-white/75 leading-[1.8]"><?= tml_e($paragraph) ?></p>
+                <p class="text-sm md:text-[15px] text-white leading-[1.8]"><?= tml_e($paragraph) ?></p>
               <?php endforeach; ?>
             </div>
           </div>
