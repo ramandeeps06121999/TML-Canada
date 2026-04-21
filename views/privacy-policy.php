@@ -25,7 +25,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="relative mx-auto max-w-3xl">
     <p class="text-[11px] text-white/40 tracking-[0.25em] uppercase mb-8 section-label">Legal</p>
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight mb-4">Privacy Policy<span class="text-[#ff4500]">.</span></h1>
-    <p class="text-sm text-white/30">Last Updated: March 2026</p>
+    <p class="text-sm text-white/80">Last Updated: March 2026</p>
   </div>
 </section>
 

@@ -135,11 +135,11 @@ require TML_VIEWS . '/partials/head.php';
               <span class="inline-block text-[11px] tracking-wider uppercase bg-white/[0.04] text-white/40 rounded-full px-2.5 py-0.5 font-medium"><?= tml_e($pos['type']) ?></span>
             </span>
           </span>
-          <span class="text-white/30 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
+          <span class="text-white/80 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
           <div class="px-5 pb-5 md:px-6 md:pb-6 border-t border-white/[0.04] pt-4">
-            <div class="flex items-center gap-2 text-xs text-white/30 mb-3">
+            <div class="flex items-center gap-2 text-xs text-white/80 mb-3">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               <?= tml_e($pos['location']) ?>
             </div>

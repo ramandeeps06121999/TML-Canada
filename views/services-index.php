@@ -46,7 +46,7 @@ require TML_VIEWS . '/partials/head.php';
           <?php if ($i > 0) : ?><div class="hidden sm:block w-[1px] h-6 bg-white/[0.08] -ml-4 mr-1"></div><?php endif; ?>
           <div class="text-center">
             <p class="text-xl md:text-2xl font-bold text-white"><?= tml_e($stat['value']) ?></p>
-            <p class="text-[10px] text-white/30 tracking-wide uppercase"><?= tml_e($stat['label']) ?></p>
+            <p class="text-[10px] text-white/80 tracking-wide uppercase"><?= tml_e($stat['label']) ?></p>
           </div>
         </div>
       <?php endforeach; ?>
@@ -167,7 +167,7 @@ $categoryDescriptions = [
         <p class="text-sm text-white/90 leading-relaxed mb-5 flex-1"><?= tml_e($service['description']) ?></p>
         <div class="flex flex-wrap gap-2 mt-auto">
           <?php foreach (array_slice($service['features'], 0, 3) as $f) : ?>
-            <span class="text-[10px] px-3 py-1.5 rounded-full border border-white/[0.06] text-white/30 bg-white/[0.02]"><?= tml_e($f['title']) ?></span>
+            <span class="text-[10px] px-3 py-1.5 rounded-full border border-white/[0.06] text-white/80 bg-white/[0.02]"><?= tml_e($f['title']) ?></span>
           <?php endforeach; ?>
         </div>
       </a>
@@ -188,7 +188,7 @@ $categoryDescriptions = [
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>
       <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
     </div>
-    <p class="text-xs text-white/30 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
+    <p class="text-xs text-white/80 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
   </div>
 </section>
 

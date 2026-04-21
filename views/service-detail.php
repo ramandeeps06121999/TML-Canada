@@ -165,7 +165,7 @@ require TML_VIEWS . '/partials/head.php';
     <a href="/services" class="inline-flex items-center gap-2 text-[11px] text-white/90 tracking-[0.2em] uppercase hover:text-white mb-8">← All Services</a>
     <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-6">Best <?= tml_e($data['title']) ?> Services<span class="text-[#ff4500]">.</span></h1>
     <p class="text-lg md:text-xl text-white/90 font-medium mb-4"><?= tml_e($data['tagline']) ?></p>
-    <p class="text-sm md:text-base text-white/30 leading-relaxed max-w-2xl mx-auto mb-8"><?= tml_e($data['heroDescription']) ?></p>
+    <p class="text-sm md:text-base text-white/80 leading-relaxed max-w-2xl mx-auto mb-8"><?= tml_e($data['heroDescription']) ?></p>
     <!-- Author Attribution -->
     <p class="text-xs text-white/40 tracking-wide mb-10">By <span class="text-white/70 font-semibold">Raman Makkar</span> • Founder & Chief SEO Strategist at TML Agency</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -384,7 +384,7 @@ require TML_VIEWS . '/partials/head.php';
             <span class="text-xs font-mono text-[#ff4500] font-bold"><?= str_pad((string) ($fi + 1), 2, '0', STR_PAD_LEFT) ?></span>
           </span>
           <span class="flex-1 text-white font-medium text-sm md:text-base"><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/30 flex-shrink-0 transition-transform duration-200" data-tml-faq-icon><path d="M6 9l6 6 6-6"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/80 flex-shrink-0 transition-transform duration-200" data-tml-faq-icon><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
           <div class="px-5 pb-5 md:px-6 md:pb-6 pl-[3.75rem] md:pl-[4.25rem] text-sm text-white/50 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
@@ -573,7 +573,7 @@ require TML_VIEWS . '/partials/head.php';
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Book a Free Strategy Call</a>
       <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
     </div>
-    <p class="text-xs text-white/30 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
+    <p class="text-xs text-white/80 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
   </div>
 </section>
 
@@ -616,7 +616,7 @@ foreach ($relatedBlogSlugs as $bs) {
         <h3 class="text-base font-semibold text-white mb-3 group-hover:text-[#ff4500] leading-snug"><?= tml_e($a['title']) ?></h3>
         <p class="text-sm text-white/35 leading-relaxed mb-4 line-clamp-2"><?= tml_e($a['metaDescription']) ?></p>
         <?php if (!empty($a['date']) || !empty($a['readTime'])) : ?>
-        <div class="flex items-center gap-4 text-xs text-white/30 mb-4">
+        <div class="flex items-center gap-4 text-xs text-white/80 mb-4">
           <?php if (!empty($a['date'])) : ?>
           <span class="inline-flex items-center gap-1"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/40"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><?= tml_e($a['date']) ?></span>
           <?php endif; ?>

@@ -284,7 +284,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors" data-tml-faq>
         <button type="button" class="w-full flex items-center justify-between p-5 md:p-6 text-left" data-tml-faq-toggle>
           <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff4500" stroke-width="1.5" class="flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e(($faq['q'] ?? $faq['question'] ?? '')) ?></span></span>
-          <span class="text-white/30 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
+          <span class="text-white/80 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
           <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e(($faq['a'] ?? $faq['answer'] ?? '')) ?></div>

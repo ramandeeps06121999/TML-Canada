@@ -116,8 +116,8 @@ require TML_VIEWS . '/partials/head.php';
   </div>
   <div class="hero-fade-up hero-delay-7 absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
     <div class="hero-bounce flex flex-col items-center gap-2">
-      <span class="text-xs text-white/30 tracking-[0.2em] uppercase hidden sm:block">Scroll</span>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="text-white/30"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="text-xs text-white/80 tracking-[0.2em] uppercase hidden sm:block">Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="text-white/80"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
   </div>
 </section>
@@ -126,7 +126,7 @@ require TML_VIEWS . '/partials/head.php';
 <section class="py-16 md:py-24 border-t border-white/[0.06] border-b border-b-white/[0.06] bg-[#080808] overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-8 scroll-reveal">
     <div class="flex items-center justify-between">
-      <p class="text-xs tracking-[0.25em] uppercase text-white/30">Trusted by ambitious brands</p>
+      <p class="text-xs tracking-[0.25em] uppercase text-white/80">Trusted by ambitious brands</p>
       <span class="text-sm font-bold text-white/20"><span data-counter-target="12" data-counter-suffix="+">0</span> brands</span>
     </div>
   </div>
@@ -214,7 +214,7 @@ require TML_VIEWS . '/partials/head.php';
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">What we do</p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Digital Marketing Services<span class="text-[#ff4500]">.</span></h2>
       </div>
-      <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/30 font-medium">10 services</span>
+      <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/80 font-medium">10 services</span>
     </div>
     <?php
     $serviceIcons = [
@@ -243,7 +243,7 @@ require TML_VIEWS . '/partials/head.php';
       <a href="/services/<?= tml_e($sp['slug']) ?>" class="group flex items-center gap-6 py-6 border-b border-white/[0.04] hover:border-[#ff4500]/20 transition-all duration-500 relative">
         <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-[#ff4500] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-full"></div>
         <span class="text-xs font-mono text-white/15 w-8 shrink-0 pl-3"><?= str_pad((string) $idx, 2, '0', STR_PAD_LEFT) ?></span>
-        <span class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center text-white/30 group-hover:text-[#ff4500] group-hover:border-[#ff4500]/20 transition-colors shrink-0"><?= $icon ?></span>
+        <span class="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center text-white/80 group-hover:text-[#ff4500] group-hover:border-[#ff4500]/20 transition-colors shrink-0"><?= $icon ?></span>
         <span class="flex-1 min-w-0"><span class="text-lg font-semibold text-white group-hover:text-[#ff4500] transition-colors"><?= tml_e($sp['title']) ?></span></span>
         <span class="hidden md:block text-sm text-white/25 max-w-sm leading-relaxed"><?= tml_e($sp['description'] ?? $sp['tagline']) ?></span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/10 group-hover:text-[#ff4500] group-hover:translate-x-1 transition-all shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -271,7 +271,7 @@ require TML_VIEWS . '/partials/head.php';
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Our toolkit</p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Our Digital Marketing Technology Stack<span class="text-[#ff4500]">.</span></h2>
       </div>
-      <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/30 font-medium">15+ tools</span>
+      <span class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.06] text-xs text-white/80 font-medium">15+ tools</span>
     </div>
   </div>
   <?php
@@ -351,7 +351,7 @@ require TML_VIEWS . '/partials/head.php';
               <h3 class="text-sm font-semibold text-white tracking-tight"><?= tml_e($p[0]) ?></h3>
             </div>
           </div>
-          <p class="text-xs text-white/30 leading-relaxed group-hover:text-white/50 transition-colors duration-300"><?= tml_e($p[2]) ?></p>
+          <p class="text-xs text-white/80 leading-relaxed group-hover:text-white/50 transition-colors duration-300"><?= tml_e($p[2]) ?></p>
           <div class="mt-4 h-px bg-gradient-to-r from-[#ff4500]/20 to-transparent"></div>
         </div>
       </div>
@@ -595,7 +595,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="text-center p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/15 hover:bg-white/[0.03] transition-all duration-500">
         <div class="text-2xl md:text-3xl font-bold text-[#ff4500]/80 tracking-tight mb-1"><span data-counter-target="<?= $ws['target'] ?>" data-counter-suffix="<?= tml_e($ws['suffix']) ?>">0</span></div>
         <div class="w-6 h-px bg-gradient-to-r from-[#ff4500]/40 to-transparent mx-auto my-2"></div>
-        <p class="text-[10px] text-white/30 tracking-[0.12em] uppercase"><?= tml_e($ws['label']) ?></p>
+        <p class="text-[10px] text-white/80 tracking-[0.12em] uppercase"><?= tml_e($ws['label']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -713,7 +713,7 @@ require TML_VIEWS . '/partials/head.php';
         <?php if ($plan['popular']) : ?><span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#ff4500] text-white text-[10px] font-bold tracking-wider uppercase">Most Popular</span><?php endif; ?>
         <div class="text-4xl mb-4"><?= $plan['emoji'] ?></div>
         <h3 class="text-xl font-semibold text-white mb-2"><?= tml_e($plan['title']) ?></h3>
-        <div class="flex items-center gap-2 text-xs text-white/30 mb-6">
+        <div class="flex items-center gap-2 text-xs text-white/80 mb-6">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           Team Size: <?= tml_e($plan['team']) ?>
         </div>
@@ -761,7 +761,7 @@ require TML_VIEWS . '/partials/head.php';
         <p class="text-sm md:text-[15px] text-white/70 leading-[1.8] mb-6"><?= tml_e($t['quote']) ?></p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 rounded-full bg-gradient-to-br <?= $gradients[$i] ?> flex items-center justify-center text-white font-bold text-sm"><?= $t['initial'] ?></div>
-          <div><p class="text-sm font-semibold text-white"><?= tml_e($t['name']) ?></p><p class="text-xs text-white/30"><?= tml_e($t['company']) ?></p></div>
+          <div><p class="text-sm font-semibold text-white"><?= tml_e($t['name']) ?></p><p class="text-xs text-white/80"><?= tml_e($t['company']) ?></p></div>
         </div>
       </div>
       <?php endforeach; ?>
@@ -790,7 +790,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors" data-tml-faq>
         <button type="button" class="w-full flex items-center justify-between p-5 md:p-6 text-left" data-tml-faq-toggle>
           <span class="flex items-center gap-4"><span class="text-xs font-mono text-[#ff4500]/40"><?= str_pad((string) ($i + 1), 2, '0', STR_PAD_LEFT) ?></span><span class="text-white font-medium text-sm md:text-base pr-4"><?= tml_e(($faq['q'] ?? $faq['question'] ?? '')) ?></span></span>
-          <span class="text-white/30 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
+          <span class="text-white/80 text-xl flex-shrink-0 transition-transform" data-tml-faq-icon>+</span>
         </button>
         <div class="overflow-hidden transition-all duration-300 ease-out" style="max-height: 0;" data-tml-faq-body>
           <div class="px-5 pb-5 md:px-6 md:pb-6 pl-14 md:pl-16 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e(($faq['a'] ?? $faq['answer'] ?? '')) ?></div>
@@ -852,7 +852,7 @@ require TML_VIEWS . '/partials/head.php';
           <?php foreach ([['70+', 'Team Members'], ['4.9', 'Avg Rating'], ['92%', 'Stay 2+ Years']] as $cs) : ?>
           <div>
             <p class="text-2xl md:text-3xl font-bold text-white/90 tracking-tight"><?= tml_e($cs[0]) ?></p>
-            <p class="text-[10px] text-white/30 tracking-[0.1em] uppercase mt-1"><?= tml_e($cs[1]) ?></p>
+            <p class="text-[10px] text-white/80 tracking-[0.1em] uppercase mt-1"><?= tml_e($cs[1]) ?></p>
           </div>
           <?php endforeach; ?>
         </div>
@@ -910,7 +910,7 @@ require TML_VIEWS . '/partials/head.php';
   <div class="max-w-7xl mx-auto">
     <!-- Showreel -->
     <div class="text-center mb-12 scroll-reveal">
-      <p class="text-[10px] text-white/30 tracking-[0.25em] uppercase mb-4">Since 2010</p>
+      <p class="text-[10px] text-white/80 tracking-[0.25em] uppercase mb-4">Since 2010</p>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-2">Partner With TML Agency</h2>
       <p class="text-lg text-white/40 italic">Industry Titans</p>
     </div>
@@ -938,7 +938,7 @@ require TML_VIEWS . '/partials/head.php';
           <?php foreach ([['target'=>500,'suffix'=>'+','label'=>'Brands scaled'],['target'=>98,'suffix'=>'%','label'=>'Client retention'],['target'=>15,'suffix'=>'+','label'=>'Years in the game'],['target'=>49,'suffix'=>'/5','prefix'=>'4.','label'=>'Average rating']] as $cs) : ?>
           <div>
             <p class="text-2xl md:text-3xl font-bold text-white/90 tracking-tight"><span data-counter-target="<?= $cs['target'] ?>" data-counter-suffix="<?= tml_e($cs['suffix']) ?>" <?php if (!empty($cs['prefix'])) : ?>data-counter-prefix="<?= tml_e($cs['prefix']) ?>"<?php endif; ?>>0</span></p>
-            <p class="text-[10px] text-white/30 tracking-[0.1em] uppercase mt-1"><?= tml_e($cs['label']) ?></p>
+            <p class="text-[10px] text-white/80 tracking-[0.1em] uppercase mt-1"><?= tml_e($cs['label']) ?></p>
           </div>
           <?php endforeach; ?>
         </div>
@@ -962,7 +962,7 @@ require TML_VIEWS . '/partials/head.php';
             <div class="w-8 h-8 rounded-full bg-gradient-to-br <?= $av[1] ?> flex items-center justify-center text-white text-[10px] font-bold border-2 border-[#050505]"><?= $av[0] ?></div>
             <?php endforeach; ?>
           </div>
-          <span class="text-xs text-white/30">500+ brands trust us</span>
+          <span class="text-xs text-white/80">500+ brands trust us</span>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ function tml_nav_active(string $navPath, string $href): string {
     <div class="flex justify-center mb-0"><div class="w-3 h-3 rotate-45 bg-black/80 border-l border-t border-white/10 -mb-1.5 z-10"></div></div>
     <div class="bg-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.5)] text-left">
       <div class="flex items-center justify-between mb-5">
-        <p class="text-[10px] text-white/30 tracking-[0.2em] uppercase font-medium">Our Services</p>
+        <p class="text-[10px] text-white/80 tracking-[0.2em] uppercase font-medium">Our Services</p>
         <a href="/services" class="text-[11px] text-[#ff4500] font-medium hover:underline">View All 39 Services &rarr;</a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;font-size:12px">
@@ -98,7 +98,7 @@ function tml_nav_active(string $navPath, string $href): string {
         </div>
       </div>
       <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-        <p class="text-[11px] text-white/30">39 services across branding, marketing, development &amp; AI technology.</p>
+        <p class="text-[11px] text-white/80">39 services across branding, marketing, development &amp; AI technology.</p>
         <a href="/contact-us" class="text-[11px] px-4 py-2 rounded-full bg-[#ff4500]/10 border border-[#ff4500]/20 text-[#ff4500] font-semibold hover:bg-[#ff4500]/20 transition-colors">Free Consultation</a>
       </div>
     </div>
@@ -108,7 +108,7 @@ function tml_nav_active(string $navPath, string $href): string {
     <div class="flex justify-center mb-0"><div class="w-3 h-3 rotate-45 bg-black/80 border-l border-t border-white/10 -mb-1.5 z-10"></div></div>
     <div class="bg-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_20px_60px_rgba(0,0,0,0.5)] text-left">
       <div class="flex items-center justify-between mb-5">
-        <p class="text-[10px] text-white/30 tracking-[0.2em] uppercase font-medium">Industries We Serve</p>
+        <p class="text-[10px] text-white/80 tracking-[0.2em] uppercase font-medium">Industries We Serve</p>
         <a href="/industries" class="text-[11px] text-[#ff4500] font-medium hover:underline">View All Industries &rarr;</a>
       </div>
       <div class="grid grid-cols-4 gap-5 text-[12px]">
@@ -128,7 +128,7 @@ function tml_nav_active(string $navPath, string $href): string {
         </div>
       </div>
       <div class="mt-5 pt-4 border-t border-white/[0.06] flex items-center justify-between">
-        <p class="text-[11px] text-white/30">We serve 39+ industries worldwide.</p>
+        <p class="text-[11px] text-white/80">We serve 39+ industries worldwide.</p>
         <a href="/contact-us" class="text-[11px] px-4 py-2 rounded-full bg-[#ff4500]/10 border border-[#ff4500]/20 text-[#ff4500] font-semibold hover:bg-[#ff4500]/20 transition-colors">Free Consultation</a>
       </div>
     </div>

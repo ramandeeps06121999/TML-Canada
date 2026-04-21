@@ -294,7 +294,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     </h1>
     <p class="text-lg md:text-xl text-white/90 font-medium mb-4"><?= tml_e($enrichment['tagline'] ?? ('Grow your ' . $cityName . ' business with expert ' . strtolower($serviceName) . ' services.')) ?></p>
     <p class="text-xs text-white/25 tracking-wide mb-4"><?= tml_e($serviceName) ?> Agency &bull; <?= tml_e($serviceName) ?> Company &bull; <?= tml_e($serviceName) ?> Services in <?= tml_e($cityName) ?></p>
-    <p class="text-sm md:text-base text-white/30 leading-relaxed max-w-2xl mx-auto mb-10"><?= tml_e($enrichment['heroDescription'] ?? ('TML is a leading ' . strtolower($serviceName) . ' agency serving businesses across ' . (string) $location['region'] . '.')) ?></p>
+    <p class="text-sm md:text-base text-white/80 leading-relaxed max-w-2xl mx-auto mb-10"><?= tml_e($enrichment['heroDescription'] ?? ('TML is a leading ' . strtolower($serviceName) . ' agency serving businesses across ' . (string) $location['region'] . '.')) ?></p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] transition-colors shadow-[0_0_30px_rgba(255,69,0,0.3)]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Quote</a>
       <a href="/services/<?= tml_e($serviceSlug) ?>" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors">View Full Service Details<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
@@ -618,7 +618,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
     <h2 class="scroll-reveal text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-10">Trusted by <?= tml_e($cityName) ?> Businesses<span class="text-[#ff4500]">.</span></h2>
     <div class="p-8 md:p-12 rounded-2xl border border-white/[0.06] bg-white/[0.02]">
       <p class="text-lg md:text-xl text-white/90 font-medium mb-2">Trusted by 500+ businesses</p>
-      <p class="text-white/30 text-sm mb-6">across <?= tml_e((string) $location['region']) ?></p>
+      <p class="text-white/80 text-sm mb-6">across <?= tml_e((string) $location['region']) ?></p>
       <div class="h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mb-6"></div>
       <p class="text-sm md:text-base text-white/75 italic leading-relaxed max-w-2xl mx-auto">&ldquo;TML transformed our digital presence in <?= tml_e($cityName) ?>. Their <?= tml_e(strtolower($serviceName)) ?> expertise delivered results that exceeded expectations.&rdquo;</p>
     </div>
@@ -728,7 +728,7 @@ $otherSvcSlugs = array_slice($otherSvcSlugs, 0, 6);
       <details class="group border border-white/[0.06] rounded-xl overflow-hidden bg-white/[0.02] hover:border-white/[0.1] transition-colors">
         <summary class="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none text-white font-medium text-sm md:text-base">
           <span class="flex items-center gap-3 pr-4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-[#ff4500] flex-shrink-0"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><?= tml_e($faq['q'] ?? $faq['question'] ?? '') ?></span>
-          <span class="text-white/30 text-xl flex-shrink-0">+</span>
+          <span class="text-white/80 text-xl flex-shrink-0">+</span>
         </summary>
         <div class="px-5 pb-5 md:px-6 md:pb-6 text-sm text-white/75 leading-relaxed border-t border-white/[0.04] pt-4"><?= tml_e($faq['a'] ?? $faq['answer'] ?? '') ?></div>
       </details>

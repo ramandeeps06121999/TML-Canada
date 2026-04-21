@@ -101,8 +101,8 @@
     </div>
     <p class="max-w-3xl text-[11px] leading-relaxed text-white/25 mb-8">TML Agency is a full-service digital marketing agency in Canada offering SEO services, web design, Google Ads management, social media marketing, branding, and content marketing. Headquartered in Edmonton, we serve businesses across Toronto, Vancouver, Calgary, Ottawa, Montreal, and 60+ Canadian cities. Our SEO experts, web designers, and marketing consultants help businesses grow online.</p>
     <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-white/[0.06]">
-      <p class="text-xs text-white/30">&copy; <?= (int) gmdate('Y') ?> TML Agency. All rights reserved.</p>
-      <div class="flex gap-6 text-xs text-white/30">
+      <p class="text-xs text-white/80">&copy; <?= (int) gmdate('Y') ?> TML Agency. All rights reserved.</p>
+      <div class="flex gap-6 text-xs text-white/80">
         <a href="/privacy-policy" class="hover:text-white/90 transition-colors">Privacy Policy</a>
         <a href="/terms-of-service" class="hover:text-white/90 transition-colors">Terms of Service</a>
         <a href="/sitemap.xml" class="hover:text-white/90 transition-colors">Sitemap</a>

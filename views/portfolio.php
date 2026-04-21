@@ -167,17 +167,17 @@ require TML_VIEWS . '/partials/head.php';
     <div class="flex items-center justify-center gap-6">
       <div class="text-center">
         <p class="text-2xl md:text-3xl font-bold text-white"><span data-counter-target="500" data-counter-suffix="+">0</span></p>
-        <p class="text-[10px] text-white/30 tracking-[0.1em] uppercase mt-1">Projects</p>
+        <p class="text-[10px] text-white/80 tracking-[0.1em] uppercase mt-1">Projects</p>
       </div>
       <div class="w-px h-8 bg-white/10"></div>
       <div class="text-center">
         <p class="text-2xl md:text-3xl font-bold text-white"><span data-counter-target="25" data-counter-suffix="+">0</span></p>
-        <p class="text-[10px] text-white/30 tracking-[0.1em] uppercase mt-1">Industries</p>
+        <p class="text-[10px] text-white/80 tracking-[0.1em] uppercase mt-1">Industries</p>
       </div>
       <div class="w-px h-8 bg-white/10"></div>
       <div class="text-center">
         <p class="text-2xl md:text-3xl font-bold text-white"><span data-counter-target="100" data-counter-suffix="%">0</span></p>
-        <p class="text-[10px] text-white/30 tracking-[0.1em] uppercase mt-1">Satisfaction</p>
+        <p class="text-[10px] text-white/80 tracking-[0.1em] uppercase mt-1">Satisfaction</p>
       </div>
     </div>
   </div>
@@ -270,7 +270,7 @@ require TML_VIEWS . '/partials/head.php';
     <div class="text-center mt-12" id="load-more-wrap">
       <button id="load-more-btn" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/10 text-white/70 text-sm font-semibold hover:bg-white/5 hover:border-white/20 transition-all duration-300">
         <span>Load More</span>
-        <span id="load-more-count" class="text-white/30 text-xs"></span>
+        <span id="load-more-count" class="text-white/80 text-xs"></span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-50"><path d="M6 9l6 6 6-6"/></svg>
       </button>
     </div>
@@ -285,7 +285,7 @@ require TML_VIEWS . '/partials/head.php';
         <p class="section-label text-xs text-white/40 tracking-[0.25em] uppercase mb-4">Showreel</p>
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-white">Video Production & <span class="italic text-white/90">Motion Design Portfolio</span><span class="text-[#ff4500]">.</span></h2>
       </div>
-      <p class="text-sm text-white/30 max-w-sm">Brand films, ad creatives, and motion design — crafted to stop the scroll.</p>
+      <p class="text-sm text-white/80 max-w-sm">Brand films, ad creatives, and motion design — crafted to stop the scroll.</p>
     </div>
     <div class="scroll-reveal scroll-delay-1 relative rounded-2xl overflow-hidden border border-white/[0.06] group">
       <video data-src="/tml-showreel.mp4" poster="/tml-showreel-poster.jpg" autoplay muted loop playsinline aria-label="TML Agency showreel" class="w-full h-auto block rounded-2xl"></video>
@@ -313,7 +313,7 @@ require TML_VIEWS . '/partials/head.php';
       <div class="text-center p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-[#ff4500]/15 transition-colors duration-500 scroll-reveal">
         <p class="text-2xl md:text-3xl font-bold text-[#ff4500]/80"><span data-counter-target="<?= $st['n'] ?>" data-counter-suffix="<?= tml_e($st['s']) ?>">0</span></p>
         <div class="w-6 h-px bg-gradient-to-r from-[#ff4500]/40 to-transparent mx-auto my-2"></div>
-        <p class="text-[10px] text-white/30 tracking-[0.12em] uppercase"><?= tml_e($st['l']) ?></p>
+        <p class="text-[10px] text-white/80 tracking-[0.12em] uppercase"><?= tml_e($st['l']) ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -332,7 +332,7 @@ require TML_VIEWS . '/partials/head.php';
       <a href="/contact-us" class="glow-button active:scale-[0.97] transition-transform px-8 py-4 rounded-full bg-[#ff4500] text-white font-semibold text-sm hover:bg-[#ff5500] shadow-[0_0_30px_rgba(255,69,0,0.3)] inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Get a Free Consultation</a>
       <a href="tel:+14036048692" class="px-8 py-4 rounded-full border border-white/10 text-white/90 font-semibold text-sm hover:bg-white/5 transition-colors inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call +1 (403) 604-8692</a>
     </div>
-    <p class="text-xs text-white/30 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
+    <p class="text-xs text-white/80 mt-6">Or email us at <a href="mailto:info@townmedialabs.ca" class="text-[#ff4500]/70 hover:text-[#ff4500] transition-colors">info@townmedialabs.ca</a></p>
   </div>
 </section>
 
